@@ -67,12 +67,12 @@ PYTHON
    source venv/bin/activate
    ```
 
-  windows
+   windows
    ```bash
    .\venv\Scripts\activate
    ```
 
-5. Install Dependencies
+4. Install Dependencies
   ```bash
    - pip install -r requirements.txt
    ```
