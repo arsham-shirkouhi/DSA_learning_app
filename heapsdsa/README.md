@@ -48,3 +48,31 @@ Join our community of developers creating universal apps.
 
 - [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
 - [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+
+
+
+
+PYTHON
+## 🛠️ Setup
+
+1. Clone the repo
+2. Create a virtual environment:
+   ```bash
+   python -m venv venv
+
+
+3. Activate virtual environment
+   ON macOS/Linux
+      - source venv/bin/activate
+   ON windows
+      - .\venv\Scripts\activate
+
+4. Install Dependencies
+   - pip install -r requirements.txt
+
+---------------------------------------------------------------------------
+IF AFTER INSTALLING DEPENDENCIES IT SHOWS DEPENDENCIES NOT FOUND
+   - ctrl + shift + p
+   - select python interpreter
+   - enter interpreter path
+   - fill in with the full path that contains "dsa_learning_app/heapsdsa/backend/venv/bin/python"
