@@ -1,25 +1,32 @@
-import { useSignIn } from '@clerk/clerk-expo'
 import { Link, useRouter } from 'expo-router'
-import React from 'react'
-import { Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { signInWithEmailAndPassword } from 'firebase/auth'
+import React, { useCallback, useMemo, useState } from 'react'
+import { ActivityIndicator, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { auth } from '../firebase'
+
+// Log Firebase initialization status
+console.log('Firebase Auth initialized:', auth ? 'Yes' : 'No')
 
 export default function SignInScreen() {
-  const { signIn, setActive, isLoaded } = useSignIn()
   const router = useRouter()
+  const [emailAddress, setEmailAddress] = useState('')
+  const [password, setPassword] = useState('')
+  const [error, setError] = useState('')
+  const [loading, setLoading] = useState(false)
 
-  const [emailAddress, setEmailAddress] = React.useState('')
-  const [password, setPassword] = React.useState('')
-  const [error, setError] = React.useState('')
+  // Memoize email validation to prevent re-computation
+  const isEmailValid = useMemo(() => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    return emailRegex.test(emailAddress)
+  }, [emailAddress])
 
   // Handle the submission of the sign-in form
-  const onSignInPress = async () => {
-    if (!isLoaded) return
+  const onSignInPress = useCallback(async () => {
+    if (loading) return
 
     setError('') // Clear any previous errors
 
-    // Basic email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    if (!emailRegex.test(emailAddress)) {
+    if (!isEmailValid) {
       setError('Please enter a valid email address')
       return
     }
@@ -29,84 +36,74 @@ export default function SignInScreen() {
       return
     }
 
-    // Start the sign-in process using the email and password provided
-    try {
-      const signInAttempt = await signIn.create({
-        identifier: emailAddress,
-        password,
-      })
+    setLoading(true)
 
-      // If sign-in process is complete, set the created session as active
-      // and redirect the user
-      if (signInAttempt.status === 'complete') {
-        await setActive({ session: signInAttempt.createdSessionId })
-        router.replace('/')
-      } else {
-        setError('Sign in failed. Please try again.')
-        console.error(JSON.stringify(signInAttempt, null, 2))
-      }
+    try {
+      await signInWithEmailAndPassword(auth, emailAddress, password)
+      router.replace('/')
     } catch (err: any) {
-      if (err.errors && err.errors.length > 0) {
-        const clerkError = err.errors[0]
-        if (clerkError.code === 'form_identifier_not_found') {
+      console.error(err)
+      switch (err.code) {
+        case 'auth/invalid-email':
+          setError('Invalid email address')
+          break
+        case 'auth/user-disabled':
+          setError('This account has been disabled')
+          break
+        case 'auth/user-not-found':
           setError('No account found with this email')
-        } else if (clerkError.code === 'form_password_incorrect') {
+          break
+        case 'auth/wrong-password':
           setError('Incorrect password')
-        } else {
-          setError(clerkError.message || 'An error occurred during sign in')
-        }
-      } else {
-        setError('An unexpected error occurred')
+          break
+        default:
+          setError('An error occurred during sign in')
       }
-      console.error(JSON.stringify(err, null, 2))
+    } finally {
+      setLoading(false)
     }
-  }
+  }, [loading, isEmailValid, password, emailAddress, router])
 
   return (
-    <View style={{ flex: 1, justifyContent: 'center', padding: 20 }}>
-      <Text style={{ fontSize: 24, marginBottom: 20 }}>Sign in</Text>
-      {error ? (
-        <Text style={{ color: 'red', marginBottom: 10 }}>{error}</Text>
-      ) : null}
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', padding: 20 }}>
       <TextInput
         autoCapitalize="none"
         value={emailAddress}
-        placeholder="Enter email"
-        onChangeText={(email) => setEmailAddress(email)}
-        style={{
-          borderWidth: 1,
-          padding: 10,
-          marginBottom: 15,
-          borderRadius: 5,
-          borderColor: error && error.includes('email') ? 'red' : '#000'
-        }}
+        placeholder="Email..."
+        onChangeText={setEmailAddress}
+        style={{ width: '100%', padding: 8, marginVertical: 10, borderWidth: 1, borderRadius: 4 }}
       />
       <TextInput
         value={password}
-        placeholder="Enter password"
-        secureTextEntry={true}
-        onChangeText={(password) => setPassword(password)}
-        style={{
-          borderWidth: 1,
-          padding: 10,
-          marginBottom: 20,
-          borderRadius: 5,
-          borderColor: error && error.includes('password') ? 'red' : '#000'
-        }}
+        placeholder="Password..."
+        secureTextEntry
+        onChangeText={setPassword}
+        style={{ width: '100%', padding: 8, marginVertical: 10, borderWidth: 1, borderRadius: 4 }}
       />
       <TouchableOpacity
         onPress={onSignInPress}
-        style={{ backgroundColor: '#000', padding: 15, marginBottom: 15, borderRadius: 5 }}
-      >
-        <Text style={{ color: '#fff', textAlign: 'center' }}>Sign in</Text>
+        disabled={loading}
+        style={{
+          width: '100%',
+          backgroundColor: loading ? '#666' : '#000',
+          padding: 10,
+          borderRadius: 5,
+          marginVertical: 10,
+        }}>
+        {loading ? (
+          <ActivityIndicator color="#fff" />
+        ) : (
+          <Text style={{ color: '#fff', textAlign: 'center' }}>Sign in</Text>
+        )}
       </TouchableOpacity>
-
-      <View style={{ flexDirection: 'row', justifyContent: 'center', gap: 5 }}>
-        <Text>Don't have an account?</Text>
-        <Link href="/sign-up">
-          <Text style={{ color: '#000', textDecorationLine: 'underline' }}>Sign up</Text>
-        </Link>
-      </View>
+      {error ? (
+        <Text style={{ color: 'red', marginVertical: 10 }}>{error}</Text>
+      ) : null}
+      <Link href="/(auth)/sign-up" asChild>
+        <Text style={{ color: '#000', textDecorationLine: 'underline', marginTop: 10 }}>
+          Don't have an account? Sign up
+        </Text>
+      </Link>
     </View>
   )
 }

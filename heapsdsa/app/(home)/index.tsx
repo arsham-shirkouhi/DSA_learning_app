@@ -1,20 +1,43 @@
-import { SignOutButton } from '@/app/components/SignOutButton'
-import { SignedIn, SignedOut, useUser } from '@clerk/clerk-expo'
 import { Link } from 'expo-router'
-import { Text, View } from 'react-native'
+import { User, onAuthStateChanged } from 'firebase/auth'
+import React, { useEffect, useState } from 'react'
+import { Text, TouchableOpacity, View } from 'react-native'
+import { auth } from '../firebase'
 
 export default function Page() {
-  const { user } = useUser()
+  const [user, setUser] = useState<User | null>(null)
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setUser(user)
+    })
+
+    return () => unsubscribe()
+  }, [])
+
+  const handleSignOut = async () => {
+    try {
+      await auth.signOut()
+    } catch (err) {
+      console.error(err)
+    }
+  }
 
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', padding: 20 }}>
-      <SignedIn>
-        <Text style={{ fontSize: 18, marginBottom: 20 }}>
-          Hello {user?.emailAddresses[0].emailAddress}
-        </Text>
-        <SignOutButton />
-      </SignedIn>
-      <SignedOut>
+      {user ? (
+        <>
+          <Text style={{ fontSize: 18, marginBottom: 20 }}>
+            Hello {user.email}
+          </Text>
+          <TouchableOpacity
+            onPress={handleSignOut}
+            style={{ backgroundColor: '#000', padding: 10, borderRadius: 5 }}
+          >
+            <Text style={{ color: '#fff', textAlign: 'center' }}>Sign out</Text>
+          </TouchableOpacity>
+        </>
+      ) : (
         <View style={{ gap: 10 }}>
           <Link href="/(auth)/sign-in" asChild>
             <Text style={{ color: '#000', textDecorationLine: 'underline', fontSize: 16 }}>
@@ -27,7 +50,7 @@ export default function Page() {
             </Text>
           </Link>
         </View>
-      </SignedOut>
+      )}
     </View>
   )
 }
