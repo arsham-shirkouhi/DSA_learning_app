@@ -1,5 +1,5 @@
 import { Link, useRouter } from 'expo-router'
-import { signInWithEmailAndPassword } from 'firebase/auth'
+import { sendEmailVerification, signInWithEmailAndPassword } from 'firebase/auth'
 import React, { useCallback, useMemo, useState } from 'react'
 import { ActivityIndicator, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { auth } from '../firebase'
@@ -13,6 +13,20 @@ export default function SignInScreen() {
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
+  const [needsVerification, setNeedsVerification] = useState(false)
+  const [verificationSent, setVerificationSent] = useState(false)
+
+  const resendVerificationEmail = async () => {
+    try {
+      if (auth.currentUser) {
+        await sendEmailVerification(auth.currentUser)
+        setVerificationSent(true)
+        setError('Verification email sent! Please check your inbox.')
+      }
+    } catch (err) {
+      setError('Failed to send verification email. Please try again.')
+    }
+  }
 
   // Memoize email validation to prevent re-computation
   const isEmailValid = useMemo(() => {
@@ -25,6 +39,8 @@ export default function SignInScreen() {
     if (loading) return
 
     setError('') // Clear any previous errors
+    setNeedsVerification(false)
+    setVerificationSent(false)
 
     if (!isEmailValid) {
       setError('Please enter a valid email address')
@@ -39,7 +55,17 @@ export default function SignInScreen() {
     setLoading(true)
 
     try {
-      await signInWithEmailAndPassword(auth, emailAddress, password)
+      const userCredential = await signInWithEmailAndPassword(auth, emailAddress, password)
+
+      if (!userCredential.user.emailVerified) {
+        setNeedsVerification(true)
+        await sendEmailVerification(userCredential.user)
+        setVerificationSent(true)
+        setError('Please verify your email before signing in. We\'ve sent a new verification email.')
+        await auth.signOut() // Sign out unverified users
+        return
+      }
+
       router.replace('/')
     } catch (err: any) {
       console.error(err)
@@ -63,6 +89,42 @@ export default function SignInScreen() {
       setLoading(false)
     }
   }, [loading, isEmailValid, password, emailAddress, router])
+
+  if (needsVerification) {
+    return (
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', padding: 20 }}>
+        <Text style={{ fontSize: 18, marginBottom: 20, textAlign: 'center' }}>
+          Please verify your email address
+        </Text>
+        {verificationSent ? (
+          <Text style={{ color: 'green', textAlign: 'center', marginBottom: 20 }}>
+            Verification email sent! Please check your inbox.
+          </Text>
+        ) : (
+          <Text style={{ textAlign: 'center', marginBottom: 20 }}>
+            You need to verify your email before you can sign in.
+          </Text>
+        )}
+        {!verificationSent && (
+          <TouchableOpacity
+            onPress={resendVerificationEmail}
+            style={{ backgroundColor: '#4CAF50', padding: 10, borderRadius: 5, marginBottom: 20 }}
+          >
+            <Text style={{ color: '#fff' }}>Resend Verification Email</Text>
+          </TouchableOpacity>
+        )}
+        <TouchableOpacity onPress={() => {
+          setNeedsVerification(false)
+          setVerificationSent(false)
+          setError('')
+        }}>
+          <Text style={{ color: '#000', textDecorationLine: 'underline', marginTop: 10 }}>
+            Back to Sign In
+          </Text>
+        </TouchableOpacity>
+      </View>
+    )
+  }
 
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', padding: 20 }}>

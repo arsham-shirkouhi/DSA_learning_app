@@ -1,5 +1,5 @@
 import { Link, useRouter } from 'expo-router'
-import { createUserWithEmailAndPassword } from 'firebase/auth'
+import { createUserWithEmailAndPassword, sendEmailVerification, signInWithEmailAndPassword } from 'firebase/auth'
 import React, { useCallback, useMemo, useState } from 'react'
 import { ActivityIndicator, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { auth } from '../firebase'
@@ -11,6 +11,7 @@ export default function SignUpScreen() {
   const [confirmPassword, setConfirmPassword] = useState('')
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
+  const [verificationSent, setVerificationSent] = useState(false)
 
   // Memoize email validation to prevent re-computation
   const isEmailValid = useMemo(() => {
@@ -47,30 +48,66 @@ export default function SignUpScreen() {
     setLoading(true)
 
     try {
-      await createUserWithEmailAndPassword(auth, emailAddress, password)
-      router.replace('/')
+      const userCredential = await createUserWithEmailAndPassword(auth, emailAddress, password)
+      // Send verification email
+      await sendEmailVerification(userCredential.user)
+      setVerificationSent(true)
+      setError('')
     } catch (err: any) {
       console.error(err)
-      switch (err.code) {
-        case 'auth/email-already-in-use':
-          setError('An account with this email already exists')
-          break
-        case 'auth/invalid-email':
-          setError('Invalid email address')
-          break
-        case 'auth/operation-not-allowed':
-          setError('Email/password accounts are not enabled')
-          break
-        case 'auth/weak-password':
-          setError('Password is too weak')
-          break
-        default:
-          setError('An error occurred during sign up')
+      if (err.code === 'auth/email-already-in-use') {
+        // Try to sign in to check if account is unverified
+        try {
+          const userCredential = await signInWithEmailAndPassword(auth, emailAddress, password)
+          if (!userCredential.user.emailVerified) {
+            // Account exists but is unverified
+            await sendEmailVerification(userCredential.user)
+            setVerificationSent(true)
+            setError('This account exists but needs verification. We\'ve sent another verification email.')
+          } else {
+            setError('An account with this email already exists and is verified. Please sign in.')
+          }
+          await auth.signOut() // Sign out to maintain clean state
+        } catch (signInErr: any) {
+          setError('An account with this email exists. Please sign in or reset your password if forgotten.')
+        }
+      } else {
+        switch (err.code) {
+          case 'auth/invalid-email':
+            setError('Invalid email address')
+            break
+          case 'auth/operation-not-allowed':
+            setError('Email/password accounts are not enabled')
+            break
+          case 'auth/weak-password':
+            setError('Password is too weak')
+            break
+          default:
+            setError('An error occurred during sign up')
+        }
       }
     } finally {
       setLoading(false)
     }
-  }, [loading, isEmailValid, password, confirmPassword, emailAddress, router])
+  }, [loading, isEmailValid, password, confirmPassword, emailAddress])
+
+  if (verificationSent) {
+    return (
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', padding: 20 }}>
+        <Text style={{ fontSize: 18, marginBottom: 20, textAlign: 'center' }}>
+          Please check your email to verify your account.
+        </Text>
+        <Text style={{ textAlign: 'center', marginBottom: 20 }}>
+          Once verified, you can proceed to login.
+        </Text>
+        <Link href="/(auth)/sign-in" asChild>
+          <Text style={{ color: '#000', textDecorationLine: 'underline', marginTop: 10 }}>
+            Go to Login
+          </Text>
+        </Link>
+      </View>
+    )
+  }
 
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', padding: 20 }}>
