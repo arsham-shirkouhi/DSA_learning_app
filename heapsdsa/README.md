@@ -59,16 +59,23 @@ PYTHON
 2. Create a virtual environment:
    ```bash
    python -m venv venv
-
+   ```
 
 3. Activate virtual environment
-   ON macOS/Linux
-      - source venv/bin/activate
-   ON windows
-      - .\venv\Scripts\activate
+   macOS/Linux
+   ```bash
+   source venv/bin/activate
+   ```
 
-4. Install Dependencies
+  windows
+   ```bash
+   .\venv\Scripts\activate
+   ```
+
+5. Install Dependencies
+  ```bash
    - pip install -r requirements.txt
+   ```
 
 ---------------------------------------------------------------------------
 IF AFTER INSTALLING DEPENDENCIES IT SHOWS DEPENDENCIES NOT FOUND
