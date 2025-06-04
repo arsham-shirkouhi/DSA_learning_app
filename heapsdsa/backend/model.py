@@ -1,13 +1,33 @@
 from flask import Flask
-from langchain.llms import Ollama
+from langchain_ollama import OllamaLLM
+from langchain_chroma import Chroma
+from langchain_huggingface import HuggingFaceEmbeddings
+from loader import main as loadermain
 
 
+#app = Flask(__name__)
 
-app = Flask(__name__)
+def main():
+    #loadermain()
+    llm = OllamaLLM(model="codellama:7b-instruct")
+    embedding = HuggingFaceEmbeddings(model_name="BAAI/bge-small-en-v1.5")
+    vectorstore = Chroma(
+    persist_directory="./vector_db",
+    embedding_function=embedding
+    )
+    generate(vectorstore, llm)
 
-@app.route('/generate', methods=['POST'])
 
-def generate():
-    # Placeholder for the model generation logic
-    # This function should handle the request to generate a model
-    return "Model generation endpoint", 200
+#@app.route('/generate', methods=['POST'])
+def generate(vectorstore, llm):
+    topic_query = "Stack"
+    retrieved_docs = vectorstore.similarity_search(topic_query, k = 3)
+    examples = "\n\n".join(doc.page_content for doc in retrieved_docs)
+
+    prompt = f"Based on these examples:\n{examples}\n\nGenerate 2 new questions."
+    print(prompt)
+    response = llm.invoke(prompt)
+    print(response)
+
+if __name__=="__main__":
+    main()

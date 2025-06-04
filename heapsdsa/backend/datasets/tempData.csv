@@ -1,0 +1,16 @@
+Question Type,Question,Choices,Answer,Topic,Difficulty
+MCQ,What is the time complexity of inserting into a min-heap?,A) O(1); B) O(log n); C) O(n); D) O(n log n),B,Heap,Medium
+MCQ,"Which data structure uses LIFO (Last In, First Out)?",A) Queue; B) Stack; C) Heap; D) Graph,B,Stack,Easy
+MCQ,What is the best case time complexity of quicksort?,A) O(n); B) O(n log n); C) O(n^2); D) O(log n),B,Sorting Algorithms,Medium
+MCQ,"In a binary search tree, where are values greater than the root stored?",A) Left subtree; B) Right subtree; C) Root; D) Not applicable,B,Binary Search Tree,Easy
+MCQ,Which traversal method uses a queue data structure?,A) DFS; B) BFS; C) Inorder; D) Postorder,B,Graph Traversal,Medium
+MCQ,Which of the following is a non-linear data structure?,A) Array; B) Linked List; C) Stack; D) Tree,D,Tree,Easy
+MCQ,What is the average time complexity for searching in a hash table?,A) O(1); B) O(log n); C) O(n); D) O(n log n),A,Hash Table,Medium
+MCQ,Which sorting algorithm is the fastest in practice for large datasets?,A) Bubble Sort; B) Merge Sort; C) Quick Sort; D) Insertion Sort,C,Sorting Algorithms,Hard
+MCQ,What is the output of a postorder traversal?,"A) Left, Right, Root; B) Root, Left, Right; C) Right, Left, Root; D) Left, Root, Right",A,Tree Traversal,Medium
+MCQ,What is the time complexity of accessing an element in an array?,A) O(n); B) O(log n); C) O(1); D) O(n log n),C,Array,Easy
+MCQ,Which of the following data structures is used in recursion?,A) Queue; B) Hash Map; C) Stack; D) Array,C,Stack,Easy
+MCQ,What data structure is best suited for implementing BFS?,A) Stack; B) Queue; C) Tree; D) Graph,B,Graph Traversal,Medium
+MCQ,What is a key property of a binary heap?,A) Balanced and Complete; B) Sorted; C) Unordered; D) Has siblings,A,Heap,Medium
+MCQ,Which data structure provides constant-time lookup on average?,A) Linked List; B) Stack; C) Hash Table; D) Tree,C,Hash Table,Medium
+MCQ,Which traversal of a binary search tree results in a sorted sequence?,A) Preorder; B) Inorder; C) Postorder; D) BFS,B,Binary Search Tree,Medium
