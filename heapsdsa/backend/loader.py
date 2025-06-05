@@ -5,8 +5,8 @@ import pandas as pd
 import json
 
 def main():
-    JSON_file_path = "./backend/datasets/tempJsonData.JSON"
-    csv_file_path = "./backend/datasets/tempData.csv"
+    JSON_file_path = "./datasets/tempJsonData.JSON"
+    csv_file_path = "./datasets/tempData.csv"
     embedding_model = HuggingFaceEmbeddings(model_name="BAAI/bge-small-en-v1.5")
     JSON_to_CSV(JSON_file_path, csv_file_path)
     docs = loader(csv_file_path)
