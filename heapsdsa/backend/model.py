@@ -9,7 +9,7 @@ from loader import main as loadermain
 
 def main():
     #loadermain()
-    llm = OllamaLLM(model="codellama:7b-instruct")
+    llm = OllamaLLM(model="codellama:13b-instruct")
     embedding = HuggingFaceEmbeddings(model_name="BAAI/bge-small-en-v1.5")
     vectorstore = Chroma(
     persist_directory="./vector_db",
@@ -21,10 +21,10 @@ def main():
 #@app.route('/generate', methods=['POST'])
 def generate(vectorstore, llm):
     topic_query = "Stack"
-    retrieved_docs = vectorstore.similarity_search(topic_query, k = 3)
+    retrieved_docs = vectorstore.similarity_search(topic_query, k = 2)
     examples = "\n\n".join(doc.page_content for doc in retrieved_docs)
 
-    prompt = f"Based on these examples:\n{examples}\n\nGenerate 2 new questions."
+    prompt = f"Based on these examples:\n{examples}\n\nGenerate 5 new questions with the same topic."
     print(prompt)
     response = llm.invoke(prompt)
     print(response)
