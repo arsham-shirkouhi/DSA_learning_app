@@ -21,7 +21,6 @@ def main():
     embedding = HuggingFaceEmbeddings(
         model_name="BAAI/bge-small-en-v1.5"
         )
-    embedding.embed_query("What is a heap?")
     print("✅ Embeddings loaded.")
 
     print("📦 Loading vector store...")
