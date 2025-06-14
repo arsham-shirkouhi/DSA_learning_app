@@ -1,5 +1,8 @@
-import { createUserWithEmailAndPassword, sendEmailVerification, signInWithEmailAndPassword } from 'firebase/auth'
-import { auth } from '../firebase'
+import { createUserWithEmailAndPassword, sendEmailVerification, signInWithEmailAndPassword } from 'firebase/auth';
+import { doc, getDoc, serverTimestamp, setDoc } from "firebase/firestore";
+import { auth, db } from '../firebase';
+
+
 
 export const signUpWithEmail = async (email: string, password: string) => {
     try {
@@ -18,9 +21,42 @@ export const signUpWithEmail = async (email: string, password: string) => {
 export const signInWithEmail = async (email: string, password: string) => {
     try {
         const result = await signInWithEmailAndPassword(auth, email, password)
+        const user = result.user
+
+        if (!user.emailVerified) {
+            throw new Error("Email not verified. Please check your inbox.")
+        }
+
+        const userRef = doc(db, "users", user.uid)
+        const docSnap = await getDoc(userRef)
+
+        if (!docSnap.exists()) {
+            await setDoc(userRef, {
+                email: user.email,
+                username: '',
+                level: 1,
+                xp: 0,
+                currentStreak: 0,
+                longestStreak: 0,
+                numberOfBadges: 0,
+                lastLogin: serverTimestamp(),
+                settings: {
+                    darkMode: false,
+                    notifications: true,
+                },
+                longestCorrectStreak: 0,
+                currentGoal: 'Solve 5 questions a day',
+                totalQuestionsAnswered: 0,
+                weeklyActivity: {},
+                accuracy: 0,
+            })
+        } else {
+            await setDoc(userRef, { lastLogin: serverTimestamp() }, { merge: true })
+        }
+
         return result
     } catch (error: any) {
-        console.error('Error signing in with email:', error)
+        console.error("Error signing in with email:", error)
         throw error
     }
 }
@@ -50,4 +86,4 @@ export const sendVerificationEmail = async () => {
 
 export const isEmailVerified = () => {
     return auth.currentUser?.emailVerified ?? false
-} 
+}

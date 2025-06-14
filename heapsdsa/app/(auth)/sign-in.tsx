@@ -1,8 +1,9 @@
 import { Link, useRouter } from 'expo-router'
-import { sendEmailVerification, signInWithEmailAndPassword } from 'firebase/auth'
+import { sendEmailVerification } from 'firebase/auth'
 import React, { useCallback, useMemo, useState } from 'react'
 import { ActivityIndicator, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { auth } from '../firebase'
+import { signInWithEmail } from '../utils/auth'
 
 // Log Firebase initialization status
 console.log('Firebase Auth initialized:', auth ? 'Yes' : 'No')
@@ -55,7 +56,7 @@ export default function SignInScreen() {
     setLoading(true)
 
     try {
-      const userCredential = await signInWithEmailAndPassword(auth, emailAddress, password)
+      const userCredential = await signInWithEmail(emailAddress, password)
 
       if (!userCredential.user.emailVerified) {
         setNeedsVerification(true)
