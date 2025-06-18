@@ -45,3 +45,5 @@ venv/
 
 .env
 results/
+
+outputs/
