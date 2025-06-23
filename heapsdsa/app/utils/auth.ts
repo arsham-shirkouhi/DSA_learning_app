@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, sendEmailVerification, signInWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, signOut as firebaseSignOut, sendEmailVerification, signInWithEmailAndPassword } from 'firebase/auth';
 import { doc, getDoc, serverTimestamp, setDoc } from "firebase/firestore";
 import { auth, db } from '../firebase';
 
@@ -63,10 +63,26 @@ export const signInWithEmail = async (email: string, password: string) => {
 
 export const signOut = async () => {
     try {
-        await auth.signOut()
+        console.log('Auth utils: Starting Firebase sign out...');
+        console.log('Auth utils: Current user before sign out:', auth.currentUser?.email);
+
+        if (!auth.currentUser) {
+            console.log('Auth utils: No user currently signed in');
+            return;
+        }
+
+        await firebaseSignOut(auth);
+        console.log('Auth utils: Firebase sign out completed successfully');
+
+        // Verify the user is actually signed out
+        if (auth.currentUser) {
+            console.log('Auth utils: Warning - User still appears to be signed in after sign out');
+        } else {
+            console.log('Auth utils: User successfully signed out');
+        }
     } catch (error: any) {
-        console.error('Error signing out:', error)
-        throw error
+        console.error('Auth utils: Error signing out:', error);
+        throw error;
     }
 }
 
