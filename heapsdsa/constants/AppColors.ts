@@ -20,7 +20,7 @@ export const AppColors = {
     cardShadow: '#000000',
 
     // Text Colors
-    textPrimary: '#333333',
+    textPrimary: '#9BBCDA',
     textSecondary: '#666666',
     textTertiary: '#999999',
     textLight: '#ffffff',
@@ -69,7 +69,9 @@ export const AppColors = {
     link: '#007AFF',
     linkHover: '#0056CC',
 
-    borderColor: '#181F26'
+    borderColor: '#181F26',
+
+
 } as const;
 
 // Type for color keys
