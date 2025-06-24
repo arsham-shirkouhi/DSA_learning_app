@@ -12,18 +12,16 @@ export const AppColors = {
 
     // Background Colors
     background: '#0C1117',
-    backgroundLight: '#ffffff',
-    backgroundDark: '#e0e0e0',
+
 
     // Card Colors
-    cardBackground: '#ffffff',
-    cardShadow: '#000000',
+    cardBackground: '#090D11',
 
     // Text Colors
     textPrimary: '#9BBCDA',
-    textSecondary: '#666666',
-    textTertiary: '#999999',
-    textLight: '#ffffff',
+    textSecondary: '#778B9D',
+    textTri: '#5F758A',
+
 
     // Status Colors
     success: '#34c759',
@@ -87,7 +85,6 @@ export const {
     primary,
     secondary,
     background,
-    backgroundLight,
     cardBackground,
     textPrimary,
     textSecondary,
