@@ -76,6 +76,7 @@ const styles = StyleSheet.create({
         borderBottomWidth: 2,
         borderBottomColor: AppColors.borderColor,
         paddingBottom: 15,  // 👈 adjust this to get your perfect bottom spacing
+        marginBottom: 0,
     },
     title: {
         color: AppColors.textPrimary,

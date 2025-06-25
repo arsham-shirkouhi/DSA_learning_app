@@ -1,6 +1,6 @@
 import { AppColors } from '@/constants/AppColors';
 import React from 'react';
-import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
+import { Dimensions, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 
 interface CardItemProps {
@@ -16,30 +16,68 @@ export default function CardItem({ title, color }: CardItemProps) {
             {/* {/* Top image placeholder */}
             <View style={styles.imageContainer}>
                 <Image
-                    source={require('@/assets/images/topics/test_topic_image.png')}
+                    source={require('@/assets/images/topics/topic_banners/test_topic_image.png')}
                     style={styles.image}
                     resizeMode="cover"
                 />
             </View>
             <View style={styles.content}>
                 <View style={styles.headerRow}>
-                    <Text style={styles.title}>{title}</Text>
-                    <Text style={styles.points}>+5k</Text>
+                    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                        <Image
+                            source={require('@/assets/images/topics/topic_icons/arrays_icon.png')}
+                            style={{ width: 24, height: 24, marginRight: 4 }}
+                        />
+                        <Text style={styles.title}>{title}</Text>
+                    </View>
+                    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                        <Image
+                            source={require('@/assets/icons/points_icon.png')}
+                            style={{ width: 24, height: 24, marginRight: 2 }}
+                        />
+                        <Text style={styles.points}>+5k</Text>
+                    </View>
                 </View>
                 <View style={styles.moduleBox}>
                     <View style={styles.moduleRow}>
-                        <Text style={styles.moduleTitle}>Module 1</Text>
-                        <View style={styles.checkCircle} />
+                        <Text>
+                            <Text style={styles.moduleTitlePrimary}>Module 1 - </Text>
+                            <Text style={styles.moduleTitleSecondary}>Traversal</Text>
+                        </Text>
+                        {/* <Text style={styles.moduleSubtitle}></Text> */}
+
+                        <Image
+                            source={require('@/assets/icons/check_icon.png')}
+                            style={{
+                                width: 24,
+                                height: 24,
+                                tintColor: AppColors.successColor,
+                                marginLeft: 8,
+                            }}
+                        />
                     </View>
-                    <Text style={styles.moduleSubtitle}>Traversal</Text>
-                    <Text style={styles.expand}>Expand</Text>
+                    {/* <Text style={styles.expand}>Expand</Text> */}
                 </View>
-                <View style={styles.progressRow}>
-                    <Text style={styles.progressText}>2/15 Modules</Text>
+                <View style={styles.progressHeaderRow}>
+                    <View style={styles.progressInfoCol}>
+                        <Text style={styles.progressText}>
+                            2/15 <Text style={{ fontWeight: 'bold' }}>Modules</Text>
+                        </Text>
+                        <View style={styles.progressBarBackground}>
+                            <View style={[styles.progressBarFill, { width: '13%' }]} />
+                        </View>
+                    </View>
+                    <View style={styles.progressButtonsRow}>
+                        <TouchableOpacity style={styles.iconButton}>
+                            <Image source={require('@/assets/icons/info_icon.png')} style={styles.icon} />
+                        </TouchableOpacity>
+                        <TouchableOpacity style={[styles.iconButton, styles.blueButton]}>
+                            <Image source={require('@/assets/icons/arrow_icon.png')} style={styles.primaryIcon} />
+                        </TouchableOpacity>
+                    </View>
+
                 </View>
-                <View style={styles.progressBarBackground}>
-                    <View style={[styles.progressBarFill, { width: '13%' }]} />
-                </View>
+
             </View>
         </View>
     );
@@ -71,7 +109,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: 15,
-        marginBottom: 0,
         borderRadius: 10,
         borderWidth: 2,
         borderColor: AppColors.borderColor,
@@ -90,21 +127,23 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        marginBottom: 8,
+        marginBottom: 10,
     },
     title: {
         color: AppColors.textPrimary,
-        fontSize: 22,
+        fontSize: 18,
         fontWeight: 'bold',
         letterSpacing: 1,
     },
     points: {
-        color: '#4DEB7E',
+        color: AppColors.textPrimary,
         fontWeight: 'bold',
         fontSize: 18,
     },
     moduleBox: {
-        backgroundColor: '#232A36',
+        backgroundColor: AppColors.background,
+        borderWidth: 2,
+        borderColor: AppColors.borderColor,
         borderRadius: 10,
         padding: 10,
         marginBottom: 8,
@@ -113,10 +152,16 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
+        height: 35,
     },
-    moduleTitle: {
+    moduleTitlePrimary: {
         color: AppColors.textPrimary,
         fontWeight: 'bold',
+        fontSize: 16,
+    },
+    moduleTitleSecondary: {
+        color: AppColors.textSecondary,
+        fontWeight: 'normal',
         fontSize: 16,
     },
     checkCircle: {
@@ -137,28 +182,70 @@ const styles = StyleSheet.create({
         fontSize: 13,
         marginTop: 4,
     },
-    progressRow: {
+    progressHeaderRow: {
         flexDirection: 'row',
         alignItems: 'center',
-        marginBottom: 4,
+        justifyContent: 'space-between',
+        marginTop: 2,
+        marginLeft: 5
+    },
+    progressButtonsRow: {
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    iconButton: {
+        width: 45,
+        height: 45,
+        borderRadius: 8,
+        backgroundColor: AppColors.buttonSecondary,
+        borderWidth: 2,
+        borderColor: AppColors.borderColor,
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginLeft: 0,
+    },
+    blueButton: {
+        borderWidth: 0,
+        marginLeft: 10,
+
+        backgroundColor: AppColors.buttonPrimary,
+    },
+    icon: {
+        width: 24,
+        height: 24,
+        tintColor: '#00AFFF',
+    },
+
+    primaryIcon: {
+        width: 24,
+        height: 24,
+        tintColor: '#fff',
     },
     progressText: {
         color: '#4DEB7E',
-        fontSize: 14,
+        fontSize: 16,
         fontFamily: 'monospace',
+        fontWeight: 'bold',
+        marginBottom: 5,
     },
     progressBarBackground: {
         width: '100%',
-        height: 8,
+        height: 15,
         backgroundColor: '#232A36',
         borderRadius: 4,
         overflow: 'hidden',
-        marginTop: 2,
-        marginBottom: 2,
+        marginTop: 3,
     },
     progressBarFill: {
-        height: 8,
+        height: 15,
         backgroundColor: '#4DEB7E',
         borderRadius: 4,
+    },
+    progressInfoCol: {
+        flexDirection: 'column',
+        alignItems: 'flex-start',
+        justifyContent: 'center',
+        width: 280,
+        marginTop: 5,
     },
 });

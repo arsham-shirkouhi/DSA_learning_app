@@ -30,10 +30,9 @@ export const AppColors = {
     info: '#007AFF',
 
     // Button Colors
-    buttonPrimary: '#007AFF',
-    buttonSecondary: '#34C759',
-    buttonDanger: '#ff3b30',
-    buttonDisabled: '#cccccc',
+    buttonPrimary: '#3094FF',
+    buttonSecondary: '#090D11',
+
 
     // Input Colors
     inputBackground: '#fafafa',
@@ -69,6 +68,8 @@ export const AppColors = {
 
     borderColor: '#181F26',
 
+    successColor: '#5FED83',
+
 
 } as const;
 
@@ -92,8 +93,7 @@ export const {
     warning,
     error,
     buttonPrimary,
-    buttonDanger,
-    buttonDisabled,
+
     inputBackground,
     inputBorder,
     tabActive,

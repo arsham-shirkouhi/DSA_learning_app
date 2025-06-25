@@ -133,7 +133,7 @@ export default function LoginScreen() {
                     style={[styles.button, loading && styles.buttonDisabled]}
                 >
                     {loading ? (
-                        <ActivityIndicator color={AppColors.textLight} />
+                        <ActivityIndicator color={AppColors.textPrimary} />
                     ) : (
                         <Text style={styles.buttonText}>Sign In</Text>
                     )}
@@ -169,7 +169,7 @@ const styles = StyleSheet.create({
         borderRadius: 12,
         width: '100%',
         maxWidth: 400,
-        shadowColor: AppColors.cardShadow,
+        shadowColor: '#000',
         shadowOffset: {
             width: 0,
             height: 2,
@@ -210,10 +210,10 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     buttonDisabled: {
-        backgroundColor: AppColors.buttonDisabled,
+        backgroundColor: "#232A36",
     },
     buttonText: {
-        color: AppColors.textLight,
+        color: AppColors.textPrimary,
         fontSize: 16,
         fontWeight: '600',
     },
