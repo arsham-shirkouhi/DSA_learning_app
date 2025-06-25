@@ -13,7 +13,25 @@ import numpy as np
 from sklearn.metrics import accuracy_score, f1_score
 
 def main():
-    global tokenizer, metric
+    global tokenizer, metric, TOPIC_LABELS, DIFFICULTY_LABELS
+    TOPIC_LABELS = {
+        "Array": 0,
+        "Linked List": 1,
+        "Tree": 2,
+        "Graph": 3,
+        "Stack": 4,
+        "Queue": 5,
+        "Matrix": 6,
+        "Heap": 7,
+        "String": 8,
+        "Bit Manipulation": 9
+    }
+    
+    DIFFICULTY_LABELS = {
+        "Easy": 0,
+        "Medium": 1,
+        "Hard": 2
+    }
 
     load_dotenv()
     token = os.getenv("HF_TOKEN")
@@ -30,16 +48,29 @@ def main():
 
     tokenizer = AutoTokenizer.from_pretrained("google-bert/bert-base-cased")
     metric = evaluate.load("accuracy")
-    dataset = dataset.map(combine_labels)
+    dataset = dataset.map(map_labels)
     dataset = dataset.map(tokenize, batched=True)
-    small_train = dataset["train"].shuffle(seed=42).select(range(1000))
-    small_eval = dataset["test"].shuffle(seed=42).select(range(1000))
+    small_train = dataset["train"]#.shuffle(seed=42).select(range(1000))
+    small_eval = dataset["test"]#.shuffle(seed=42).select(range(1000))
 
     trainer = config(small_train, small_eval)
     trainer.train()
     eval_results = trainer.evaluate()
-    print(eval_results)
+    print("Evaluation Summary (Epoch {:.1f}):".format(eval_results["epoch"]))
+    print(f"  📌 Eval Loss:           {eval_results['eval_loss']:.4f}")
+    print(f"  🎯 Topic Accuracy:      {eval_results['eval_topic_acc']:.4f}")
+    print(f"  🎯 Difficulty Accuracy: {eval_results['eval_difficulty_acc']:.4f}")
+    print(f"  🧠 Topic F1:            {eval_results['eval_topic_f1']:.4f}")
+    print(f"  🧠 Difficulty F1:       {eval_results['eval_difficulty_f1']:.4f}")
+    print(f"  ⏱ Runtime:             {eval_results['eval_runtime']:.2f}s")
 
+        
+def map_labels(examples):
+    examples["topic_label"] = TOPIC_LABELS[examples["topic_label"]]
+    examples["difficulty_label"] = DIFFICULTY_LABELS[examples["difficulty_label"]]
+    examples["labels"] = [examples["topic_label"], examples["difficulty_label"]]
+    return examples
+    
 def tokenize(examples):
     global tokenizer
     return tokenizer(examples["input_text"], padding="max_length", truncation=True)
@@ -61,11 +92,6 @@ def compute_metrics(eval_pred):
         "topic_f1": f1_score(topic_labels, topic_preds, average="macro"),
         "difficulty_f1": f1_score(diff_labels, diff_preds, average="macro")
     }
-
-
-def combine_labels(example):
-    example["labels"] = [example["topic_label"], example["difficulty_label"]]
-    return example
 
 # checks if its training on gpu
 def deviceToGPU():
