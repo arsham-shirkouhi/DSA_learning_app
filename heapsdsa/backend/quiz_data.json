@@ -1,6 +1,246 @@
 [
     {
         "question_number": "Question 1",
+        "question_title": "What will the output of the below code?",
+        "code": "#include <iostream>\nusing namespace std;\n\nint main()\n{\n\n    int arr[2] = { 1, 2 };\n    cout << arr[0] << \", \" << arr[1] << endl;\n    return 0;\n}",
+        "choices": [
+            "A\n1, 2",
+            "B\nSyntax error",
+            "C\nRun time error",
+            "D\nNone"
+        ],
+        "answer": "A\n1, 2"
+    },
+    {
+        "question_number": "Question 2",
+        "question_title": "The minimum number of comparisons required to determine if an integer appears more than n/2 times in a sorted array of n integers is",
+        "code": "",
+        "choices": [
+            "A\nΘ(n)",
+            "B\nΘ(logn)",
+            "C\nΘ(n*logn)",
+            "D\nΘ(1)"
+        ],
+        "answer": "B\nΘ(logn)"
+    },
+    {
+        "question_number": "Question 3",
+        "question_title": "An algorithm performs (logN)1/2 find operations, N insert operations, (logN)1/2 , delete operations, and (logN)1/2 decrease-key operations on a set of data items with keys drawn from a linearly ordered set. For a delete operation, a pointer is provided to the record that must be deleted. For the decrease-key operation, a pointer is provided to the record that has its key decreased. Which one of the following data structures is the most suited for the algorithm to use, if the goal is to achieve the best total asymptotic complexity considering all the operations?",
+        "code": "",
+        "choices": [
+            "A\nUnsorted array",
+            "B\nMin-heap",
+            "C\nSorted array",
+            "D\nSorted doubly linked list"
+        ],
+        "answer": "A\nUnsorted array"
+    },
+    {
+        "question_number": "Question 4",
+        "question_title": "Consider an array consisting of –ve and +ve numbers. What would be the worst case time complexity of an algorithm to segregate the numbers having same sign altogether i.e all +ve on one side and then all -ve on the other ?",
+        "code": "",
+        "choices": [
+            "A\nO(N)",
+            "B\nO(N Log N)",
+            "C\nO(N * N)",
+            "D\nO(N Log Log N)"
+        ],
+        "answer": "A\nO(N)"
+    },
+    {
+        "question_number": "Question 5",
+        "question_title": "Let A[1...n] be an array of n distinct numbers. If i < j and A[i] > A[j], then the pair (i, j) is called an inversion of A. What is the expected number of inversions in any permutation on n elements ?",
+        "code": "",
+        "choices": [
+            "A\nn(n-1)/2",
+            "B\nn(n-1)/4",
+            "C\nn(n+1)/4",
+            "D\n2n[logn]"
+        ],
+        "answer": "B\nn(n-1)/4"
+    },
+    {
+        "question_number": "Question 6",
+        "question_title": "Consider a two dimensional array A[20][10]. Assume 4 words per memory cell, the base address of array A is 100, elements are stored in row-major order and first element is A[0][0]. What is the address of A[11][5] ?",
+        "code": "",
+        "choices": [
+            "A\n560",
+            "B\n460",
+            "C\n570",
+            "D\n575"
+        ],
+        "answer": "A\n560"
+    },
+    {
+        "question_number": "Question 7",
+        "question_title": "An array A consists of n integers in locations A[0], A[1] ....A[n-1]. It is required to shift the elements of the array cyclically to the left by k places, where 1 <= k <= (n-1). An incomplete algorithm for doing this in linear time, without using another array is given below. Complete the algorithm by filling in the blanks. Assume alt the variables are suitably declared.",
+        "code": "min = n; i = 0;\n\nwhile (___________) { \n\n     temp = A[i]; j = i;\n\n     while (________) {\n\n     A[j] = ________ \n\n     j= (j + k) mod n ;\n\n     If ( j< min ) then\n\n         min = j;\n\n}\n\nA[(n + i — k) mod n] = _________\n\ni = __________",
+        "choices": [
+            "A\ni > min; j!= (n+i)mod n; A[j + k]; temp; i + 1 ;",
+            "B\ni < min; j!= (n+i)mod n; A[j + k]; temp; i + 1;",
+            "C\ni > min; j!= (n+i+k)mod n; A[(j + k)]; temp; i + 1;",
+            "D\ni < min; j!= (n+i-k)mod n; A[(j + k)mod n]; temp; i + 1;"
+        ],
+        "answer": "D\ni < min; j!= (n+i-k)mod n; A[(j + k)mod n]; temp; i + 1;"
+    },
+    {
+        "question_number": "Question 8",
+        "question_title": "Which of the following correctly declares an array?",
+        "code": "",
+        "choices": [
+            "A\nint geeks[20];",
+            "B\nint geeks;",
+            "C\ngeeks{20};",
+            "D\narray geeks[20];"
+        ],
+        "answer": "A\nint geeks[20];"
+    },
+    {
+        "question_number": "Question 9",
+        "question_title": "A three dimensional array in ‘C++’ is declared as int A[x][y][z]. Consider that array elements are stored in row major order and indexing begins from 0. Here, the address of an item at the location A[p][q][r] can be computed as follows (where w is the word length of an integer):",
+        "code": "",
+        "choices": [
+            "A\n&A[0][0][0] + w(y * z * q + z * p + r)",
+            "B\n&A[0][0][0] + w(y * z * p + z*q + r)",
+            "C\n&A[0][0][0] + w(x * y * p + z * q+ r)",
+            "D\n&A[0][0][0] + w(x * y * q + z * p + r)"
+        ],
+        "answer": "B\n&A[0][0][0] + w(y * z * p + z*q + r)"
+    },
+    {
+        "question_number": "Question 10",
+        "question_title": "Let A be a square matrix of size n x n. Consider the following program. What is the expected output? ",
+        "code": "",
+        "choices": [
+            "A\nThe matrix A itself",
+            "B\nTranspose of matrix A",
+            "C\nAdding 100 to the upper diagonal elements and subtracting 100 from diagonal elements of A",
+            "D\nInverse of matrix A"
+        ],
+        "answer": "A\nThe matrix A itself"
+    },
+    {
+        "question_number": "Question 11",
+        "question_title": "A program P reads in 500 integers in the range [0..100] representing the scores of 500 students. It then prints the frequency of each score above 50. What would be the best way for P to store the frequencies?\n ",
+        "code": "",
+        "choices": [
+            "A\nAn array of 50 numbers\n ",
+            "B\nAn array of 100 numbers\n ",
+            "C\nAn array of 500 numbers\n ",
+            "D\nA dynamically allocated array of 550 numbers\n "
+        ],
+        "answer": "A\nAn array of 50 numbers"
+    },
+    {
+        "question_number": "Question 12",
+        "question_title": "What will the output of the below code, be if the base address of the array is 1200?",
+        "code": "#include <iostream>\nusing namespace std;\n\nint main()\n{\n\n    int arr[] = { 1, 2, 3, 4, 5 };\n    cout << arr << \", \" << &arr << \", \" << &arr[0] << endl;\n    return 0;\n}",
+        "choices": [
+            "A\n1200, 1202, 1204",
+            "B\n1200 1200 1200",
+            "C\n1200, 1204, 1208",
+            "D\n1200, 1204, 1208"
+        ],
+        "answer": "B\n1200 1200 1200"
+    },
+    {
+        "question_number": "Question 13",
+        "question_title": "What is the correct way to call the function (fun) in the below program?",
+        "code": "#include <bits/stdc++.h>\n#include <iostream>\nusing namespace std;\n\nvoid fun(char* arr)\n{\n    int i;\n    unsigned int n = strlen(arr);\n    for (i = 0; i < n; i++)\n        cout << \" \" << arr[i];\n}\n\n// Driver program\nint main()\n{\n    char arr[]\n        = { 'g', 'e', 'e', 'k', 's', 'q', 'u', 'i', 'z' };\n    // How to call the above function here to print the char\n    // elements?\n\n    return 0;\n}",
+        "choices": [
+            "A\nfun(&arr);",
+            "B\nfun(*arr);",
+            "C\nfun(arr)",
+            "D\nNone"
+        ],
+        "answer": "C\nfun(arr)"
+    },
+    {
+        "question_number": "Question 14",
+        "question_title": "Let A be a matrix of size n x n. Consider the following program. What is the expected output? ",
+        "code": "void fun(int A[][N])\n{\n    for (int i = 0; i < N; i++)\n        for (int j = i + 1; j < N; j++)\n            swap(A[i][j], A[j][i]);\n}",
+        "choices": [
+            "A\nMatrix A",
+            "B\nDiagonal Of matrix A",
+            "C\nTranspose of matrix A",
+            "D\nNone"
+        ],
+        "answer": "C\nTranspose of matrix A"
+    },
+    {
+        "question_number": "Question 15",
+        "question_title": "What will do the following code?",
+        "code": "void fun(int arr[], int n)\n{\n    for (int i = 0; i < n; i++) {\n        for (int j = i; j < n; j++) {\n            for (int k = i; k <= j; k++)\n                cout << arr[k] << \" \";\n\n            cout << endl;\n        }\n    }\n}",
+        "choices": [
+            "A\nPrints the subsequence of the article.",
+            "B\nPrints the elements of the array",
+            "C\nPrints the subarray of the element.",
+            "D\nNone"
+        ],
+        "answer": "C\nPrints the subarray of the element."
+    },
+    {
+        "question_number": "Question 16",
+        "question_title": "Which of the following is the limitation of the array?",
+        "code": "",
+        "choices": [
+            "A\nelements can be accessed from anywhere.",
+            "B\nThe size of the array is fixed.",
+            "C\nIndexing is started from Zero.",
+            "D\nMemory waste if an array's elements are smaller than the size allotted to them"
+        ],
+        "answer": "D\nMemory waste if an array's elements are smaller than the size allotted to them"
+    },
+    {
+        "question_number": "Question 17",
+        "question_title": "Consider the below program, and what is doing this program basically?",
+        "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nvoid print(char a[], int n, int ind)\n{\n    for (int i = ind; i < n + ind; i++)\n        cout << a[(i % n)] << \" \";\n}\n\nint main()\n{\n    char a[] = { 'A', 'B', 'C', 'D', 'E', 'F' };\n    int n = sizeof(a) / sizeof(a[0]);\n    print(a, n, 3);\n    return 0;\n}",
+        "choices": [
+            "A\nIt is printing the normal array",
+            "B\nIt is printing circular array rotated by 3",
+            "C\nSyntax error",
+            "D\nNone"
+        ],
+        "answer": "B\nIt is printing circular array rotated by 3"
+    },
+    {
+        "question_number": "Question 18",
+        "question_title": "Fill in the blanks for completing the program to rotate an array by d elements.",
+        "code": "/*Function to left rotate arr[] of size n by d*/\nvoid Rotate(int arr[], int d, int n)\n{\n    int p = 1;\n    while (_______) {\n        int last = arr[0];\n        for (int i = 0; ______ i++) {\n            arr[i] = arr[i + 1];\n        }\n        __________\n        p++;\n    }\n}",
+        "choices": [
+            "A\np <= d , i < n - 1 , arr[n - 1] = last;",
+            "B\np < d, i < n, arr[n] = last;",
+            "C\np >=d, i >n , arr[n] =  last",
+            "D\nNone"
+        ],
+        "answer": "A\np <= d , i < n - 1 , arr[n - 1] = last;"
+    },
+    {
+        "question_number": "Question 19",
+        "question_title": "Refer the below diagram and identify the problem.",
+        "code": "",
+        "choices": [
+            "A\nNormal traversal of the matrix.",
+            "B\nRow-wise traversal of the matrix.",
+            "C\nColumn-wise traversal of the matrix.",
+            "D\nspiral traversal of the matrix."
+        ],
+        "answer": "D\nspiral traversal of the matrix."
+    },
+    {
+        "question_number": "Question 20",
+        "question_title": "Consider the below program. What is the expected output? ",
+        "code": "void fun(int arr[], int start, int end)\n{\n    while (start < end) {\n        int temp = arr[start];\n        arr[start] = arr[end];\n        arr[end] = temp;\n        start++;\n        end--;\n    }\n}",
+        "choices": [
+            "A\nswapping the elements pairwise",
+            "B\nsorting the elements",
+            "C\nReverse an array",
+            "D\nNone"
+        ],
+        "answer": "C\nReverse an array"
+    },
+    {
+        "question_number": "Question 1",
         "question_title": "What does the following function do for a given Linked List with first node as head?",
         "code": "void fun1(struct node* head)\n{\n  if(head == NULL)\n    return;\n  \n  fun1(head->next);\n  printf(\"%d  \", head->data);\n}",
         "choices": [
@@ -8,7 +248,8 @@
             "B\nPrints all nodes of linked list in reverse order",
             "C\nPrints alternate nodes of Linked List",
             "D\nPrints alternate nodes in reverse order"
-        ]
+        ],
+        "answer": "B\nPrints all nodes of linked list in reverse order"
     },
     {
         "question_number": "Question 2",
@@ -20,7 +261,8 @@
             "C\nRandom access is not allowed in a typical implementation of Linked Lists",
             "D\nThe size of array has to be pre-decided, linked lists can change their size any time.",
             "E\nAll of the above"
-        ]
+        ],
+        "answer": "E\nAll of the above"
     },
     {
         "question_number": "Question 3",
@@ -31,7 +273,8 @@
             "B\n5 <--> 4 <--> 3 <--> 2 <--> 1 <-->6.",
             "C\n6 <--> 5 <--> 4 <--> 3 <--> 2 <--> 1.",
             "D\n6 <--> 5 <--> 4 <--> 3 <--> 1 <--> 2"
-        ]
+        ],
+        "answer": "C\n6 <--> 5 <--> 4 <--> 3 <--> 2 <--> 1."
     },
     {
         "question_number": "Question 4",
@@ -42,7 +285,8 @@
             "B\nSet the value of head_ref to current;",
             "C\nSet the value of head_ref to next;",
             "D\nSet the value of head_ref to NULL;"
-        ]
+        ],
+        "answer": "A\nSet the value of head_ref to prev;"
     },
     {
         "question_number": "Question 5",
@@ -53,7 +297,8 @@
             "B\n1 3 5 1 3 5",
             "C\n1 2 3 5",
             "D\n1 3 5 5 3 1"
-        ]
+        ],
+        "answer": "D\n1 3 5 5 3 1"
     },
     {
         "question_number": "Question 6",
@@ -64,7 +309,8 @@
             "B\nnext of q = NULL; head = p; next of p = head;",
             "C\nhead = p; next of p = q; next of q = NULL;",
             "D\nnext of q = NULL; next of p = head; head = p;"
-        ]
+        ],
+        "answer": "D\nnext of q = NULL; next of p = head; head = p;"
     },
     {
         "question_number": "Question 7",
@@ -75,7 +321,8 @@
             "B\n2,1,4,3,6,5,7",
             "C\n1,3,2,5,4,7,6",
             "D\n2,3,4,5,6,7,1"
-        ]
+        ],
+        "answer": "B\n2,1,4,3,6,5,7"
     },
     {
         "question_number": "Question 8",
@@ -86,7 +333,8 @@
             "B\n membership",
             "C\ncardinality",
             "D\n union, intersection"
-        ]
+        ],
+        "answer": "D\n union, intersection"
     },
     {
         "question_number": "Question 9",
@@ -97,7 +345,8 @@
             "B\nthe elements in the list are sorted in non-decreasing order of data value",
             "C\nthe elements in the list are sorted in non-increasing order of data value",
             "D\nNone of them"
-        ]
+        ],
+        "answer": "B\nthe elements in the list are sorted in non-decreasing order of data value"
     },
     {
         "question_number": "Question 10",
@@ -108,7 +357,8 @@
             "B\nfront node",
             "C\nnot possible with a single pointer",
             "D\nnode next to front"
-        ]
+        ],
+        "answer": "A\nrear node"
     },
     {
         "question_number": "Question 11",
@@ -119,7 +369,8 @@
             "B\nO(1) and O(1)",
             "C\nO(n) and O(1)",
             "D\nO(n) and O(n)"
-        ]
+        ],
+        "answer": "A\nO(1) and O(n)"
     },
     {
         "question_number": "Question 12",
@@ -130,7 +381,8 @@
             "B\nYes, possible by storing XOR of addresses of previous and next nodes.",
             "C\nYes, possible by storing XOR of current node and next node",
             "D\nYes, possible by storing XOR of current node and previous node"
-        ]
+        ],
+        "answer": "B\nYes, possible by storing XOR of addresses of previous and next nodes."
     },
     {
         "question_number": "Question 13",
@@ -141,7 +393,8 @@
             "B\nPossible if size of linked list is even.",
             "C\nPossible if size of linked list is odd",
             "D\nPossible if X is not first node. Use following two steps (a) Copy the data of next of X to X. (b) Delete next of X."
-        ]
+        ],
+        "answer": "A\nPossible if X is not last node. Use following two steps (a) Copy the data of next of X to X. (b)Update the pointer of node X to the node after the next node. Delete next of X."
     },
     {
         "question_number": "Question 14",
@@ -152,7 +405,8 @@
             "B\nImplementing queues",
             "C\nMemory-efficient linked list representation",
             "D\nCaching data structures"
-        ]
+        ],
+        "answer": "C\nMemory-efficient linked list representation"
     },
     {
         "question_number": "Question 15",
@@ -163,7 +417,8 @@
             "B\nThe function doesn't print the last node when the linked list is not empty",
             "C\nThe function is implemented incorrectly because it changes head",
             "D\nNone of the above"
-        ]
+        ],
+        "answer": "C\nThe function is implemented incorrectly because it changes head"
     },
     {
         "question_number": "Question 16",
@@ -174,7 +429,8 @@
             "B\nO(N)",
             "C\nO(N Log N)",
             "D\nΘ(N2 Log N)"
-        ]
+        ],
+        "answer": "C\nO(N Log N)"
     },
     {
         "question_number": "Question 17",
@@ -185,7 +441,8 @@
             "B\nMaintaining a directory of names",
             "C\nNone of the above",
             "D\nBoth a and b"
-        ]
+        ],
+        "answer": "D\nBoth a and b"
     },
     {
         "question_number": "Question 18",
@@ -196,7 +453,8 @@
             "B\ndoubly linked list",
             "C\ncircular doubly linked list",
             "D\narray implementation of lists"
-        ]
+        ],
+        "answer": "C\ncircular doubly linked list"
     },
     {
         "question_number": "Question 19",
@@ -216,7 +474,8 @@
             "(b). maximum : n-1 for all distinct elements, minimum: 1 for all same elements.",
             "(C). j keeps count of distinct nodes in the list.",
             "D\nNone of the above"
-        ]
+        ],
+        "answer": "A\n(a). n-1 times, since comparison is pairwise for n elements.\n(b). maximum : n-1 for all distinct elements, minimum: 0 for all same elements.\n(C). j keeps count of distinct nodes in the list."
     },
     {
         "question_number": "Question 20",
@@ -227,6 +486,7 @@
             "B\nΘ(n^2), where m>n and m, n are lengths of given lists",
             "C\nΘ(m+n), where m, n are lengths of given lists",
             "D\nΘ(min(n, m)), where m, n are lengths of given lists"
-        ]
+        ],
+        "answer": "C\nΘ(m+n), where m, n are lengths of given lists"
     }
 ]
