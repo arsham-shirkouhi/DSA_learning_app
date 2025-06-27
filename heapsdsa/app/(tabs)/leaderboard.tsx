@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
         borderRadius: 12,
         width: '100%',
         maxWidth: 400,
-        shadowColor: AppColors.cardShadow,
+        shadowColor: "#000",
         shadowOffset: {
             width: 0,
             height: 2,
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
     },
     note: {
         fontSize: 12,
-        color: AppColors.textTertiary,
+        color: AppColors.textTri,
         textAlign: 'center',
         fontStyle: 'italic',
     },

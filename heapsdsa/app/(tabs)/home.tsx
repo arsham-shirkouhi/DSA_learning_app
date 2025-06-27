@@ -31,6 +31,7 @@ const DATA = [
 ];
 
 export default function SnapPage() {
+
     const flatListRef = useRef<FlatList>(null);
 
     const renderCard = ({ item }: { item: any }) => (

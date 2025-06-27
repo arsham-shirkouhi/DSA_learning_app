@@ -103,3 +103,5 @@ export const sendVerificationEmail = async () => {
 export const isEmailVerified = () => {
     return auth.currentUser?.emailVerified ?? false
 }
+
+export default function AuthUtilsStub() { return null; }

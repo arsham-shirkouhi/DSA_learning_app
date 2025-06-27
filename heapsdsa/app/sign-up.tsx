@@ -136,7 +136,7 @@ export default function SignUpScreen() {
                     style={[styles.button, loading && styles.buttonDisabled]}
                 >
                     {loading ? (
-                        <ActivityIndicator color={AppColors.textLight} />
+                        <ActivityIndicator color={"#fff"} />
                     ) : (
                         <Text style={styles.buttonText}>Create Account</Text>
                     )}
@@ -172,7 +172,7 @@ const styles = StyleSheet.create({
         borderRadius: 12,
         width: '100%',
         maxWidth: 400,
-        shadowColor: AppColors.cardShadow,
+        shadowColor: "#000",
         shadowOffset: {
             width: 0,
             height: 2,
@@ -213,10 +213,10 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     buttonDisabled: {
-        backgroundColor: AppColors.buttonDisabled,
+        backgroundColor: "#fff",
     },
     buttonText: {
-        color: AppColors.textLight,
+        color: "#fff",
         fontSize: 16,
         fontWeight: '600',
     },

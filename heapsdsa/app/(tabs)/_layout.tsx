@@ -1,4 +1,4 @@
-import TopBar from '@/components/ui/TopBar';
+import { TopBar } from '@/components/ui/TopBar';
 import { AppColors } from '@/constants/AppColors';
 import { Tabs } from 'expo-router';
 import React from 'react';

@@ -1,8 +1,7 @@
-import { getAuth } from 'firebase/auth';
-import { doc, getDoc, getFirestore } from 'firebase/firestore';
+import { doc, getDoc } from 'firebase/firestore';
+import { auth, db } from '../../app/firebase';
 
 export async function getUserStats() {
-    const auth = getAuth();
     const user = auth.currentUser;
 
     if (!user) {
@@ -11,18 +10,16 @@ export async function getUserStats() {
     }
 
     const uid = user.uid;
-    const db = getFirestore();
     const docRef = doc(db, 'users', uid);
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
         const data = docSnap.data();
         const points = data.xp;
-        const streaks = data.currentStreak;  // or whichever streak you want
+        const streaks = data.currentStreak;
         const level = data.level;
 
         return { points, streaks, level };
-
     } else {
         console.log('No such document!');
         return null;

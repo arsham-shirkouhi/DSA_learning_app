@@ -40,13 +40,13 @@ const styles = StyleSheet.create({
         borderRadius: 12,
         width: '100%',
         maxWidth: 400,
-        shadowColor: AppColors.cardShadow,
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        shadowOpacity: 0.1,
-        shadowRadius: 3.84,
+        // shadowColor: AppColors.cardShadow,
+        // shadowOffset: {
+        //     width: 0,
+        //     height: 2,
+        // },
+        // shadowOpacity: 0.1,
+        // shadowRadius: 3.84,
         elevation: 5,
     },
     title: {
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
     },
     note: {
         fontSize: 12,
-        color: AppColors.textTertiary,
+        color: AppColors.textTri,
         textAlign: 'center',
         fontStyle: 'italic',
     },

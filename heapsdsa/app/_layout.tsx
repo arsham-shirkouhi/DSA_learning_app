@@ -1,5 +1,5 @@
 import { Stack } from 'expo-router';
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { AuthProvider, useAuth } from './context/AuthContext';
 
 /**
@@ -38,4 +38,8 @@ export default function RootLayout() {
       <RootLayoutNav />
     </AuthProvider>
   )
+}
+
+export function Layout({ children }: { children: ReactNode }) {
+  return <>{children}</>;
 }

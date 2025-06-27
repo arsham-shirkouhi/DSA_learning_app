@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
         borderRadius: 12,
         width: '100%',
         maxWidth: 400,
-        shadowColor: AppColors.cardShadow,
+        shadowColor: "#000",
         shadowOffset: {
             width: 0,
             height: 2,
@@ -65,13 +65,13 @@ const styles = StyleSheet.create({
         color: AppColors.textPrimary,
     },
     logoutButton: {
-        backgroundColor: AppColors.buttonDanger,
+        backgroundColor: "#ff3b30",
         padding: 15,
         borderRadius: 8,
         alignItems: 'center',
     },
     logoutText: {
-        color: AppColors.textLight,
+        color: "#fff",
         fontSize: 16,
         fontWeight: '600',
     },
