@@ -17,14 +17,13 @@ def main():
     TOPIC_LABELS = {
         "Array": 0,
         "Linked List": 1,
-        "Tree": 2,
-        "Graph": 3,
-        "Stack": 4,
-        "Queue": 5,
-        "Matrix": 6,
-        "Heap": 7,
-        "String": 8,
-        "Bit Manipulation": 9
+        "Stack": 2,
+        "Queue": 3,
+        "Heap": 4,
+        "Hashing": 5,
+        "Tree": 6,
+        "Graph": 7,
+        "String": 8
     }
     
     DIFFICULTY_LABELS = {

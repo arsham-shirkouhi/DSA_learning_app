@@ -23,11 +23,11 @@ options.add_experimental_option('excludeSwitches', ['enable-logging'])
 driver = webdriver.Edge(service=EdgeService(EdgeChromiumDriverManager().install()), options=options)
 
 # Go to the quiz page
-url = "https://www.geeksforgeeks.org/quizzes/top-mcqs-on-graph-traversals-with-answers/"
+url = "https://www.geeksforgeeks.org/quizzes/top-mcqs-on-hash-data-strcuture-with-answers/"
 driver.get(url)
 
 # Wait for content to load
-wait = WebDriverWait(driver, 60)
+wait = WebDriverWait(driver, 100)
 
 # Scroll smoothly to the bottom of the page
 for _ in range(2):
@@ -45,7 +45,7 @@ for _ in range(2):
             behavior: 'smooth'
         })   
     """)
-    time.sleep(1)
+    time.sleep(3)
 
 # Find all MCQ blocks
 question_blocks = driver.find_elements(By.XPATH, "//div[contains(@class, 'QuizQuestionCard_quizCard__9T_0J')]")
@@ -106,21 +106,20 @@ for card in question_blocks:
                     print(f"⚠️ Could not determine answer for Q{q_number}")
 
             # Store in list
-            quiz_data.append({
-                "question_number": q_number,
-                "question_title": q_title,
-                "code": q_code,
-                "choices": q_choices,
-                "answer": q_answer
-            })
+            # quiz_data.append({
+            #     "question_number": q_number,
+            #     "question_title": q_title,
+            #     "code": q_code,
+            #     "choices": q_choices,
+            #     "answer": q_answer
+            # })
             
             # Store in list (formatted for finetuning)
-            # quiz_data.append({
-            #     "Question_number": q_number,
-            #     "input_text": f"{q_title}, {q_code}, Choices: {q_choices}, Answer: {q_answer}",
-            #     "topic_label": 0,
-                
-            # })
+            quiz_data.append({
+                "Question_number": q_number,
+                "input_text": f"{q_title}, {q_code}, Choices: {q_choices}, Answer: {q_answer}",
+                "topic_label": "Hashing"
+            })
 
         except Exception as e:
             print(f"❌ Skipping {q_number} due to error: {e}")

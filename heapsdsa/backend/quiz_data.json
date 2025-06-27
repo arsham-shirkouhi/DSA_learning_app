@@ -1,514 +1,797 @@
 [
     {
-        "question_number": "Question 1",
-        "question_title": "Which of the following algorithms can be used to most efficiently determine the presence of a cycle in a given graph ?",
-        "code": "",
-        "choices": [
-            "A\nDepth First Search",
-            "B\nBreadth First Search",
-            "C\nPrim\\'s Minimum Spanning Tree Algorithm",
-            "D\nKruskal\\' Minimum Spanning Tree Algorithm"
-        ],
-        "answer": "A\nDepth First Search"
+        "Question_number": "Question 1",
+        "input_text": "What will the output of the below code?, #include <iostream>\nusing namespace std;\n\nint main()\n{\n\n    int arr[2] = { 1, 2 };\n    cout << arr[0] << \", \" << arr[1] << endl;\n    return 0;\n}, Choices: ['A\\n1, 2', 'B\\nSyntax error', 'C\\nRun time error', 'D\\nNone'], Answer: A\n1, 2",
+        "topic_label": "Array"
     },
     {
-        "question_number": "Question 2",
-        "question_title": "Traversal of a graph is different from tree because",
-        "code": "",
-        "choices": [
-            "A\nThere can be a loop in graph so we must maintain a visited flag for every vertex",
-            "B\nDFS of a graph uses stack, but inorder traversal of a tree is recursive",
-            "C\nBFS of a graph uses queue, but a time efficient BFS of a tree is recursive.",
-            "D\nAll of the above"
-        ],
-        "answer": "A\nThere can be a loop in graph so we must maintain a visited flag for every vertex"
+        "Question_number": "Question 2",
+        "input_text": "The minimum number of comparisons required to determine if an integer appears more than n/2 times in a sorted array of n integers is, , Choices: ['A\\nΘ(n)', 'B\\nΘ(logn)', 'C\\nΘ(n*logn)', 'D\\nΘ(1)'], Answer: B\nΘ(logn)",
+        "topic_label": "Array"
     },
     {
-        "question_number": "Question 3",
-        "question_title": "What are the appropriate data structures for following algorithms?",
-        "code": "",
-        "choices": [
-            "A\n Stack\n Queue\nPriority Queue\nUnion Find",
-            " Stack",
-            " Queue",
-            "Priority Queue",
-            "Union Find",
-            "B\nQueue\nStack\nPriority Queue\nUnion Find",
-            "Queue",
-            "Stack",
-            "Priority Queue",
-            "Union Find",
-            "C\nStack\nQueue\nUnion Find\nPriority Queue ",
-            "Stack",
-            "Queue",
-            "Union Find",
-            "Priority Queue ",
-            "D\nPriority Queue\nQueue\nStack\nUnion Find",
-            "Priority Queue",
-            "Queue",
-            "Stack",
-            "Union Find"
-        ],
-        "answer": "B\nQueue\nStack\nPriority Queue\nUnion Find"
+        "Question_number": "Question 3",
+        "input_text": "An algorithm performs (logN)1/2 find operations, N insert operations, (logN)1/2 , delete operations, and (logN)1/2 decrease-key operations on a set of data items with keys drawn from a linearly ordered set. For a delete operation, a pointer is provided to the record that must be deleted. For the decrease-key operation, a pointer is provided to the record that has its key decreased. Which one of the following data structures is the most suited for the algorithm to use, if the goal is to achieve the best total asymptotic complexity considering all the operations?, , Choices: ['A\\nUnsorted array', 'B\\nMin-heap', 'C\\nSorted array', 'D\\nSorted doubly linked list'], Answer: A\nUnsorted array",
+        "topic_label": "Array"
     },
     {
-        "question_number": "Question 5",
-        "question_title": "Let G be an undirected graph. Consider a depth-first traversal of G, and let T be the resulting depth-first search tree. Let u be a vertex in G and let v be the first new (unvisited) vertex visited after visiting u in the traversal. Which of the following statements is always true? (GATE CS 2000)",
-        "code": "",
-        "choices": [
-            "A\n{u,v} must be an edge in G, and u is a descendant of v in T",
-            "B\n{u,v} must be an edge in G, and v is a descendant of u in T",
-            "C\nIf {u,v} is not an edge in G then u is a leaf in T",
-            "D\nIf {u,v} is not an edge in G then u and v must have the same parent in T"
-        ],
-        "answer": "C\nIf {u,v} is not an edge in G then u is a leaf in T"
+        "Question_number": "Question 4",
+        "input_text": "Consider an array consisting of –ve and +ve numbers. What would be the worst case time complexity of an algorithm to segregate the numbers having same sign altogether i.e all +ve on one side and then all -ve on the other ?, , Choices: ['A\\nO(N)', 'B\\nO(N Log N)', 'C\\nO(N * N)', 'D\\nO(N Log Log N)'], Answer: A\nO(N)",
+        "topic_label": "Array"
     },
     {
-        "question_number": "Question 7",
-        "question_title": "Which of the following condition is sufficient to detect cycle in a directed graph?",
-        "code": "",
-        "choices": [
-            "A\nThere is an edge from currently being visited node to an already visited node.",
-            "B\nThere is an edge from currently being visited node to an ancestor of currently visited node in DFS forest.",
-            "C\nEvery node is seen twice in DFS.",
-            "D\nNone of the above"
-        ],
-        "answer": "B\nThere is an edge from currently being visited node to an ancestor of currently visited node in DFS forest."
+        "Question_number": "Question 5",
+        "input_text": "Let A[1...n] be an array of n distinct numbers. If i < j and A[i] > A[j], then the pair (i, j) is called an inversion of A. What is the expected number of inversions in any permutation on n elements ?, , Choices: ['A\\nn(n-1)/2', 'B\\nn(n-1)/4', 'C\\nn(n+1)/4', 'D\\n2n[logn]'], Answer: B\nn(n-1)/4",
+        "topic_label": "Array"
     },
     {
-        "question_number": "Question 8",
-        "question_title": "Is following statement true/false If a DFS of a directed graph contains a back edge, any other DFS of the same graph will also contain at least one back edge.",
-        "code": "",
-        "choices": [
-            "A\nTrue",
-            "B\nFalse"
-        ],
-        "answer": "A\nTrue"
+        "Question_number": "Question 6",
+        "input_text": "Consider a two dimensional array A[20][10]. Assume 4 words per memory cell, the base address of array A is 100, elements are stored in row-major order and first element is A[0][0]. What is the address of A[11][5] ?, , Choices: ['A\\n560', 'B\\n460', 'C\\n570', 'D\\n575'], Answer: A\n560",
+        "topic_label": "Array"
     },
     {
-        "question_number": "Question 9",
-        "question_title": "Make is a utility that automatically builds executable programs and libraries from source code by reading files called makefiles which specify how to derive the target program. Which of the following standard graph algorithms is used by Make.",
-        "code": "",
-        "choices": [
-            "A\nStrongly Connected Components",
-            "B\nTopological Sorting",
-            "C\nBreadth First Search",
-            "D\nDijkstra\\'s Shortest Path"
-        ],
-        "answer": "B\nTopological Sorting"
+        "Question_number": "Question 7",
+        "input_text": "An array A consists of n integers in locations A[0], A[1] ....A[n-1]. It is required to shift the elements of the array cyclically to the left by k places, where 1 <= k <= (n-1). An incomplete algorithm for doing this in linear time, without using another array is given below. Complete the algorithm by filling in the blanks. Assume alt the variables are suitably declared., min = n; i = 0;\n\nwhile (___________) { \n\n     temp = A[i]; j = i;\n\n     while (________) {\n\n     A[j] = ________ \n\n     j= (j + k) mod n ;\n\n     If ( j< min ) then\n\n         min = j;\n\n}\n\nA[(n + i — k) mod n] = _________\n\ni = __________, Choices: ['A\\ni > min; j!= (n+i)mod n; A[j + k]; temp; i + 1 ;', 'B\\ni < min; j!= (n+i)mod n; A[j + k]; temp; i + 1;', 'C\\ni > min; j!= (n+i+k)mod n; A[(j + k)]; temp; i + 1;', 'D\\ni < min; j!= (n+i-k)mod n; A[(j + k)mod n]; temp; i + 1;'], Answer: D\ni < min; j!= (n+i-k)mod n; A[(j + k)mod n]; temp; i + 1;",
+        "topic_label": "Array"
     },
     {
-        "question_number": "Question 10",
-        "question_title": "Given two vertices in a graph s and t, which of the two traversals (BFS and DFS) can be used to find if there is path from s to t?",
-        "code": "",
-        "choices": [
-            "A\nOnly BFS",
-            "B\nOnly DFS",
-            "C\nBoth BFS and DFS",
-            "D\nNeither BFS nor DFS"
-        ],
-        "answer": "C\nBoth BFS and DFS"
+        "Question_number": "Question 8",
+        "input_text": "Which of the following correctly declares an array?, , Choices: ['A\\nint geeks[20];', 'B\\nint geeks;', 'C\\ngeeks{20};', 'D\\narray geeks[20];'], Answer: A\nint geeks[20];",
+        "topic_label": "Array"
     },
     {
-        "question_number": "Question 11",
-        "question_title": "Is the following statement true/false? A DFS of a directed graph always produces the same number of tree edges, i.e., independent of the order in which vertices are considered for DFS. ",
-        "code": "",
-        "choices": [
-            "A\nTrue",
-            "B\nFalse"
-        ],
-        "answer": "B\nFalse"
+        "Question_number": "Question 9",
+        "input_text": "A three dimensional array in ‘C++’ is declared as int A[x][y][z]. Consider that array elements are stored in row major order and indexing begins from 0. Here, the address of an item at the location A[p][q][r] can be computed as follows (where w is the word length of an integer):, , Choices: ['A\\n&A[0][0][0] + w(y * z * q + z * p + r)', 'B\\n&A[0][0][0] + w(y * z * p + z*q + r)', 'C\\n&A[0][0][0] + w(x * y * p + z * q+ r)', 'D\\n&A[0][0][0] + w(x * y * q + z * p + r)'], Answer: B\n&A[0][0][0] + w(y * z * p + z*q + r)",
+        "topic_label": "Array"
     },
     {
-        "question_number": "Question 12",
-        "question_title": "If the DFS finishing time f[u] > f[v] for two vertices u and v in a directed graph G, and u and v are in the same DFS tree in the DFS forest, then u is an ancestor of v in the depth-first tree.",
-        "code": "",
-        "choices": [
-            "A\nTrue",
-            "B\nFalse"
-        ],
-        "answer": "B\nFalse"
+        "Question_number": "Question 10",
+        "input_text": "Let A be a square matrix of size n x n. Consider the following program. What is the expected output? , , Choices: ['A\\nThe matrix A itself', 'B\\nTranspose of matrix A', 'C\\nAdding 100 to the upper diagonal elements and subtracting 100 from diagonal elements of A', 'D\\nInverse of matrix A'], Answer: A\nThe matrix A itself",
+        "topic_label": "Array"
     },
     {
-        "question_number": "Question 14",
-        "question_title": "Let G be a graph with n vertices and m edges. What is the tightest upper bound on the running time on Depth First Search of G? Assume that the graph is represented using adjacency matrix.",
-        "code": "",
-        "choices": [
-            "A\nO(n)",
-            "B\nO(m+n)",
-            "C\nO(n2)",
-            "D\nO(mn)"
-        ],
-        "answer": "C\nO(n2)"
+        "Question_number": "Question 11",
+        "input_text": "A program P reads in 500 integers in the range [0..100] representing the scores of 500 students. It then prints the frequency of each score above 50. What would be the best way for P to store the frequencies?\n , , Choices: ['A\\nAn array of 50 numbers\\n ', 'B\\nAn array of 100 numbers\\n ', 'C\\nAn array of 500 numbers\\n ', 'D\\nA dynamically allocated array of 550 numbers\\n '], Answer: A\nAn array of 50 numbers",
+        "topic_label": "Array"
     },
     {
-        "question_number": "Question 15",
-        "question_title": "Consider the tree arcs of a BFS traversal from a source node W in an unweighted, connected, undirected graph. The tree T formed by the tree arcs is a data structure for computing.",
-        "code": "",
-        "choices": [
-            "A\nthe shortest path between every pair of vertices.",
-            "B\nthe shortest path from W to every vertex in the graph.",
-            "C\nthe shortest paths from W to only those nodes that are leaves of T.",
-            "D\nthe longest path in the graph"
-        ],
-        "answer": "B\nthe shortest path from W to every vertex in the graph."
+        "Question_number": "Question 12",
+        "input_text": "What will the output of the below code, be if the base address of the array is 1200?, #include <iostream>\nusing namespace std;\n\nint main()\n{\n\n    int arr[] = { 1, 2, 3, 4, 5 };\n    cout << arr << \", \" << &arr << \", \" << &arr[0] << endl;\n    return 0;\n}, Choices: ['A\\n1200, 1202, 1204', 'B\\n1200 1200 1200', 'C\\n1200, 1204, 1208', 'D\\n1200, 1204, 1208'], Answer: B\n1200 1200 1200",
+        "topic_label": "Array"
     },
     {
-        "question_number": "Question 17",
-        "question_title": "",
-        "code": "",
-        "choices": [
-            "A\nThere must exist a vertex w adjacent to both u and n in G",
-            "B\nThere must exist a vertex w whose removal disconnects u and n in G",
-            "C\nThere must exist a cycle in G containing u and n",
-            "D\nThere must exist a cycle in G containing u and all its neighbours in G."
-        ],
-        "answer": "D\nThere must exist a cycle in G containing u and all its neighbours in G."
+        "Question_number": "Question 13",
+        "input_text": "What is the correct way to call the function (fun) in the below program?, #include <bits/stdc++.h>\n#include <iostream>\nusing namespace std;\n\nvoid fun(char* arr)\n{\n    int i;\n    unsigned int n = strlen(arr);\n    for (i = 0; i < n; i++)\n        cout << \" \" << arr[i];\n}\n\n// Driver program\nint main()\n{\n    char arr[]\n        = { 'g', 'e', 'e', 'k', 's', 'q', 'u', 'i', 'z' };\n    // How to call the above function here to print the char\n    // elements?\n\n    return 0;\n}, Choices: ['A\\nfun(&arr);', 'B\\nfun(*arr);', 'C\\nfun(arr)', 'D\\nNone'], Answer: C\nfun(arr)",
+        "topic_label": "Array"
     },
     {
-        "question_number": "Question 18",
-        "question_title": "",
-        "code": "",
-        "choices": [
-            "A\n{u,v} must be an edge in G, and u is a descendant of v in T",
-            "B\n{u,v} must be an edge in G, and v is a descendant of u in T",
-            "C\nIf {u,v} is not an edge in G then u is a leaf in T",
-            "D\nIf {u,v} is not an edge in G then u and v must have the same parent in T"
-        ],
-        "answer": "C\nIf {u,v} is not an edge in G then u is a leaf in T"
+        "Question_number": "Question 14",
+        "input_text": "Let A be a matrix of size n x n. Consider the following program. What is the expected output? , void fun(int A[][N])\n{\n    for (int i = 0; i < N; i++)\n        for (int j = i + 1; j < N; j++)\n            swap(A[i][j], A[j][i]);\n}, Choices: ['A\\nMatrix A', 'B\\nDiagonal Of matrix A', 'C\\nTranspose of matrix A', 'D\\nNone'], Answer: C\nTranspose of matrix A",
+        "topic_label": "Array"
     },
     {
-        "question_number": "Question 19",
-        "question_title": "",
-        "code": "",
-        "choices": [
-            "A\nk",
-            "B\nk + 1",
-            "C\nn - k - 1",
-            "D\nn - k"
-        ],
-        "answer": "D\nn - k"
+        "Question_number": "Question 15",
+        "input_text": "What will do the following code?, void fun(int arr[], int n)\n{\n    for (int i = 0; i < n; i++) {\n        for (int j = i; j < n; j++) {\n            for (int k = i; k <= j; k++)\n                cout << arr[k] << \" \";\n\n            cout << endl;\n        }\n    }\n}, Choices: ['A\\nPrints the subsequence of the article.', 'B\\nPrints the elements of the array', 'C\\nPrints the subarray of the element.', 'D\\nNone'], Answer: C\nPrints the subarray of the element.",
+        "topic_label": "Array"
     },
     {
-        "question_number": "Question 21",
-        "question_title": "In an adjacency list representation of an undirected simple graph G = (V, E), each edge (u, v) has two adjacency list entries: [v] in the adjacency list of u, and [u] in the adjacency list of v. These are called twins of each other. A twin pointer is a pointer from an adjacency list entry to its twin. If |E| = m and |V | = n, and the memory size is not a constraint, what is the time complexity of the most efficient algorithm to set the twin pointer in each entry in each adjacency list?",
-        "code": "",
-        "choices": [
-            "A\nΘ(n2)",
-            "B\nΘ(m+n)",
-            "C\nΘ(m2)",
-            "D\nΘ(n4)"
-        ],
-        "answer": "B\nΘ(m+n)"
+        "Question_number": "Question 16",
+        "input_text": "Which of the following is the limitation of the array?, , Choices: ['A\\nelements can be accessed from anywhere.', 'B\\nThe size of the array is fixed.', 'C\\nIndexing is started from Zero.', \"D\\nMemory waste if an array's elements are smaller than the size allotted to them\"], Answer: D\nMemory waste if an array's elements are smaller than the size allotted to them",
+        "topic_label": "Array"
     },
     {
-        "question_number": "Question 22",
-        "question_title": "Let G = (V, G) be a weighted undirected graph and let T be a Minimum Spanning Tree (MST) of G maintained using adjacency lists. Suppose a new weighed edge (u, v) ∈ V×V is added to G. The worst case time complexity of determining if T is still an MST of the resultant graph is",
-        "code": "",
-        "choices": [
-            "A\nΘ(∣E∣ + ∣V∣)",
-            "B\nΘ(∣E∣.∣V∣)",
-            "C\nΘ(E∣ log ∣V∣)",
-            "D\nΘ(∣V∣)"
-        ],
-        "answer": "D\nΘ(∣V∣)"
+        "Question_number": "Question 17",
+        "input_text": "Consider the below program, and what is doing this program basically?, #include <bits/stdc++.h>\nusing namespace std;\n\nvoid print(char a[], int n, int ind)\n{\n    for (int i = ind; i < n + ind; i++)\n        cout << a[(i % n)] << \" \";\n}\n\nint main()\n{\n    char a[] = { 'A', 'B', 'C', 'D', 'E', 'F' };\n    int n = sizeof(a) / sizeof(a[0]);\n    print(a, n, 3);\n    return 0;\n}, Choices: ['A\\nIt is printing the normal array', 'B\\nIt is printing circular array rotated by 3', 'C\\nSyntax error', 'D\\nNone'], Answer: B\nIt is printing circular array rotated by 3",
+        "topic_label": "Array"
     },
     {
-        "question_number": "Question 23",
-        "question_title": "An articulation point in a connected graph is a vertex such that removing the vertex and its incident edges disconnects the graph into two or more connected components. ",
-        "code": "",
-        "choices": [
-            "A\nRoot of T can never be an articulation point in G.",
-            "B\nRoot of T is an articulation point in G if and only if it has 2 or more children.",
-            "C\nA leaf of T can be an articulation point in G.",
-            "D\nIf u is an articulation point in G such that x is an ancestor of u in T and y is a descendent of u in T, then all paths from x to y in G must pass through u."
-        ],
-        "answer": "B\nRoot of T is an articulation point in G if and only if it has 2 or more children."
+        "Question_number": "Question 18",
+        "input_text": "Fill in the blanks for completing the program to rotate an array by d elements., /*Function to left rotate arr[] of size n by d*/\nvoid Rotate(int arr[], int d, int n)\n{\n    int p = 1;\n    while (_______) {\n        int last = arr[0];\n        for (int i = 0; ______ i++) {\n            arr[i] = arr[i + 1];\n        }\n        __________\n        p++;\n    }\n}, Choices: ['A\\np <= d , i < n - 1 , arr[n - 1] = last;', 'B\\np < d, i < n, arr[n] = last;', 'C\\np >=d, i >n , arr[n] =  last', 'D\\nNone'], Answer: A\np <= d , i < n - 1 , arr[n - 1] = last;",
+        "topic_label": "Array"
     },
     {
-        "question_number": "Question 26",
-        "question_title": "Consider a complete binary tree with 7 nodes. Let A denote the set of first 3 elements obtained by performing Breadth-First Search (BFS) starting from the root. Let B denote the set of first 3 elements obtained by performing Depth-First Search (DFS) starting from the root. The value of ∣A−B∣ is _____________ .",
-        "code": "",
-        "choices": [
-            "A\n1",
-            "B\n2",
-            "C\n3",
-            "D\n4"
-        ],
-        "answer": "A\n1"
+        "Question_number": "Question 20",
+        "input_text": "Consider the below program. What is the expected output? , void fun(int arr[], int start, int end)\n{\n    while (start < end) {\n        int temp = arr[start];\n        arr[start] = arr[end];\n        arr[end] = temp;\n        start++;\n        end--;\n    }\n}, Choices: ['A\\nswapping the elements pairwise', 'B\\nsorting the elements', 'C\\nReverse an array', 'D\\nNone'], Answer: C\nReverse an array",
+        "topic_label": "Array"
     },
     {
-        "question_number": "Question 27",
-        "question_title": "For a given graph G having v vertices and e edges which is connected and has no cycles, which of the following statements is true?",
-        "code": "",
-        "choices": [
-            "A\nv= e-1",
-            "B\ne= v-2",
-            "C\nv=e+1",
-            "D\nNone"
-        ],
-        "answer": "C\nv=e+1"
+        "Question_number": "Question 1",
+        "input_text": "What is the output of the following code?, #include <iostream>\nusing namespace std;\n\nint main()\n{\n\n    string str1 = \"Hello\";\n    string str2 = \"Geeks\";\n    string str3 = str1 + str2;\n    cout << str3 << endl;\n\n    return 0;\n}, Choices: ['A\\nHello +  Geeks', 'B\\nstr1 + str2', 'C\\nHello Geeks', 'D\\nHelloGeeks'], Answer: D\nHelloGeeks",
+        "topic_label": "String"
     },
     {
-        "question_number": "Question 28",
-        "question_title": "Which data structure is commonly used to implement the navigation system in a mapping application, helping users find the shortest route between locations?",
-        "code": "",
-        "choices": [
-            "A\nHeap",
-            "B\nStack",
-            "C\nGraph",
-            "D\nQueue"
-        ],
-        "answer": "C\nGraph"
+        "Question_number": "Question 2",
+        "input_text": "What is the output of the following code?, #include <iostream>\nusing namespace std;\n\nint main()\n{\n\n    string str = \"Hello\";\n    cout << str.substr(2, 5);\n    return 0;\n}, Choices: ['A\\nSyntax error', 'B\\nello', 'C\\nllo', 'D\\nNone'], Answer: C\nllo",
+        "topic_label": "String"
     },
     {
-        "question_number": "Question 30",
-        "question_title": "Which of the following statement is correct?",
-        "code": "",
-        "choices": [
-            "A\nP1 and P2",
-            "B\nP1",
-            "C\nP2",
-            "D\nP1 and P3"
-        ],
-        "answer": "D\nP1 and P3"
+        "Question_number": "Question 3",
+        "input_text": "What is the output of the following code?, #include<bits/stdc++.h> \nusing namespace std;\n\nint main()\n{\n    // Write C++ code here\n    char str_array2[] = \"Geeks\";\n    cout << sizeof(str_array2) << \" \";\n    char str_array[] = { 'G', 'e', 'e', 'k', 's'};\n    cout << sizeof(str_array);\n    return 0;\n}, Choices: ['A\\n6, 6', 'B\\n5, 6', 'C\\n6, 5', 'D\\nNone'], Answer: C\n6, 5",
+        "topic_label": "String"
     },
     {
-        "question_number": "Question 1",
-        "question_title": "Which of the following algorithms can be used to most efficiently determine the presence of a cycle in a given graph ?",
-        "code": "",
-        "choices": [
-            "A\nDepth First Search",
-            "B\nBreadth First Search",
-            "C\nPrim\\'s Minimum Spanning Tree Algorithm",
-            "D\nKruskal\\' Minimum Spanning Tree Algorithm"
-        ],
-        "answer": "A\nDepth First Search"
+        "Question_number": "Question 4",
+        "input_text": "If two string s are identical, then strcmp() functions returns ______, , Choices: ['A\\n-1', 'B\\n1', 'C\\nYES', 'D\\n0'], Answer: D\n0",
+        "topic_label": "String"
     },
     {
-        "question_number": "Question 2",
-        "question_title": "Traversal of a graph is different from tree because",
-        "code": "",
-        "choices": [
-            "A\nThere can be a loop in graph so we must maintain a visited flag for every vertex",
-            "B\nDFS of a graph uses stack, but inorder traversal of a tree is recursive",
-            "C\nBFS of a graph uses queue, but a time efficient BFS of a tree is recursive.",
-            "D\nAll of the above"
-        ],
-        "answer": "A\nThere can be a loop in graph so we must maintain a visited flag for every vertex"
+        "Question_number": "Question 5",
+        "input_text": "How will you print \"\\\\\\n\" on the screen?, , Choices: ['A\\n  cout << \"\\\\\\\\\\\\n\";', 'B\\ncout<<\"\\\\\\\\\\\\\\\\\\\\n\";', 'C\\ncout<<\"//n\";', 'D\\ncout<<\"///n\"'], Answer: A\n  cout << \"\\\\\\n\";",
+        "topic_label": "String"
     },
     {
-        "question_number": "Question 3",
-        "question_title": "What are the appropriate data structures for following algorithms?",
-        "code": "",
-        "choices": [
-            "A\n Stack\n Queue\nPriority Queue\nUnion Find",
-            " Stack",
-            " Queue",
-            "Priority Queue",
-            "Union Find",
-            "B\nQueue\nStack\nPriority Queue\nUnion Find",
-            "Queue",
-            "Stack",
-            "Priority Queue",
-            "Union Find",
-            "C\nStack\nQueue\nUnion Find\nPriority Queue ",
-            "Stack",
-            "Queue",
-            "Union Find",
-            "Priority Queue ",
-            "D\nPriority Queue\nQueue\nStack\nUnion Find",
-            "Priority Queue",
-            "Queue",
-            "Stack",
-            "Union Find"
-        ],
-        "answer": "B\nQueue\nStack\nPriority Queue\nUnion Find"
+        "Question_number": "Question 6",
+        "input_text": "What will the output of the following questions:, #include <bits/stdc++.h>\nusing namespace std;\n\nint main()\n{\n\n    string a = \"Hello\";\n    string b = \"World\";\n    string c = b.append(a);\n    cout << c << endl;\n\n    return 0;\n}, Choices: ['A\\nHello world', 'B\\nWorld hello', 'C\\nWorldHello', 'D\\nError'], Answer: C\nWorldHello",
+        "topic_label": "String"
     },
     {
-        "question_number": "Question 5",
-        "question_title": "Let G be an undirected graph. Consider a depth-first traversal of G, and let T be the resulting depth-first search tree. Let u be a vertex in G and let v be the first new (unvisited) vertex visited after visiting u in the traversal. Which of the following statements is always true? (GATE CS 2000)",
-        "code": "",
-        "choices": [
-            "A\n{u,v} must be an edge in G, and u is a descendant of v in T",
-            "B\n{u,v} must be an edge in G, and v is a descendant of u in T",
-            "C\nIf {u,v} is not an edge in G then u is a leaf in T",
-            "D\nIf {u,v} is not an edge in G then u and v must have the same parent in T"
-        ],
-        "answer": "C\nIf {u,v} is not an edge in G then u is a leaf in T"
+        "Question_number": "Question 7",
+        "input_text": "What is missing in the given code?, #include <bits/stdc++.h>\nusing namespace std;\n\nvoid reverseStr(string& str)\n{\n\n    for (int i = 0; i < n / 2; i++)\n        swap(str[i], str[n - i - 1]);\n}\n\n// Driver program\nint main()\n{\n    string str = \"geeksforgeeks\";\n    reverseStr(str);\n    cout << str;\n    return 0;\n}, Choices: ['A\\nswap function is not defined', 'B\\nstring is not defined here.', 'C\\nVariable n is not declared anywhere.', 'D\\nNone'], Answer: C\nVariable n is not declared anywhere.",
+        "topic_label": "String"
     },
     {
-        "question_number": "Question 7",
-        "question_title": "Which of the following condition is sufficient to detect cycle in a directed graph?",
-        "code": "",
-        "choices": [
-            "A\nThere is an edge from currently being visited node to an already visited node.",
-            "B\nThere is an edge from currently being visited node to an ancestor of currently visited node in DFS forest.",
-            "C\nEvery node is seen twice in DFS.",
-            "D\nNone of the above"
-        ],
-        "answer": "B\nThere is an edge from currently being visited node to an ancestor of currently visited node in DFS forest."
+        "Question_number": "Question 8",
+        "input_text": "What is the function present to sort a string in C++?, , Choices: ['A\\nsort();', 'B\\n sort(str.begin(), str.end());', 'C\\nSort_asec();', 'D\\nNone'], Answer: B\n sort(str.begin(), str.end());",
+        "topic_label": "String"
     },
     {
-        "question_number": "Question 8",
-        "question_title": "Is following statement true/false If a DFS of a directed graph contains a back edge, any other DFS of the same graph will also contain at least one back edge.",
-        "code": "",
-        "choices": [
-            "A\nTrue",
-            "B\nFalse"
-        ],
-        "answer": "A\nTrue"
+        "Question_number": "Question 10",
+        "input_text": "What is a palindromic string?, , Choices: ['A\\nThe string of length 0 ', 'B\\nThe string of having a special character.', 'C\\nThe string of having an uppercase letter', 'D\\nThe string whose reversed string is equal to the original string.'], Answer: D\nThe string whose reversed string is equal to the original string.",
+        "topic_label": "String"
     },
     {
-        "question_number": "Question 9",
-        "question_title": "Make is a utility that automatically builds executable programs and libraries from source code by reading files called makefiles which specify how to derive the target program. Which of the following standard graph algorithms is used by Make.",
-        "code": "",
-        "choices": [
-            "A\nStrongly Connected Components",
-            "B\nTopological Sorting",
-            "C\nBreadth First Search",
-            "D\nDijkstra\\'s Shortest Path"
-        ],
-        "answer": "B\nTopological Sorting"
+        "Question_number": "Question 11",
+        "input_text": "Guess the output:, , Choices: ['A\\n\"10 20\"', 'B\\n30', 'C\\n10 20', 'D\\n1020'], Answer: D\n1020",
+        "topic_label": "String"
     },
     {
-        "question_number": "Question 10",
-        "question_title": "Given two vertices in a graph s and t, which of the two traversals (BFS and DFS) can be used to find if there is path from s to t?",
-        "code": "",
-        "choices": [
-            "A\nOnly BFS",
-            "B\nOnly DFS",
-            "C\nBoth BFS and DFS",
-            "D\nNeither BFS nor DFS"
-        ],
-        "answer": "C\nBoth BFS and DFS"
+        "Question_number": "Question 12",
+        "input_text": "What is the output of the following code?, #include <iostream>\nusing namespace std;\n\nint main() {\n\n    cout << \"GFG!\"[0] <<\" \"<<\"GFG!\"[3] ;\n    return 0;\n}, Choices: ['A\\nError', 'B\\nG !', 'C\\nF !', 'D\\nNone'], Answer: B\nG !",
+        "topic_label": "String"
     },
     {
-        "question_number": "Question 11",
-        "question_title": "Is the following statement true/false? A DFS of a directed graph always produces the same number of tree edges, i.e., independent of the order in which vertices are considered for DFS. ",
-        "code": "",
-        "choices": [
-            "A\nTrue",
-            "B\nFalse"
-        ],
-        "answer": "B\nFalse"
+        "Question_number": "Question 13",
+        "input_text": "Which of the following statement is a binary string?, , Choices: ['A\\n\"ab\"', 'B\\n\"121212\"', 'C\\n\"01010101110\"', 'D\\nNone'], Answer: C\n\"01010101110\"",
+        "topic_label": "String"
     },
     {
-        "question_number": "Question 12",
-        "question_title": "If the DFS finishing time f[u] > f[v] for two vertices u and v in a directed graph G, and u and v are in the same DFS tree in the DFS forest, then u is an ancestor of v in the depth-first tree.",
-        "code": "",
-        "choices": [
-            "A\nTrue",
-            "B\nFalse"
-        ],
-        "answer": "B\nFalse"
+        "Question_number": "Question 14",
+        "input_text": "How does strcmp() function work to compare two strings?, , Choices: ['A\\nIt compares characters based on their index.', 'B\\nIt compares strings based on the index.', 'C\\nIt compares characters of the string based on their ASCII values.', 'D\\nNone.'], Answer: C\nIt compares characters of the string based on their ASCII values.",
+        "topic_label": "String"
     },
     {
-        "question_number": "Question 14",
-        "question_title": "Let G be a graph with n vertices and m edges. What is the tightest upper bound on the running time on Depth First Search of G? Assume that the graph is represented using adjacency matrix.",
-        "code": "",
-        "choices": [
-            "A\nO(n)",
-            "B\nO(m+n)",
-            "C\nO(n2)",
-            "D\nO(mn)"
-        ],
-        "answer": "C\nO(n2)"
+        "Question_number": "Question 15",
+        "input_text": "Which of these methods from the String class is used to extract a single character from an object of String?, , Choices: ['A\\nCHARAT()', 'B\\ncharAt()', 'C\\nCharAt()', 'D\\ncharAT()'], Answer: B\ncharAt()",
+        "topic_label": "String"
     },
     {
-        "question_number": "Question 15",
-        "question_title": "Consider the tree arcs of a BFS traversal from a source node W in an unweighted, connected, undirected graph. The tree T formed by the tree arcs is a data structure for computing.",
-        "code": "",
-        "choices": [
-            "A\nthe shortest path between every pair of vertices.",
-            "B\nthe shortest path from W to every vertex in the graph.",
-            "C\nthe shortest paths from W to only those nodes that are leaves of T.",
-            "D\nthe longest path in the graph"
-        ],
-        "answer": "B\nthe shortest path from W to every vertex in the graph."
+        "Question_number": "Question 16",
+        "input_text": "What is the time complexity to reverse a string?, , Choices: ['A\\nO(n^2)', 'B\\nO(1)', 'C\\nO(log n)', 'D\\nO(n)'], Answer: D\nO(n)",
+        "topic_label": "String"
     },
     {
-        "question_number": "Question 21",
-        "question_title": "In an adjacency list representation of an undirected simple graph G = (V, E), each edge (u, v) has two adjacency list entries: [v] in the adjacency list of u, and [u] in the adjacency list of v. These are called twins of each other. A twin pointer is a pointer from an adjacency list entry to its twin. If |E| = m and |V | = n, and the memory size is not a constraint, what is the time complexity of the most efficient algorithm to set the twin pointer in each entry in each adjacency list?",
-        "code": "",
-        "choices": [
-            "A\nΘ(n2)",
-            "B\nΘ(m+n)",
-            "C\nΘ(m2)",
-            "D\nΘ(n4)"
-        ],
-        "answer": "B\nΘ(m+n)"
+        "Question_number": "Question 17",
+        "input_text": "Which of the following is a palindromic string?, , Choices: ['A\\n\"APPLE\"', 'B\\n\"ABCDE\"', 'C\\n\"APPLA\"', 'D\\n\"ABCCBA\"'], Answer: D\n\"ABCCBA\"",
+        "topic_label": "String"
     },
     {
-        "question_number": "Question 22",
-        "question_title": "Let G = (V, G) be a weighted undirected graph and let T be a Minimum Spanning Tree (MST) of G maintained using adjacency lists. Suppose a new weighed edge (u, v) ∈ V×V is added to G. The worst case time complexity of determining if T is still an MST of the resultant graph is",
-        "code": "",
-        "choices": [
-            "A\nΘ(∣E∣ + ∣V∣)",
-            "B\nΘ(∣E∣.∣V∣)",
-            "C\nΘ(E∣ log ∣V∣)",
-            "D\nΘ(∣V∣)"
-        ],
-        "answer": "D\nΘ(∣V∣)"
+        "Question_number": "Question 18",
+        "input_text": "What is the output of the below code?, #include <iostream>\nusing namespace std;\n\nint main()\n{\n\n    string str = \"GeeksForGeeks\";\n    cout << str.substr(2).substr(4);\n    return 0;\n}, Choices: ['A\\neksForGeeks', 'B\\nForGEeks', 'C\\nGeeks', 'D\\norGeeks'], Answer: D\norGeeks",
+        "topic_label": "String"
     },
     {
-        "question_number": "Question 23",
-        "question_title": "An articulation point in a connected graph is a vertex such that removing the vertex and its incident edges disconnects the graph into two or more connected components. ",
-        "code": "",
-        "choices": [
-            "A\nRoot of T can never be an articulation point in G.",
-            "B\nRoot of T is an articulation point in G if and only if it has 2 or more children.",
-            "C\nA leaf of T can be an articulation point in G.",
-            "D\nIf u is an articulation point in G such that x is an ancestor of u in T and y is a descendent of u in T, then all paths from x to y in G must pass through u."
-        ],
-        "answer": "B\nRoot of T is an articulation point in G if and only if it has 2 or more children."
+        "Question_number": "Question 19",
+        "input_text": "Which of these methods of class String is used to obtain the length of the String object?, , Choices: ['A\\nget()', 'B\\nSizeof()', 'C\\nlengthof()', 'D\\nlength()'], Answer: D\nlength()",
+        "topic_label": "String"
     },
     {
-        "question_number": "Question 26",
-        "question_title": "Consider a complete binary tree with 7 nodes. Let A denote the set of first 3 elements obtained by performing Breadth-First Search (BFS) starting from the root. Let B denote the set of first 3 elements obtained by performing Depth-First Search (DFS) starting from the root. The value of ∣A−B∣ is _____________ .",
-        "code": "",
-        "choices": [
-            "A\n1",
-            "B\n2",
-            "C\n3",
-            "D\n4"
-        ],
-        "answer": "A\n1"
+        "Question_number": "Question 20",
+        "input_text": "What the below program will  Print?, #// C program to find the length of string\n#include <bits/stdc++.h>\nusing namespace std;\nint main()\n{\n\n    string str = \"Hello Geeks\";\n    int i;\n    for (i = 0; str[i] != '\\0'; ++i)\n        ;\n    cout << i;\n\n    return 0;\n}, Choices: ['A\\n0', 'B\\n1', 'C\\n5', 'D\\n11'], Answer: D\n11",
+        "topic_label": "String"
     },
     {
-        "question_number": "Question 27",
-        "question_title": "For a given graph G having v vertices and e edges which is connected and has no cycles, which of the following statements is true?",
-        "code": "",
-        "choices": [
-            "A\nv= e-1",
-            "B\ne= v-2",
-            "C\nv=e+1",
-            "D\nNone"
-        ],
-        "answer": "C\nv=e+1"
+        "Question_number": "Question 1",
+        "input_text": "Following is a pseudo code of a function that takes a number as an argument, and uses a stack S to do processing., def fun(n):\n    S = []  # Say it creates an empty stack S\n    while n > 0:\n        # This line pushes the value of n%2 to stack S\n        S.append(n % 2)\n        n = n // 2\n\n    # Run while Stack S is not empty\n    while S:\n        print(S.pop(), end=' ')  # pop an element from S and print it, Choices: ['A\\nPrints binary representation of n in reverse order', 'B\\nPrints binary representation of n', 'C\\nPrints the value of Logn', 'D\\nPrints the value of Logn in reverse order'], Answer: B\nPrints binary representation of n",
+        "topic_label": "Stack"
     },
     {
-        "question_number": "Question 28",
-        "question_title": "Which data structure is commonly used to implement the navigation system in a mapping application, helping users find the shortest route between locations?",
-        "code": "",
-        "choices": [
-            "A\nHeap",
-            "B\nStack",
-            "C\nGraph",
-            "D\nQueue"
-        ],
-        "answer": "C\nGraph"
+        "Question_number": "Question 2",
+        "input_text": "Consider the following pseudocode that uses a stack , # Declare a stack of characters\nword = \"example\"  # Replace with the word you want to read\nchar_stack = []\n\n# While there are more characters in the word to read\nfor c in word:\n    char_stack.append(c)  # Push the character on the stack\n\n# While the stack is not empty\nwhile char_stack:\n    c = char_stack.pop()  # Pop a character off the stack\n    print(c, end='')  # Write the character to the screen, Choices: ['A\\ngeeksquizgeeksquiz', 'B\\nziuqskeeg', 'C\\ngeeksquiz', 'D\\nziuqskeegziuqskeeg'], Answer: B\nziuqskeeg",
+        "topic_label": "Stack"
     },
     {
-        "question_number": "Question 30",
-        "question_title": "Which of the following statement is correct?",
-        "code": "",
-        "choices": [
-            "A\nP1 and P2",
-            "B\nP1",
-            "C\nP2",
-            "D\nP1 and P3"
-        ],
-        "answer": "D\nP1 and P3"
+        "Question_number": "Question 3",
+        "input_text": "Following is an incorrect pseudocode for the algorithm which is supposed to determine whether a sequence of parentheses is balanced: ,    declare a character stack \n   while ( more input is available)\n   {\n      read a character\n      if ( the character is a '(' ) \n         push it on the stack\n      else if ( the character is a ')' and the stack is not empty )\n         pop a character off the stack\n      else\n         print \"unbalanced\" and exit\n    }\n    print \"balanced\", Choices: ['A\\n((())', 'B\\n())(()', 'C\\n(()()))', 'D\\n(()))()'], Answer: A\n((())",
+        "topic_label": "Stack"
+    },
+    {
+        "Question_number": "Question 4",
+        "input_text": "The following postfix expression with single digit operands is evaluated using a stack:, , Choices: ['A\\n6, 1', 'B\\n5, 7', 'C\\n3, 2', 'D\\n1, 5'], Answer: A\n6, 1",
+        "topic_label": "Stack"
+    },
+    {
+        "Question_number": "Question 5",
+        "input_text": "Let S be a stack of size n >= 1. Starting with the empty stack, suppose we push the first n natural numbers in sequence, and then perform n pop operations. Assume that Push and Pop operation take X seconds each, and Y seconds elapse between the end of one such stack operation and the start of the next operation. For m >= 1, define the stack-life of m as the time elapsed from the end of Push(m) to the start of the pop operation that removes m from S. The average stack-life of an element of this stack is, , Choices: ['A\\nn(X+ Y)', 'B\\n3Y + 2X', 'C\\nn(X + Y)-X', 'D\\nY + 2X'], Answer: C\nn(X + Y)-X",
+        "topic_label": "Stack"
+    },
+    {
+        "Question_number": "Question 6",
+        "input_text": "A single array A[1..MAXSIZE] is used to implement two stacks. The two stacks grow from opposite ends of the array. Variables top1 and top2 (topl< top 2) point to the location of the topmost element in each of the stacks. If the space is to be used efficiently, the condition for “stack full” is:, , Choices: ['A\\n(top1 = MAXSIZE/2) and (top2 = MAXSIZE/2+1)', 'B\\ntop1 + top2 + 1 = MAXSIZE', 'C\\n(top1= MAXSIZE/2) or (top2 = MAXSIZE)', 'D\\ntop1= top2 -1'], Answer: D\ntop1= top2 -1",
+        "topic_label": "Stack"
+    },
+    {
+        "Question_number": "Question 7",
+        "input_text": "Assume that the operators +, -, × are left associative and ^ is right associative. The order of precedence (from highest to lowest) is ^, x , +, -. The postfix expression corresponding to the infix expression a + b × c - d ^ e ^ f is, , Choices: ['A\\nabc × + def ^ ^ -', 'B\\nabc × + de ^ f ^ -', 'C\\nab + c × d - e ^ f ^', 'D\\n- + a × bc ^ ^ def'], Answer: A\nabc × + def ^ ^ -",
+        "topic_label": "Stack"
+    },
+    {
+        "Question_number": "Question 8",
+        "input_text": "To evaluate an expression without any embedded function calls :\n , , Choices: ['A\\nAs many stacks as the height of the expression tree are needed', 'B\\nOne stack is enough', 'C\\nTwo stacks are needed', 'D\\nA Turing machine is needed in the general case'], Answer: B\nOne stack is enough",
+        "topic_label": "Stack"
+    },
+    {
+        "Question_number": "Question 9",
+        "input_text": "The result evaluating the postfix expression 10 5 + 60 6 / * 8 – is, , Choices: ['A\\n284', 'B\\n213', 'C\\n142', 'D\\n71'], Answer: C\n142",
+        "topic_label": "Stack"
+    },
+    {
+        "Question_number": "Question 10",
+        "input_text": "If a stack S contains the integers 2, -3, 2, -1, 2 in order from bottom to top, what is f(S)?, , Choices: ['A\\n6', 'B\\n4', 'C\\n3', 'D\\n2'], Answer: D\n2",
+        "topic_label": "Stack"
+    },
+    {
+        "Question_number": "Question 11",
+        "input_text": "Consider the following program:, #include <iostream>\n#include <cctype>\n#include <stack>\n\n#define EOF -1\n\nstd::stack<int> s;\n\nvoid push(int value) { s.push(value); } /* push the argument on the stack */\nint pop(void) { if (s.empty()) return EOF; int value = s.top(); s.pop(); return value; }  /* pop the top of the stack */\nvoid flagError() { std::cerr << \"Error!\" << std::endl; exit(1); }\n\nint main() {\n    int c, m, n, r;\n    while ((c = std::cin.get()) != EOF) {\n        if (isdigit(c))\n            push(c - '0');\n        else if ((c == '+') || (c == '*')) {\n            m = pop();\n            n = pop();\n            r = (c == '+') ? n + m : n * m;\n            push(r);\n        } else if (c != ' ')\n            flagError();\n    }\n    std::cout << pop() << std::endl;\n}, Choices: ['A\\n15', 'B\\n25', 'C\\n30', 'D\\n150'], Answer: B\n25",
+        "topic_label": "Stack"
+    },
+    {
+        "Question_number": "Question 13",
+        "input_text": "O(n2), , Choices: ['A\\nO(n logk)', 'B\\nO(nk)', 'C\\nO(n2)', 'D\\nO(k2)'], Answer: A\nO(n logk)",
+        "topic_label": "Stack"
+    },
+    {
+        "Question_number": "Question 14",
+        "input_text": "A priority queue Q is used to implement a stack S that stores characters. PUSH(C) is implemented as INSERT(Q, C, K) where K is an appropriate integer key chosen by the implementation. POP is implemented as DELETEMIN(Q). For a sequence of operations, the keys chosen are in, , Choices: ['A\\nNon-increasing order', 'B\\nNon-decreasing order', 'C\\nstrictly increasing order', 'D\\nstrictly decreasing order'], Answer: D\nstrictly decreasing order",
+        "topic_label": "Stack"
+    },
+    {
+        "Question_number": "Question 18",
+        "input_text": "If the sequence of operations - push (1), push (2), pop, push (1), push (2), pop, pop, pop, push (2), pop are performed on a stack, the sequence of popped out values, , Choices: ['A\\n2,2,1,1,2', 'B\\n2,2,1,2,2', 'C\\n2,1,2,2,1', 'D\\n2,1,2,2,2'], Answer: A\n2,2,1,1,2",
+        "topic_label": "Stack"
+    },
+    {
+        "Question_number": "Question 19",
+        "input_text": "The five items: A, B, C, D, and E are pushed in a stack, one after other starting from A. The stack is popped four items and each element is inserted in a queue. The two elements are deleted from the queue and pushed back on the stack. Now one item is popped from the stack. The popped item is, , Choices: ['A\\nA', 'B\\nB', 'C\\nC', 'D\\nD'], Answer: D\nD",
+        "topic_label": "Stack"
+    },
+    {
+        "Question_number": "Question 20",
+        "input_text": "Consider the following operations performed on a stack of size 5 : Push (a); Pop() ; Push(b); Push(c); Pop(); Push(d); Pop();Pop(); Push (e) Which of the following statements is correct?, , Choices: ['A\\nUnderflow occurs', 'B\\nStack operations are performed smoothly', 'C\\nOverflow occurs', 'D\\nNone of the above'], Answer: B\nStack operations are performed smoothly",
+        "topic_label": "Stack"
+    },
+    {
+        "Question_number": "Question 21",
+        "input_text": "Which of the following is not an inherent application of stack?, , Choices: ['A\\nImplementation of recursion', 'B\\nEvaluation of a postfix expression', 'C\\nJob scheduling', 'D\\nReverse a string'], Answer: C\nJob scheduling",
+        "topic_label": "Stack"
+    },
+    {
+        "Question_number": "Question 23",
+        "input_text": "Consider the following sequence of operations on an empty stack., , Choices: ['A\\n86', 'B\\n68', 'C\\n24', 'D\\n94'], Answer: A\n86",
+        "topic_label": "Stack"
+    },
+    {
+        "Question_number": "Question 29",
+        "input_text": "Consider the following statements:, , Choices: ['A\\n(ii) is true', 'B\\n(i) and (ii) are true', 'C\\n(iii) is true', 'D\\n(ii) and (iv) are true'], Answer: C\n(iii) is true",
+        "topic_label": "Stack"
+    },
+    {
+        "Question_number": "Question 30",
+        "input_text": "The minimum number of stacks needed to implement a queue is, , Choices: ['A\\n3', 'B\\n1', 'C\\n2', 'D\\n4'], Answer: C\n2",
+        "topic_label": "Stack"
+    },
+    {
+        "Question_number": "Question 1",
+        "input_text": "Following is pseudo code of a function that takes a Queue as an argument, and uses a stack S to do processing. , void fun(Queue *Q) {\n    Stack S;  // Say it creates an empty stack S\n\n    // Run while Q is not empty\n    while (!isEmpty(Q)) {\n        // deQueue an item from Q and push the dequeued item to S\n        push(&S, deQueue(Q));\n    }\n\n    // Run while Stack S is not empty\n    while (!isEmpty(&S)) {\n        // Pop an item from S and enqueue the popped item to Q\n        enQueue(Q, pop(&S));\n    }\n}, Choices: ['A\\nRemoves the last from Q', 'B\\nKeeps the Q same as it was before the call', 'C\\nMakes Q empty', 'D\\nReverses the Q'], Answer: D\nReverses the Q",
+        "topic_label": "Queue"
+    },
+    {
+        "Question_number": "Question 2",
+        "input_text": "How many stacks are needed to implement a queue. Consider the situation where no other data structure like arrays, linked list is available to you., , Choices: ['A\\n1', 'B\\n2', 'C\\n3', 'D\\n4'], Answer: B\n2",
+        "topic_label": "Queue"
+    },
+    {
+        "Question_number": "Question 3",
+        "input_text": "Which of the following operations on a queue data structure has a time complexity of O(1)? \n\nA) Enqueue \nB) Dequeue \nC) Peek \nD) Clear, , Choices: ['A\\nA and B', 'B\\nB only', 'C\\nC only', 'D\\nA and D '], Answer: B\nB only",
+        "topic_label": "Queue"
+    },
+    {
+        "Question_number": "Question 4",
+        "input_text": "A priority queue can efficiently implemented using which of the following data structures? Assume that the number of insert and peek (operation to see the current highest priority item) and extraction (remove the highest priority item) operations are almost same., , Choices: ['A\\nArray', 'B\\nLinked List', 'C\\nHeap Data Structures like Binary Heap, Fibonacci Heap', 'D\\nNone of the above'], Answer: C\nHeap Data Structures like Binary Heap, Fibonacci Heap",
+        "topic_label": "Queue"
+    },
+    {
+        "Question_number": "Question 5",
+        "input_text": "Which of the following is true about linked list implementation of queue?, , Choices: ['A\\nIn push operation, if new nodes are inserted at the beginning of linked list, then in pop operation, nodes must be removed from end.', 'B\\nIn push operation, if new nodes are inserted at the end, then in pop operation, nodes must be removed from the beginning.', 'C\\nBoth of the above', 'D\\nNone of the above'], Answer: C\nBoth of the above",
+        "topic_label": "Queue"
+    },
+    {
+        "Question_number": "Question 6",
+        "input_text": "A Priority-Queue is implemented as a Max-Heap. Initially, it has 5 elements. The level-order traversal of the heap is given below: 10, 8, 5, 3, 2 Two new elements ”1‘ and ”7‘ are inserted in the heap in that order. The level-order traversal of the heap after the insertion of the elements is:, , Choices: ['A\\n10, 8, 7, 5, 3, 2, 1', 'B\\n10, 8, 7, 2, 3, 1, 5', 'C\\n10, 8, 7, 1, 2, 3, 5', 'D\\n10, 8, 7, 3, 2, 1, 5'], Answer: D\n10, 8, 7, 3, 2, 1, 5",
+        "topic_label": "Queue"
+    },
+    {
+        "Question_number": "Question 7",
+        "input_text": "An implementation of a queue Q, using two stacks S1 and S2, is given below: , , Choices: ['A\\nn+m <= x < 2n and 2m <= y <= n+m', 'B\\nn+m <= x < 2n and 2m<= y <= 2n', 'C\\n2m <= x < 2n and 2m <= y <= n+m', 'D\\n2m <= x <2n and 2m <= y <= 2n'], Answer: A\nn+m <= x < 2n and 2m <= y <= n+m",
+        "topic_label": "Queue"
+    },
+    {
+        "Question_number": "Question 8",
+        "input_text": "Consider the following operation along with Enqueue and Dequeue operations on queues, where k is a global parameter., , Choices: ['A\\nA', 'B\\nB', 'C\\nC', 'D\\nD'], Answer: A\nA",
+        "topic_label": "Queue"
+    },
+    {
+        "Question_number": "Question 9",
+        "input_text": "Consider the following pseudo-code. Assume that IntQueue is an integer queue. What does the function fun do? , , Choices: ['A\\nPrints numbers from 0 to n-1', 'B\\nPrints numbers from n-1 to 0', 'C\\nPrints first n Fibonacci numbers', 'D\\nPrints first n Fibonacci numbers in reverse order.'], Answer: C\nPrints first n Fibonacci numbers",
+        "topic_label": "Queue"
+    },
+    {
+        "Question_number": "Question 10",
+        "input_text": "Which of the following is NOT a common operation in a queue data structure? , , Choices: ['A\\nEnqueue ', 'B\\nDequeue ', 'C\\nPeek ', 'D\\nShuffle '], Answer: D\nShuffle",
+        "topic_label": "Queue"
+    },
+    {
+        "Question_number": "Question 11",
+        "input_text": "Suppose a stack implementation supports an instruction REVERSE, which reverses the order of elements on the stack, in addition to the PUSH and POP instructions. Which one of the following statements is TRUE with respect to this modified stack?, , Choices: ['A\\nA queue cannot be implemented using this stack.', 'B\\nA queue can be implemented where ENQUEUE takes a single instruction and DEQUEUE takes a sequence of two instructions.', 'C\\nA queue can be implemented where ENQUEUE takes a sequence of three instructions and DEQUEUE takes a single instruction.', 'D\\nA queue can be implemented where both ENQUEUE and DEQUEUE take a single instruction each.'], Answer: C\nA queue can be implemented where ENQUEUE takes a sequence of three instructions and DEQUEUE takes a single instruction.",
+        "topic_label": "Queue"
+    },
+    {
+        "Question_number": "Question 12",
+        "input_text": "A queue is implemented using an array such that ENQUEUE and DEQUEUE operations are performed efficiently. Which one of the following statements is CORRECT (n refers to the number of items in the queue)?, , Choices: ['A\\nBoth operations can be performed in O(1) time', 'B\\nAt most one operation can be performed in O(1) time but the worst case time for the other operation will be Ω(n)', 'C\\nThe worst case time complexity for both operations will be Ω(n)', 'D\\nWorst case time complexity for both operations will be Ω(log n)'], Answer: A\nBoth operations can be performed in O(1) time",
+        "topic_label": "Queue"
+    },
+    {
+        "Question_number": "Question 13",
+        "input_text": "Let Q denote a queue containing sixteen numbers and S be an empty stack. Head(Q) returns the element at the head of the queue Q without removing it from Q. Similarly Top(S) returns the element at the top of S without removing it from S. Consider the algorithm given below., , Choices: ['A\\n16', 'B\\n32', 'C\\n256', 'D\\n64'], Answer: C\n256",
+        "topic_label": "Queue"
+    },
+    {
+        "Question_number": "Question 14",
+        "input_text": "Suppose you are given an implementation of a queue of integers\nConsider the following function: , void f(queue<int> &Q) {\n    int i;\n    if (!Q.empty()) {\n        i = Q.front();\n        Q.pop();\n        f(Q);\n        Q.push(i);\n    }\n}, Choices: ['A\\nLeaves the queue Q unchanged', 'B\\nReverses the order of the elements in the queue Q', 'C\\nDeletes the element at the front of the queue Q and inserts it at the rear keeping the other elements in the same order', 'D\\nEmpties the queue Q'], Answer: B\nReverses the order of the elements in the queue Q",
+        "topic_label": "Queue"
+    },
+    {
+        "Question_number": "Question 15",
+        "input_text": "q[0], , Choices: ['A\\nq[0]', 'B\\nq[1]', 'C\\nq[9]', 'D\\nq[10]'], Answer: A\nq[0]",
+        "topic_label": "Queue"
+    },
+    {
+        "Question_number": "Question 16",
+        "input_text": "Circular queue is also called -----., , Choices: ['A\\nRing Buffer', 'B\\nRectangular Buffer', 'C\\nSquare Buffer', 'D\\nNone'], Answer: A\nRing Buffer",
+        "topic_label": "Queue"
+    },
+    {
+        "Question_number": "Question 18",
+        "input_text": "Which one of the following is an application of Queue Data Structure?, , Choices: ['A\\nWhen a resource is shared among multiple consumers.', 'B\\nWhen data is transferred asynchronously (data not necessarily received at same rate as sent) between two processes', 'C\\nLoad Balancing', 'D\\nAll of the above'], Answer: D\nAll of the above",
+        "topic_label": "Queue"
+    },
+    {
+        "Question_number": "Question 19",
+        "input_text": "Consider the following statements:, , Choices: ['A\\n(ii) is true', 'B\\n(i) and (ii) are true', 'C\\n(iii) is true', 'D\\n(ii) and (iv) are true'], Answer: C\n(iii) is true",
+        "topic_label": "Queue"
+    },
+    {
+        "Question_number": "Question 20",
+        "input_text": "Which of the following option is not correct?, , Choices: ['A\\nIf the queue is implemented with a linked list, keeping track of a front pointer, Only rear pointer s will change during an insertion into an non-empty queue.', 'B\\nQueue data structure can be used to implement least recently used (LRU) page fault algorithm and Quick short algorithm.', 'C\\nQueue data structure can be used to implement Quick short algorithm but not least recently used (LRU) page fault algorithm.', 'D\\nBoth (A) and (C)'], Answer: C\nQueue data structure can be used to implement Quick short algorithm but not least recently used (LRU) page fault algorithm.",
+        "topic_label": "Queue"
+    },
+    {
+        "Question_number": "Question 21",
+        "input_text": "Suppose a circular queue of capacity (n – 1) elements is implemented with an array of n elements. Assume that the insertion and deletion operation are carried out using REAR and FRONT as array index variables, respectively. Initially, REAR = FRONT = 0. The conditions to detect queue full and queue empty are, , Choices: ['A\\nFull: (REAR+1) mod n == FRONT, empty: REAR == FRONT', 'B\\nFull: (REAR+1) mod n == FRONT, empty: (FRONT+1) mod n == REAR', 'C\\nFull: REAR == FRONT, empty: (REAR+1) mod n == FRONT', 'D\\nFull: (FRONT+1) mod n == REAR, empty: REAR == FRONT'], Answer: A\nFull: (REAR+1) mod n == FRONT, empty: REAR == FRONT",
+        "topic_label": "Queue"
+    },
+    {
+        "Question_number": "Question 22",
+        "input_text": "The minimum number of stacks needed to implement a queue is, , Choices: ['A\\n3', 'B\\n1', 'C\\n2', 'D\\n4'], Answer: C\n2",
+        "topic_label": "Queue"
+    },
+    {
+        "Question_number": "Question 23",
+        "input_text": "Which data structure is commonly used to implement the event-driven simulation of complex systems, such as in computer network simulations or traffic simulations?, , Choices: ['A\\nStack', 'B\\nTree', 'C\\nArray', 'D\\nQueue'], Answer: D\nQueue",
+        "topic_label": "Queue"
+    },
+    {
+        "Question_number": "Question 24",
+        "input_text": "The deque which stores elements in strictly increasing order or in strictly decreasing order is called ------., , Choices: ['A\\nPriority  Queue', 'B\\nDouble ended Queue', 'C\\nMonotonic Deque', 'D\\nNone'], Answer: C\nMonotonic Deque",
+        "topic_label": "Queue"
+    },
+    {
+        "Question_number": "Question 25",
+        "input_text": "Consider the below program, and identify what the function is doing., #include <iostream>\n#include <queue>\n\nclass Node {\npublic:\n    int data;\n    Node* left;\n    Node* right;\n    Node(int item) {\n        data = item;\n        left = right = nullptr;\n    }\n};\n\nvoid function(Node* root) {\n    if (root == nullptr)\n        return;\n    std::queue<Node*> q;\n\n    q.push(root);\n\n    while (!q.empty()) {\n        Node* node = q.front();\n        q.pop();\n        std::cout << node->data << \" \";\n\n        if (node->left != nullptr)\n            q.push(node->left);\n\n        if (node->right != nullptr)\n            q.push(node->right);\n    }\n}, Choices: ['A\\nIn order traversal of a tree', 'B\\nNormal traversal of a tree', 'C\\nLevel order traversal of  a tree', 'D\\nNone'], Answer: C\nLevel order traversal of  a tree",
+        "topic_label": "Queue"
+    },
+    {
+        "Question_number": "Question 26",
+        "input_text": "Which of the following is/are advantages of circular Queue?, , Choices: ['A\\nMemory Management', 'B\\nTraffic system', 'C\\nCPU Scheduling', 'D\\nAll of the above'], Answer: D\nAll of the above",
+        "topic_label": "Queue"
+    },
+    {
+        "Question_number": "Question 27",
+        "input_text": "which data structure is used to implement deque?, , Choices: ['A\\nStack', 'B\\nDoubly linked  list', 'C\\ncircular array', 'D\\nBoth B and C'], Answer: D\nBoth B and C",
+        "topic_label": "Queue"
+    },
+    {
+        "Question_number": "Question 28",
+        "input_text": "Which of the following is the type of priority Queue?, , Choices: ['A\\nAscending Order Priority Queue', 'B\\nDescending order Priority Queue ', 'C\\nDeque', 'D\\nBoth A and B.'], Answer: D\nBoth A and B.",
+        "topic_label": "Queue"
+    },
+    {
+        "Question_number": "Question 29",
+        "input_text": "What is wrong in the below code of printing Right View of a binary tree using the Queue data structure?, #include <iostream>\n#include <queue>\nusing namespace std;\n\nclass Node {\npublic:\n    int data;\n    Node* left;\n    Node* right;\n    Node(int val) : data(val), left(nullptr), right(nullptr) {}\n};\n\nvoid printRightView(Node* root) {\n    if (root == nullptr) return;\n\n    queue<Node*> q;\n    q.push(root);\n    while (!q.empty()) {\n        int n = q.size();\n        for (int i = 0; i < n; i++) {\n            Node* x = q.front();\n            q.pop();\n            if (i == n - 1) {\n                cout << x->data << \" \";\n            }\n            if (x->left) {\n                q.push(x->left);\n            }\n            if (x->right) {\n                q.push(x->right);\n            }\n        }\n    }\n}, Choices: ['A\\nWe have not initialized anything in the Queue', 'B\\nQueue will never be empty.', 'C\\nleft and right nodes of the tree are null.', 'D\\nNone'], Answer: A\nWe have not initialized anything in the Queue",
+        "topic_label": "Queue"
+    },
+    {
+        "Question_number": "Question 30",
+        "input_text": "Given a queue with a linked list implementation. the Rear pointer points to the rear node of the queue. and the front node of the queue points to the front node of the queue, Which of the following operations is impossible to do in O(1) time?\n , , Choices: ['A\\nDelete the front item from the list.', 'B\\nDelete the rear from the list.', 'C\\ninsert at the front of the list.', 'D\\nNone'], Answer: B\nDelete the rear from the list.",
+        "topic_label": "Queue"
+    },
+    {
+        "Question_number": "Question 1",
+        "input_text": "What does the following function do for a given Linked List with first node as head?, void fun1(struct node* head)\n{\n  if(head == NULL)\n    return;\n  \n  fun1(head->next);\n  printf(\"%d  \", head->data);\n}, Choices: ['A\\nPrints all nodes of linked lists', 'B\\nPrints all nodes of linked list in reverse order', 'C\\nPrints alternate nodes of Linked List', 'D\\nPrints alternate nodes in reverse order'], Answer: B\nPrints all nodes of linked list in reverse order",
+        "topic_label": "Linked List"
+    },
+    {
+        "Question_number": "Question 2",
+        "input_text": "Which of the following points is/are true about Linked List data structure when it is compared with array?, , Choices: ['A\\nArrays have better cache locality that can make them better in terms of performance.', 'B\\nIt is easy to insert and delete elements in Linked List', 'C\\nRandom access is not allowed in a typical implementation of Linked Lists', 'D\\nThe size of array has to be pre-decided, linked lists can change their size any time.', 'E\\nAll of the above'], Answer: E\nAll of the above",
+        "topic_label": "Linked List"
+    },
+    {
+        "Question_number": "Question 3",
+        "input_text": "Consider the following function that takes reference to head of a Doubly Linked List as parameter. Assume that a node of doubly linked list has previous pointer as prev and next pointer as next. , void fun(struct node **head_ref) {\n    struct node *temp = NULL;\n    struct node *current = *head_ref;\n\n    while (current != NULL) {\n        temp = current->prev;\n        current->prev = current->next;\n        current->next = temp;\n        current = current->prev;\n    }\n\n    if (temp != NULL)\n        *head_ref = temp->prev;\n}, Choices: ['A\\n2 <--> 1 <--> 4 <--> 3 <--> 6 <-->5', 'B\\n5 <--> 4 <--> 3 <--> 2 <--> 1 <-->6.', 'C\\n6 <--> 5 <--> 4 <--> 3 <--> 2 <--> 1.', 'D\\n6 <--> 5 <--> 4 <--> 3 <--> 1 <--> 2'], Answer: C\n6 <--> 5 <--> 4 <--> 3 <--> 2 <--> 1.",
+        "topic_label": "Linked List"
+    },
+    {
+        "Question_number": "Question 4",
+        "input_text": "The following function reverse() is supposed to reverse a singly linked list. There is one line missing at the end of the function. , // Link list node\nstruct node\n{\n    int data;\n    struct node* next;\n};\n\n// head_ref is a double pointer which points to head (or start) pointer \nof linked list\nstatic void reverse(struct node** head_ref)\n{\n    struct node* prev   = NULL;\n    struct node* current = *head_ref;\n    struct node* next;\n    while (current != NULL)\n    {\n        next  = current->next;  \n        current->next = prev;   \n        prev = current;\n        current = next;\n    }\n     // MISSING STATEMENT HERE\n}, Choices: ['A\\nSet the value of head_ref to prev;', 'B\\nSet the value of head_ref to current;', 'C\\nSet the value of head_ref to next;', 'D\\nSet the value of head_ref to NULL;'], Answer: A\nSet the value of head_ref to prev;",
+        "topic_label": "Linked List"
+    },
+    {
+        "Question_number": "Question 5",
+        "input_text": "What is the output of following function in which start is pointing to the first node of the following linked list 1->2->3->4->5->6 ?, #include <iostream>\nusing namespace std;\n\nstruct Node {\n    int data;\n    Node* next;\n    Node() { data = 0; next = nullptr; } \n};\n\nvoid fun(Node* start) {\n    if (start == nullptr)\n        return;\n    cout << start->data << \"  \";\n    \n    if (start->next != nullptr)\n        fun(start->next->next);\n    cout << start->data << \"  \";\n}, Choices: ['A\\n1 4 6 6 4 1', 'B\\n1 3 5 1 3 5', 'C\\n1 2 3 5', 'D\\n1 3 5 5 3 1'], Answer: D\n1 3 5 5 3 1",
+        "topic_label": "Linked List"
+    },
+    {
+        "Question_number": "Question 6",
+        "input_text": "The following C function takes a simply-linked list as input argument. It modifies the list by moving the last element to the front of the list and returns the modified list. Some part of the code is left blank. Choose the correct alternative that contain the correct pseudocode for the blank line. , #include <iostream>\nstruct Node {\n    int value;\n    Node *next;\n};\n\nNode* move_to_front(Node *head) {\n    Node *p, *q;\n    if (head == NULL || head->next == NULL)\n        return head;\n    q = NULL; p = head;\n    while (p->next != NULL) {\n        q = p;\n        p = p->next;\n    }\n    __________________________________\n    return head;\n}, Choices: ['A\\nq = NULL; next of p = head; head = p;', 'B\\nnext of q = NULL; head = p; next of p = head;', 'C\\nhead = p; next of p = q; next of q = NULL;', 'D\\nnext of q = NULL; next of p = head; head = p;'], Answer: D\nnext of q = NULL; next of p = head; head = p;",
+        "topic_label": "Linked List"
+    },
+    {
+        "Question_number": "Question 7",
+        "input_text": "The following  function takes a single-linked list of integers as a parameter and rearranges the elements of the list. The function is called with the list containing the integers 1, 2, 3, 4, 5, 6, 7 in the given order. What will be the contents of the list after the function completes execution? , class Node {\npublic:\n    int value;\n    Node* next;\n};\n\nvoid rearrange(Node* list) {\n    Node* p;\n    Node* q;\n    int temp;\n    if (list == nullptr || list->next == nullptr) {\n        return;\n    }\n    p = list;\n    q = list->next;\n    while (q != nullptr) {\n        temp = p->value;\n        p->value = q->value;\n        q->value = temp;\n        p = q->next;\n        q = (p != nullptr) ? p->next : nullptr;\n    }\n}, Choices: ['A\\n1,2,3,4,5,6,7', 'B\\n2,1,4,3,6,5,7', 'C\\n1,3,2,5,4,7,6', 'D\\n2,3,4,5,6,7,1'], Answer: B\n2,1,4,3,6,5,7",
+        "topic_label": "Linked List"
+    },
+    {
+        "Question_number": "Question 8",
+        "input_text": "Suppose each set is represented as a linked list with elements in arbitrary order. Which of the operations among union, intersection, membership, cardinality will be the slowest? (GATE CS 2004), , Choices: ['A\\nunion ', 'B\\n membership', 'C\\ncardinality', 'D\\n union, intersection'], Answer: D\n union, intersection",
+        "topic_label": "Linked List"
+    },
+    {
+        "Question_number": "Question 9",
+        "input_text": "Consider the function f defined below. , #include <iostream>\n\nstruct item {\n    int data;\n    struct item *next;\n};\n\nint f(struct item *p) {\n    return (\n        (p == NULL) || \n        (p->next == NULL) || \n        ((p->data <= p->next->data) && f(p->next))\n    );\n}, Choices: ['A\\nnot all elements in the list have the same data value.', 'B\\nthe elements in the list are sorted in non-decreasing order of data value', 'C\\nthe elements in the list are sorted in non-increasing order of data value', 'D\\nNone of them'], Answer: B\nthe elements in the list are sorted in non-decreasing order of data value",
+        "topic_label": "Linked List"
+    },
+    {
+        "Question_number": "Question 10",
+        "input_text": "A circularly linked list is used to represent a Queue. A single variable p is used to access the Queue. To which node should p point such that both the operations enQueue and deQueue can be performed in constant time? (GATE 2004) , , Choices: ['A\\nrear node', 'B\\nfront node', 'C\\nnot possible with a single pointer', 'D\\nnode next to front'], Answer: A\nrear node",
+        "topic_label": "Linked List"
+    },
+    {
+        "Question_number": "Question 11",
+        "input_text": "What are the time complexities of finding 8th element from beginning and 8th element from end in a singly linked list? Let n be the number of nodes in linked list, you may assume that n > 8., , Choices: ['A\\nO(1) and O(n)', 'B\\nO(1) and O(1)', 'C\\nO(n) and O(1)', 'D\\nO(n) and O(n)'], Answer: A\nO(1) and O(n)",
+        "topic_label": "Linked List"
+    },
+    {
+        "Question_number": "Question 12",
+        "input_text": "Is it possible to create a doubly linked list using only one pointer with every node., , Choices: ['A\\nNot Possible', 'B\\nYes, possible by storing XOR of addresses of previous and next nodes.', 'C\\nYes, possible by storing XOR of current node and next node', 'D\\nYes, possible by storing XOR of current node and previous node'], Answer: B\nYes, possible by storing XOR of addresses of previous and next nodes.",
+        "topic_label": "Linked List"
+    },
+    {
+        "Question_number": "Question 13",
+        "input_text": "Given pointer to a node X in a singly linked list. Only one pointer is given, pointer to head node is not given, can we delete the node X from given linked list?, , Choices: ['A\\nPossible if X is not last node. Use following two steps (a) Copy the data of next of X to X. (b)Update the pointer of node X to the node after the next node. Delete next of X.', 'B\\nPossible if size of linked list is even.', 'C\\nPossible if size of linked list is odd', 'D\\nPossible if X is not first node. Use following two steps (a) Copy the data of next of X to X. (b) Delete next of X.'], Answer: A\nPossible if X is not last node. Use following two steps (a) Copy the data of next of X to X. (b)Update the pointer of node X to the node after the next node. Delete next of X.",
+        "topic_label": "Linked List"
+    },
+    {
+        "Question_number": "Question 14",
+        "input_text": "Which of the following is an application of XOR-linked lists?, , Choices: ['A\\nImplementing stacks', 'B\\nImplementing queues', 'C\\nMemory-efficient linked list representation', 'D\\nCaching data structures'], Answer: C\nMemory-efficient linked list representation",
+        "topic_label": "Linked List"
+    },
+    {
+        "Question_number": "Question 15",
+        "input_text": "Consider the following function to traverse a linked list. , // C++ version of traverse function\nvoid traverse(Node *head) {\n    while (head != NULL) {\n        printf(\"%d  \", head->data);\n        head = head->next;\n    }\n}, Choices: ['A\\nThe function may crash when the linked list is empty', \"B\\nThe function doesn't print the last node when the linked list is not empty\", 'C\\nThe function is implemented incorrectly because it changes head', 'D\\nNone of the above'], Answer: C\nThe function is implemented incorrectly because it changes head",
+        "topic_label": "Linked List"
+    },
+    {
+        "Question_number": "Question 16",
+        "input_text": "N items are stored in a sorted doubly linked list. For a delete operation, a pointer is provided to the record to be deleted. For a decrease-key operation, a pointer is provided to the record on which the operation is to be performed. An algorithm performs the following operations on the list in this order: Θ(N) delete, O(log N) insert, O(log N) find, and Θ(N) decrease-key What is the time complexity of all these operations put together?, , Choices: ['A\\nO(Log2N)', 'B\\nO(N)', 'C\\nO(N Log N)', 'D\\nΘ(N2 Log N)'], Answer: C\nO(N Log N)",
+        "topic_label": "Linked List"
+    },
+    {
+        "Question_number": "Question 17",
+        "input_text": "What are the application(s) of linked list?, , Choices: ['A\\nImplementation of stacks and queues.', 'B\\nMaintaining a directory of names', 'C\\nNone of the above', 'D\\nBoth a and b'], Answer: D\nBoth a and b",
+        "topic_label": "Linked List"
+    },
+    {
+        "Question_number": "Question 18",
+        "input_text": "The concatenation of two lists is to be performed in O(1) time. Which of the following implementations of a list should be used?, , Choices: ['A\\nsingly linked list', 'B\\ndoubly linked list', 'C\\ncircular doubly linked list', 'D\\narray implementation of lists'], Answer: C\ncircular doubly linked list",
+        "topic_label": "Linked List"
+    },
+    {
+        "Question_number": "Question 19",
+        "input_text": "Consider the following piece of 'C' code fragment that removes duplicates from an ordered list of integers., #include <stdio.h>\n\nNode *remove_duplicates(Node *head, int *j) {\n    Node *t1, *t2;\n    *j = 0;\n    t1 = head;\n    if (t1 != NULL) t2 = t1->next;\n    else return head;\n    *j = 1;\n    if (t2 == NULL)\n        return head;\n    while (t2 != NULL) {\n        if (t1->val != t2->val) { // S1\n            (*j)++; t1->next = t2; t1 = t2; // S2\n        }\n        t2 = t2->next;\n    }\n    t1->next = NULL;\n    return head;\n}, Choices: ['A\\n(a). n-1 times, since comparison is pairwise for n elements.\\n(b). maximum : n-1 for all distinct elements, minimum: 0 for all same elements.\\n(C). j keeps count of distinct nodes in the list.', '(a). n-1 times, since comparison is pairwise for n elements.', '(b). maximum : n-1 for all distinct elements, minimum: 0 for all same elements.', '(C). j keeps count of distinct nodes in the list.', 'B\\n(a). n times, since comparison is pairwise for n elements.\\n(b). maximum : n-1 for all distinct elements, minimum: 0 for all same elements.\\n(C). j keeps count of distinct nodes in the list.', '(a). n times, since comparison is pairwise for n elements.', '(b). maximum : n-1 for all distinct elements, minimum: 0 for all same elements.', '(C). j keeps count of distinct nodes in the list.', 'C\\n(a). n-1 times, since comparison is pairwise for n elements.\\n(b). maximum : n-1 for all distinct elements, minimum: 1 for all same elements.\\n(C). j keeps count of distinct nodes in the list.', '(a). n-1 times, since comparison is pairwise for n elements.', '(b). maximum : n-1 for all distinct elements, minimum: 1 for all same elements.', '(C). j keeps count of distinct nodes in the list.', 'D\\nNone of the above'], Answer: A\n(a). n-1 times, since comparison is pairwise for n elements.\n(b). maximum : n-1 for all distinct elements, minimum: 0 for all same elements.\n(C). j keeps count of distinct nodes in the list.",
+        "topic_label": "Linked List"
+    },
+    {
+        "Question_number": "Question 20",
+        "input_text": "Suppose there are two singly linked lists both of which intersect at some point and become a single linked list. The head or start pointers of both the lists are known, but the intersecting node and lengths of lists are not known. What is worst case time complexity of optimal algorithm to find intersecting node from two intersecting linked lists?, , Choices: ['A\\nΘ(n*m), where m, n are lengths of given lists', 'B\\nΘ(n^2), where m>n and m, n are lengths of given lists', 'C\\nΘ(m+n), where m, n are lengths of given lists', 'D\\nΘ(min(n, m)), where m, n are lengths of given lists'], Answer: C\nΘ(m+n), where m, n are lengths of given lists",
+        "topic_label": "Linked List"
+    },
+    {
+        "Question_number": "Question 22",
+        "input_text": "In a doubly linked list, the number of pointers affected for an insertion operation will be, , Choices: ['A\\n5', 'B\\n0', 'C\\n1', 'D\\nNone of these'], Answer: D\nNone of these",
+        "topic_label": "Linked List"
+    },
+    {
+        "Question_number": "Question 23",
+        "input_text": "Consider an implementation of unsorted single linked list. Suppose it has its representation with a head and a tail pointer (i.e. pointers to the first and last nodes of the linked list). Given the representation, which of the following operation can not be implemented in O(1) time ?, , Choices: ['A\\nInsertion at the front of the linked list.', 'B\\nInsertion at the end of the linked list.', 'C\\nDeletion of the front node of the linked list.', 'D\\nDeletion of the last node of the linked list.'], Answer: D\nDeletion of the last node of the linked list.",
+        "topic_label": "Linked List"
+    },
+    {
+        "Question_number": "Question 24",
+        "input_text": "Consider a single linked list where F and L are pointers to the first and last elements respectively of the linked list. The time for performing which of the given operations depends on the length of the linked list?, , Choices: ['A\\nDelete the first element of the list', 'B\\nInterchange the first two elements of the list', 'C\\nDelete the last element of the list', 'D\\nAdd an element at the end of the list'], Answer: C\nDelete the last element of the list",
+        "topic_label": "Linked List"
+    },
+    {
+        "Question_number": "Question 25",
+        "input_text": "The following steps in a linked list, , Choices: ['A\\npop operation in stack', 'B\\nremoval of a node', 'C\\ninserting a node at beginning ', 'D\\nmodifying an existing node'], Answer: C\ninserting a node at beginning",
+        "topic_label": "Linked List"
+    },
+    {
+        "Question_number": "Question 26",
+        "input_text": "In DNA sequence alignment, which string-matching algorithm is commonly used to identify similarities between two DNA sequences efficiently?, , Choices: ['A\\nRabin-Karp algorithm', 'B\\nKnuth-Morris-Pratt algorithm', 'C\\nZ function', 'D\\nNone of the above'], Answer: D\nNone of the above",
+        "topic_label": "Linked List"
+    },
+    {
+        "Question_number": "Question 27",
+        "input_text": "Which of the following operations is performed more efficiently by doubly linked list than by linear linked list?, , Choices: ['A\\nDeleting a node whose location is given', 'B\\nSearching an unsorted list for a given item', 'C\\nInserting a node after the node with a given location', 'D\\nTraversing the list to process each node'], Answer: A\nDeleting a node whose location is given",
+        "topic_label": "Linked List"
+    },
+    {
+        "Question_number": "Question 28",
+        "input_text": "The time required to search an element in a linked list of length n is, , Choices: ['A\\nO (log n)', 'B\\nO (n)', 'C\\nO (1)', 'D\\nO (n2)'], Answer: B\nO (n)",
+        "topic_label": "Linked List"
+    },
+    {
+        "Question_number": "Question 29",
+        "input_text": "The minimum number of fields with each node of doubly linked list is, , Choices: ['A\\n1', 'B\\n2', 'C\\n3', 'D\\n4'], Answer: C\n3",
+        "topic_label": "Linked List"
+    },
+    {
+        "Question_number": "Question 30",
+        "input_text": "A doubly linked list is declared as, struct Node {\n       int Value;\n       struct Node *Fwd;\n       struct Node *Bwd;\n);, Choices: ['A\\nX->Bwd->Fwd = X->Fwd; X->Fwd->Bwd = X->Bwd ;', 'B\\nX->Bwd.Fwd = X->Fwd ; X.Fwd->Bwd = X->Bwd ;', 'C\\nX.Bwd->Fwd = X.Bwd ; X->Fwd.Bwd = X.Bwd ;', 'D\\nX->Bwd->Fwd = X->Bwd ; X->Fwd->Bwd = X->Fwd;'], Answer: A\nX->Bwd->Fwd = X->Fwd; X->Fwd->Bwd = X->Bwd ;",
+        "topic_label": "Linked List"
+    },
+    {
+        "Question_number": "Question 31",
+        "input_text": "Consider a singly linked list of the form where F is a pointer to the first element in the linked list and L is the pointer to the last element in the list. The time of which of the following operations depends on the length of the list?, , Choices: ['A\\nDelete the last element of the list', 'B\\nDelete the first element of the list', 'C\\nAdd an element after the last element of the list', 'D\\nInterchange the first two elements of the list'], Answer: A\nDelete the last element of the list",
+        "topic_label": "Linked List"
+    },
+    {
+        "Question_number": "Question 32",
+        "input_text": "Which of the following sorting algorithms can be used to sort a random linked list with minimum time complexity?, , Choices: ['A\\nInsertion Sort', 'B\\nQuick Sort', 'C\\nHeap Sort', 'D\\nMerge Sort'], Answer: D\nMerge Sort",
+        "topic_label": "Linked List"
+    },
+    {
+        "Question_number": "Question 33",
+        "input_text": "In the worst case, the number of comparisons needed to search a singly linked list of length n for a given element is, , Choices: ['A\\nlog(2*n)', 'B\\nn/2', 'C\\nlog(2*n) -1', 'D\\nn'], Answer: D\nn",
+        "topic_label": "Linked List"
+    },
+    {
+        "Question_number": "Question 34",
+        "input_text": "Let P be a singly linked list. Let Q be the pointer to an intermediate node x in the list. What is the worst-case time complexity of the best known algorithm to delete the node Q from the list?, , Choices: ['A\\nO(n)', 'B\\nO(log2 n)', 'C\\nO(logn)', 'D\\nO(1)'], Answer: A\nO(n)",
+        "topic_label": "Linked List"
+    },
+    {
+        "Question_number": "Question 35",
+        "input_text": "What is the worst case time complexity of inserting n elements into an empty linked list, if the linked list needs to be maintained in sorted order ?, , Choices: ['A\\nΘ(n)', 'B\\nΘ(n log n)', 'C\\nΘ(n2)', 'D\\nΘ(1)'], Answer: C\nΘ(n2)",
+        "topic_label": "Linked List"
+    },
+    {
+        "Question_number": "Question 36",
+        "input_text": "Consider the following conditions:, , Choices: ['A\\n(a) and (b) only', 'B\\n(a) and (c) only', 'C\\n(b) and (c) only', 'D\\n(a), (b) and (c)'], Answer: D\n(a), (b) and (c)",
+        "topic_label": "Linked List"
+    },
+    {
+        "Question_number": "Question 37",
+        "input_text": "Consider the following statements:, , Choices: ['A\\n(ii) is true', 'B\\n(i) and (ii) are true', 'C\\n(iii) is true', 'D\\n(ii) and (iv) are true'], Answer: C\n(iii) is true",
+        "topic_label": "Linked List"
+    },
+    {
+        "Question_number": "Question 1",
+        "input_text": "Find the functionality of the given code-, void function(int data)\n{\n    int flag = 0;\n    if (head != null) {\n        Node temp = head.getNext();\n        while ((temp != head)\n               && (!(temp.getItem() == data))) {\n            temp = temp.getNext();\n            flag = 1;\n            break;\n        }\n    }\n    if (flag)\n        System.out.println(\"success\");\n    else\n        System.out.println(\"fail\");\n}, Choices: ['A\\nPrint success if a particular element is not found', 'B\\nPrint fail if a particular element is not found', 'C\\nPrint success if a particular element is equal to 1', 'D\\nPrint fail if the list is empty'], Answer: D\nPrint fail if the list is empty",
+        "topic_label": "Linked List"
+    },
+    {
+        "Question_number": "Question 2",
+        "input_text": "What is the time complexity of searching for an element in a circular linked list?, , Choices: ['A\\nO(n)', 'B\\nO(nlogn)', 'C\\nO(1)', 'D\\nO(n2)'], Answer: A\nO(n)",
+        "topic_label": "Linked List"
+    },
+    {
+        "Question_number": "Question 3",
+        "input_text": "Choose the code snippet which inserts a node to the head of the list?, , Choices: ['A\\npublic void insertHead(int data)\\n{\\nNode temp = new Node(data);\\nNode cur = head;\\nwhile(cur.getNext() != head)\\n cur = cur.getNext()\\nif(head == null)\\n{\\n head = temp;\\n head.setNext(head);\\n}\\nelse\\n{\\n temp.setNext(head);\\n head = temp;\\n cur.setNext(temp);\\n}\\nsize++;\\n}\\n ', 'B\\npublic void insertHead(int data)\\n{\\nNode temp = new Node(data);\\nwhile(cur != head)\\n cur = cur.getNext()\\nif(head == null)\\n{\\n head = temp;\\n head.setNext(head);\\n}\\nelse\\n{\\n temp.setNext(head.getNext());\\n cur.setNext(temp);\\n}\\nsize++;\\n}', 'C\\npublic void insertHead(int data)\\n{\\nNode temp = new Node(data);\\nif(head == null)\\n{\\n head = temp;\\n head.setNext(head);\\n}\\nelse\\n{\\n temp.setNext(head.getNext());\\n head = temp;\\n}\\nsize++;\\n}', 'D\\npublic void insertHead(int data)\\n{\\nNode temp = new Node(data);\\nif(head == null)\\n{\\n head = temp;\\n head.setNext(head.getNext());\\n}\\nelse\\n{\\n temp.setNext(head.getNext());\\n head = temp;\\n}\\nsize++;\\n}'], Answer: A\npublic void insertHead(int data)\n{\nNode temp = new Node(data);\nNode cur = head;\nwhile(cur.getNext() != head)\n cur = cur.getNext()\nif(head == null)\n{\n head = temp;\n head.setNext(head);\n}\nelse\n{\n temp.setNext(head);\n head = temp;\n cur.setNext(temp);\n}\nsize++;\n}",
+        "topic_label": "Linked List"
+    },
+    {
+        "Question_number": "Question 4",
+        "input_text": "What is the functionality of the following code? Choose the most appropriate answer., int function()\n{\n    if (head == null)\n        return Integer.MIN_VALUE;\n    int var;\n    Node temp = head;\n    while (temp.getNext() != head)\n        temp = temp.getNext();\n    if (temp == head) {\n        var = head.getItem();\n        head = null;\n        return var;\n    }\n    temp.setNext(head.getNext());\n    var = head.getItem();\n    head = head.getNext();\n    return var;\n}, Choices: ['A\\nReturn data from the end of the list', 'B\\nReturns the data and deletes the node at the end of the list', 'C\\nReturns the data from the beginning of the list', 'D\\nReturns the data and deletes the node from the beginning of the list'], Answer: D\nReturns the data and deletes the node from the beginning of the list",
+        "topic_label": "Linked List"
+    },
+    {
+        "Question_number": "Question 5",
+        "input_text": "Consider a small circular linked list. How to detect the presence of cycles in this list effectively?, , Choices: ['A\\nKeep one node as head and traverse another temp node till the end to check if its ‘next points to head', 'B\\nHave fast and slow pointers with the fast pointer advancing two nodes at a time and slow pointer advancing by one node at a time', 'C\\nCannot determine, you have to pre-define if the list contains cycles', 'D\\nCircular linked list itself represents a cycle. So no new cycles cannot be generated'], Answer: B\nHave fast and slow pointers with the fast pointer advancing two nodes at a time and slow pointer advancing by one node at a time",
+        "topic_label": "Linked List"
+    },
+    {
+        "Question_number": "Question 6",
+        "input_text": "Which of the following application makes use of a circular linked list?, , Choices: ['A\\nUndo Operation', 'B\\nRecursive function calls', 'C\\nAllocating CPU to resources', 'D\\nImplement Hash Tables'], Answer: C\nAllocating CPU to resources",
+        "topic_label": "Linked List"
+    },
+    {
+        "Question_number": "Question 7",
+        "input_text": "In a circular linked list, How many nodes are containing NULL as the address?, , Choices: ['A\\nOnly one node', 'B\\nOnly Two node', 'C\\nEvery Node', 'D\\nNo, any node'], Answer: D\nNo, any node",
+        "topic_label": "Linked List"
+    },
+    {
+        "Question_number": "Question 8",
+        "input_text": "What is the time complexity to insert a node at the beginning of the list?, , Choices: ['A\\nO(LogN)', 'B\\nO(N)', 'C\\nO(1)', 'D\\nNone'], Answer: C\nO(1)",
+        "topic_label": "Linked List"
+    },
+    {
+        "Question_number": "Question 9",
+        "input_text": "Consider the below program, and identify which Operation is performed., int solve(struct Node* head)\n{\n    if (head == NULL)\n        return 1;\n    struct Node* ptr;\n    ptr = head->next;\n    while (ptr != NULL && ptr != head)\n        ptr = ptr->next;\n    return (ptr == head);\n}, Choices: ['A\\nChecking for List is empty of not', 'B\\nChecking for the list is Circular or not', 'C\\ncount the number of elements in the list', 'D\\nNone'], Answer: B\nChecking for the list is Circular or not",
+        "topic_label": "Linked List"
+    },
+    {
+        "Question_number": "Question 10",
+        "input_text": "Which of the following Statement is correct about Circular Linked List?, , Choices: ['A\\nOnly P4', 'B\\nOnly P1', 'C\\nP1 and P2', 'D\\nP1 and P4.'], Answer: D\nP1 and P4.",
+        "topic_label": "Linked List"
+    },
+    {
+        "Question_number": "Question 1",
+        "input_text": "What is the time complexity of Build Heap operation? \n(Build Heap is used to build a max(or min) binary heap from a given array. Build Heap is used in Heap Sort as a first step for sorting.), , Choices: ['A\\nO(nLogn)', 'B\\nO(n^2)', 'C\\nO(n)', 'D\\nO(logn)'], Answer: C\nO(n)",
+        "topic_label": "Heap"
+    },
+    {
+        "Question_number": "Question 3",
+        "input_text": "A 3-ary max heap is like a binary max heap, but instead of 2 children, nodes have 3 children. A 3-ary heap can be represented by an array as follows: The root is stored in the first location, a[0], nodes in the next level, from left to right, is stored from a[1] to a[3]. The nodes from the second level of the tree from left to right are stored from a[4] location onward. An item x can be inserted into a 3-ary heap containing n items by placing x in the location a[n] and pushing it up the tree to satisfy the heap property. Which one of the following is a valid sequence of elements in an array representing 3-ary max heap?, , Choices: ['A\\n1, 3, 5, 6, 8, 9', 'B\\n9, 6, 3, 1, 8, 5', 'C\\n9, 3, 6, 8, 5, 1', 'D\\n9, 5, 6, 8, 3, 1'], Answer: D\n9, 5, 6, 8, 3, 1",
+        "topic_label": "Heap"
+    },
+    {
+        "Question_number": "Question 4",
+        "input_text": "Suppose the elements 7, 2, 10 and 4 are inserted, in that order, into the valid 3- ary max heap found in the above question, Which one of the following is the sequence of items in the array representing the resultant heap?, , Choices: ['A\\n10, 7, 9, 8, 3, 1, 5, 2, 6, 4', 'B\\n10, 9, 8, 7, 6, 5, 4, 3, 2, 1', 'C\\n10, 9, 4, 5, 7, 6, 8, 2, 1, 3', 'D\\n10, 8, 6, 9, 7, 2, 3, 4, 1, 5'], Answer: A\n10, 7, 9, 8, 3, 1, 5, 2, 6, 4",
+        "topic_label": "Heap"
+    },
+    {
+        "Question_number": "Question 5",
+        "input_text": "Consider a binary max-heap implemented using an array. Which among the following arrays represents a binary max-heap? \n(More than one option correct), , Choices: ['25,12,16,8,10,13,14', '25,12,16,13,10,8,14', '25,14,16,13,10,8,12', '25,14,12,13,10,8,16'], Answer: N/A",
+        "topic_label": "Heap"
+    },
+    {
+        "Question_number": "Question 6",
+        "input_text": "A min- Heap is a complete binary tree., , Choices: ['A\\nTrue', 'B\\nFalse'], Answer: A\nTrue",
+        "topic_label": "Heap"
+    },
+    {
+        "Question_number": "Question 7",
+        "input_text": "We have a binary heap on n elements and wish to insert n more elements (not necessarily one after another) into this heap. The total time required for this is (A) theta(logn) (B) theta(n) (C) theta(nlogn) (D) theta(n^2), , Choices: ['A\\nA', 'B\\nB', 'C\\nC', 'D\\nD'], Answer: B\nB",
+        "topic_label": "Heap"
+    },
+    {
+        "Question_number": "Question 8",
+        "input_text": "In a min-heap with n elements with the smallest element at the root, the 7th smallest element can be found in time:, , Choices: ['A\\ntheta(nlogn)', 'B\\ntheta(n)', 'C\\ntheta(logn)', 'D\\ntheta(1)'], Answer: C\ntheta(logn)",
+        "topic_label": "Heap"
+    },
+    {
+        "Question_number": "Question 9",
+        "input_text": "What is the necessary condition for a Tree to be a heap?, , Choices: ['A\\nOnly the tree must be complete.', \"B\\nEvery Root value should be greater or smaller than the children's value only.\", \"C\\nThe tree must be complete and Every Root value should be greater or smaller than the children's value.\", 'D\\nNone'], Answer: C\nThe tree must be complete and Every Root value should be greater or smaller than the children's value.",
+        "topic_label": "Heap"
+    },
+    {
+        "Question_number": "Question 11",
+        "input_text": "Given two max heaps of size n each, what is the minimum possible time complexity to make a one max-heap of size from elements of two max heaps?, , Choices: ['A\\nO(n^2)', 'B\\nO(nLogLogn)', 'C\\nO(n)', 'D\\nO(nLogn)'], Answer: C\nO(n)",
+        "topic_label": "Heap"
+    },
+    {
+        "Question_number": "Question 12",
+        "input_text": "Which of the following Binary Min Heap operation has the highest time complexity?, , Choices: ['A\\nInserting an item under the assumption that the heap has capacity to accommodate one more item', 'B\\nMerging with another heap under the assumption that the heap has capacity to accommodate items of other heap', 'C\\nDeleting an item from heap', 'D\\nDecreasing value of a key'], Answer: B\nMerging with another heap under the assumption that the heap has capacity to accommodate items of other heap",
+        "topic_label": "Heap"
+    },
+    {
+        "Question_number": "Question 13",
+        "input_text": "A priority queue is implemented as a Max-Heap. Initially, it has 5 elements. The level-order traversal of the heap is: 10, 8, 5, 3, 2. Two new elements 1 and 7 are inserted into the heap in that order. The level-order traversal of the heap after the insertion of the elements is:, , Choices: ['A\\n10, 8, 7, 3, 2, 1, 5', 'B\\n10, 8, 7, 2, 3, 1, 5', 'C\\n10, 8, 7, 1, 2, 3, 5', 'D\\n10, 8, 7, 5, 3, 2, 1'], Answer: A\n10, 8, 7, 3, 2, 1, 5",
+        "topic_label": "Heap"
+    },
+    {
+        "Question_number": "Question 14",
+        "input_text": "Consider any array representation of an n element binary heap where the elements are stored from index 1 to index n of the array. For the element stored at index i of the array (i <= n), the index of the parent is, , Choices: ['A\\ni - 1', 'B\\nfloor(i/2)', 'C\\nceiling(i/2)', 'D\\n(i+1)/2'], Answer: B\nfloor(i/2)",
+        "topic_label": "Heap"
+    },
+    {
+        "Question_number": "Question 15",
+        "input_text": "Consider a max heap, represented by the array: 40, 30, 20, 10, 15, 16, 17, 8, 4. Now consider that a value 35 is inserted into this heap. After insertion, the new heap is, , Choices: ['A\\n40, 30, 20, 10, 15, 16, 17, 8, 4, 35', 'B\\n40, 35, 20, 10, 30, 16, 17, 8, 4, 15', 'C\\n40, 30, 20, 10, 35, 16, 17, 8, 4, 15', 'D\\n40, 35, 20, 10, 15, 16, 17, 8, 4, 30'], Answer: B\n40, 35, 20, 10, 30, 16, 17, 8, 4, 15",
+        "topic_label": "Heap"
+    },
+    {
+        "Question_number": "Question 16",
+        "input_text": "Consider the following array of elements. 〈89, 19, 50, 17, 12, 15, 2, 5, 7, 11, 6, 9, 100〉. The minimum number of interchanges needed to convert it into a max-heap is, , Choices: ['A\\n4', 'B\\n5', 'C\\n2', 'D\\n3'], Answer: D\n3",
+        "topic_label": "Heap"
+    },
+    {
+        "Question_number": "Question 17",
+        "input_text": "An operator delete(i) for a binary heap data structure is to be designed to delete the item in the i-th node. Assume that the heap is implemented in an array and i refers to the i-th index of the array. If the heap tree has depth d (number of edges on the path from the root to the farthest leaf), then what is the time complexity to re-fix the heap efficiently after the removal of the element?, , Choices: ['A\\nO(1)', 'B\\nO(d) but not O(1)', 'C\\nO(2d) but not O(d)', 'D\\nO(d2d) but not O(2d)'], Answer: B\nO(d) but not O(1)",
+        "topic_label": "Heap"
+    },
+    {
+        "Question_number": "Question 18",
+        "input_text": "A complete binary min-heap is made by including each integer in [1, 1023] exactly once. The depth of a node in the heap is the length of the path from the root of the heap to that node. Thus, the root is at depth 0. The maximum depth at which integer 9 can appear is _____________, , Choices: ['A\\n6', 'B\\n7', 'C\\n8', 'D\\n9'], Answer: C\n8",
+        "topic_label": "Heap"
+    },
+    {
+        "Question_number": "Question 19",
+        "input_text": "Which of the following sequences of array elements forms a heap?, , Choices: ['A\\n{23, 17, 14, 6, 13, 10, 1, 12, 7, 5}', 'B\\n{23, 17, 14, 6, 13, 10, 1, 5, 7, 12}', 'C\\n{23, 17, 14, 7, 13, 10, 1, 5, 6, 12}', 'D\\n{23, 17, 14, 7, 13, 10, 1, 12, 5, 7}'], Answer: C\n{23, 17, 14, 7, 13, 10, 1, 5, 6, 12}",
+        "topic_label": "Heap"
+    },
+    {
+        "Question_number": "Question 20",
+        "input_text": "The minimum number of interchanges needed to convert the array 89, 19, 40, 17, 12, 10, 2, 5, 7, 11, 6, 9, 70 into a heap with the maximum element at the root is, , Choices: ['A\\n0', 'B\\n1', 'C\\n2', 'D\\n3'], Answer: C\n2",
+        "topic_label": "Heap"
+    },
+    {
+        "Question_number": "Question 21",
+        "input_text": "Which of the following is a valid heap ? , , Choices: ['A\\nA', 'B\\nB', 'C\\nC', 'D\\nD'], Answer: B\nB",
+        "topic_label": "Heap"
+    },
+    {
+        "Question_number": "Question 23",
+        "input_text": "The number of nodes of height h in any n - element heap is __________., , Choices: ['A\\nh', 'B\\n2h', 'C\\nceil(n/2h)/', 'D\\nceil(n/2h+1)'], Answer: D\nceil(n/2h+1)",
+        "topic_label": "Heap"
+    },
+    {
+        "Question_number": "Question 25",
+        "input_text": "Consider the array representation of a binary min-heap containing 1023 elements. The minimum number of comparisons required to find the maximum in the heap is _________ . , , Choices: ['A\\n510', 'B\\n511', 'C\\n512', 'D\\n255'], Answer: B\n511",
+        "topic_label": "Heap"
+    },
+    {
+        "Question_number": "Question 26",
+        "input_text": "Let H be a binary min-heap consisting of n elements implemented as an array. What is the worst case time complexity of an optimal algorithm to find the maximum element in H?, , Choices: ['A\\nΘ(1)', 'B\\nΘ(logn)', 'C\\nΘ(n)', 'D\\nΘ(nlogn)'], Answer: C\nΘ(n)",
+        "topic_label": "Heap"
+    },
+    {
+        "Question_number": "Question 27",
+        "input_text": "Suppose we are sorting an array of eight integers using heapsort, and we have just finished some heapify (either maxheapify or minheapify) operations. The array now looks like this: 16 14 15 10 12 27 28 How many heapify operations have been performed on root of heap?, , Choices: ['A\\n1', 'B\\n2', 'C\\n3 or 4', 'D\\n5 or 6'], Answer: B\n2",
+        "topic_label": "Heap"
+    },
+    {
+        "Question_number": "Question 28",
+        "input_text": "Which languages necessarily need heap allocation in the run time environment?, , Choices: ['A\\nThose that support recursion', 'B\\nThose that use dynamic scoping', 'C\\nThose that use global variables', 'D\\nThose that allow dynamic data structures'], Answer: D\nThose that allow dynamic data structures",
+        "topic_label": "Heap"
+    },
+    {
+        "Question_number": "Question 29",
+        "input_text": "What are the applications of the Heap data structure?, , Choices: ['A\\nMedical Applications', 'B\\nFile Compression', 'C\\nStock market', 'D\\nAll of these'], Answer: D\nAll of these",
+        "topic_label": "Heap"
+    },
+    {
+        "Question_number": "Question 30",
+        "input_text": "How much time a heap will take to Find Min/Max value?, , Choices: ['A\\nO(logN)', 'B\\nO(N)', 'C\\nO(1)', 'D\\nNone'], Answer: C\nO(1)",
+        "topic_label": "Heap"
     }
 ]
