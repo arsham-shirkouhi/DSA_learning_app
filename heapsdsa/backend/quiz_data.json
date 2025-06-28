@@ -793,5 +793,100 @@
         "Question_number": "Question 30",
         "input_text": "How much time a heap will take to Find Min/Max value?, , Choices: ['A\\nO(logN)', 'B\\nO(N)', 'C\\nO(1)', 'D\\nNone'], Answer: C\nO(1)",
         "topic_label": "Heap"
+    },
+    {
+        "Question_number": "Question 2",
+        "input_text": "Which of the following hash functions is most likely to cause clustering in a hash table? Here k is the input key value and m is hash table size. You may assume that all four hash functions generate valid indexes in the hash table., , Choices: ['A\\nh(k) = k % m', 'B\\nh(k) = floor(m * (k mod 1))', 'C\\nh(k) = k', 'D\\nh(k) = ((k / m) + k * m) + k % m'], Answer: A\nh(k) = k % m",
+        "topic_label": "Hashing"
+    },
+    {
+        "Question_number": "Question 3",
+        "input_text": "Consider a hash table with 100 slots. Collisions are resolved using chaining. Assuming simple uniform hashing, what is the probability that the first 3 slots are unfilled after the first 3 insertions?, , Choices: ['A\\n(97 × 97 × 97)/1003', 'B\\n(99 × 98 × 97)/1003', 'C\\n(97 × 96 × 95)/1003', 'D\\n(97 × 96 × 95)/(3! × 1003)'], Answer: A\n(97 × 97 × 97)/1003",
+        "topic_label": "Hashing"
+    },
+    {
+        "Question_number": "Question 4",
+        "input_text": "Which one of the following hash functions on integers will distribute keys most uniformly over 10 buckets numbered 0 to 9 for i ranging from 0 to 2020?\n , , Choices: ['A\\nh(i) = (12 ∗ i) mod 10\\n ', 'B\\nh(i) = (11 ∗ i2) mod 10\\n ', 'C\\nh(i) =i3 mod 10\\n ', 'D\\nh(i) =i2 mod 10 \\n '], Answer: C\nh(i) =i3 mod 10",
+        "topic_label": "Hashing"
+    },
+    {
+        "Question_number": "Question 5",
+        "input_text": "Which of the following statement(s) is TRUE?, , Choices: ['A\\nI only', 'B\\nII and III only', 'C\\nI and III only', 'D\\nII only'], Answer: C\nI and III only",
+        "topic_label": "Hashing"
+    },
+    {
+        "Question_number": "Question 6",
+        "input_text": "Consider a hash function that distributes keys uniformly. The hash table size is 20. After hashing of how many keys will the probability that any new key hashed collides with an existing one exceed 0.5., , Choices: ['A\\n5', 'B\\n6', 'C\\n7', 'D\\n10'], Answer: D\n10",
+        "topic_label": "Hashing"
+    },
+    {
+        "Question_number": "Question 7",
+        "input_text": "What is the probability of a collision when hashing n keys into a hash table of size m, assuming that the hash function produces a uniform random distribution?, , Choices: ['A\\nO(1/n)', 'B\\nO(n/m)', 'C\\nO(logn)', 'D\\nO(m/n)'], Answer: B\nO(n/m)",
+        "topic_label": "Hashing"
+    },
+    {
+        "Question_number": "Question 8",
+        "input_text": "Insert the characters of the string K R P C S N Y T J M into a hash table of size 10. Use the hash function, , Choices: ['A\\nY', 'B\\nC', 'C\\nM', 'D\\nP'], Answer: C\nM",
+        "topic_label": "Hashing"
+    },
+    {
+        "Question_number": "Question 9",
+        "input_text": "What is the space used by programs when we use Hashmap in our program?, , Choices: ['A\\nO(1)', 'B\\nO(LogN)', 'C\\nO(N)', 'D\\nNone'], Answer: C\nO(N)",
+        "topic_label": "Hashing"
+    },
+    {
+        "Question_number": "Question 10",
+        "input_text": "Which searching technique takes O(1) time complexity for searching the data?, , Choices: ['A\\nBinary Search', 'B\\nLinear Search', 'C\\nAVL Tree Search', 'D\\nHashing'], Answer: D\nHashing",
+        "topic_label": "Hashing"
+    },
+    {
+        "Question_number": "Question 12",
+        "input_text": "Consider a 13 element hash table for which f(key)=key mod 13 is used with integer keys. Assuming linear probing is used for collision resolution, at which location would the key 103 be inserted, if the keys 661, 182, 24 and 103 are inserted in that order?, , Choices: ['A\\n0', 'B\\n1', 'C\\n11', 'D\\n12'], Answer: B\n1",
+        "topic_label": "Hashing"
+    },
+    {
+        "Question_number": "Question 17",
+        "input_text": "Consider a double hashing scheme in which the primary hash function is h1(k) = k mod 23, and the secondary hash function is h2(k) = 1+(k mod 19). Assume that the table size is 23. Then the address returned by probe 1 in the probe sequence (assume that the probe sequence begins at probe 0) for key value k = 90 is ________ . , , Choices: ['A\\n13', 'B\\n15', 'C\\n21', 'D\\n23'], Answer: A\n13",
+        "topic_label": "Hashing"
+    },
+    {
+        "Question_number": "Question 20",
+        "input_text": "An advantage of chained hash table (external hashing) over the open addressing scheme is, , Choices: ['A\\nWorst case complexity of search operations is less', 'B\\nSpace used is less', 'C\\nDeletion is easier', 'D\\nNone of the above'], Answer: C\nDeletion is easier",
+        "topic_label": "Hashing"
+    },
+    {
+        "Question_number": "Question 21",
+        "input_text": "Given a hash table T with 25 slots that stores 2000 elements, the load factor α for T is __________, , Choices: ['A\\n80', 'B\\n0.0125', 'C\\n8000', 'D\\n1.25'], Answer: A\n80",
+        "topic_label": "Hashing"
+    },
+    {
+        "Question_number": "Question 25",
+        "input_text": "Suppose we are given n keys, m hash table slots, and two simple uniform hash functions h1 and h2. Further, suppose our hashing scheme uses h1 for the odd keys and h2 for the even keys. What is the expected number of keys in a slot? , , Choices: ['A\\n2m\\nn', 'B\\nm\\nn', 'C\\nn\\nm', 'D\\nm\\n2n'], Answer: B\nm\nn",
+        "topic_label": "Hashing"
+    },
+    {
+        "Question_number": "Question 26",
+        "input_text": "Output of given program is,, def findSymPairs(arr, row):\n    hM = dict()\n    for i in range(row):\n        first = arr[i][0]\n        sec = arr[i][1]\n        if (sec in hM.keys() and hM[sec] == first):\n            print(\"(\", sec,\",\", first, \")\")\n        else:\n            hM[first] = sec\n        \nif __name__ == '__main__':\n    arr = [[0 for i in range(2)]\n      for i in range(5)]\n    arr[0][0], arr[0][1] = 11, 20\n    arr[1][0], arr[1][1] = 30, 40\n    arr[2][0], arr[2][1] = 5, 10\n    arr[3][0], arr[3][1] = 40, 30\n    arr[4][0], arr[4][1] = 10, 5\n    findSymPairs(arr, 5), Choices: ['A\\n(30, 40)\\n(5, 10)', 'B\\n(30, 40)\\n(5, 5)', 'C\\n(30, 4)\\n(5, 1)', 'D\\n(3, 4)\\n(5, 1)'], Answer: A\n(30, 40)\n(5, 10)",
+        "topic_label": "Hashing"
+    },
+    {
+        "Question_number": "Question 27",
+        "input_text": "Which of the following are components of Hashing?, , Choices: ['A\\nKey', 'B\\nHash Function', 'C\\nHash Table', 'D\\nAll of the above'], Answer: D\nAll of the above",
+        "topic_label": "Hashing"
+    },
+    {
+        "Question_number": "Question 28",
+        "input_text": "Which is a simple form of hashing where the data is directly mapped to an index in a hash table., , Choices: ['A\\nCollision', 'B\\nIndex Mapping', 'C\\nFunctional Mapping', 'D\\nHash function'], Answer: B\nIndex Mapping",
+        "topic_label": "Hashing"
+    },
+    {
+        "Question_number": "Question 29",
+        "input_text": "What are the applications of linear probing include:, , Choices: ['A\\nDatabases', 'B\\nCaching', 'C\\nCompiler Design', 'D\\nAll of the above'], Answer: D\nAll of the above",
+        "topic_label": "Hashing"
+    },
+    {
+        "Question_number": "Question 30",
+        "input_text": "What are the methods to handle  collision: , , Choices: ['A\\nSeparate Chaining ', 'B\\nOpen Chaining ', 'C\\nBoth of the above', 'D\\nNone of the above'], Answer: C\nBoth of the above",
+        "topic_label": "Hashing"
     }
 ]

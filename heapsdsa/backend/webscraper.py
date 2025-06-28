@@ -23,7 +23,7 @@ options.add_experimental_option('excludeSwitches', ['enable-logging'])
 driver = webdriver.Edge(service=EdgeService(EdgeChromiumDriverManager().install()), options=options)
 
 # Go to the quiz page
-url = "https://www.geeksforgeeks.org/quizzes/top-mcqs-on-hash-data-strcuture-with-answers/"
+url = "https://www.geeksforgeeks.org/quizzes/top-mcqs-on-tree-traversal-with-interview-question-and-answers/"
 driver.get(url)
 
 # Wait for content to load
@@ -118,7 +118,7 @@ for card in question_blocks:
             quiz_data.append({
                 "Question_number": q_number,
                 "input_text": f"{q_title}, {q_code}, Choices: {q_choices}, Answer: {q_answer}",
-                "topic_label": "Hashing"
+                "topic_label": "Tree"
             })
 
         except Exception as e:
