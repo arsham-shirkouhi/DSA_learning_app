@@ -2,7 +2,7 @@ import { AppColors } from '@/constants/AppColors';
 import { useRouter } from 'expo-router';
 import { signOut } from 'firebase/auth';
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { auth } from '../firebase';
 
 export default function ProfileScreen() {
@@ -22,15 +22,17 @@ export default function ProfileScreen() {
     };
 
     return (
-        <View style={styles.container}>
-            <View style={styles.card}>
-                <Text style={styles.title}>Profile</Text>
+        <SafeAreaView style={{ flex: 1, backgroundColor: AppColors.background }}>
+            <View style={styles.container}>
+                <View style={styles.card}>
+                    <Text style={styles.title}>Profile</Text>
 
-                <TouchableOpacity style={styles.logoutButton} onPress={handleLogout}>
-                    <Text style={styles.logoutText}>Logout</Text>
-                </TouchableOpacity>
+                    <TouchableOpacity style={styles.logoutButton} onPress={handleLogout}>
+                        <Text style={styles.logoutText}>Logout</Text>
+                    </TouchableOpacity>
+                </View>
             </View>
-        </View>
+        </SafeAreaView>
     );
 }
 

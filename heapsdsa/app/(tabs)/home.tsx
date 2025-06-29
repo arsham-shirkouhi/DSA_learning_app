@@ -1,14 +1,13 @@
-
+import { TopBar } from '@/components/ui/TopBar';
 import { AppColors } from '@/constants/AppColors';
 import React, { useRef } from 'react';
 import { Dimensions, FlatList, StyleSheet, View } from 'react-native';
 import CardItem from '../components/CardItem';
 
-
 const { height: SCREEN_HEIGHT } = Dimensions.get('window');
 
-const ITEM_HEIGHT = 370;
-const ITEM_SPACING = 40;
+const ITEM_HEIGHT = 5;
+const ITEM_SPACING = 0;
 
 const SNAP_INTERVAL = ITEM_HEIGHT + ITEM_SPACING;
 
@@ -19,24 +18,17 @@ const DATA = [
     { id: '4', title: 'Stacks', color: '#8844FF' },
     { id: '5', title: 'Queues', color: '#22CCAA' },
     { id: '6', title: 'Binary Trees', color: '#22CCAA' },
-
     { id: '7', title: 'Binary Search Trees', color: '#22CCAA' },
-
     { id: '8', title: 'Graphs', color: '#22CCAA' },
-
     { id: '9', title: 'Heaps', color: '#22CCAA' },
-
     { id: '10', title: 'Tries', color: '#22CCAA' },
-
 ];
 
 export default function SnapPage() {
-
     const flatListRef = useRef<FlatList>(null);
 
     const renderCard = ({ item }: { item: any }) => (
         <View style={{
-            height: ITEM_HEIGHT,
             justifyContent: 'center',
             alignItems: 'center',
             marginVertical: ITEM_SPACING / 2
@@ -49,6 +41,7 @@ export default function SnapPage() {
 
     return (
         <View style={styles.container}>
+            <TopBar />
             <FlatList
                 ref={flatListRef}
                 data={DATA}
@@ -63,8 +56,8 @@ export default function SnapPage() {
                 bounces={false}
                 scrollEventThrottle={16}
                 contentContainerStyle={{
-                    paddingTop: (SCREEN_HEIGHT - ITEM_HEIGHT) / 2,
-                    paddingBottom: (SCREEN_HEIGHT - ITEM_HEIGHT) / 2 + ITEM_SPACING / 2,
+                    paddingTop: 0,
+                    paddingBottom: ITEM_SPACING / 2,
                 }}
             />
 
@@ -73,13 +66,7 @@ export default function SnapPage() {
                 style={[styles.gradientImage, { top: 0 }]}
             />
 
-            <View pointerEvents="none" style={[styles.gradientImage, { bottom: 0 }]}>
-                <Image
-                    source={require('@/assets/images/gradient.png')}
-                    style={{ width: '100%', height: 150, transform: [{ scaleY: -1 }] }}
-                    resizeMode="cover"
-                />
-            </View> */}
+            */}
 
         </View>
     );

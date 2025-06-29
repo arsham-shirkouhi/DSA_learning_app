@@ -1,10 +1,46 @@
 import { AppColors } from '@/constants/AppColors';
 import { onAuthStateChanged } from 'firebase/auth';
 import { doc, getDoc } from 'firebase/firestore';
-import React, { useEffect, useState } from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import React, { useEffect, useRef, useState } from 'react';
+import { Animated, Image, Platform, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { auth, db } from '../../app/firebase';
+
+// GlowingIcon component for animated glow effect
+function GlowingIcon({ source, color, style }: { source: any; color: string; style?: any }) {
+    const glowAnim = useRef(new Animated.Value(0)).current;
+
+    useEffect(() => {
+        Animated.loop(
+            Animated.sequence([
+                Animated.timing(glowAnim, { toValue: 1, duration: 1000, useNativeDriver: false }),
+                Animated.timing(glowAnim, { toValue: 0, duration: 1000, useNativeDriver: false }),
+            ])
+        ).start();
+    }, [glowAnim]);
+
+    const animatedStyle = {
+        shadowColor: color,
+        shadowOpacity: glowAnim.interpolate({ inputRange: [0, 1], outputRange: [0.4, 1] }),
+        shadowRadius: glowAnim.interpolate({ inputRange: [0, 1], outputRange: [6, 16] }),
+        shadowOffset: { width: 0, height: 0 },
+        ...(
+            Platform.OS === 'android'
+                ? {
+                    backgroundColor: color,
+                    opacity: glowAnim.interpolate({ inputRange: [0, 1], outputRange: [0.2, 0.5] }),
+                    borderRadius: 20,
+                }
+                : {}
+        ),
+    };
+
+    return (
+        <Animated.View style={[animatedStyle, { justifyContent: 'center', alignItems: 'center' }]}>
+            <Image source={source} style={style} />
+        </Animated.View>
+    );
+}
 
 export function TopBar() {
     const insets = useSafeAreaInsets();
@@ -40,22 +76,29 @@ export function TopBar() {
             <View style={styles.badgeRow}>
                 {/* First one: just text */}
 
-                <View style={styles.badge}>
-                    <Text style={[styles.badgeLabel, { color: AppColors.textPrimary, paddingLeft: 10 }]}>Java</Text>
+                <View style={[styles.badge, { backgroundColor: 'rgba(26, 15, 42, 0.5)', borderWidth: 2, borderColor: '#8A4DB8' }]}>
+                    <GlowingIcon
+                        source={require('@/assets/icons/coding_icon.png')}
+                        color={'#C06EFF'}
+                        style={[styles.badgeIcon, { tintColor: '#C06EFF' }]}
+                    />
+                    <Text style={[styles.badgeLabel, { color: '#C06EFF', paddingLeft: 0, marginLeft: -5, }]}>Java</Text>
                 </View>
 
                 {/* Second one: icon + text */}
-                <View style={styles.badge}>
-                    <Image
+                <View style={[styles.badge, { backgroundColor: 'rgba(42, 21, 16, 0.5)', borderWidth: 2, borderColor: '#CC4C3A' }]}>
+                    <GlowingIcon
                         source={require('@/assets/icons/streak_icon.png')}
+                        color={'#FF5F4A'}
                         style={[styles.badgeIcon, { tintColor: '#FF5F4A' }]}
                     />
                     <Text style={[styles.badgeLabel, { color: '#FF5F4A' }]}>{userData.streaks}</Text>
                 </View>
 
-                <View style={styles.badge}>
-                    <Image
+                <View style={[styles.badge, { backgroundColor: 'rgba(15, 26, 42, 0.5)', borderWidth: 2, borderColor: '#2678CC' }]}>
+                    <GlowingIcon
                         source={require('@/assets/icons/points_icon.png')}
+                        color={'#339AFF'}
                         style={[styles.badgeIcon, { tintColor: '#339AFF' }]}
                     />
                     <Text style={[styles.badgeLabel, { color: '#339AFF', fontSize: 16 }]}>
@@ -64,9 +107,10 @@ export function TopBar() {
 
                 </View>
 
-                <View style={styles.badge}>
-                    <Image
+                <View style={[styles.badge, { backgroundColor: 'rgba(26, 42, 15, 0.5)', borderWidth: 2, borderColor: '#9ECC31' }]}>
+                    <GlowingIcon
                         source={require('@/assets/icons/level_icon.png')}
+                        color={'#C5FF3D'}
                         style={[styles.badgeIcon, { tintColor: '#C5FF3D' }]}
                     />
                     <Text style={[styles.badgeLabel, { color: '#C5FF3D' }]}>{userData.level}</Text>
@@ -98,24 +142,25 @@ const styles = StyleSheet.create({
         marginBottom: 0,  // 👈 here you control your bottom spacing
         marginLeft: 15,
         marginRight: 15,
+
         // justifyContent: 'center',
     },
     badge: {
         flexDirection: 'row',
         alignItems: 'center',
-        borderWidth: 2,
+        // borderWidth: 2,
         borderColor: AppColors.borderColor,
-        borderRadius: 12,
-        paddingHorizontal: 16,
+        borderRadius: 10,
+        paddingHorizontal: 6,
         // paddingVertical: 20,
-        marginHorizontal: 8,
-        width: 95,
-        height: 45,
+        marginHorizontal: 12,
+        width: 85,
+        height: 40,
     },
     badgeIcon: {
         width: 28,
         height: 28,
-        marginRight: 6,
+        marginRight: 8,
     },
     badgeLabel: {
         width: 100,

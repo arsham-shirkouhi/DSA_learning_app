@@ -1,28 +1,30 @@
 import { AppColors } from '@/constants/AppColors';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
 
 export default function LeaderBoardScreen() {
     return (
-        <View style={styles.container}>
-            <View style={styles.card}>
-                <Text style={styles.title}>Leaderboard</Text>
-                <Text style={styles.subtitle}>Coming Soon</Text>
+        <SafeAreaView style={{ flex: 1, backgroundColor: AppColors.background }}>
+            <View style={styles.container}>
+                <View style={styles.card}>
+                    <Text style={styles.title}>Leaderboard</Text>
+                    <Text style={styles.subtitle}>Coming Soon</Text>
 
-                <View style={styles.features}>
-                    <Text style={styles.featureTitle}>What's coming:</Text>
-                    <Text style={styles.feature}>• Global rankings</Text>
-                    <Text style={styles.feature}>• Weekly competitions</Text>
-                    <Text style={styles.feature}>• Achievement badges</Text>
-                    <Text style={styles.feature}>• Performance analytics</Text>
-                    <Text style={styles.feature}>• Friend challenges</Text>
+                    <View style={styles.features}>
+                        <Text style={styles.featureTitle}>What's coming:</Text>
+                        <Text style={styles.feature}>• Global rankings</Text>
+                        <Text style={styles.feature}>• Weekly competitions</Text>
+                        <Text style={styles.feature}>• Achievement badges</Text>
+                        <Text style={styles.feature}>• Performance analytics</Text>
+                        <Text style={styles.feature}>• Friend challenges</Text>
+                    </View>
+
+                    <Text style={styles.note}>
+                        Compete with other learners and track your progress.
+                    </Text>
                 </View>
-
-                <Text style={styles.note}>
-                    Compete with other learners and track your progress.
-                </Text>
             </View>
-        </View>
+        </SafeAreaView>
     );
 }
 
