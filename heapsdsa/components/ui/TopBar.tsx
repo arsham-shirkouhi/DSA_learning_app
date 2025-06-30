@@ -2,8 +2,9 @@ import { AppColors } from '@/constants/AppColors';
 import { onAuthStateChanged } from 'firebase/auth';
 import { doc, getDoc } from 'firebase/firestore';
 import React, { useEffect, useRef, useState } from 'react';
-import { Animated, Image, Platform, StyleSheet, Text, View } from 'react-native';
+import { Animated, Image, Platform, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { GlobalText } from '../../app/components/GlobalText';
 import { auth, db } from '../../app/firebase';
 
 // GlowingIcon component for animated glow effect
@@ -82,7 +83,7 @@ export function TopBar() {
                         color={'#C06EFF'}
                         style={[styles.badgeIcon, { tintColor: '#C06EFF' }]}
                     />
-                    <Text style={[styles.badgeLabel, { color: '#C06EFF', paddingLeft: 0, marginLeft: -5, }]}>Java</Text>
+                    <GlobalText variant='bold' style={[styles.badgeLabel, { color: '#C06EFF', paddingLeft: 0, marginLeft: -5, }]}>Java</GlobalText>
                 </View>
 
                 {/* Second one: icon + text */}
@@ -92,7 +93,7 @@ export function TopBar() {
                         color={'#FF5F4A'}
                         style={[styles.badgeIcon, { tintColor: '#FF5F4A' }]}
                     />
-                    <Text style={[styles.badgeLabel, { color: '#FF5F4A' }]}>{userData.streaks}</Text>
+                    <GlobalText variant='bold' style={[styles.badgeLabel, { color: '#FF5F4A' }]}>{userData.streaks}</GlobalText>
                 </View>
 
                 <View style={[styles.badge, { backgroundColor: 'rgba(15, 26, 42, 0.5)', borderWidth: 2, borderColor: '#2678CC' }]}>
@@ -101,9 +102,9 @@ export function TopBar() {
                         color={'#339AFF'}
                         style={[styles.badgeIcon, { tintColor: '#339AFF' }]}
                     />
-                    <Text style={[styles.badgeLabel, { color: '#339AFF', fontSize: 16 }]}>
+                    <GlobalText variant='bold' style={[styles.badgeLabel, { color: '#339AFF', fontSize: 16 }]}>
                         {userData.points >= 1000 ? `${Math.round(userData.points / 1000)}k` : userData.points}
-                    </Text>
+                    </GlobalText>
 
                 </View>
 
@@ -113,7 +114,7 @@ export function TopBar() {
                         color={'#C5FF3D'}
                         style={[styles.badgeIcon, { tintColor: '#C5FF3D' }]}
                     />
-                    <Text style={[styles.badgeLabel, { color: '#C5FF3D' }]}>{userData.level}</Text>
+                    <GlobalText variant='bold' style={[styles.badgeLabel, { color: '#C5FF3D' }]}>{userData.level}</GlobalText>
                 </View>
             </View>
         </View>

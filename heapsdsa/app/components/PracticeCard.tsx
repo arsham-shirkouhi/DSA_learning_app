@@ -1,6 +1,7 @@
 import { AppColors } from '@/constants/AppColors';
 import React from 'react';
-import { Dimensions, Pressable, StyleSheet, Text, View } from 'react-native';
+import { Dimensions, Pressable, StyleSheet, View } from 'react-native';
+import { GlobalText } from './GlobalText';
 import GlowingIcon from './GlowingIcon';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
@@ -27,8 +28,8 @@ export default function PracticeCard({ title, subtitle, points, icon, iconColor,
             ]}
         >
             <View style={styles.leftCol}>
-                <Text style={styles.title}>{title}</Text>
-                <Text style={styles.subtitle}>{subtitle}</Text>
+                <GlobalText style={styles.title}>{title}</GlobalText>
+                <GlobalText style={styles.subtitle}>{subtitle}</GlobalText>
                 <View style={styles.pointsRow}>
                     <GlowingIcon
                         source={require('@/assets/icons/points_icon.png')}
@@ -36,7 +37,7 @@ export default function PracticeCard({ title, subtitle, points, icon, iconColor,
                         style={styles.pointsIcon}
                         tintColor="#339AFF"
                     />
-                    <Text style={styles.pointsText}>{points}</Text>
+                    <GlobalText style={styles.pointsText}>{points}</GlobalText>
                 </View>
             </View>
             <View style={styles.rightCol}>
@@ -100,8 +101,8 @@ const styles = StyleSheet.create({
         tintColor: '#339AFF',
     },
     pointsText: {
-        color: AppColors.textPrimary,
-        fontWeight: 'bold',
+        color: AppColors.textSecondary,
+        // fontWeight: 'bold',
         fontSize: 18,
     },
     icon: {

@@ -37,6 +37,16 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "fonts": [
+      {
+        "asset": "./assets/fonts/JetBrainsMono-Regular.ttf",
+        "family": "JetBrainsMono"
+      },
+      {
+        "asset": "./assets/fonts/JetBrainsMono-Bold.ttf",
+        "family": "JetBrainsMono-Bold"
+      }
+    ]
   }
 }

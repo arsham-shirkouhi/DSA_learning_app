@@ -1,7 +1,7 @@
 import { AppColors } from '@/constants/AppColors';
 import React from 'react';
-import { Dimensions, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-
+import { Dimensions, Image, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { GlobalText } from './GlobalText';
 
 interface CardItemProps {
     title: string;
@@ -21,18 +21,18 @@ export default function CardItem({ title, color }: CardItemProps) {
             {/* Right: Content */}
             <View style={styles.content}>
                 <View style={styles.headerRow}>
-                    <Text style={styles.title}>{'{'}{'}'} {title}</Text>
+                    <GlobalText variant="bold" style={styles.title}>{'{'}{'}'} {title}</GlobalText>
                     <View style={styles.pointsRow}>
                         <Image
                             source={require('@/assets/icons/points_icon.png')}
                             style={styles.pointsIcon}
                         />
-                        <Text style={styles.pointsText}>+5k</Text>
+                        <GlobalText variant="bold" style={styles.pointsText}>+5k</GlobalText>
                     </View>
                 </View>
                 <View style={styles.progressRow}>
                     <View style={styles.progressInfoCol}>
-                        <Text style={styles.progressText}>2/15 <Text style={styles.progressTextBold}>Modules</Text></Text>
+                        <GlobalText style={styles.progressText}>2/15 <GlobalText style={styles.progressTextBold}>Modules</GlobalText></GlobalText>
                         <View style={styles.progressBarBackground}>
                             <View style={styles.progressBarFill} />
                         </View>
@@ -132,7 +132,6 @@ const styles = StyleSheet.create({
     progressText: {
         color: '#4DEB7E',
         fontSize: SCREEN_WIDTH * 0.045,
-        fontFamily: 'monospace',
         fontWeight: 'bold',
         marginRight: 0,
         marginBottom: 4,

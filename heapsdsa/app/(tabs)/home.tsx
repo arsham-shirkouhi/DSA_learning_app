@@ -1,73 +1,147 @@
-import { TopBar } from '@/components/ui/TopBar';
 import { AppColors } from '@/constants/AppColors';
-import React, { useRef } from 'react';
-import { Dimensions, FlatList, StyleSheet, View } from 'react-native';
-import CardItem from '../components/CardItem';
+import React from 'react';
+import { Dimensions, FlatList, Image, StyleSheet, View } from 'react-native';
+import { TopBar } from '../../components/ui/TopBar';
+import { GlobalText } from '../components/GlobalText';
+import HomeCard from '../components/HomeCard';
 
-const { height: SCREEN_HEIGHT } = Dimensions.get('window');
+const { width } = Dimensions.get('window');
+const CARD_MARGIN = 10;
+const CARD_WIDTH = (width - CARD_MARGIN * 3) / 2;
 
-const ITEM_HEIGHT = 5;
-const ITEM_SPACING = 0;
-
-const SNAP_INTERVAL = ITEM_HEIGHT + ITEM_SPACING;
+const DEFAULT_ICON_SIZE = Math.round(CARD_WIDTH * 0.32);
 
 const DATA = [
-    { id: '1', title: 'Arrays', color: '#FF5F4A' },
-    { id: '2', title: 'Strings', color: '#339AFF' },
-    { id: '3', title: 'Linked Lists', color: '#C5FF3D' },
-    { id: '4', title: 'Stacks', color: '#8844FF' },
-    { id: '5', title: 'Queues', color: '#22CCAA' },
-    { id: '6', title: 'Binary Trees', color: '#22CCAA' },
-    { id: '7', title: 'Binary Search Trees', color: '#22CCAA' },
-    { id: '8', title: 'Graphs', color: '#22CCAA' },
-    { id: '9', title: 'Heaps', color: '#22CCAA' },
-    { id: '10', title: 'Tries', color: '#22CCAA' },
+    {
+        title: 'Array',
+        bracesColor: '#FF5F4A',
+        bracesIcon: require('@/assets/icons/topic_icons/array_icon.png'),
+        xp: '+5k',
+        xpIcon: require('@/assets/icons/points_icon.png'),
+    },
+    {
+        title: 'Linked List',
+        bracesColor: '#4DEB7E',
+        bracesIcon: require('@/assets/icons/topic_icons/linkedlist_icon.png'),
+        xp: '+5k',
+        xpIcon: require('@/assets/icons/points_icon.png'),
+    },
+    {
+        title: 'Stack',
+        bracesColor: '#C5FF3D',
+        bracesIcon: require('@/assets/icons/topic_icons/stack_icon.png'),
+        xp: '+5k',
+        xpIcon: require('@/assets/icons/points_icon.png'),
+    },
+    {
+        title: 'Queue',
+        bracesColor: '#339AFF',
+        bracesIcon: require('@/assets/icons/topic_icons/queue_icon.png'),
+        xp: '+5k',
+        xpIcon: require('@/assets/icons/points_icon.png'),
+    },
+    {
+        title: 'Heap',
+        bracesColor: '#FF5F4A',
+        bracesIcon: require('@/assets/icons/topic_icons/heap_icon.png'),
+        xp: '+5k',
+        xpIcon: require('@/assets/icons/points_icon.png'),
+    },
+    {
+        title: 'Hashing',
+        bracesColor: '#FF5F4A',
+        bracesIcon: require('@/assets/icons/topic_icons/hashing_icon.png'),
+        xp: '+5k',
+        xpIcon: require('@/assets/icons/points_icon.png'),
+    },
+    {
+        title: 'Trees',
+        bracesColor: '#C5FF3D',
+        bracesIcon: require('@/assets/icons/topic_icons/trees_icon.png'),
+        xp: '+5k',
+        xpIcon: require('@/assets/icons/points_icon.png'),
+    },
+    {
+        title: 'Graphs',
+        bracesColor: '#FF5F4A',
+        bracesIcon: require('@/assets/icons/topic_icons/graphs_icon.png'),
+        xp: '+5k',
+        xpIcon: require('@/assets/icons/points_icon.png'),
+    },
+    {
+        title: 'String',
+        bracesColor: '#4DEB7E',
+        bracesIcon: require('@/assets/icons/topic_icons/string_icon.png'),
+        xp: '+5k',
+        xpIcon: require('@/assets/icons/points_icon.png'),
+    },
+    {
+        title: 'Sorting',
+        bracesColor: '#339AFF',
+        bracesIcon: require('@/assets/icons/topic_icons/sorting_icon.png'),
+        xp: '+5k',
+        xpIcon: require('@/assets/icons/points_icon.png'),
+    },
+    {
+        title: 'Search',
+        bracesColor: '#C5FF3D',
+        bracesIcon: require('@/assets/icons/topic_icons/search_icon.png'),
+        xp: '+5k',
+        xpIcon: require('@/assets/icons/points_icon.png'),
+    },
+    {
+        title: 'Theory',
+        bracesColor: '#FF5F4A',
+        bracesIcon: require('@/assets/icons/topic_icons/theory_icon.png'),
+        xp: '+5k',
+        xpIcon: require('@/assets/icons/points_icon.png'),
+    },
 ];
 
-export default function SnapPage() {
-    const flatListRef = useRef<FlatList>(null);
-
-    const renderCard = ({ item }: { item: any }) => (
-        <View style={{
-            justifyContent: 'center',
-            alignItems: 'center',
-            marginVertical: ITEM_SPACING / 2
-        }}>
-            <CardItem title={item.title} color={item.color} />
-        </View>
-    );
-
-    // const renderSeparator = () => <View style={{ height: ITEM_SPACING }} />;
+export default function HomePage() {
+    // You can replace these with dynamic values from context or props
+    const userName = 'Arsham';
+    const xpToday = 1300;
 
     return (
         <View style={styles.container}>
             <TopBar />
+            <View style={styles.headerCard}>
+                <View style={{ flex: 1 }}>
+                    <GlobalText style={styles.headerText}>
+                        Welcome back, <GlobalText style={styles.headerName}>{userName}!</GlobalText>
+                    </GlobalText>
+                    <GlobalText style={styles.headerSubText}>
+                        XP gained today: {xpToday}XP
+                    </GlobalText>
+                </View>
+                <Image source={require('@/assets/images/mascot.png')} style={styles.avatar} />
+            </View>
+            {/* Grid of Cards */}
             <FlatList
-                ref={flatListRef}
                 data={DATA}
-                keyExtractor={(item) => item.id}
-                renderItem={renderCard}
-                showsVerticalScrollIndicator={false}
-                pagingEnabled
-                decelerationRate="fast"
-                snapToInterval={SNAP_INTERVAL}
-                snapToAlignment="center"
-                // ItemSeparatorComponent={renderSeparator}
-                bounces={false}
-                scrollEventThrottle={16}
-                contentContainerStyle={{
-                    paddingTop: 0,
-                    paddingBottom: ITEM_SPACING / 2,
+                keyExtractor={(item) => item.title}
+                numColumns={2}
+                renderItem={({ item, index }) => {
+                    const isLeft = index % 2 === 0;
+                    const cardStyle = {
+                        marginRight: isLeft ? 15 : 0,
+                        marginBottom: 15,
+                    };
+                    return (
+                        <HomeCard
+                            title={item.title}
+                            xp={item.xp}
+                            xpIcon={item.xpIcon}
+                            bracesColor={item.bracesColor}
+                            bracesIcon={item.bracesIcon}
+                            style={cardStyle}
+                        />
+                    );
                 }}
+                contentContainerStyle={{ paddingHorizontal: 15, paddingBottom: 24 }}
+                showsVerticalScrollIndicator={false}
             />
-
-            {/* <Image
-                source={require('@/assets/images/gradient.png')}
-                style={[styles.gradientImage, { top: 0 }]}
-            />
-
-            */}
-
         </View>
     );
 }
@@ -75,30 +149,49 @@ export default function SnapPage() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: AppColors.background,
-
+        backgroundColor: '#10151C',
+        paddingTop: 0,
     },
-    card: {
-        height: 380,
-        marginHorizontal: 20,
-        borderRadius: 10,
-        justifyContent: 'center',
+    headerCard: {
+        flexDirection: 'row',
         alignItems: 'center',
+        backgroundColor: '#0D233B',
+        borderRadius: 10,
+        borderWidth: 2,
+        borderColor: '#2678CC',
+        margin: 12,
+        marginTop: 18,
+        padding: 16,
+        minHeight: 70,
+        shadowColor: '#000',
+        shadowOpacity: 0.08,
+        shadowRadius: 8,
+        shadowOffset: { width: 0, height: 2 },
     },
-    text: {
+    headerText: {
         color: AppColors.textPrimary,
-        fontSize: 28,
-        fontWeight: 'bold',
-
+        fontSize: 20,
+        fontFamily: 'JetBrainsMono',
+        marginBottom: 2,
     },
-
-    gradientImage: {
-        position: 'absolute',
-        left: 0,
-        right: 0,
-        width: '100%',
-        height: 150,
-        zIndex: 10,
-    }
-
+    headerName: {
+        color: '#339AFF',
+        fontFamily: 'JetBrainsMono',
+    },
+    headerSubText: {
+        color: AppColors.textSecondary,
+        fontSize: 14,
+        fontFamily: 'JetBrainsMono',
+        marginTop: 2,
+    },
+    avatar: {
+        width: 54,
+        height: 54,
+        resizeMode: 'contain',
+        marginLeft: 10,
+    },
+    grid: {
+        paddingBottom: 24,
+        paddingHorizontal: 0,
+    },
 });

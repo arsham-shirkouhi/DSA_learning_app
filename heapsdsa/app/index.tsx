@@ -1,7 +1,9 @@
 import { AppColors } from '@/constants/AppColors'
 import { Link } from 'expo-router'
 import React, { useCallback, useMemo, useState } from 'react'
-import { ActivityIndicator, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { ActivityIndicator, StyleSheet, TouchableOpacity, View } from 'react-native'
+import { GlobalText } from './components/GlobalText'
+import { GlobalTextInput } from './components/GlobalTextInput'
 import { signInWithEmail } from './utils/auth'
 
 export default function LoginScreen() {
@@ -77,18 +79,18 @@ export default function LoginScreen() {
         return (
             <View style={styles.container}>
                 <View style={styles.card}>
-                    <Text style={styles.title}>Email Verification Required</Text>
-                    <Text style={styles.subtitle}>
+                    <GlobalText style={styles.title}>Email Verification Required</GlobalText>
+                    <GlobalText style={styles.subtitle}>
                         Please verify your email address
-                    </Text>
+                    </GlobalText>
                     {verificationSent ? (
-                        <Text style={styles.successText}>
+                        <GlobalText style={styles.successText}>
                             Verification email sent! Please check your inbox.
-                        </Text>
+                        </GlobalText>
                     ) : (
-                        <Text style={styles.text}>
+                        <GlobalText style={styles.text}>
                             You need to verify your email before you can sign in.
-                        </Text>
+                        </GlobalText>
                     )}
                     <TouchableOpacity
                         onPress={() => {
@@ -98,7 +100,7 @@ export default function LoginScreen() {
                         }}
                         style={styles.linkButton}
                     >
-                        <Text style={styles.linkText}>Back to Sign In</Text>
+                        <GlobalText style={styles.linkText}>Back to Sign In</GlobalText>
                     </TouchableOpacity>
                 </View>
             </View>
@@ -108,10 +110,10 @@ export default function LoginScreen() {
     return (
         <View style={styles.container}>
             <View style={styles.card}>
-                <Text style={styles.title}>Welcome Back</Text>
-                <Text style={styles.subtitle}>Sign in to continue</Text>
+                <GlobalText style={styles.title}>Welcome Back</GlobalText>
+                <GlobalText style={styles.subtitle}>Sign in to continue</GlobalText>
 
-                <TextInput
+                <GlobalTextInput
                     autoCapitalize="none"
                     value={emailAddress}
                     placeholder="Email address"
@@ -119,7 +121,7 @@ export default function LoginScreen() {
                     style={styles.input}
                     keyboardType="email-address"
                 />
-                <TextInput
+                <GlobalTextInput
                     value={password}
                     placeholder="Password"
                     secureTextEntry
@@ -135,19 +137,19 @@ export default function LoginScreen() {
                     {loading ? (
                         <ActivityIndicator color={AppColors.textPrimary} />
                     ) : (
-                        <Text style={styles.buttonText}>Sign In</Text>
+                        <GlobalText style={styles.buttonText}>Sign In</GlobalText>
                     )}
                 </TouchableOpacity>
 
                 {error ? (
-                    <Text style={styles.errorText}>{error}</Text>
+                    <GlobalText style={styles.errorText}>{error}</GlobalText>
                 ) : null}
 
                 <Link href="/sign-up" asChild>
                     <TouchableOpacity style={styles.linkButton}>
-                        <Text style={styles.linkText}>
+                        <GlobalText style={styles.linkText}>
                             Don't have an account? Sign up
-                        </Text>
+                        </GlobalText>
                     </TouchableOpacity>
                 </Link>
             </View>

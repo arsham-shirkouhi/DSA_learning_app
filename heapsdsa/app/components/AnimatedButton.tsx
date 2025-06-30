@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
-import { Animated, Image, ImageSourcePropType, Pressable, StyleSheet, Text, TextStyle, ViewStyle } from 'react-native';
+import { Animated, Image, ImageSourcePropType, Pressable, StyleSheet, TextStyle, ViewStyle } from 'react-native';
+import { GlobalText } from './GlobalText';
 
 interface AnimatedButtonProps {
     onPress?: () => void;
@@ -95,7 +96,7 @@ export default function AnimatedButton({
                 ]}
             >
                 {icon && <Image source={icon} style={{ width: 20, height: 20, marginRight: 6, tintColor: iconColor }} />}
-                <Text style={[{ color: '#fff', fontWeight: 'bold', fontSize }, textStyle]}>{children}</Text>
+                <GlobalText style={[{ color: '#fff', fontWeight: 'bold', fontSize }, textStyle]}>{children}</GlobalText>
             </Animated.View>
         </Pressable>
     );

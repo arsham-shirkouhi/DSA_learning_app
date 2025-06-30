@@ -1,8 +1,9 @@
 import { AppColors } from '@/constants/AppColors';
 import { useFocusEffect } from '@react-navigation/native';
 import React, { useState } from 'react';
-import { Dimensions, Image, SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Dimensions, Image, SafeAreaView, ScrollView, StyleSheet, View } from 'react-native';
 import AnimatedButton from '../components/AnimatedButton';
+import { GlobalText } from '../components/GlobalText';
 import PracticeCard from '../components/PracticeCard';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
@@ -50,8 +51,8 @@ export default function PracticePage() {
                 <View style={[styles.topCard, { borderColor: topCardColor, backgroundColor: getDarkerBackground(topCardColor) }]}>
                     <View style={{ flex: 1, justifyContent: 'space-between' }}>
                         <View>
-                            <Text style={styles.topTitle}>Practice Makes Perfect!</Text>
-                            <Text style={styles.topSubtitle}>Practice questions that might be tough</Text>
+                            <GlobalText style={styles.topTitle}>Practice Makes Perfect!</GlobalText>
+                            <GlobalText style={styles.topSubtitle}>Practice questions that might be tough</GlobalText>
                         </View>
                         <View style={styles.topCardBottomRow}>
                             <AnimatedButton
@@ -82,7 +83,7 @@ export default function PracticePage() {
                 </View>
 
                 {/* Section Title */}
-                <Text style={styles.sectionTitle}>Practice</Text>
+                <GlobalText style={styles.sectionTitle}>Practice</GlobalText>
 
                 {/* Practice Modes */}
                 <PracticeCard

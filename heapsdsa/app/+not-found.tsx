@@ -1,16 +1,17 @@
 import { AppColors } from '@/constants/AppColors';
 import { Link, Stack } from 'expo-router';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import { GlobalText } from './components/GlobalText';
 
 export default function NotFoundScreen() {
   return (
     <>
       <Stack.Screen options={{ title: 'Oops!' }} />
       <View style={styles.container}>
-        <Text style={styles.title}>This screen does not exist.</Text>
+        <GlobalText style={styles.title}>This screen does not exist.</GlobalText>
         <Link href="/" style={styles.link}>
-          <Text style={styles.linkText}>Go to home screen!</Text>
+          <GlobalText style={styles.linkText}>Go to home screen!</GlobalText>
         </Link>
       </View>
     </>
