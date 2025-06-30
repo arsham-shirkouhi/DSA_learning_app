@@ -23,7 +23,7 @@ options.add_experimental_option('excludeSwitches', ['enable-logging'])
 driver = webdriver.Edge(service=EdgeService(EdgeChromiumDriverManager().install()), options=options)
 
 # Go to the quiz page
-url = "https://www.geeksforgeeks.org/quizzes/top-mcqs-on-tree-traversal-with-interview-question-and-answers/"
+url = "https://www.geeksforgeeks.org/quizzes/top-mcqs-on-minimum-spanning-tree-mst-in-graphs-with-answers/"
 driver.get(url)
 
 # Wait for content to load

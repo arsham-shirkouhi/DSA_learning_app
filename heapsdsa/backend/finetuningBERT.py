@@ -23,7 +23,10 @@ def main():
         "Hashing": 5,
         "Tree": 6,
         "Graph": 7,
-        "String": 8
+        "String": 8,
+        "Sorting": 9,
+        "Search": 10,
+        "Theory": 11
     }
     
     DIFFICULTY_LABELS = {
@@ -39,7 +42,7 @@ def main():
     login(token=token)
 
 
-    with open("./datasets/deduplicated_dataset.json") as f:
+    with open("./datasets/quiz_data.json") as f:
         data = json.load(f)
 
     dataset = Dataset.from_list(data)
@@ -49,8 +52,8 @@ def main():
     metric = evaluate.load("accuracy")
     dataset = dataset.map(map_labels)
     dataset = dataset.map(tokenize, batched=True)
-    small_train = dataset["train"]#.shuffle(seed=42).select(range(1000))
-    small_eval = dataset["test"]#.shuffle(seed=42).select(range(1000))
+    small_train = dataset["train"].shuffle(seed=42)#.select(range(1000))
+    small_eval = dataset["test"].shuffle(seed=42)#.select(range(1000))
 
     trainer = config(small_train, small_eval)
     trainer.train()
@@ -104,7 +107,7 @@ def config(small_train, small_eval):
         output_dir="./outputs",
         per_device_train_batch_size=8,
         per_device_eval_batch_size=8,
-        num_train_epochs=3,
+        num_train_epochs=15,
         learning_rate=2e-5,
         eval_strategy="epoch",
         save_strategy="epoch",
@@ -117,7 +120,7 @@ def config(small_train, small_eval):
     # initializing model
     model = TopicDifficultyClassifier.from_pretrained(
         "google-bert/bert-base-cased",
-        topic_labels = 10,
+        topic_labels = 9,
         diff_labels = 3
     )
 
