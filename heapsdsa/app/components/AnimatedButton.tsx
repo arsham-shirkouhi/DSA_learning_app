@@ -1,5 +1,5 @@
-import React, { useRef } from 'react';
-import { Animated, Image, ImageSourcePropType, Pressable, StyleSheet, TextStyle, ViewStyle } from 'react-native';
+import React from 'react';
+import { Image, ImageSourcePropType, Pressable, StyleSheet, TextStyle, View, ViewStyle } from 'react-native';
 import { GlobalText } from './GlobalText';
 
 interface AnimatedButtonProps {
@@ -22,6 +22,8 @@ interface AnimatedButtonProps {
     fontSize?: number;
     style?: ViewStyle;
     textStyle?: TextStyle;
+    borderColor?: string;
+    borderWidth?: number;
 }
 
 export default function AnimatedButton({
@@ -44,30 +46,12 @@ export default function AnimatedButton({
     fontSize = 16,
     style,
     textStyle,
+    borderColor,
+    borderWidth,
 }: AnimatedButtonProps) {
-    const translateY = useRef(new Animated.Value(0)).current;
-
-    const handlePressIn = () => {
-        Animated.timing(translateY, {
-            toValue: 4,
-            duration: 80,
-            useNativeDriver: true,
-        }).start();
-    };
-
-    const handlePressOut = () => {
-        Animated.timing(translateY, {
-            toValue: 0,
-            duration: 80,
-            useNativeDriver: true,
-        }).start();
-    };
-
     return (
         <Pressable
             onPress={onPress}
-            onPressIn={handlePressIn}
-            onPressOut={handlePressOut}
             style={({ pressed }) => [
                 {
                     shadowColor,
@@ -79,25 +63,41 @@ export default function AnimatedButton({
                 style,
             ]}
         >
-            <Animated.View
-                style={[
-                    {
-                        flexDirection: 'row',
-                        alignItems: 'center',
-                        borderRadius,
-                        paddingVertical,
-                        paddingHorizontal,
-                        alignSelf: 'flex-start',
-                        backgroundColor,
-                        transform: [{ translateY }],
-                        width,
-                        height,
-                    },
-                ]}
-            >
-                {icon && <Image source={icon} style={{ width: 20, height: 20, marginRight: 6, tintColor: iconColor }} />}
-                <GlobalText style={[{ color: '#fff', fontWeight: 'bold', fontSize }, textStyle]}>{children}</GlobalText>
-            </Animated.View>
+            {({ pressed }) => (
+                <View
+                    style={[
+                        {
+                            flexDirection: 'row',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            borderRadius,
+                            paddingVertical,
+                            paddingHorizontal,
+                            alignSelf: 'stretch',
+                            backgroundColor,
+                            transform: [{ translateY: pressed ? 4 : 0 }],
+                            width,
+                            height,
+                            ...(borderColor !== undefined ? { borderColor } : {}),
+                            ...(borderWidth !== undefined ? { borderWidth } : {}),
+                        },
+                        style,
+                    ]}
+                >
+                    {icon && (
+                        <Image
+                            source={icon}
+                            style={{
+                                width: 20,
+                                height: 20,
+                                marginRight: children ? 6 : 0,
+                                tintColor: iconColor
+                            }}
+                        />
+                    )}
+                    {children && <GlobalText style={[{ color: '#fff', fontWeight: 'bold', fontSize }, textStyle]}>{children}</GlobalText>}
+                </View>
+            )}
         </Pressable>
     );
 }

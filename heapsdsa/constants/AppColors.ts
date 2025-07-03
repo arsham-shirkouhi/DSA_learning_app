@@ -70,6 +70,11 @@ export const AppColors = {
 
     successColor: '#5FED83',
 
+    green: '#CEF952',
+    blue: '#0094FB',
+    red: '#FF522C',
+    purple: '#C06EFF',
+
 
 } as const;
 
