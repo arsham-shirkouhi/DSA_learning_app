@@ -115,7 +115,7 @@ export default function HomePage() {
                         XP gained today: {xpToday}XP
                     </GlobalText>
                 </View>
-                <Image source={require('@/assets/images/mascot.png')} style={styles.avatar} />
+                <Image source={require('@/assets/images/testavatar.png')} style={styles.avatar} />
             </View>
             {/* Grid of Cards */}
             <FlatList
