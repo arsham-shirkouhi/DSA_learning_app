@@ -28,11 +28,11 @@ export default function ProfileScreen() {
     };
 
     return (
-        <SafeAreaView style={{ flex: 1, backgroundColor: '#0C1117' }}>
+        <SafeAreaView style={{ flex: 1, backgroundColor: AppColors.navbar }}>
             <ScrollView contentContainerStyle={styles.scrollContainer}>
                 {/* Mascot Banner */}
                 <View style={[styles.mascotBanner, { width: CARD_WIDTH }]}>
-                    <Image source={require('@/assets/images/mascot.png')} style={styles.mascotImage} />
+                    <Image source={require('@/assets/images/testavatar.png')} style={styles.mascotImage} />
                 </View>
 
                 {/* Profile Info Card */}
@@ -61,9 +61,18 @@ export default function ProfileScreen() {
                         </AnimatedButton>
                     </View>
                     <View style={[styles.statsRowInfo, { width: '100%' }]}>
-                        <View style={[styles.statBoxInfo, { marginLeft: 0 }]}><GlobalText variant="bold" style={styles.statValueInfo}>{String(user.language)}</GlobalText><GlobalText style={styles.statLabelInfo}>Languages</GlobalText></View>
-                        <View style={styles.statBoxInfo}><GlobalText variant="bold" style={styles.statValueInfo}>{String(user.following)}</GlobalText><GlobalText style={styles.statLabelInfo}>Following</GlobalText></View>
-                        <View style={[styles.statBoxInfo, { marginRight: 0 }]}><GlobalText variant="bold" style={styles.statValueInfo}>{String(user.followers)}</GlobalText><GlobalText style={styles.statLabelInfo}>Followers</GlobalText></View>
+                        <View style={[styles.statBoxInfo, { marginLeft: 0 }]}>
+                            <GlobalText variant="bold" style={styles.statValueInfo}>{String(user.language)}</GlobalText>
+                            <GlobalText style={styles.statLabelInfo}>Languages</GlobalText>
+                        </View>
+                        <View style={styles.statBoxInfo}>
+                            <GlobalText variant="bold" style={styles.statValueInfo}>{String(user.following)}</GlobalText>
+                            <GlobalText style={styles.statLabelInfo}>Following</GlobalText>
+                        </View>
+                        <View style={[styles.statBoxInfo, { marginRight: 0 }]}>
+                            <GlobalText variant="bold" style={styles.statValueInfo}>{String(user.followers)}</GlobalText>
+                            <GlobalText style={styles.statLabelInfo}>Followers</GlobalText>
+                        </View>
                     </View>
                     <View style={styles.addFriendsRowInfo}>
                         <AnimatedButton
@@ -196,8 +205,8 @@ const styles = StyleSheet.create({
         // paddingHorizontal: 0,
     },
     mascotImage: {
-        width: 110,
-        height: 110,
+        width: '125%',
+        height: '125%',
         resizeMode: 'contain',
         position: 'absolute',
         bottom: 0,

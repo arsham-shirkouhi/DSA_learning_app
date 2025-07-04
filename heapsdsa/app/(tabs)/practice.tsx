@@ -45,7 +45,7 @@ export default function PracticePage() {
     );
 
     return (
-        <SafeAreaView style={{ flex: 1, backgroundColor: safeAreaColor }}>
+        <SafeAreaView style={{ flex: 1, backgroundColor: AppColors.background }}>
             <ScrollView style={{ flex: 1 }} contentContainerStyle={styles.container}>
                 {/* Top Card */}
                 <View style={[styles.topCard, { borderColor: topCardColor, backgroundColor: getDarkerBackground(topCardColor) }]}>

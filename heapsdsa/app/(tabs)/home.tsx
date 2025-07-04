@@ -149,7 +149,7 @@ export default function HomePage() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#10151C',
+        backgroundColor: AppColors.navbar,
         paddingTop: 0,
     },
     headerCard: {
