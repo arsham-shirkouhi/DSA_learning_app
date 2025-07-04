@@ -120,7 +120,7 @@ def config(small_train, small_eval):
     # initializing model
     model = TopicDifficultyClassifier.from_pretrained(
         "google-bert/bert-base-cased",
-        topic_labels = 9,
+        topic_labels = 12,
         diff_labels = 3
     )
 

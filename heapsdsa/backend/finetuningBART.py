@@ -37,11 +37,21 @@ def main():
         train_dataset=tokenized_train,
         eval_dataset=tokenized_eval,
         tokenizer=tokenizer,
+        compute_metrics=compute_metrics
     )
     
     trainer.train()
     eval_results = trainer.evaluate()
     print(eval_results)
+    
+def compute_metrics(eval_preds):
+    predictions, labels = eval_preds
+    decoded_preds = tokenizer.batch_decode(predictions, skip_special_tokens=True)
+    decoded_labels = tokenizer.batch_decode(labels, skip_special_tokens=True)
+
+    exact_matches = sum(p.strip() == l.strip() for p, l in zip(decoded_preds, decoded_labels))
+    return {"accuracy": exact_matches / len(decoded_preds)}
+
 
 def tokenize(examples):
     global tokenizer

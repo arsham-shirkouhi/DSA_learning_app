@@ -56,24 +56,34 @@ def bert_model():
     print("🔥 Predicted Difficulty:", difficulty_map.get(diff_pred, "Unknown"))
 
 def bart_model():
-    checkpoint_path = "./outputs_bart/checkpoint-570"
-    
+    checkpoint_path = "./outputs_bart/checkpoint-3970"
+
     # Load tokenizer and model
     tokenizer = BartTokenizer.from_pretrained("facebook/bart-base")
     model = BartForConditionalGeneration.from_pretrained(checkpoint_path)
     model.eval()
 
-    # Prepare prompt
-    prompt = "Generate a question on topic=Heap and difficulty=Hard"
+    # Prompt
+    prompt = "Generate 5 **valid** and **factually correct** multiple-choice question on topic=Tree and difficulty=Hard. Include 4 distinct options and specify the correct answer using Answer: <option>"
     inputs = tokenizer(prompt, return_tensors="pt")
 
-    # Generate output
-    with torch.no_grad():
-        outputs = model.generate(**inputs, max_new_tokens=128)
-    
-    # Decode and print
-    result = tokenizer.decode(outputs[0], skip_special_tokens=True)
-    print("📝 Generated Question:\n", result)
+    # Generate multiple diverse questions
+    outputs = model.generate(
+        **inputs,
+        max_new_tokens=128,
+        num_return_sequences=5,     # get 5 sequences
+        do_sample=True,
+        temperature=0.8,
+        top_p=0.95,
+        num_beams=1                 # <- critical to avoid beam constraint
+    )
+
+    # Decode all 5 sequences properly
+    results = tokenizer.batch_decode(outputs, skip_special_tokens=True)
+
+    for i, result in enumerate(results):
+        print(f"\n📝 Question {i+1}:\n{result.strip()}")
+
 
 if __name__ == "__main__":
     main()

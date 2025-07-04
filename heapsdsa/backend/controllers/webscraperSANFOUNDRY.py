@@ -10,12 +10,19 @@ import os
 
 # --- Configuration ---
 LINKS = [
-    "https://www.sanfoundry.com/bplus-tree-multiple-choice-questions-answers-mcqs/",
-    "https://www.sanfoundry.com/2-3-tree-multiple-choice-questions-answers-mcqs/"
+    "https://www.sanfoundry.com/data-structure-questions-answers-graph/",
+    "https://www.sanfoundry.com/data-structure-questions-answers-adjacency-matrix/",
+    "https://www.sanfoundry.com/data-structure-questions-answers-incidence-matrix-graph-structured-stack/",
+    "https://www.sanfoundry.com/data-structure-questions-answers-adjacency-list/",
+    "https://www.sanfoundry.com/data-structure-questions-answers-undirected-graph/",
+    "https://www.sanfoundry.com/data-structure-questions-answers-directed-graph/",
+    "https://www.sanfoundry.com/data-structure-questions-answers-directed-acyclic-graph/",
+    "https://www.sanfoundry.com/data-structure-questions-answers-propositional-directed-acyclic-word-graph/",
+    "https://www.sanfoundry.com/data-structure-questions-answers-multigraph-hypergraph/",
+    "https://www.sanfoundry.com/data-structure-questions-answers-test/"
     # add as many URLs as you like
 ]
 OUTPUT_JSON = "sanfoundry_structured_clean.json"
-
 # --- Initialize WebDriver ---
 options = webdriver.EdgeOptions()
 options.add_argument('--disable-gpu')
@@ -67,7 +74,7 @@ try:
 
             # New question header
             if tag == "p" and re.match(r"^\d+\.", txt):
-                if current:
+                if current and "title" in current:
                     questions.append(current)
                 qnum += 1
                 title = re.sub(r"^\d+\.\s*", "", txt)
