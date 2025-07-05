@@ -21,6 +21,7 @@ const users = [
         rank: 1,
         avatar: require('@/assets/images/mascot.png'),
         highlight: true,
+        movement: 'up', // up, down, or null
     },
     {
         name: 'Seong',
@@ -28,6 +29,7 @@ const users = [
         rank: 2,
         avatar: require('@/assets/images/topics/topic_banners/test_topic_image.png'),
         highlight: false,
+        movement: 'down',
     },
     {
         name: 'Ben',
@@ -35,108 +37,126 @@ const users = [
         rank: 3,
         avatar: require('@/assets/images/react-logo.png'),
         highlight: false,
+        movement: 'up',
     },
     {
         name: 'Maya Patel',
         score: 954,
         rank: 4,
         avatar: require('@/assets/images/mascot.png'),
+        movement: 'up',
     },
     {
         name: 'Aiden Chen',
         score: 856,
         rank: 5,
         avatar: require('@/assets/images/mascot.png'),
+        movement: 'down',
     },
     {
         name: 'Sofia Rivera',
         score: 829,
         rank: 6,
         avatar: require('@/assets/images/mascot.png'),
+        movement: 'up',
     },
     {
         name: 'Jacob Hassan',
         score: 790,
         rank: 7,
         avatar: require('@/assets/images/mascot.png'),
+        movement: null,
     },
     {
         name: 'Elijah Das',
         score: 753,
         rank: 8,
         avatar: require('@/assets/images/mascot.png'),
+        movement: 'down',
     },
     {
         name: 'Layla Wong',
         score: 693,
         rank: 9,
         avatar: require('@/assets/images/mascot.png'),
+        movement: 'up',
     },
     {
         name: 'Daniel Morales',
         score: 667,
         rank: 10,
         avatar: require('@/assets/images/mascot.png'),
+        movement: 'down',
     },
     {
         name: 'Hana Yusuf',
         score: 650,
         rank: 11,
         avatar: require('@/assets/images/mascot.png'),
+        movement: 'up',
     },
     {
         name: 'Priya Singh',
         score: 640,
         rank: 12,
         avatar: require('@/assets/images/mascot.png'),
+        movement: 'down',
     },
     {
         name: 'Lucas Kim',
         score: 630,
         rank: 13,
         avatar: require('@/assets/images/mascot.png'),
+        movement: 'up',
     },
     {
         name: 'Olivia Brown',
         score: 620,
         rank: 14,
         avatar: require('@/assets/images/mascot.png'),
+        movement: 'down',
     },
     {
         name: 'Noah Wilson',
         score: 610,
         rank: 15,
         avatar: require('@/assets/images/mascot.png'),
+        movement: 'up',
     },
     {
         name: 'Emma Garcia',
         score: 600,
         rank: 16,
         avatar: require('@/assets/images/mascot.png'),
+        movement: 'down',
     },
     {
         name: 'William Lee',
         score: 590,
         rank: 17,
         avatar: require('@/assets/images/mascot.png'),
+        movement: 'up',
     },
     {
         name: 'Chloe Martin',
         score: 580,
         rank: 18,
         avatar: require('@/assets/images/mascot.png'),
+        movement: 'down',
     },
     {
         name: 'James Clark',
         score: 570,
         rank: 19,
         avatar: require('@/assets/images/mascot.png'),
+        movement: 'up',
     },
     {
         name: 'Sophia Turner',
         score: 560,
         rank: 20,
         avatar: require('@/assets/images/mascot.png'),
+        movement: 'down',
     },
 ];
 
@@ -155,13 +175,13 @@ export default function LeaderBoardScreen() {
             <View style={styles.leagueHeader}>
                 <View style={styles.leagueHeaderRow}>
                     <View style={{ flex: 1 }}>
-                        <GlobalText variant="bold" style={styles.leagueTitle}>bronze league</GlobalText>
+                        <GlobalText variant="bold" style={[styles.leagueTitle, { color: AppColors.green }]}>bronze league</GlobalText>
                         <GlobalText style={styles.leagueSubtitle}>top 15 advance to the next league</GlobalText>
                     </View>
-                    <View style={styles.trophyContainer}>
+                    <View style={[styles.trophyContainer, { borderColor: AppColors.green, backgroundColor: 'rgba(206,249,82,0.12)' }]}>
                         <Image
                             source={require('@/assets/icons/leaderboard_icon.png')}
-                            style={styles.trophyIcon}
+                            style={[styles.trophyIcon, { tintColor: AppColors.green }]}
                             resizeMode="contain"
                         />
                     </View>
@@ -170,55 +190,117 @@ export default function LeaderBoardScreen() {
 
             {/* Top 3 Users */}
             <View style={[styles.topThreeRow, { marginBottom: 12, justifyContent: 'center' }]}>
-                {users.slice(0, 3).map((user) => (
-                    <View key={user.rank} style={[styles.topUserCol, { width: CARD_SIZE, marginHorizontal: CARD_MARGIN }]}>
-                        <View style={[styles.topUserImageBorderWrapper, { width: CARD_SIZE, height: CARD_SIZE, borderRadius: CARD_SIZE * 0.12 }]}>
-                            <Image
-                                source={user.avatar}
-                                style={[styles.topUserImage, { borderRadius: CARD_SIZE * 0.12 }]}
-                                resizeMode="cover"
-                            />
-                            <View style={[styles.topUserGradient, { borderBottomLeftRadius: CARD_SIZE * 0.12, borderBottomRightRadius: CARD_SIZE * 0.12, height: CARD_SIZE * 0.22 }]} />
-                            <View style={[styles.topUserNameContainer, { paddingLeft: CARD_SIZE * 0.08, bottom: CARD_SIZE * 0.03 }]}>
-                                <GlobalText variant="bold" style={[styles.topUserNameNew, { fontSize: FONT_LARGE * 0.8 }]}>{user.name}</GlobalText>
+                {users.slice(0, 3).map((user) => {
+                    const rankColors = {
+                        1: { border: AppColors.green, background: 'rgba(206,249,82,0.12)', text: AppColors.green }, // Green for 1st
+                        2: { border: AppColors.blue, background: 'rgba(0,148,251,0.12)', text: AppColors.blue }, // Blue for 2nd
+                        3: { border: AppColors.purple, background: 'rgba(192,110,255,0.12)', text: AppColors.purple }, // Purple for 3rd
+                    };
+                    const colors = rankColors[user.rank as keyof typeof rankColors] || { border: '#232A36', background: 'transparent', text: AppColors.textPrimary };
+
+                    return (
+                        <View key={user.rank} style={[styles.topUserCol, { width: CARD_SIZE, marginHorizontal: CARD_MARGIN }]}>
+                            <View style={[
+                                styles.topUserImageBorderWrapper,
+                                {
+                                    width: CARD_SIZE,
+                                    height: CARD_SIZE,
+                                    borderRadius: CARD_SIZE * 0.12,
+                                    borderColor: colors.border,
+                                    borderWidth: user.rank <= 3 ? 2 : 1.5
+                                }
+                            ]}>
+                                <Image
+                                    source={user.avatar}
+                                    style={[styles.topUserImage, { borderRadius: CARD_SIZE * 0.12 }]}
+                                    resizeMode="cover"
+                                />
+                                <View style={[styles.topUserGradient, { borderBottomLeftRadius: CARD_SIZE * 0.12, borderBottomRightRadius: CARD_SIZE * 0.12, height: CARD_SIZE * 0.22 }]} />
+                                <View style={[styles.topUserNameContainer, { paddingLeft: CARD_SIZE * 0.08, bottom: CARD_SIZE * 0.03 }]}>
+                                    <GlobalText variant="bold" style={[styles.topUserNameNew, { fontSize: FONT_LARGE * 0.8, color: colors.text }]}>{user.name}</GlobalText>
+                                </View>
+                            </View>
+                            <View style={[styles.topUserScoreRowNewOuter, { width: CARD_SIZE, marginTop: 6 }]}>
+                                <Image
+                                    source={require('@/assets/icons/points_icon.png')}
+                                    style={[styles.pointsIconNew, { width: FONT_LARGE * 0.8, height: FONT_LARGE * 0.8 }]}
+                                />
+                                <GlobalText variant="bold" style={[styles.topUserScoreNew, { fontSize: FONT_LARGE * 0.8 }]}>{user.score}</GlobalText>
+                                <View style={[
+                                    styles.rankBadgeNew,
+                                    {
+                                        minWidth: FONT_LARGE * 0.8,
+                                        paddingHorizontal: FONT_SMALL * 0.7,
+                                        backgroundColor: colors.background,
+                                        borderColor: colors.border
+                                    }
+                                ]}>
+                                    <GlobalText variant="bold" style={[styles.rankBadgeTextNew, { fontSize: FONT_LARGE * 0.8, color: colors.text }]}>{user.rank}</GlobalText>
+                                </View>
                             </View>
                         </View>
-                        <View style={[styles.topUserScoreRowNewOuter, { width: CARD_SIZE, marginTop: 6 }]}>
-                            <Image
-                                source={require('@/assets/icons/points_icon.png')}
-                                style={[styles.pointsIconNew, { width: FONT_LARGE * 0.8, height: FONT_LARGE * 0.8 }]}
-                            />
-                            <GlobalText variant="bold" style={[styles.topUserScoreNew, { fontSize: FONT_LARGE * 0.8 }]}>{(user.score / 1000).toFixed(2).replace(/\.00$/, '')}k</GlobalText>
-                            <View style={[styles.rankBadgeNew, { minWidth: FONT_LARGE * 0.8, paddingHorizontal: FONT_SMALL * 0.7 }]}>
-                                <GlobalText variant="bold" style={[styles.rankBadgeTextNew, { fontSize: FONT_LARGE * 0.8 }]}>{user.rank}</GlobalText>
-                            </View>
-                        </View>
-                    </View>
-                ))}
+                    );
+                })}
             </View>
 
             {/* User List (Scrollable) */}
             <ScrollView contentContainerStyle={styles.userList}>
-                {users.slice(3).map((user, idx) => (
-                    <View key={user.rank} style={[styles.userRowNew, { paddingLeft: H_PADDING_LEFT * 0.85, paddingRight: H_PADDING_RIGHT * 0.85 }]}>
-                        <GlobalText variant="bold" style={[styles.userRankNew, { width: RANK_WIDTH * 0.85, fontSize: FONT_LARGE * 0.85 }]}>{user.rank}</GlobalText>
-                        <View style={[styles.userAvatarWrapperNew, { width: AVATAR_SIZE * 0.85, height: AVATAR_SIZE * 0.85, borderRadius: AVATAR_SIZE * 0.19 }]}>
-                            <Image
-                                source={user.avatar || require('@/assets/images/mascot.png')}
-                                style={[styles.userAvatarNew, { borderRadius: AVATAR_SIZE * 0.19 }]}
-                                resizeMode="cover"
-                            />
+                {users.slice(3).map((user, idx) => {
+                    const isHighlighted = user.highlight;
+
+                    return (
+                        <View key={user.rank} style={[
+                            styles.userRowNew,
+                            {
+                                paddingLeft: H_PADDING_LEFT * 0.85,
+                                paddingRight: H_PADDING_RIGHT * 0.85
+                            }
+                        ]}>
+                            <GlobalText variant="bold" style={[
+                                styles.userRankNew,
+                                {
+                                    width: RANK_WIDTH * 0.85,
+                                    fontSize: FONT_LARGE * 0.85,
+                                    color: AppColors.textPrimary
+                                }
+                            ]}>{user.rank}</GlobalText>
+                            <View style={[
+                                styles.userAvatarWrapperNew,
+                                {
+                                    width: AVATAR_SIZE * 0.85,
+                                    height: AVATAR_SIZE * 0.85,
+                                    borderRadius: AVATAR_SIZE * 0.19
+                                }
+                            ]}>
+                                <Image
+                                    source={user.avatar || require('@/assets/images/mascot.png')}
+                                    style={[styles.userAvatarNew, { borderRadius: AVATAR_SIZE * 0.19 }]}
+                                    resizeMode="cover"
+                                />
+                            </View>
+                            <GlobalText variant="bold" style={[
+                                styles.userNameNew,
+                                {
+                                    fontSize: FONT_MEDIUM * 0.95,
+                                    color: AppColors.textPrimary
+                                }
+                            ]}>{user.name}</GlobalText>
+                            <View style={styles.userScoreRowNew}>
+                                <Image
+                                    source={require('@/assets/icons/points_icon.png')}
+                                    style={[styles.userPointsIconNew, { width: FONT_MEDIUM * 1.2, height: FONT_MEDIUM * 1.2 }]}
+                                />
+                                <GlobalText variant="bold" style={[
+                                    styles.userScoreNew,
+                                    {
+                                        fontSize: FONT_MEDIUM * 0.95,
+                                        color: AppColors.blue
+                                    }
+                                ]}>{user.score}</GlobalText>
+                            </View>
                         </View>
-                        <GlobalText variant="bold" style={[styles.userNameNew, { fontSize: FONT_MEDIUM * 0.95 }]}>{user.name}</GlobalText>
-                        <View style={styles.userScoreRowNew}>
-                            <Image
-                                source={require('@/assets/icons/points_icon.png')}
-                                style={[styles.userPointsIconNew, { width: FONT_MEDIUM * 0.95, height: FONT_MEDIUM * 0.95 }]}
-                            />
-                            <GlobalText variant="bold" style={[styles.userScoreNew, { fontSize: FONT_MEDIUM * 0.95 }]}>{user.score}</GlobalText>
-                        </View>
-                    </View>
-                ))}
+                    );
+                })}
             </ScrollView>
         </SafeAreaView>
     );
