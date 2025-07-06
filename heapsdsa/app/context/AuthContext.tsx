@@ -2,6 +2,7 @@ import { useRouter } from 'expo-router';
 import { onAuthStateChanged, User } from 'firebase/auth';
 import React from 'react';
 import { auth } from '../firebase';
+import { userService } from '../utils/userService';
 
 // Define the shape of the context data
 interface AuthContextData {
@@ -23,22 +24,33 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
     React.useEffect(() => {
         // Listen for changes in authentication state
-        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+        const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
             console.log('Auth state changed:', currentUser ? 'User logged in' : 'User logged out');
             setUser(currentUser);
 
-            // Navigate based on authentication state
+            // Only navigate if the user is authenticated and email is verified
             if (currentUser && currentUser.emailVerified) {
-                // User is authenticated and email is verified, navigate to tabs
-                console.log('Navigating to tabs');
-                router.replace('/(tabs)/home');
+                try {
+                    // Check if user has completed onboarding
+                    const hasCompletedOnboarding = await userService.checkOnboardingStatus(currentUser.uid);
+
+                    if (hasCompletedOnboarding) {
+                        console.log('Navigating to home');
+                        router.replace('/(tabs)/home');
+                    } else {
+                        console.log('Navigating to onboarding');
+                        router.replace('/(onboarding)/profile');
+                    }
+                } catch (error) {
+                    console.error('Error checking onboarding status:', error);
+                    router.replace('/(onboarding)/profile');
+                }
             } else {
                 // User is not authenticated or email not verified, navigate to login
                 console.log('Navigating to login');
                 router.replace('/');
             }
         });
-        // Cleanup subscription on unmount
         return () => unsubscribe();
     }, [router]);
 

@@ -1,187 +1,226 @@
 import { AppColors } from '@/constants/AppColors';
-import React from 'react';
-import { Dimensions, Image, SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { getAuth } from 'firebase/auth';
+import { doc, getDoc } from 'firebase/firestore';
+import React, { useEffect, useState } from 'react';
+import { Dimensions, Image, SafeAreaView, ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
 import AnimatedButton from '../components/AnimatedButton';
 import { GlobalText } from '../components/GlobalText';
 import GlowingIcon from '../components/GlowingIcon';
+import { db } from '../firebase'; // adjust path if needed
 
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const CARD_WIDTH = Math.min(SCREEN_WIDTH * 0.92, 440);
 
+type UserProfile = {
+    displayName?: string;
+    username?: string;
+    createdAt?: any;
+    language?: string;
+    following?: number;
+    followers?: number;
+    streak?: number;
+    xp?: number;
+    league?: string;
+    level?: number;
+    accuracy?: number;
+    solved?: number;
+    timeSpent?: string;
+    // ...add any other fields you use
+};
+
 export default function ProfileScreen() {
-    // Hardcoded values for now
-    const user = {
-        name: 'Arsham',
-        handle: '@gumpointer132',
-        joinDate: 'joined april 2020',
-        language: 'Java',
-        following: 231,
-        followers: 262,
-        streak: 133,
-        xp: 13593,
-        league: 'Bronze',
-        level: 31,
-        accuracy: '84%',
-        solved: 1343,
-        timeSpent: '213hrs',
-    };
+    const [userData, setUserData] = useState<UserProfile | null>(null);
+
+    useEffect(() => {
+        const fetchUserData = async () => {
+            const auth = getAuth();
+            const user = auth.currentUser;
+            if (!user) return;
+
+            const userRef = doc(db, 'users', user.uid);
+            const userSnap = await getDoc(userRef);
+
+            if (userSnap.exists()) {
+                setUserData(userSnap.data());
+            }
+        };
+
+        fetchUserData();
+    }, []);
+
+    if (!userData) {
+        return <GlobalText>Loading...</GlobalText>;
+    }
 
     return (
-        <SafeAreaView style={{ flex: 1, backgroundColor: AppColors.navbar }}>
-            <ScrollView contentContainerStyle={styles.scrollContainer}>
-                {/* Mascot Banner */}
-                <View style={[styles.mascotBanner, { width: CARD_WIDTH }]}>
-                    <Image source={require('@/assets/images/testavatar.png')} style={styles.mascotImage} />
-                </View>
-
-                {/* Profile Info Card */}
-                <View style={[styles.profileInfoCard, { width: CARD_WIDTH, paddingHorizontal: 0 }]}>
-                    <View style={styles.profileInfoHeaderRow}>
-                        <View style={styles.profileInfoHeaderText}>
-                            <GlobalText variant="bold" style={styles.nameInfo}>{user.name}</GlobalText>
-                            <GlobalText style={styles.handleInfo}>
-                                <Text style={styles.handleInfoText}>{user.handle}</Text>
-                                <Text style={styles.joinDateInfo}>• {user.joinDate}</Text>
-                            </GlobalText>
-                        </View>
-                        <AnimatedButton
-                            icon={require('@/assets/icons/edit_icon.png')}
-                            backgroundColor={AppColors.cardBackground}
-                            borderColor={'#232A36'}
-                            borderWidth={2}
-                            borderRadius={8}
-                            height={45}
-                            width={45}
-                            iconColor="#1EA7FF"
-                            style={{ justifyContent: 'center', alignItems: 'center' }}
-                            onPress={() => { }}
-                        >
-                            {null}
-                        </AnimatedButton>
+        <>
+            <SafeAreaView style={{ flex: 1, backgroundColor: AppColors.navbar }}>
+                <View
+                    style={{
+                        position: 'absolute',
+                        left: 0,
+                        right: 0,
+                        top: 58,
+                        height: 2,
+                        backgroundColor: AppColors.borderColor,
+                        zIndex: 100,
+                    }}
+                />
+                <ScrollView contentContainerStyle={styles.scrollContainer}>
+                    {/* Mascot Banner */}
+                    <View style={[styles.mascotBanner, { width: CARD_WIDTH }]}>
+                        <Image source={require('@/assets/images/testavatar.png')} style={styles.mascotImage} />
                     </View>
-                    <View style={[styles.statsRowInfo, { width: '100%' }]}>
-                        <View style={[styles.statBoxInfo, { marginLeft: 0 }]}>
-                            <GlobalText variant="bold" style={styles.statValueInfo}>{user.language}</GlobalText>
-                            <GlobalText style={styles.statLabelInfo}>Languages</GlobalText>
-                        </View>
-                        <View style={styles.statBoxInfo}>
-                            <GlobalText variant="bold" style={styles.statValueInfo}>{user.following}</GlobalText>
-                            <GlobalText style={styles.statLabelInfo}>Following</GlobalText>
-                        </View>
-                        <View style={[styles.statBoxInfo, { marginRight: 0 }]}>
-                            <GlobalText variant="bold" style={styles.statValueInfo}>{user.followers}</GlobalText>
-                            <GlobalText style={styles.statLabelInfo}>Followers</GlobalText>
-                        </View>
-                    </View>
-                    <View style={styles.addFriendsRowInfo}>
-                        <AnimatedButton
-                            icon={require('@/assets/icons/addfriend_icon.png')}
-                            backgroundColor={AppColors.cardBackground}
-                            borderColor={'#232A36'}
-                            borderWidth={2}
-                            borderRadius={8}
-                            height={45}
-                            width={CARD_WIDTH / 2 - 6}
-                            iconColor="#339AFF"
-                            textStyle={{ color: '#9BBCDA', fontWeight: 'bold' }}
-                            style={{ marginLeft: 0, marginRight: 5, justifyContent: 'center' }}
-                            onPress={() => { }}
-                        >
-                            Add Friends
-                        </AnimatedButton>
-                        <AnimatedButton
-                            icon={require('@/assets/icons/share_icon.png')}
-                            backgroundColor={AppColors.cardBackground}
-                            borderColor={'#232A36'}
-                            borderWidth={2}
-                            borderRadius={8}
-                            height={45}
-                            width={CARD_WIDTH / 2 - 6}
-                            iconColor="#339AFF"
-                            textStyle={{ color: '#9BBCDA', fontWeight: 'bold' }}
-                            style={{ marginRight: 0, justifyContent: 'center' }}
-                            onPress={() => { }}
-                        >
-                            Share
-                        </AnimatedButton>
-                    </View>
-                </View>
 
-                {/* Divider */}
-                <View style={styles.divider} />
-
-                {/* Overview Section */}
-                <GlobalText variant="bold" style={styles.sectionTitle}>Overview</GlobalText>
-                <View style={styles.overviewGrid}>
-                    <View style={styles.overviewRowCustom}>
-                        <View style={[styles.overviewBoxCustom, { marginLeft: 0, backgroundColor: 'rgba(255,82,44,0.12)', borderColor: AppColors.red }]}> {/* Streak */}
-                            <View style={styles.overviewContentRow}>
-                                <View style={styles.overviewTextCol}>
-                                    <GlobalText variant="bold" style={[styles.overviewValueCustom, { color: AppColors.red }]}>{user.streak}</GlobalText>
-                                    <GlobalText style={styles.overviewLabelCustom}>Streak</GlobalText>
+                    {/* Profile Info Card */}
+                    <View style={[styles.profileInfoCard, { width: CARD_WIDTH, paddingHorizontal: 0 }]}>
+                        <View style={styles.profileInfoHeaderRow}>
+                            <View style={styles.profileInfoHeaderText}>
+                                <GlobalText variant="bold" style={styles.nameInfo}>{userData.displayName}</GlobalText>
+                                <View style={styles.handleInfo}>
+                                    <GlobalText style={styles.handleInfoText}>@{userData.username}</GlobalText>
+                                    <GlobalText style={styles.joinDateInfo}> • {userData.createdAt?.toDate().toLocaleDateString()}</GlobalText>
                                 </View>
-                                <GlowingIcon source={require('@/assets/icons/streak_icon.png')} color={AppColors.red} style={styles.overviewIconCustom} tintColor={AppColors.red} />
+                            </View>
+                            <AnimatedButton
+                                icon={require('@/assets/icons/edit_icon.png')}
+                                backgroundColor={AppColors.cardBackground}
+                                borderColor={'#232A36'}
+                                borderWidth={2}
+                                borderRadius={8}
+                                height={45}
+                                width={45}
+                                iconColor="#1EA7FF"
+                                style={{ justifyContent: 'center', alignItems: 'center' }}
+                                onPress={() => { }}
+                            >
+                                {null}
+                            </AnimatedButton>
+                        </View>
+                        <View style={[styles.statsRowInfo, { width: '100%' }]}>
+                            <View style={[styles.statBoxInfo, { marginLeft: 0 }]}>
+                                <GlobalText variant="bold" style={styles.statValueInfo}>{userData.language || 'Java'}</GlobalText>
+                                <GlobalText style={styles.statLabelInfo}>Languages</GlobalText>
+                            </View>
+                            <View style={styles.statBoxInfo}>
+                                <GlobalText variant="bold" style={styles.statValueInfo}>{userData.following || 0}</GlobalText>
+                                <GlobalText style={styles.statLabelInfo}>Following</GlobalText>
+                            </View>
+                            <View style={[styles.statBoxInfo, { marginRight: 0 }]}>
+                                <GlobalText variant="bold" style={styles.statValueInfo}>{userData.followers || 0}</GlobalText>
+                                <GlobalText style={styles.statLabelInfo}>Followers</GlobalText>
                             </View>
                         </View>
-                        <View style={[styles.overviewBoxCustom, { marginRight: 0, backgroundColor: 'rgba(0,148,251,0.12)', borderColor: AppColors.blue }]}> {/* XP */}
-                            <View style={styles.overviewContentRow}>
-                                <View style={styles.overviewTextCol}>
-                                    <GlobalText variant="bold" style={[styles.overviewValueCustom, { color: AppColors.blue }]}>{user.xp}</GlobalText>
-                                    <GlobalText style={styles.overviewLabelCustom}>Total XP</GlobalText>
+                        <View style={styles.addFriendsRowInfo}>
+                            <AnimatedButton
+                                icon={require('@/assets/icons/addfriend_icon.png')}
+                                backgroundColor={AppColors.cardBackground}
+                                borderColor={'#232A36'}
+                                borderWidth={2}
+                                borderRadius={8}
+                                height={45}
+                                width={CARD_WIDTH / 2 - 6}
+                                iconColor="#339AFF"
+                                textStyle={{ color: '#9BBCDA', fontWeight: 'bold' }}
+                                style={{ marginLeft: 0, marginRight: 5, justifyContent: 'center' }}
+                                onPress={() => { }}
+                            >
+                                <GlobalText style={{ color: '#9BBCDA', fontWeight: 'bold' }}>Add Friends</GlobalText>
+                            </AnimatedButton>
+                            <AnimatedButton
+                                icon={require('@/assets/icons/share_icon.png')}
+                                backgroundColor={AppColors.cardBackground}
+                                borderColor={'#232A36'}
+                                borderWidth={2}
+                                borderRadius={8}
+                                height={45}
+                                width={CARD_WIDTH / 2 - 6}
+                                iconColor="#339AFF"
+                                textStyle={{ color: '#9BBCDA', fontWeight: 'bold' }}
+                                style={{ marginRight: 0, justifyContent: 'center' }}
+                                onPress={() => { }}
+                            >
+                                <GlobalText style={{ color: '#9BBCDA', fontWeight: 'bold' }}>Share</GlobalText>
+                            </AnimatedButton>
+                        </View>
+                    </View>
+
+                    {/* Divider */}
+                    <View style={styles.divider} />
+
+                    {/* Overview Section */}
+                    <GlobalText variant="bold" style={styles.sectionTitle}>Overview</GlobalText>
+                    <View style={styles.overviewGrid}>
+                        <View style={styles.overviewRowCustom}>
+                            <View style={[styles.overviewBoxCustom, { marginLeft: 0, backgroundColor: 'rgba(255,82,44,0.12)', borderColor: AppColors.red }]}> {/* Streak */}
+                                <View style={styles.overviewContentRow}>
+                                    <View style={styles.overviewTextCol}>
+                                        <GlobalText variant="bold" style={[styles.overviewValueCustom, { color: AppColors.red }]}>{userData.streak || 0}</GlobalText>
+                                        <GlobalText style={styles.overviewLabelCustom}>Streak</GlobalText>
+                                    </View>
+                                    <GlowingIcon source={require('@/assets/icons/streak_icon.png')} color={AppColors.red} style={styles.overviewIconCustom} tintColor={AppColors.red} />
                                 </View>
-                                <GlowingIcon source={require('@/assets/icons/points_icon.png')} color={AppColors.blue} style={styles.overviewIconCustom} tintColor={AppColors.blue} />
+                            </View>
+                            <View style={[styles.overviewBoxCustom, { marginRight: 0, backgroundColor: 'rgba(0,148,251,0.12)', borderColor: AppColors.blue }]}> {/* XP */}
+                                <View style={styles.overviewContentRow}>
+                                    <View style={styles.overviewTextCol}>
+                                        <GlobalText variant="bold" style={[styles.overviewValueCustom, { color: AppColors.blue }]}>{userData.xp}</GlobalText>
+                                        <GlobalText style={styles.overviewLabelCustom}>Total XP</GlobalText>
+                                    </View>
+                                    <GlowingIcon source={require('@/assets/icons/points_icon.png')} color={AppColors.blue} style={styles.overviewIconCustom} tintColor={AppColors.blue} />
+                                </View>
+                            </View>
+                        </View>
+                        <View style={styles.overviewRowCustom}>
+                            <View style={[styles.overviewBoxCustom, { marginLeft: 0, backgroundColor: 'rgba(192,110,255,0.12)', borderColor: AppColors.purple }]}> {/* League */}
+                                <View style={styles.overviewContentRow}>
+                                    <View style={styles.overviewTextCol}>
+                                        <GlobalText variant="bold" style={[styles.overviewValueCustom, { color: AppColors.purple }]}>{userData.league || 'Bronze'}</GlobalText>
+                                        <GlobalText style={styles.overviewLabelCustom}>League</GlobalText>
+                                    </View>
+                                    <GlowingIcon source={require('@/assets/icons/filled_league_icon.png')} color={AppColors.purple} style={styles.overviewIconCustom} tintColor={AppColors.purple} />
+                                </View>
+                            </View>
+                            <View style={[styles.overviewBoxCustom, { marginRight: 0, backgroundColor: 'rgba(206,249,82,0.12)', borderColor: AppColors.green }]}> {/* Level */}
+                                <View style={styles.overviewContentRow}>
+                                    <View style={styles.overviewTextCol}>
+                                        <GlobalText variant="bold" style={[styles.overviewValueCustom, { color: AppColors.green }]}>{userData.level}</GlobalText>
+                                        <GlobalText style={styles.overviewLabelCustom}>Level</GlobalText>
+                                    </View>
+                                    <GlowingIcon source={require('@/assets/icons/level_icon.png')} color={AppColors.green} style={styles.overviewIconCustom} tintColor={AppColors.green} />
+                                </View>
                             </View>
                         </View>
                     </View>
-                    <View style={styles.overviewRowCustom}>
-                        <View style={[styles.overviewBoxCustom, { marginLeft: 0, backgroundColor: 'rgba(192,110,255,0.12)', borderColor: AppColors.purple }]}> {/* League */}
-                            <View style={styles.overviewContentRow}>
-                                <View style={styles.overviewTextCol}>
-                                    <GlobalText variant="bold" style={[styles.overviewValueCustom, { color: AppColors.purple }]}>{user.league}</GlobalText>
-                                    <GlobalText style={styles.overviewLabelCustom}>League</GlobalText>
-                                </View>
-                                <GlowingIcon source={require('@/assets/icons/filled_league_icon.png')} color={AppColors.purple} style={styles.overviewIconCustom} tintColor={AppColors.purple} />
-                            </View>
+
+                    {/* Divider */}
+                    <View style={styles.divider} />
+
+                    {/* Personal Stats Section */}
+                    <GlobalText variant="bold" style={styles.sectionTitle}>Personal Stats</GlobalText>
+                    <View style={styles.statsRowSection}>
+                        <View style={[styles.statBox2, { marginLeft: 0 }]}> {/* Accuracy */}
+                            <GlobalText variant="bold" style={[styles.statValue2, { color: AppColors.blue, textAlign: 'left' }]}>{userData.accuracy || 0 + '%'}</GlobalText>
+                            <GlobalText style={[styles.statLabel2, { textAlign: 'left' }]}>Accuracy</GlobalText>
                         </View>
-                        <View style={[styles.overviewBoxCustom, { marginRight: 0, backgroundColor: 'rgba(206,249,82,0.12)', borderColor: AppColors.green }]}> {/* Level */}
-                            <View style={styles.overviewContentRow}>
-                                <View style={styles.overviewTextCol}>
-                                    <GlobalText variant="bold" style={[styles.overviewValueCustom, { color: AppColors.green }]}>{user.level}</GlobalText>
-                                    <GlobalText style={styles.overviewLabelCustom}>Level</GlobalText>
-                                </View>
-                                <GlowingIcon source={require('@/assets/icons/level_icon.png')} color={AppColors.green} style={styles.overviewIconCustom} tintColor={AppColors.green} />
-                            </View>
+                        <View style={styles.statBox2}> {/* Solved */}
+                            <GlobalText variant="bold" style={[styles.statValue2, { color: AppColors.blue, textAlign: 'left' }]}>{userData.solved || 0}</GlobalText>
+                            <GlobalText style={[styles.statLabel2, { textAlign: 'left' }]}>Solved</GlobalText>
+                        </View>
+                        <View style={[styles.statBox2, { marginRight: 0 }]}> {/* Time Spent */}
+                            <GlobalText variant="bold" style={[styles.statValue2, { color: AppColors.blue, textAlign: 'left' }]}>{userData.timeSpent || 0 + 'hrs'}</GlobalText>
+                            <GlobalText style={[styles.statLabel2, { textAlign: 'left' }]}>Time Spent</GlobalText>
                         </View>
                     </View>
-                </View>
 
-                {/* Divider */}
-                <View style={styles.divider} />
-
-                {/* Personal Stats Section */}
-                <GlobalText variant="bold" style={styles.sectionTitle}>Personal Stats</GlobalText>
-                <View style={styles.statsRowSection}>
-                    <View style={[styles.statBox2, { marginLeft: 0 }]}> {/* Accuracy */}
-                        <GlobalText variant="bold" style={[styles.statValue2, { color: AppColors.blue, textAlign: 'left' }]}>{user.accuracy}</GlobalText>
-                        <GlobalText style={[styles.statLabel2, { textAlign: 'left' }]}>Accuracy</GlobalText>
-                    </View>
-                    <View style={styles.statBox2}> {/* Solved */}
-                        <GlobalText variant="bold" style={[styles.statValue2, { color: AppColors.blue, textAlign: 'left' }]}>{user.solved}</GlobalText>
-                        <GlobalText style={[styles.statLabel2, { textAlign: 'left' }]}>Solved</GlobalText>
-                    </View>
-                    <View style={[styles.statBox2, { marginRight: 0 }]}> {/* Time Spent */}
-                        <GlobalText variant="bold" style={[styles.statValue2, { color: AppColors.blue, textAlign: 'left' }]}>{user.timeSpent}</GlobalText>
-                        <GlobalText style={[styles.statLabel2, { textAlign: 'left' }]}>Time Spent</GlobalText>
-                    </View>
-                </View>
-
-                {/* Logout Button */}
-                <TouchableOpacity style={[styles.logoutBtn, { backgroundColor: AppColors.cardBackground }]}>
-                    <GlobalText variant="bold" style={styles.logoutText}>Logout</GlobalText>
-                </TouchableOpacity>
-            </ScrollView>
-        </SafeAreaView >
+                    {/* Logout Button */}
+                    <TouchableOpacity style={[styles.logoutBtn, { backgroundColor: AppColors.cardBackground }]}>
+                        <GlobalText variant="bold" style={styles.logoutText}>Logout</GlobalText>
+                    </TouchableOpacity>
+                </ScrollView>
+            </SafeAreaView>
+        </>
     );
 }
 
@@ -246,7 +285,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         marginBottom: 10,
-        textAlign: 'left',
     },
     handleInfoText: {
         color: '#339AFF',

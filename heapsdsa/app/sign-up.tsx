@@ -1,7 +1,9 @@
 import { AppColors } from '@/constants/AppColors'
 import { Link, useRouter } from 'expo-router'
-import React, { useCallback, useMemo, useState } from 'react'
+import { getAuth, reload } from 'firebase/auth'
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { ActivityIndicator, StyleSheet, TouchableOpacity, View } from 'react-native'
+import AnimatedButton from './components/AnimatedButton'
 import { GlobalText } from './components/GlobalText'
 import { GlobalTextInput } from './components/GlobalTextInput'
 import { signUpWithEmail } from './utils/auth'
@@ -13,7 +15,7 @@ export default function SignUpScreen() {
     const [confirmPassword, setConfirmPassword] = useState('')
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
-    const [verificationSent, setVerificationSent] = useState(false)
+    const pollingRef = useRef<number | null>(null)
 
     // Memoize email validation to prevent re-computation
     const isEmailValid = useMemo(() => {
@@ -55,8 +57,7 @@ export default function SignUpScreen() {
 
         try {
             const userCredential = await signUpWithEmail(emailAddress, password)
-            setVerificationSent(true)
-            setError('Account created! Please check your email to verify your account before signing in.')
+            router.replace({ pathname: '/(auth)/verify-email', params: { email: emailAddress } })
         } catch (err: any) {
             console.error(err)
             switch (err.code) {
@@ -75,86 +76,107 @@ export default function SignUpScreen() {
         } finally {
             setLoading(false)
         }
-    }, [loading, isEmailValid, isPasswordValid, isConfirmPasswordValid, emailAddress, password])
+    }, [loading, isEmailValid, isPasswordValid, isConfirmPasswordValid, emailAddress, password, router])
 
-    if (verificationSent) {
-        return (
-            <View style={styles.container}>
-                <View style={styles.card}>
-                    <GlobalText style={styles.title}>Account Created!</GlobalText>
-                    <GlobalText style={styles.subtitle}>
-                        Please verify your email address
-                    </GlobalText>
-                    <GlobalText style={styles.successText}>
-                        We've sent a verification email to {emailAddress}. Please check your inbox and click the verification link.
-                    </GlobalText>
-                    <TouchableOpacity
-                        onPress={() => {
-                            setVerificationSent(false)
-                            setError('')
-                            router.replace('/')
-                        }}
-                        style={styles.button}
-                    >
-                        <GlobalText style={styles.buttonText}>Back to Sign In</GlobalText>
-                    </TouchableOpacity>
-                </View>
-            </View>
-        )
-    }
+    // Poll for email verification after account creation
+    useEffect(() => {
+        const auth = getAuth()
+        pollingRef.current = setInterval(async () => {
+            if (auth.currentUser) {
+                await reload(auth.currentUser)
+                if (auth.currentUser.emailVerified) {
+                    clearInterval(pollingRef.current as number)
+                    pollingRef.current = null
+                    // Let AuthContext handle navigation
+                    router.replace('/')
+                }
+            }
+        }, 3000)
+        return () => {
+            if (pollingRef.current) {
+                clearInterval(pollingRef.current)
+            }
+        }
+    }, [router])
 
     return (
         <View style={styles.container}>
             <View style={styles.card}>
-                <GlobalText style={styles.title}>Create Account</GlobalText>
-                <GlobalText style={styles.subtitle}>Sign up to get started</GlobalText>
+                <View style={styles.headerSection}>
+                    <GlobalText style={styles.title}>Create Account</GlobalText>
+                    <GlobalText style={styles.subtitle}>Join us to start your DSA learning journey</GlobalText>
+                </View>
 
-                <GlobalTextInput
-                    autoCapitalize="none"
-                    value={emailAddress}
-                    placeholder="Email address"
-                    onChangeText={setEmailAddress}
-                    style={styles.input}
-                    keyboardType="email-address"
-                />
-                <GlobalTextInput
-                    value={password}
-                    placeholder="Password (min 6 characters)"
-                    secureTextEntry
-                    onChangeText={setPassword}
-                    style={styles.input}
-                />
-                <GlobalTextInput
-                    value={confirmPassword}
-                    placeholder="Confirm password"
-                    secureTextEntry
-                    onChangeText={setConfirmPassword}
-                    style={styles.input}
-                />
+                <View style={styles.formSection}>
+                    <View style={styles.inputGroup}>
+                        <GlobalText style={styles.inputLabel}>Email Address</GlobalText>
+                        <GlobalTextInput
+                            autoCapitalize="none"
+                            value={emailAddress}
+                            placeholder="Enter your email"
+                            onChangeText={setEmailAddress}
+                            style={styles.input}
+                            keyboardType="email-address"
+                            placeholderTextColor="#666666"
+                        />
+                    </View>
 
-                <TouchableOpacity
-                    onPress={onSignUpPress}
-                    disabled={loading}
-                    style={[styles.button, loading && styles.buttonDisabled]}
-                >
-                    {loading ? (
-                        <ActivityIndicator color={"#fff"} />
-                    ) : (
-                        <GlobalText style={styles.buttonText}>Create Account</GlobalText>
-                    )}
-                </TouchableOpacity>
+                    <View style={styles.inputGroup}>
+                        <GlobalText style={styles.inputLabel}>Password</GlobalText>
+                        <GlobalTextInput
+                            value={password}
+                            placeholder="Enter password (min 6 characters)"
+                            secureTextEntry
+                            onChangeText={setPassword}
+                            style={styles.input}
+                            placeholderTextColor="#666666"
+                        />
+                    </View>
 
-                {error ? (
-                    <GlobalText style={styles.errorText}>{error}</GlobalText>
-                ) : null}
+                    <View style={styles.inputGroup}>
+                        <GlobalText style={styles.inputLabel}>Confirm Password</GlobalText>
+                        <GlobalTextInput
+                            value={confirmPassword}
+                            placeholder="Confirm your password"
+                            secureTextEntry
+                            onChangeText={setConfirmPassword}
+                            style={styles.input}
+                            placeholderTextColor="#666666"
+                        />
+                    </View>
 
-                <Link href="/" asChild>
-                    <TouchableOpacity style={styles.linkButton}>
-                        <GlobalText style={styles.linkText}>
-                            Already have an account? Sign in
-                        </GlobalText>
-                    </TouchableOpacity>
-                </Link>
+                    {error ? (
+                        <View style={styles.errorContainer}>
+                            <GlobalText style={styles.errorText}>{error}</GlobalText>
+                        </View>
+                    ) : null}
+
+                    <AnimatedButton
+                        onPress={loading ? undefined : onSignUpPress}
+                        backgroundColor={AppColors.buttonPrimary}
+                        shadowColor="#1a4a8a"
+                        borderRadius={12}
+                        paddingVertical={16}
+                        style={styles.animatedButton}
+                        textStyle={styles.animatedButtonText}
+                    >
+                        {loading ? (
+                            <ActivityIndicator color="#fff" />
+                        ) : (
+                            "Create Account"
+                        )}
+                    </AnimatedButton>
+                </View>
+
+                <View style={styles.footerSection}>
+                    <Link href="/" asChild>
+                        <TouchableOpacity style={styles.linkButton}>
+                            <GlobalText style={styles.linkText}>
+                                Already have an account? <GlobalText style={styles.linkTextBold}>Sign in</GlobalText>
+                            </GlobalText>
+                        </TouchableOpacity>
+                    </Link>
+                </View>
             </View>
         </View>
     )
@@ -170,21 +192,27 @@ const styles = StyleSheet.create({
     },
     card: {
         backgroundColor: AppColors.cardBackground,
-        padding: 30,
-        borderRadius: 12,
+        padding: 32,
+        borderRadius: 16,
         width: '100%',
-        maxWidth: 400,
-        shadowColor: "#000",
+        maxWidth: 420,
+        shadowColor: '#000',
         shadowOffset: {
             width: 0,
-            height: 2,
+            height: 4,
         },
-        shadowOpacity: 0.1,
-        shadowRadius: 3.84,
-        elevation: 5,
+        shadowOpacity: 0.15,
+        shadowRadius: 8,
+        elevation: 8,
+        borderWidth: 1,
+        borderColor: AppColors.borderColor,
+    },
+    headerSection: {
+        marginBottom: 32,
+        alignItems: 'center',
     },
     title: {
-        fontSize: 28,
+        fontSize: 32,
         fontWeight: 'bold',
         textAlign: 'center',
         marginBottom: 8,
@@ -193,54 +221,96 @@ const styles = StyleSheet.create({
     subtitle: {
         fontSize: 16,
         textAlign: 'center',
-        marginBottom: 30,
         color: AppColors.textSecondary,
+        lineHeight: 22,
+    },
+    formSection: {
+        marginBottom: 24,
+    },
+    inputGroup: {
+        marginBottom: 20,
+    },
+    inputLabel: {
+        fontSize: 14,
+        fontWeight: '600',
+        color: AppColors.textPrimary,
+        marginBottom: 8,
     },
     input: {
         width: '100%',
-        padding: 15,
-        marginVertical: 8,
-        borderWidth: 1,
-        borderColor: AppColors.inputBorder,
-        borderRadius: 8,
+        padding: 16,
+        borderWidth: 1.5,
+        borderColor: AppColors.borderColor,
+        borderRadius: 12,
         fontSize: 16,
         backgroundColor: AppColors.inputBackground,
+        color: '#333333',
     },
-    button: {
-        width: '100%',
-        backgroundColor: AppColors.buttonPrimary,
-        padding: 15,
+    errorContainer: {
+        backgroundColor: 'rgba(255, 82, 44, 0.1)',
+        padding: 12,
         borderRadius: 8,
-        marginVertical: 15,
-        alignItems: 'center',
+        marginBottom: 16,
+        borderWidth: 1,
+        borderColor: 'rgba(255, 82, 44, 0.2)',
     },
-    buttonDisabled: {
-        backgroundColor: "#fff",
+    errorText: {
+        color: AppColors.red,
+        textAlign: 'center',
+        fontSize: 14,
+        lineHeight: 20,
     },
-    buttonText: {
-        color: "#fff",
+    animatedButton: {
+        marginTop: 8,
+    },
+    animatedButtonText: {
+        color: '#fff',
         fontSize: 16,
         fontWeight: '600',
     },
-    errorText: {
-        color: AppColors.error,
-        textAlign: 'center',
-        marginVertical: 10,
-        fontSize: 14,
+    secondaryButton: {
+        width: '100%',
+        backgroundColor: 'transparent',
+        padding: 16,
+        borderRadius: 12,
+        alignItems: 'center',
+        borderWidth: 1.5,
+        borderColor: AppColors.borderColor,
+    },
+    secondaryButtonText: {
+        color: AppColors.textPrimary,
+        fontSize: 16,
+        fontWeight: '600',
+    },
+    contentSection: {
+        marginBottom: 24,
+    },
+    successContainer: {
+        backgroundColor: 'rgba(52, 199, 89, 0.1)',
+        padding: 16,
+        borderRadius: 12,
+        borderWidth: 1,
+        borderColor: 'rgba(52, 199, 89, 0.2)',
     },
     successText: {
         color: AppColors.success,
         textAlign: 'center',
-        marginVertical: 10,
         fontSize: 14,
+        lineHeight: 20,
     },
-    linkButton: {
-        marginTop: 15,
+    footerSection: {
         alignItems: 'center',
     },
+    linkButton: {
+        paddingVertical: 8,
+    },
     linkText: {
-        color: AppColors.link,
+        color: AppColors.textPrimary,
         fontSize: 14,
-        textDecorationLine: 'underline',
+        textAlign: 'center',
+    },
+    linkTextBold: {
+        color: AppColors.link,
+        fontWeight: '600',
     },
 }) 

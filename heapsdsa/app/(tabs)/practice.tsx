@@ -27,10 +27,10 @@ export default function PracticePage() {
 
     const getDarkerBackground = (color: string) => {
         switch (color) {
-            case '#1EA7FF': return 'rgba(15, 26, 42, 0.5)'; // Blue
-            case '#4DEB7E': return 'rgba(15, 42, 26, 0.5)'; // Green
-            case '#B97AFF': return 'rgba(42, 15, 42, 0.5)'; // Purple
-            case '#FF6A3D': return 'rgba(42, 26, 15, 0.5)'; // Orange
+            case '#1EA7FF': return 'rgba(15, 26, 42, 0.7)'; // Blue
+            case '#4DEB7E': return 'rgba(15, 42, 26, 0.7)'; // Green
+            case '#B97AFF': return 'rgba(42, 15, 42, 0.7)'; // Purple
+            case '#FF6A3D': return 'rgba(42, 26, 15, 0.7)'; // Orange
             default: return 'rgba(26, 26, 26, 0.5)';
         }
     };
@@ -45,77 +45,90 @@ export default function PracticePage() {
     );
 
     return (
-        <SafeAreaView style={{ flex: 1, backgroundColor: AppColors.background }}>
-            <ScrollView style={{ flex: 1 }} contentContainerStyle={styles.container}>
-                {/* Top Card */}
-                <View style={[styles.topCard, { borderColor: topCardColor, backgroundColor: getDarkerBackground(topCardColor) }]}>
-                    <View style={{ flex: 1, justifyContent: 'space-between' }}>
-                        <View>
-                            <GlobalText style={styles.topTitle}>Practice Makes Perfect!</GlobalText>
-                            <GlobalText style={styles.topSubtitle}>Practice questions that might be tough</GlobalText>
+        <>
+            <SafeAreaView style={{ flex: 1, backgroundColor: AppColors.background }}>
+                <View
+                    style={{
+                        position: 'absolute',
+                        left: 0,
+                        right: 0,
+                        top: 58,
+                        height: 2,
+                        backgroundColor: AppColors.borderColor,
+                        zIndex: 100,
+                    }}
+                />
+                <ScrollView style={{ flex: 1 }} contentContainerStyle={styles.container}>
+                    {/* Top Card */}
+                    <View style={[styles.topCard, { borderColor: topCardColor, backgroundColor: getDarkerBackground(topCardColor) }]}>
+                        <View style={{ flex: 1, justifyContent: 'space-between' }}>
+                            <View>
+                                <GlobalText variant="bold" style={[styles.topTitle, { color: topCardColor }]}>Practice Makes Perfect!</GlobalText>
+                                <GlobalText style={styles.topSubtitle}>Practice questions that might be tough</GlobalText>
+                            </View>
+                            <View style={styles.topCardBottomRow}>
+                                <AnimatedButton
+                                    icon={require('@/assets/icons/points_icon.png')}
+                                    backgroundColor={topCardColor}
+                                    shadowColor={darkenHexColor(topCardColor, 0.25)}
+                                    shadowOffsetHeight={4}
+                                    shadowRadius={0}
+                                    shadowOpacity={1}
+                                    elevation={10}
+                                    borderRadius={8}
+                                    paddingVertical={8}
+                                    paddingHorizontal={16}
+                                    iconColor="#fff"
+                                    fontSize={16}
+                                    width={155}
+                                    height={40}
+                                    style={{ marginTop: 0 }}
+                                >
+                                    +20 Start
+                                </AnimatedButton>
+                            </View>
                         </View>
-                        <View style={styles.topCardBottomRow}>
-                            <AnimatedButton
-                                icon={require('@/assets/icons/points_icon.png')}
-                                backgroundColor={topCardColor}
-                                shadowColor={darkenHexColor(topCardColor, 0.25)}
-                                shadowOffsetHeight={4}
-                                shadowRadius={0}
-                                shadowOpacity={1}
-                                elevation={10}
-                                borderRadius={8}
-                                paddingVertical={8}
-                                paddingHorizontal={16}
-                                iconColor="#fff"
-                                fontSize={16}
-                                width={155}
-                                height={40}
-                                style={{ marginTop: 0 }}
-                            >
-                                +20 Start
-                            </AnimatedButton>
-                        </View>
+                        <Image
+                            source={require('@/assets/images/mascot.png')}
+                            style={styles.topImage}
+                        />
                     </View>
-                    <Image
-                        source={require('@/assets/images/mascot.png')}
-                        style={styles.topImage}
+
+                    {/* Section Title */}
+                    <GlobalText style={styles.sectionTitle}>Practice</GlobalText>
+
+                    {/* Practice Modes */}
+                    <PracticeCard
+                        title="Zen Mode"
+                        subtitle="Practice without concern!"
+                        points="+20"
+                        icon={require('@/assets/icons/zenmode_icon.png')}
+                        iconColor="#1EA7FF"
                     />
-                </View>
-
-                {/* Section Title */}
-                <GlobalText style={styles.sectionTitle}>Practice</GlobalText>
-
-                {/* Practice Modes */}
-                <PracticeCard
-                    title="Zen Mode"
-                    subtitle="Practice without concern!"
-                    points="+20"
-                    icon={require('@/assets/icons/zenmode_icon.png')}
-                    iconColor="#1EA7FF"
-                />
-                <PracticeCard
-                    title="Mistakes"
-                    subtitle="Go over things you got wrong!"
-                    points="+20"
-                    icon={require('@/assets/icons/mistakes_icon.png')}
-                    iconColor="#4DEB7E"
-                />
-                <PracticeCard
-                    title="Time Attack"
-                    subtitle="Questions under a time limit"
-                    points="+20"
-                    icon={require('@/assets/icons/timed_icon.png')}
-                    iconColor="#B97AFF"
-                />
-                <PracticeCard
-                    title="Sudden Death"
-                    subtitle="Get one question wrong its over!"
-                    points="+20"
-                    icon={require('@/assets/icons/suddendeath_icon.png')}
-                    iconColor="#FF6A3D"
-                />
-            </ScrollView>
-        </SafeAreaView>
+                    <PracticeCard
+                        title="Mistakes"
+                        subtitle="Go over things you got wrong!"
+                        points="+20"
+                        icon={require('@/assets/icons/mistakes_icon.png')}
+                        iconColor="#4DEB7E"
+                    />
+                    <PracticeCard
+                        title="Time Attack"
+                        subtitle="Questions under a time limit"
+                        points="+20"
+                        icon={require('@/assets/icons/timed_icon.png')}
+                        iconColor="#B97AFF"
+                    />
+                    <PracticeCard
+                        title="Sudden Death"
+                        subtitle="Get one question wrong its over!"
+                        points="+20"
+                        icon={require('@/assets/icons/suddendeath_icon.png')}
+                        iconColor="#FF6A3D"
+                    />
+                </ScrollView>
+            </SafeAreaView>
+        </>
     );
 }
 
@@ -155,7 +168,7 @@ const styles = StyleSheet.create({
         marginBottom: 2,
     },
     topSubtitle: {
-        color: AppColors.textSecondary,
+        color: '#fff',
         fontSize: 14,
         marginBottom: 0,
         marginLeft: 10,

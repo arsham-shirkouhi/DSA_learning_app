@@ -10,6 +10,7 @@ export const signUpWithEmail = async (email: string, password: string) => {
         // Send verification email right after sign up
         if (userCredential.user) {
             await sendEmailVerification(userCredential.user)
+            // Do NOT create user doc here. Only after verification.
         }
         return userCredential
     } catch (error: any) {

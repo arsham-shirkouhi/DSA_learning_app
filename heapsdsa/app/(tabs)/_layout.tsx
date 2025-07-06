@@ -2,6 +2,7 @@ import { AppColors } from '@/constants/AppColors';
 import { Tabs } from 'expo-router';
 import React from 'react';
 import { Image, StyleSheet, View } from 'react-native';
+import HapticTab from '../../components/HapticTab';
 
 export default function TabLayout() {
   // Unique colors for each tab
@@ -38,7 +39,11 @@ export default function TabLayout() {
             borderTopColor: AppColors.borderColor,
             borderTopWidth: 2,
             height: 90,
+            paddingTop: 0,
+            paddingBottom: 0,
           },
+          tabBarHideOnKeyboard: true,
+          tabBarButton: (props) => <HapticTab {...props} />,
         }}
       >
         <Tabs.Screen
@@ -118,7 +123,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   tabIcon: {
-    marginTop: 30,
     width: 40,
     height: 40,
     resizeMode: 'contain',

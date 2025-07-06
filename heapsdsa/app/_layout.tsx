@@ -52,8 +52,11 @@ function RootLayoutNav() {
   return (
     <Stack screenOptions={{ headerShown: false }}>
       {isAuthenticated ? (
-        // User is signed in, show the main app.
-        <Stack.Screen name="(tabs)" />
+        // User is signed in, show the main app or onboarding
+        <>
+          <Stack.Screen name="(tabs)" />
+          <Stack.Screen name="(onboarding)" />
+        </>
       ) : (
         // User is not signed in, show the login page as the main entry point
         <>
