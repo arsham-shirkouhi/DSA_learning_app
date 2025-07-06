@@ -70,7 +70,7 @@ def format_question(question_data):
     # Parse the target_text
     parsed = parse_target_text(question_data['target_text'])
     if not parsed:
-        return f"Error parsing question: {question_data['target_text']}\n"
+        return None  # Return None instead of error message
     
     formatted = f"Question: {parsed['question']}\n"
     
@@ -103,18 +103,24 @@ def process_quiz_data():
         
         # Format each question
         formatted_questions = []
+        skipped_count = 0
         for question in quiz_data:
             formatted_question = format_question(question)
-            formatted_questions.append({
-                "input_text": question["input_text"],
-                "target_text": formatted_question
-            })
+            if formatted_question is not None:  # Only include successfully parsed questions
+                formatted_questions.append({
+                    "input_text": question["input_text"],
+                    "target_text": formatted_question
+                })
+            else:
+                skipped_count += 1
         
         # Write to new file
         with open(output_file, 'w', encoding='utf-8') as f:
             json.dump(formatted_questions, f, indent=2, ensure_ascii=False)
         
         print(f"✅ Successfully processed {len(formatted_questions)} questions")
+        if skipped_count > 0:
+            print(f"⚠️  Skipped {skipped_count} questions that couldn't be parsed")
         print(f"📁 Output saved to: {output_file}")
         
         # Show a sample of the first question
