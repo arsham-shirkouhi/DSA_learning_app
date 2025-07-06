@@ -7,7 +7,7 @@ import json
 def main():
     global tokenizer
     
-    with open("./datasets/quiz_data_generation_format.json") as f:
+    with open("./datasets/final_quiz_questions.json") as f:
         data = json.load(f)
         
     dataset = Dataset.from_list(data)

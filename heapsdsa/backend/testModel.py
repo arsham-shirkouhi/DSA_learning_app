@@ -64,14 +64,14 @@ def bart_model():
     model.eval()
 
     # Prompt
-    prompt = "Generate 5 **valid** and **factually correct** multiple-choice question on topic=Tree and difficulty=Hard. Include 4 distinct options and specify the correct answer using Answer: <option>"
+    prompt = "Generate a question on topic=Array and difficulty=Hard"
     inputs = tokenizer(prompt, return_tensors="pt")
 
     # Generate multiple diverse questions
     outputs = model.generate(
         **inputs,
         max_new_tokens=128,
-        num_return_sequences=5,     # get 5 sequences
+        num_return_sequences=1,     # get 5 sequences
         do_sample=True,
         temperature=0.8,
         top_p=0.95,
