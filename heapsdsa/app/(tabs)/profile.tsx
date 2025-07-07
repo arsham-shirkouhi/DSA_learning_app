@@ -1,51 +1,22 @@
 import { AppColors } from '@/constants/AppColors';
-import { getAuth } from 'firebase/auth';
-import { doc, getDoc } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react';
 import { Dimensions, Image, SafeAreaView, ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
 import AnimatedButton from '../components/AnimatedButton';
 import { GlobalText } from '../components/GlobalText';
 import GlowingIcon from '../components/GlowingIcon';
-import { db } from '../firebase'; // adjust path if needed
-
+import { UserProfile, userService } from '../utils/userService';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const CARD_WIDTH = Math.min(SCREEN_WIDTH * 0.92, 440);
-
-type UserProfile = {
-    displayName?: string;
-    username?: string;
-    createdAt?: any;
-    language?: string;
-    following?: number;
-    followers?: number;
-    streak?: number;
-    xp?: number;
-    league?: string;
-    level?: number;
-    accuracy?: number;
-    solved?: number;
-    timeSpent?: string;
-    // ...add any other fields you use
-};
 
 export default function ProfileScreen() {
     const [userData, setUserData] = useState<UserProfile | null>(null);
 
     useEffect(() => {
         const fetchUserData = async () => {
-            const auth = getAuth();
-            const user = auth.currentUser;
-            if (!user) return;
-
-            const userRef = doc(db, 'users', user.uid);
-            const userSnap = await getDoc(userRef);
-
-            if (userSnap.exists()) {
-                setUserData(userSnap.data());
-            }
+            const data = await userService.getCurrentUserProfile();
+            if (data) setUserData(data);
         };
-
         fetchUserData();
     }, []);
 

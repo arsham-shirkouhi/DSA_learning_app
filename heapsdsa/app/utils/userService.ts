@@ -1,12 +1,12 @@
-import { User } from 'firebase/auth';
-import { doc, getDoc, setDoc } from 'firebase/firestore';
+import { User, getAuth } from 'firebase/auth';
+import { doc, getDoc, serverTimestamp, setDoc } from 'firebase/firestore';
 import { db } from '../firebase';
 
 export interface UserProfile {
-    displayName: string;
-    username: string;
-    currentGoal: string;
-    isOnboardingCompleted: boolean;
+    displayName?: string;
+    username?: string;
+    currentGoal?: string;
+    isOnboardingCompleted?: boolean;
     email?: string;
     level?: number;
     xp?: number;
@@ -19,11 +19,62 @@ export interface UserProfile {
     totalQuestionsAnswered?: number;
     weeklyActivity?: any;
     accuracy?: number;
-    createdAt?: Date;
-    updatedAt?: Date;
+    createdAt?: any;
+    updatedAt?: any;
+    [key: string]: any;
 }
 
 export const userService = {
+    // Get the current logged-in user's profile
+    async getCurrentUserProfile(): Promise<UserProfile | null> {
+        const auth = getAuth();
+        const user = auth.currentUser;
+        if (!user) return null;
+        return await this.getUserProfile(user.uid);
+    },
+
+    // Get any user's profile by UID
+    async getUserProfile(uid: string): Promise<UserProfile | null> {
+        try {
+            const userDoc = await getDoc(doc(db, 'users', uid));
+            if (userDoc.exists()) {
+                return userDoc.data() as UserProfile;
+            }
+            return null;
+        } catch (error) {
+            console.error('Error getting user profile:', error);
+            throw error;
+        }
+    },
+
+    // Create a user profile (used after verification)
+    async createUserProfile(uid: string, data: Partial<UserProfile>): Promise<void> {
+        try {
+            await setDoc(doc(db, 'users', uid), {
+                ...data,
+                createdAt: serverTimestamp(),
+                updatedAt: serverTimestamp(),
+            }, { merge: true });
+        } catch (error) {
+            console.error('Error creating user profile:', error);
+            throw error;
+        }
+    },
+
+    // Update a user profile (merge fields)
+    async updateUserProfile(uid: string, data: Partial<UserProfile>): Promise<void> {
+        try {
+            await setDoc(doc(db, 'users', uid), {
+                ...data,
+                updatedAt: serverTimestamp(),
+            }, { merge: true });
+        } catch (error) {
+            console.error('Error updating user profile:', error);
+            throw error;
+        }
+    },
+
+    // Save onboarding data (for onboarding flow)
     async saveOnboardingData(user: User, onboardingData: {
         displayName: string;
         username: string;
@@ -33,7 +84,6 @@ export const userService = {
             const userRef = doc(db, 'users', user.uid);
             const userSnap = await getDoc(userRef);
             const currentGoal = `Practice ${onboardingData.practiceFrequency} times a week`;
-            // If the user doc doesn't exist, set all default fields
             if (!userSnap.exists()) {
                 await setDoc(userRef, {
                     email: user.email,
@@ -59,7 +109,6 @@ export const userService = {
                     updatedAt: new Date(),
                 }, { merge: true });
             } else {
-                // If it exists, just update onboarding fields
                 await setDoc(userRef, {
                     displayName: onboardingData.displayName,
                     username: onboardingData.username,
@@ -75,19 +124,6 @@ export const userService = {
         }
     },
 
-    async getUserProfile(userId: string): Promise<UserProfile | null> {
-        try {
-            const userDoc = await getDoc(doc(db, 'users', userId));
-            if (userDoc.exists()) {
-                return userDoc.data() as UserProfile;
-            }
-            return null;
-        } catch (error) {
-            console.error('Error getting user profile:', error);
-            throw error;
-        }
-    },
-
     async checkOnboardingStatus(userId: string): Promise<boolean> {
         try {
             const profile = await this.getUserProfile(userId);
@@ -97,4 +133,6 @@ export const userService = {
             return false;
         }
     },
-}; 
+};
+
+export default userService; 

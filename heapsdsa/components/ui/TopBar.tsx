@@ -1,13 +1,10 @@
 import { AppColors } from '@/constants/AppColors';
-import { onAuthStateChanged } from 'firebase/auth';
-import { doc, getDoc } from 'firebase/firestore';
 import React, { useEffect, useRef, useState } from 'react';
 import { Animated, Image, Platform, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { GlobalText } from '../../app/components/GlobalText';
-import { auth, db } from '../../app/firebase';
+import { userService } from '../../app/utils/userService';
 
-// GlowingIcon component for animated glow effect
 function GlowingIcon({ source, color, style }: { source: any; color: string; style?: any }) {
     const glowAnim = useRef(new Animated.Value(0)).current;
 
@@ -45,30 +42,23 @@ function GlowingIcon({ source, color, style }: { source: any; color: string; sty
 
 export function TopBar() {
     const insets = useSafeAreaInsets();
-    const [userData, setUserData] = useState<{ points: number; streaks: number; level: number }>({ points: 0, streaks: 0, level: 0 });
+    const userDataRef = useRef<{ points: number; streaks: number; level: number }>({ points: 0, streaks: 0, level: 0 });
+    const [, forceUpdate] = useState(0); // dummy state to force re-render
 
     useEffect(() => {
-        // Listen for auth state changes and update user data accordingly
-        const unsubscribe = onAuthStateChanged(auth, async (user) => {
-            if (!user) {
-                setUserData({ points: 0, streaks: 0, level: 0 });
-                return;
-            }
-            const docRef = doc(db, 'users', user.uid);
-            const docSnap = await getDoc(docRef);
-            if (docSnap.exists()) {
-                const data = docSnap.data();
-                setUserData({
-                    points: data.xp || 0,
-                    streaks: data.currentStreak || 0,
-                    level: data.level || 0,
-                });
-            } else {
-                setUserData({ points: 0, streaks: 0, level: 0 });
-            }
-        });
-        return () => unsubscribe();
+        const fetchUserData = async () => {
+            const data = await userService.getCurrentUserProfile();
+            userDataRef.current = {
+                points: data?.xp || 0,
+                streaks: data?.currentStreak || 0,
+                level: data?.level || 0,
+            };
+            forceUpdate(n => n + 1);
+        };
+        fetchUserData();
     }, []);
+
+    const userData = userDataRef.current;
 
     return (
         <View style={[styles.container, { paddingTop: insets.top, height: insets.top + 65 }]}>

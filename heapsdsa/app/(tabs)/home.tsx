@@ -1,13 +1,16 @@
 import { AppColors } from '@/constants/AppColors';
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Dimensions, FlatList, Image, StyleSheet, View } from 'react-native';
 import { TopBar } from '../../components/ui/TopBar';
 import { GlobalText } from '../components/GlobalText';
 import HomeCard from '../components/HomeCard';
+import { userService } from '../utils/userService';
 
 const { width } = Dimensions.get('window');
 const CARD_MARGIN = 10;
 const CARD_WIDTH = (width - CARD_MARGIN * 3) / 2;
+
+
 
 const DEFAULT_ICON_SIZE = Math.round(CARD_WIDTH * 0.32);
 
@@ -99,20 +102,33 @@ const DATA = [
 ];
 
 export default function HomePage() {
-    // You can replace these with dynamic values from context or props
-    const userName = 'Arsham';
-    const xpToday = 1300;
+    const userDataRef = useRef<{ username: string; xp: number }>({ username: '', xp: 0 });
+    const [, forceUpdate] = useState(0); // dummy state to force re-render
+
+    useEffect(() => {
+        const fetchUserData = async () => {
+            const data = await userService.getCurrentUserProfile();
+            userDataRef.current = {
+                username: data?.displayName || '',
+                xp: data?.xp || 0,
+            };
+            forceUpdate(n => n + 1);
+        };
+        fetchUserData();
+    }, []);
+
+    const userData = userDataRef.current;
 
     return (
         <View style={styles.container}>
             <TopBar />
             <View style={styles.headerCard}>
                 <View style={{ flex: 1 }}>
-                    <GlobalText style={styles.headerText}>
-                        Welcome back, <GlobalText style={styles.headerName}>{userName}!</GlobalText>
+                    <GlobalText variant="bold" style={styles.headerText}>
+                        Welcome back, <GlobalText style={styles.headerName}>{userData.username}!</GlobalText>
                     </GlobalText>
                     <GlobalText style={styles.headerSubText}>
-                        XP gained today: {xpToday}XP
+                        XP gained today: {userData.xp}XP
                     </GlobalText>
                 </View>
                 <Image source={require('@/assets/images/testavatar.png')} style={styles.avatar} />

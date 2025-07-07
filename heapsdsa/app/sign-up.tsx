@@ -2,7 +2,7 @@ import { AppColors } from '@/constants/AppColors'
 import { Link, useRouter } from 'expo-router'
 import { getAuth, reload } from 'firebase/auth'
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { ActivityIndicator, StyleSheet, TouchableOpacity, View } from 'react-native'
+import { ActivityIndicator, ImageBackground, StyleSheet, TouchableOpacity, View } from 'react-native'
 import AnimatedButton from './components/AnimatedButton'
 import { GlobalText } from './components/GlobalText'
 import { GlobalTextInput } from './components/GlobalTextInput'
@@ -101,83 +101,111 @@ export default function SignUpScreen() {
 
     return (
         <View style={styles.container}>
-            <View style={styles.card}>
-                <View style={styles.headerSection}>
-                    <GlobalText style={styles.title}>Create Account</GlobalText>
-                    <GlobalText style={styles.subtitle}>Join us to start your DSA learning journey</GlobalText>
-                </View>
-
-                <View style={styles.formSection}>
-                    <View style={styles.inputGroup}>
-                        <GlobalText style={styles.inputLabel}>Email Address</GlobalText>
-                        <GlobalTextInput
-                            autoCapitalize="none"
-                            value={emailAddress}
-                            placeholder="Enter your email"
-                            onChangeText={setEmailAddress}
-                            style={styles.input}
-                            keyboardType="email-address"
-                            placeholderTextColor="#666666"
-                        />
-                    </View>
-
-                    <View style={styles.inputGroup}>
-                        <GlobalText style={styles.inputLabel}>Password</GlobalText>
-                        <GlobalTextInput
-                            value={password}
-                            placeholder="Enter password (min 6 characters)"
-                            secureTextEntry
-                            onChangeText={setPassword}
-                            style={styles.input}
-                            placeholderTextColor="#666666"
-                        />
-                    </View>
-
-                    <View style={styles.inputGroup}>
-                        <GlobalText style={styles.inputLabel}>Confirm Password</GlobalText>
-                        <GlobalTextInput
-                            value={confirmPassword}
-                            placeholder="Confirm your password"
-                            secureTextEntry
-                            onChangeText={setConfirmPassword}
-                            style={styles.input}
-                            placeholderTextColor="#666666"
-                        />
-                    </View>
-
-                    {error ? (
-                        <View style={styles.errorContainer}>
-                            <GlobalText style={styles.errorText}>{error}</GlobalText>
+            <ImageBackground
+                source={require('../assets/images/pattern_background.png')}
+                style={styles.glowLayer1}
+                resizeMode="cover"
+            />
+            <ImageBackground
+                source={require('../assets/images/pattern_background.png')}
+                style={styles.glowLayer2}
+                resizeMode="cover"
+            />
+            <ImageBackground
+                source={require('../assets/images/pattern_background.png')}
+                style={styles.backgroundImage}
+                resizeMode="cover"
+            >
+                <View style={styles.terminalWindow}>
+                    <View style={styles.terminalHeader}>
+                        <View style={styles.terminalButtons}>
+                            <View style={styles.closeButton} />
+                            <View style={styles.minimizeButton} />
+                            <View style={styles.fullscreenButton} />
                         </View>
-                    ) : null}
+                        <GlobalText style={styles.terminalTitle}>signup.exe</GlobalText>
+                    </View>
+                    <View style={styles.terminalContent}>
+                        <View style={styles.card}>
+                            <View style={styles.headerSection}>
+                                <GlobalText style={styles.title}>Create Account</GlobalText>
+                                <GlobalText style={styles.subtitle}>Join us to start your DSA learning journey</GlobalText>
+                            </View>
 
-                    <AnimatedButton
-                        onPress={loading ? undefined : onSignUpPress}
-                        backgroundColor={AppColors.buttonPrimary}
-                        shadowColor="#1a4a8a"
-                        borderRadius={12}
-                        paddingVertical={16}
-                        style={styles.animatedButton}
-                        textStyle={styles.animatedButtonText}
-                    >
-                        {loading ? (
-                            <ActivityIndicator color="#fff" />
-                        ) : (
-                            "Create Account"
-                        )}
-                    </AnimatedButton>
-                </View>
+                            <View style={styles.formSection}>
+                                <View style={styles.inputGroup}>
+                                    <GlobalText style={styles.inputLabel}>Email Address</GlobalText>
+                                    <GlobalTextInput
+                                        autoCapitalize="none"
+                                        value={emailAddress}
+                                        placeholder="Enter your email"
+                                        onChangeText={setEmailAddress}
+                                        style={styles.input}
+                                        keyboardType="email-address"
+                                        placeholderTextColor="#666666"
+                                    />
+                                </View>
 
-                <View style={styles.footerSection}>
-                    <Link href="/" asChild>
-                        <TouchableOpacity style={styles.linkButton}>
-                            <GlobalText style={styles.linkText}>
-                                Already have an account? <GlobalText style={styles.linkTextBold}>Sign in</GlobalText>
-                            </GlobalText>
-                        </TouchableOpacity>
-                    </Link>
+                                <View style={styles.inputGroup}>
+                                    <GlobalText style={styles.inputLabel}>Password</GlobalText>
+                                    <GlobalTextInput
+                                        value={password}
+                                        placeholder="Enter password (min 6 characters)"
+                                        secureTextEntry
+                                        onChangeText={setPassword}
+                                        style={styles.input}
+                                        placeholderTextColor="#666666"
+                                    />
+                                </View>
+
+                                <View style={styles.inputGroup}>
+                                    <GlobalText style={styles.inputLabel}>Confirm Password</GlobalText>
+                                    <GlobalTextInput
+                                        value={confirmPassword}
+                                        placeholder="Confirm your password"
+                                        secureTextEntry
+                                        onChangeText={setConfirmPassword}
+                                        style={styles.input}
+                                        placeholderTextColor="#666666"
+                                    />
+                                </View>
+
+                                {error ? (
+                                    <View style={styles.errorContainer}>
+                                        <GlobalText style={styles.errorText}>{error}</GlobalText>
+                                    </View>
+                                ) : null}
+
+                                <AnimatedButton
+                                    onPress={loading ? undefined : onSignUpPress}
+                                    backgroundColor={AppColors.buttonPrimary}
+                                    shadowColor="#1a4a8a"
+                                    borderRadius={12}
+                                    paddingVertical={16}
+                                    style={styles.animatedButton}
+                                    textStyle={styles.animatedButtonText}
+                                >
+                                    {loading ? (
+                                        <ActivityIndicator color="#fff" />
+                                    ) : (
+                                        "Create Account"
+                                    )}
+                                </AnimatedButton>
+                            </View>
+
+                            <View style={styles.footerSection}>
+                                <Link href="/" asChild>
+                                    <TouchableOpacity style={styles.linkButton}>
+                                        <GlobalText style={styles.linkText}>
+                                            Already have an account? <GlobalText style={styles.linkTextBold}>Sign in</GlobalText>
+                                        </GlobalText>
+                                    </TouchableOpacity>
+                                </Link>
+                            </View>
+                        </View>
+                    </View>
                 </View>
-            </View>
+            </ImageBackground>
         </View>
     )
 }
@@ -188,7 +216,75 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         padding: 20,
-        backgroundColor: AppColors.background,
+    },
+    glowLayer1: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        opacity: 0.2,
+    },
+    glowLayer2: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        opacity: 0.1,
+    },
+    backgroundImage: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        opacity: 1,
+    },
+    terminalWindow: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        padding: 20,
+    },
+    terminalHeader: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginBottom: 20,
+    },
+    terminalButtons: {
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    closeButton: {
+        width: 20,
+        height: 20,
+        backgroundColor: 'red',
+        borderRadius: 5,
+        marginRight: 5,
+    },
+    minimizeButton: {
+        width: 20,
+        height: 20,
+        backgroundColor: 'yellow',
+        borderRadius: 5,
+        marginRight: 5,
+    },
+    fullscreenButton: {
+        width: 20,
+        height: 20,
+        backgroundColor: 'green',
+        borderRadius: 5,
+    },
+    terminalTitle: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        color: '#fff',
+    },
+    terminalContent: {
+        flex: 1,
     },
     card: {
         backgroundColor: AppColors.cardBackground,
