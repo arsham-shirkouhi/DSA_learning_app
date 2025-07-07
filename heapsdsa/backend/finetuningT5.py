@@ -1,5 +1,5 @@
-from transformers import BartForConditionalGeneration
-from transformers import BartTokenizer
+from transformers import T5ForConditionalGeneration
+from transformers import T5Tokenizer
 from transformers import Seq2SeqTrainer, Seq2SeqTrainingArguments
 from datasets import Dataset
 import json
@@ -7,14 +7,14 @@ import json
 def main():
     global tokenizer
     
-    with open("./datasets/quiz_generation_format.json") as f:
+    with open("./datasets/smartly_formatted_and_fixed_quiz_data.json") as f:
         data = json.load(f)
         
     dataset = Dataset.from_list(data)
     dataset = dataset.train_test_split(test_size=0.2)
     
-    tokenizer = BartTokenizer.from_pretrained("facebook/bart-base")
-    model = BartForConditionalGeneration.from_pretrained("facebook/bart-base")
+    tokenizer = T5Tokenizer.from_pretrained("google/flan-t5-base")
+    model = T5ForConditionalGeneration.from_pretrained("google/flan-t5-base")
     
     tokenized = dataset.map(tokenize, batched=True)
     tokenized_train = tokenized["train"]

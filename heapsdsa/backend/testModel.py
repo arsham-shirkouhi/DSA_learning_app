@@ -2,10 +2,11 @@ import torch
 import torch.nn as nn
 from transformers import BartTokenizer, BartForConditionalGeneration
 from transformers import BertModel, BertPreTrainedModel, AutoTokenizer
-
+from transformers import T5Tokenizer, T5ForConditionalGeneration
 def main():
     # bert_model()
-    bart_model()
+    # bart_model()
+    T5_model()
 
 # === Custom Classifier ===
 class TopicDifficultyClassifier(BertPreTrainedModel):
@@ -84,6 +85,37 @@ def bart_model():
     for i, result in enumerate(results):
         print(f"\n📝 Question {i+1}:\n{result.strip()}")
 
+def T5_model():
+    checkpoint_path = "./outputs_T5/checkpoint-398"
+
+    # Load tokenizer and model
+    tokenizer = T5Tokenizer.from_pretrained("google/flan-t5-base")
+    model = T5ForConditionalGeneration.from_pretrained(checkpoint_path)
+    model.eval()
+
+    # Move to GPU if available
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    model = model.to(device)
+
+    # Prompt
+    prompt = "Generate a question on topic=Array and difficulty=Hard about data structures with multiple choices"
+    inputs = tokenizer(prompt, return_tensors="pt").to(device)
+
+    # Generate
+    outputs = model.generate(
+        **inputs,
+        max_new_tokens=128,
+        num_return_sequences=1,  # Set to 5 if you want 5 questions
+        do_sample=True,
+        temperature=0.8,
+        top_p=0.95,
+        num_beams=1
+    )
+
+    results = tokenizer.batch_decode(outputs, skip_special_tokens=True)
+
+    for i, result in enumerate(results):
+        print(f"\n📝 Question {i+1}:\n{result.strip()}")
 
 if __name__ == "__main__":
     main()
