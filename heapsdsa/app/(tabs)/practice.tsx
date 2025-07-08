@@ -105,6 +105,7 @@ export default function PracticePage() {
                         icon={require('@/assets/icons/zenmode_icon.png')}
                         iconColor="#1EA7FF"
                     />
+
                     <PracticeCard
                         title="Mistakes"
                         subtitle="Go over things you got wrong!"
@@ -112,6 +113,7 @@ export default function PracticePage() {
                         icon={require('@/assets/icons/mistakes_icon.png')}
                         iconColor="#4DEB7E"
                     />
+
                     <PracticeCard
                         title="Time Attack"
                         subtitle="Questions under a time limit"
@@ -119,6 +121,7 @@ export default function PracticePage() {
                         icon={require('@/assets/icons/timed_icon.png')}
                         iconColor="#B97AFF"
                     />
+
                     <PracticeCard
                         title="Sudden Death"
                         subtitle="Get one question wrong its over!"

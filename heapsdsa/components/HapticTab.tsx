@@ -13,42 +13,42 @@ export default function HapticTab(props: BottomTabBarButtonProps) {
 
   useEffect(() => {
     if (focused) {
-      // Animate in when focused
+      // Animate in when focused - more subtle
       Animated.parallel([
         Animated.spring(scaleAnim, {
-          toValue: 1.1,
+          toValue: 1.05,
           useNativeDriver: true,
-          tension: 100,
-          friction: 8,
+          tension: 80,
+          friction: 10,
         }),
         Animated.timing(opacityAnim, {
           toValue: 1,
-          duration: 200,
+          duration: 300,
           useNativeDriver: true,
         }),
         Animated.timing(colorAnim, {
           toValue: 1,
-          duration: 300,
+          duration: 400,
           useNativeDriver: false,
         }),
       ]).start();
     } else {
-      // Animate out when not focused
+      // Animate out when not focused - more subtle
       Animated.parallel([
         Animated.spring(scaleAnim, {
           toValue: 1,
           useNativeDriver: true,
-          tension: 100,
-          friction: 8,
+          tension: 80,
+          friction: 10,
         }),
         Animated.timing(opacityAnim, {
-          toValue: 0.7,
-          duration: 200,
+          toValue: 0.8,
+          duration: 300,
           useNativeDriver: true,
         }),
         Animated.timing(colorAnim, {
           toValue: 0,
-          duration: 300,
+          duration: 400,
           useNativeDriver: false,
         }),
       ]).start();
@@ -56,18 +56,18 @@ export default function HapticTab(props: BottomTabBarButtonProps) {
   }, [focused, scaleAnim, opacityAnim, colorAnim]);
 
   const handlePress = (event: any) => {
-    // Simple press animation
+    // Simple press animation - more subtle
     Animated.sequence([
       Animated.timing(scaleAnim, {
-        toValue: 0.95,
-        duration: 100,
+        toValue: 0.98,
+        duration: 80,
         useNativeDriver: true,
       }),
       Animated.spring(scaleAnim, {
-        toValue: focused ? 1.1 : 1,
+        toValue: focused ? 1.05 : 1,
         useNativeDriver: true,
-        tension: 100,
-        friction: 8,
+        tension: 80,
+        friction: 10,
       }),
     ]).start();
 
@@ -80,9 +80,9 @@ export default function HapticTab(props: BottomTabBarButtonProps) {
   const glowStyle = focused ? {
     shadowColor: AppColors.tabActive,
     shadowOffset: { width: 0, height: 0 },
-    shadowOpacity: 0.7,
-    shadowRadius: 16,
-    elevation: 12,
+    shadowOpacity: 0.3, // Reduced from 0.7
+    shadowRadius: 8, // Reduced from 16
+    elevation: 6, // Reduced from 12
     borderRadius: 24,
     backgroundColor: 'rgba(0,0,0,0)',
     alignItems: 'center' as const,

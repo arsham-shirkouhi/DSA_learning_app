@@ -2,6 +2,7 @@ import * as Font from 'expo-font';
 import { Stack } from 'expo-router';
 import React, { ReactNode, useEffect, useState } from 'react';
 import { Text, View } from 'react-native';
+import { transitionPresets } from './config/transitions';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { ThemeProvider } from './context/ThemeContext';
 
@@ -50,18 +51,43 @@ function RootLayoutNav() {
   console.log('RootLayoutNav: user =', user?.email);
 
   return (
-    <Stack screenOptions={{ headerShown: false }}>
+    <Stack
+      screenOptions={{
+        headerShown: false,
+        ...transitionPresets.fade,
+      }}
+    >
       {isAuthenticated ? (
         // User is signed in, show the main app or onboarding
         <>
-          <Stack.Screen name="(tabs)" />
-          <Stack.Screen name="(onboarding)" />
+          <Stack.Screen
+            name="(tabs)"
+            options={{
+              ...transitionPresets.tabs,
+            }}
+          />
+          <Stack.Screen
+            name="(onboarding)"
+            options={{
+              ...transitionPresets.onboarding,
+            }}
+          />
         </>
       ) : (
         // User is not signed in, show the login page as the main entry point
         <>
-          <Stack.Screen name="index" />
-          <Stack.Screen name="sign-up" />
+          <Stack.Screen
+            name="index"
+            options={{
+              ...transitionPresets.fade,
+            }}
+          />
+          <Stack.Screen
+            name="sign-up"
+            options={{
+              ...transitionPresets.fade,
+            }}
+          />
         </>
       )}
     </Stack>

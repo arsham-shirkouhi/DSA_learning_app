@@ -3,6 +3,7 @@ import { Tabs } from 'expo-router';
 import React from 'react';
 import { Image, StyleSheet, View } from 'react-native';
 import HapticTab from '../../components/HapticTab';
+import { transitionPresets } from '../config/transitions';
 
 export default function TabLayout() {
   // Unique colors for each tab
@@ -44,6 +45,12 @@ export default function TabLayout() {
           },
           tabBarHideOnKeyboard: true,
           tabBarButton: (props) => <HapticTab {...props} />,
+          ...transitionPresets.tabs,
+          // Ensure dark background during transitions
+          cardStyle: {
+            backgroundColor: '#000000',
+          },
+          cardOverlayEnabled: false,
         }}
       >
         <Tabs.Screen
@@ -121,6 +128,7 @@ export default function TabLayout() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#000000', // Dark background to prevent light flashes
   },
   tabIcon: {
     width: 40,

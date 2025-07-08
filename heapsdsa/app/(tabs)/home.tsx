@@ -4,13 +4,12 @@ import { Dimensions, FlatList, Image, StyleSheet, View } from 'react-native';
 import { TopBar } from '../../components/ui/TopBar';
 import { GlobalText } from '../components/GlobalText';
 import HomeCard from '../components/HomeCard';
+import { FadeIn } from '../components/ScreenEntrance';
 import { userService } from '../utils/userService';
 
 const { width } = Dimensions.get('window');
 const CARD_MARGIN = 10;
 const CARD_WIDTH = (width - CARD_MARGIN * 3) / 2;
-
-
 
 const DEFAULT_ICON_SIZE = Math.round(CARD_WIDTH * 0.32);
 
@@ -122,17 +121,20 @@ export default function HomePage() {
     return (
         <View style={styles.container}>
             <TopBar />
-            <View style={styles.headerCard}>
-                <View style={{ flex: 1 }}>
-                    <GlobalText variant="bold" style={styles.headerText}>
-                        Welcome back, <GlobalText style={styles.headerName}>{userData.username}!</GlobalText>
-                    </GlobalText>
-                    <GlobalText style={styles.headerSubText}>
-                        XP gained today: {userData.xp}XP
-                    </GlobalText>
+            <FadeIn duration={300} delay={100}>
+                <View style={styles.headerCard}>
+                    <View style={{ flex: 1 }}>
+                        <GlobalText variant="bold" style={styles.headerText}>
+                            Welcome back, <GlobalText style={styles.headerName}>{userData.username}!</GlobalText>
+                        </GlobalText>
+                        <GlobalText style={styles.headerSubText}>
+                            XP gained today: {userData.xp}XP
+                        </GlobalText>
+                    </View>
+                    <Image source={require('@/assets/images/testavatar.png')} style={styles.avatar} />
                 </View>
-                <Image source={require('@/assets/images/testavatar.png')} style={styles.avatar} />
-            </View>
+            </FadeIn>
+
             {/* Grid of Cards */}
             <FlatList
                 data={DATA}
@@ -144,15 +146,21 @@ export default function HomePage() {
                         marginRight: isLeft ? 15 : 0,
                         marginBottom: 15,
                     };
+
                     return (
-                        <HomeCard
-                            title={item.title}
-                            xp={item.xp}
-                            xpIcon={item.xpIcon}
-                            bracesColor={item.bracesColor}
-                            bracesIcon={item.bracesIcon}
-                            style={cardStyle}
-                        />
+                        <FadeIn
+                            duration={300}
+                            delay={200 + (index * 50)}
+                        >
+                            <HomeCard
+                                title={item.title}
+                                xp={item.xp}
+                                xpIcon={item.xpIcon}
+                                bracesColor={item.bracesColor}
+                                bracesIcon={item.bracesIcon}
+                                style={cardStyle}
+                            />
+                        </FadeIn>
                     );
                 }}
                 contentContainerStyle={{ paddingHorizontal: 15, paddingBottom: 24 }}

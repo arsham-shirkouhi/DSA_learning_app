@@ -1,6 +1,6 @@
 import { AppColors } from '@/constants/AppColors';
 import React, { useEffect, useState } from 'react';
-import { Dimensions, Image, SafeAreaView, ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { Animated, Dimensions, Image, SafeAreaView, ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
 import AnimatedButton from '../components/AnimatedButton';
 import { GlobalText } from '../components/GlobalText';
 import GlowingIcon from '../components/GlowingIcon';
@@ -11,18 +11,26 @@ const CARD_WIDTH = Math.min(SCREEN_WIDTH * 0.92, 440);
 
 export default function ProfileScreen() {
     const [userData, setUserData] = useState<UserProfile | null>(null);
+    const [showLoading, setShowLoading] = useState(true);
+    const fadeAnim = useState(new Animated.Value(1))[0];
 
     useEffect(() => {
         const fetchUserData = async () => {
             const data = await userService.getCurrentUserProfile();
-            if (data) setUserData(data);
+            if (data) {
+                setUserData(data);
+                // Fade out loading background
+                Animated.timing(fadeAnim, {
+                    toValue: 0,
+                    duration: 300,
+                    useNativeDriver: true,
+                }).start(() => {
+                    setShowLoading(false);
+                });
+            }
         };
         fetchUserData();
-    }, []);
-
-    if (!userData) {
-        return <GlobalText>Loading...</GlobalText>;
-    }
+    }, [fadeAnim]);
 
     return (
         <>
@@ -48,10 +56,10 @@ export default function ProfileScreen() {
                     <View style={[styles.profileInfoCard, { width: CARD_WIDTH, paddingHorizontal: 0 }]}>
                         <View style={styles.profileInfoHeaderRow}>
                             <View style={styles.profileInfoHeaderText}>
-                                <GlobalText variant="bold" style={styles.nameInfo}>{userData.displayName}</GlobalText>
+                                <GlobalText variant="bold" style={styles.nameInfo}>{userData?.displayName}</GlobalText>
                                 <View style={styles.handleInfo}>
-                                    <GlobalText style={styles.handleInfoText}>@{userData.username}</GlobalText>
-                                    <GlobalText style={styles.joinDateInfo}> • {userData.createdAt?.toDate().toLocaleDateString()}</GlobalText>
+                                    <GlobalText style={styles.handleInfoText}>@{userData?.username}</GlobalText>
+                                    <GlobalText style={styles.joinDateInfo}> • {userData?.createdAt?.toDate().toLocaleDateString()}</GlobalText>
                                 </View>
                             </View>
                             <AnimatedButton
@@ -71,15 +79,15 @@ export default function ProfileScreen() {
                         </View>
                         <View style={[styles.statsRowInfo, { width: '100%' }]}>
                             <View style={[styles.statBoxInfo, { marginLeft: 0 }]}>
-                                <GlobalText variant="bold" style={styles.statValueInfo}>{userData.language || 'Java'}</GlobalText>
+                                <GlobalText variant="bold" style={styles.statValueInfo}>{userData?.language || 'Java'}</GlobalText>
                                 <GlobalText style={styles.statLabelInfo}>Languages</GlobalText>
                             </View>
                             <View style={styles.statBoxInfo}>
-                                <GlobalText variant="bold" style={styles.statValueInfo}>{userData.following || 0}</GlobalText>
+                                <GlobalText variant="bold" style={styles.statValueInfo}>{userData?.following || 0}</GlobalText>
                                 <GlobalText style={styles.statLabelInfo}>Following</GlobalText>
                             </View>
                             <View style={[styles.statBoxInfo, { marginRight: 0 }]}>
-                                <GlobalText variant="bold" style={styles.statValueInfo}>{userData.followers || 0}</GlobalText>
+                                <GlobalText variant="bold" style={styles.statValueInfo}>{userData?.followers || 0}</GlobalText>
                                 <GlobalText style={styles.statLabelInfo}>Followers</GlobalText>
                             </View>
                         </View>
@@ -127,7 +135,7 @@ export default function ProfileScreen() {
                             <View style={[styles.overviewBoxCustom, { marginLeft: 0, backgroundColor: 'rgba(255,82,44,0.12)', borderColor: AppColors.red }]}> {/* Streak */}
                                 <View style={styles.overviewContentRow}>
                                     <View style={styles.overviewTextCol}>
-                                        <GlobalText variant="bold" style={[styles.overviewValueCustom, { color: AppColors.red }]}>{userData.streak || 0}</GlobalText>
+                                        <GlobalText variant="bold" style={[styles.overviewValueCustom, { color: AppColors.red }]}>{userData?.streak || 0}</GlobalText>
                                         <GlobalText style={styles.overviewLabelCustom}>Streak</GlobalText>
                                     </View>
                                     <GlowingIcon source={require('@/assets/icons/streak_icon.png')} color={AppColors.red} style={styles.overviewIconCustom} tintColor={AppColors.red} />
@@ -136,7 +144,7 @@ export default function ProfileScreen() {
                             <View style={[styles.overviewBoxCustom, { marginRight: 0, backgroundColor: 'rgba(0,148,251,0.12)', borderColor: AppColors.blue }]}> {/* XP */}
                                 <View style={styles.overviewContentRow}>
                                     <View style={styles.overviewTextCol}>
-                                        <GlobalText variant="bold" style={[styles.overviewValueCustom, { color: AppColors.blue }]}>{userData.xp}</GlobalText>
+                                        <GlobalText variant="bold" style={[styles.overviewValueCustom, { color: AppColors.blue }]}>{userData?.xp}</GlobalText>
                                         <GlobalText style={styles.overviewLabelCustom}>Total XP</GlobalText>
                                     </View>
                                     <GlowingIcon source={require('@/assets/icons/points_icon.png')} color={AppColors.blue} style={styles.overviewIconCustom} tintColor={AppColors.blue} />
@@ -147,7 +155,7 @@ export default function ProfileScreen() {
                             <View style={[styles.overviewBoxCustom, { marginLeft: 0, backgroundColor: 'rgba(192,110,255,0.12)', borderColor: AppColors.purple }]}> {/* League */}
                                 <View style={styles.overviewContentRow}>
                                     <View style={styles.overviewTextCol}>
-                                        <GlobalText variant="bold" style={[styles.overviewValueCustom, { color: AppColors.purple }]}>{userData.league || 'Bronze'}</GlobalText>
+                                        <GlobalText variant="bold" style={[styles.overviewValueCustom, { color: AppColors.purple }]}>{userData?.league || 'Bronze'}</GlobalText>
                                         <GlobalText style={styles.overviewLabelCustom}>League</GlobalText>
                                     </View>
                                     <GlowingIcon source={require('@/assets/icons/filled_league_icon.png')} color={AppColors.purple} style={styles.overviewIconCustom} tintColor={AppColors.purple} />
@@ -156,7 +164,7 @@ export default function ProfileScreen() {
                             <View style={[styles.overviewBoxCustom, { marginRight: 0, backgroundColor: 'rgba(206,249,82,0.12)', borderColor: AppColors.green }]}> {/* Level */}
                                 <View style={styles.overviewContentRow}>
                                     <View style={styles.overviewTextCol}>
-                                        <GlobalText variant="bold" style={[styles.overviewValueCustom, { color: AppColors.green }]}>{userData.level}</GlobalText>
+                                        <GlobalText variant="bold" style={[styles.overviewValueCustom, { color: AppColors.green }]}>{userData?.level}</GlobalText>
                                         <GlobalText style={styles.overviewLabelCustom}>Level</GlobalText>
                                     </View>
                                     <GlowingIcon source={require('@/assets/icons/level_icon.png')} color={AppColors.green} style={styles.overviewIconCustom} tintColor={AppColors.green} />
@@ -172,15 +180,15 @@ export default function ProfileScreen() {
                     <GlobalText variant="bold" style={styles.sectionTitle}>Personal Stats</GlobalText>
                     <View style={styles.statsRowSection}>
                         <View style={[styles.statBox2, { marginLeft: 0 }]}> {/* Accuracy */}
-                            <GlobalText variant="bold" style={[styles.statValue2, { color: AppColors.blue, textAlign: 'left' }]}>{userData.accuracy || 0 + '%'}</GlobalText>
+                            <GlobalText variant="bold" style={[styles.statValue2, { color: AppColors.blue, textAlign: 'left' }]}>{userData?.accuracy || 0 + '%'}</GlobalText>
                             <GlobalText style={[styles.statLabel2, { textAlign: 'left' }]}>Accuracy</GlobalText>
                         </View>
                         <View style={styles.statBox2}> {/* Solved */}
-                            <GlobalText variant="bold" style={[styles.statValue2, { color: AppColors.blue, textAlign: 'left' }]}>{userData.solved || 0}</GlobalText>
+                            <GlobalText variant="bold" style={[styles.statValue2, { color: AppColors.blue, textAlign: 'left' }]}>{userData?.solved || 0}</GlobalText>
                             <GlobalText style={[styles.statLabel2, { textAlign: 'left' }]}>Solved</GlobalText>
                         </View>
                         <View style={[styles.statBox2, { marginRight: 0 }]}> {/* Time Spent */}
-                            <GlobalText variant="bold" style={[styles.statValue2, { color: AppColors.blue, textAlign: 'left' }]}>{userData.timeSpent || 0 + 'hrs'}</GlobalText>
+                            <GlobalText variant="bold" style={[styles.statValue2, { color: AppColors.blue, textAlign: 'left' }]}>{userData?.timeSpent || 0 + 'hrs'}</GlobalText>
                             <GlobalText style={[styles.statLabel2, { textAlign: 'left' }]}>Time Spent</GlobalText>
                         </View>
                     </View>
@@ -191,11 +199,34 @@ export default function ProfileScreen() {
                     </TouchableOpacity>
                 </ScrollView>
             </SafeAreaView>
+
+            {/* Loading overlay that fades out */}
+            {showLoading && (
+                <Animated.View style={[styles.loadingOverlay, { opacity: fadeAnim }]}>
+                    <GlobalText style={styles.loadingText}>Loading...</GlobalText>
+                </Animated.View>
+            )}
         </>
     );
 }
 
 const styles = StyleSheet.create({
+    loadingOverlay: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        backgroundColor: AppColors.navbar,
+        justifyContent: 'center',
+        alignItems: 'center',
+        zIndex: 1000,
+    },
+    loadingText: {
+        color: '#ffffff',
+        fontSize: 16,
+        fontWeight: '500',
+    },
     scrollContainer: {
         alignItems: 'center',
         padding: 0,
@@ -246,7 +277,6 @@ const styles = StyleSheet.create({
         color: AppColors.textPrimary,
         textAlign: 'left',
     },
-
     editIconInfo: {
         width: 22,
         height: 22,
