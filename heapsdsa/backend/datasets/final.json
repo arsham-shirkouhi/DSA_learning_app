@@ -1,0 +1,922 @@
+[
+{
+  "input_text": "Topic: Linked List\nDifficulty: Easy\nContext: A linked list is a linear data structure where each element, called a node, contains data and a pointer to the next node. Functions that traverse linked lists can use different traversal patterns (e.g., skipping nodes, recursion) to print or manipulate data. Understanding recursive access to every second node helps in reasoning about output in such cases.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What is the output of the following function in which start is pointing to the first node of the linked list 1->2->3->4->5->6?\n\n#include <iostream>\nusing namespace std;\n\nstruct Node {\n    int data;\n    Node* next;\n    Node() { data = 0; next = nullptr; } \n};\n\nvoid fun(Node* start) {\n    if (start == nullptr)\n        return;\n    cout << start->data << \"  \";\n    \n    if (start->next != nullptr)\n        fun(start->next->next);\n    cout << start->data << \"  \";\n}\n\nChoices:\nA) 1 4 6 6 4 1\nB) 1 3 5 1 3 5\nC) 1 2 3 5\nD) 1 3 5 5 3 1\nAnswer: D"
+},
+{
+  "input_text": "Topic: Array\nDifficulty: Easy\nContext: An array is a data structure that stores elements in contiguous memory locations. Each element in an array can be accessed directly using its index, making access time constant (O(1)). This direct access means elements are accessed randomly using their indices, unlike structures such as linked lists.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Elements in an array are accessed _____________\na) randomly\nb) sequentially\nc) exponentially\nd) logarithmically\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Array\nDifficulty: Easy\nContext: An array is a data structure that stores elements in contiguous memory locations. Each element in an array can be accessed directly using its index, making access time constant (O(1)). This direct access means elements are accessed randomly using their indices, unlike structures such as linked lists.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Elements in an array are accessed _____________\na) randomly\nb) sequentially\nc) exponentially\nd) logarithmically\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Heap\nDifficulty: Easy\nContext: A heap is a special tree-based data structure that satisfies the heap property. In a max-heap, each parent node is greater than or equal to its children, while in a min-heap, each parent is less than or equal to its children. A leftist heap is a variant of a binary heap that is implemented as a binary tree and is optimized for efficient merging of two heaps. It maintains a special property called the null path length (npl), ensuring that the right child of any node has the shortest npl.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: A leftist heap is also said to be a binary heap.\na) true\nb) false\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Stack\nDifficulty: Easy\nContext: A stack is a linear data structure that follows the Last-In-First-Out (LIFO) principle. It is commonly used in parsing expressions, managing function calls, and checking for balanced symbols like parentheses, braces, and brackets. When validating balanced expressions, opening symbols are pushed onto the stack, and when a corresponding closing symbol is encountered, the stack is popped to check for a match.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: If the corresponding end bracket/braces/parentheses is encountered, which of the following is done?\na) push it on to the stack\nb) pop the stack\nc) throw an error\nd) treated as an exception\n\nAnswer: b"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: A tree is a non-linear hierarchical data structure widely used to represent relationships between elements. Specialized trees like suffix trees are used in string processing tasks. A suffix tree is a compressed trie of all the suffixes of a given string and is commonly used in applications such as text editors, search engines, and bioinformatics for pattern matching and substring queries.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Can suffix tree be used in string problems occurring in a text editor?\na) True\nb) False\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: A binary tree is a hierarchical data structure in which each node has at most two children. Deleting a node from a binary tree requires careful handling to maintain the tree's structure. A common approach is to locate the node to be deleted, replace its value with that of the deepest (rightmost) node, and then delete the deepest node. This ensures that the properties of the binary tree remain intact.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: The following lines talk about deleting a node in a binary tree (the tree property must not be violated after deletion):\ni) From root, search for the node to be deleted\n ii)\n iii) Delete the node at\nWhat must be statement ii) and fill up statement iii)?\na) ii)- Find random node, replace with node to be deleted. iii)- Delete the node\nb) ii)- Find node to be deleted. iii)- Delete the node at found location\nc) ii)- Find deepest node, replace with node to be deleted. iii)- Delete a node\nd) ii)- Find deepest node, replace with node to be deleted. iii)- Delete the deepest node\n\nAnswer: d"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: Graphs are generalizations of tree structures that may include cycles and weights on edges. In a weighted graph, the shortest path from a source to a destination may not be unique unless additional constraints apply. For example, if all edge weights are unique, there may still be multiple paths of equal total weight due to different combinations of edges. Hence, uniqueness of edge weights does not guarantee a unique shortest path.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Is the following statement valid?\n\nGiven a weighted graph where weights of all edges are unique (no two edges have the same weights), there is always a unique shortest path from a source to destination in such a graph.\n\nChoices:\nA) True\nB) False\n\nAnswer: B"
+},
+{
+  "input_text": "Topic: Linked List\nDifficulty: Easy\nContext: A linked list is a dynamic data structure consisting of nodes that contain data and a pointer to the next node. In compiler design, the syntax analysis phase (also called parsing) uses data structures to represent the syntactic structure of code. Although trees (especially abstract syntax trees) are common, linked lists are also used internally to manage tokens and other dynamic sequences of elements during parsing.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Which data structure is used in the syntax analysis phase of the compiler?\na) Tree\nb) Stack\nc) Linked List\nd) Queue\n\nAnswer: c"
+},
+{
+  "input_text": "Topic: Array\nDifficulty: Easy\nContext: An array is a linear data structure that stores elements in contiguous memory locations. Inversions in an array are pairs of elements that are out of their natural order (i.e., a pair (i, j) such that i < j and arr[i] > arr[j]). A completely sorted array has zero such inversions.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: How many inversions does a sorted array have?\na) 0\nb) 1\nc) 2\nd) cannot be determined\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Array\nDifficulty: Easy\nContext: Arrays are used in many algorithmic applications including number system conversions. To convert a decimal number to binary, repeated division by 2 is performed, and the remainders are stored in an array. The binary representation is obtained by reading the remainders in reverse order.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Which of the following code snippet is used to convert decimal to binary numbers?\na)\n\npublic void convertBinary(int num)\n{\n     int bin[] = new int[50];\n     int index = 0;\n     while(num > 0)\n     {\n       bin[index++] = num%2;\n       num = num/2;\n     }\n     for(int i = index-1;i >= 0;i--)\n     {\n       System.out.print(bin[i]);\n     }\n}\nb)\n\npublic void convertBinary(int num)\n{\n     int bin[] = new int[50];\n     int index = 0;\n     while(num > 0)\n     {\n       bin[++index] = num%2;\n       num = num/2;\n     }\n     for(int i = index-1;i >= 0;i--)\n     {\n       System.out.print(bin[i]);\n     }\n}\nc)\n\npublic void convertBinary(int num)\n{\n     int bin[] = new int[50];\n     int index = 0;\n     while(num > 0)\n     {\n         bin[index++] = num/2;\n         num = num%2;\n     }\n     for(int i = index-1;i >= 0;i--)\n     {\n         System.out.print(bin[i]);\n     }\n}\nd)\n\npublic void convertBinary(int num)\n {\n     int bin[] = new int[50];\n     int index = 0;\n     while(num > 0)\n     {\n         bin[++index] = num/2;\n         num = num%2;\n     }\n     for(int i = index-1;i >= 0;i--)\n     {\n         System.out.print(bin[i]);\n     }\n  }\n\nAnswer: d"
+},
+{
+  "input_text": "Topic: Stack\nDifficulty: Easy\nContext: A stack is a LIFO (Last-In-First-Out) data structure used in various applications including function call management in programming languages. Recursion, which involves a function calling itself, uses the call stack to keep track of active function calls. Each recursive call consumes stack space, making recursion more memory-intensive than iteration.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Recursion uses more memory space than iteration because ………\nChoices:\nA) it uses stack instead of queue.\nB) every recursive call has to be stored.\nC) both A & B are true.\nD) None of the above.\n\nAnswer: B\nevery recursive call has to be stored."
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: A binary tree is a hierarchical data structure where each node has at most two children. An almost complete binary tree of depth 'd' is a tree in which all levels are completely filled except possibly the last, and the last level has all keys as left as possible. Properties of almost complete trees are important in data structures like heaps.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: A binary tree of depth “d” is an almost complete binary tree if:\nChoices:\nA) Each leaf in the tree is either at level “d” or at level “d–1”\nB) For any node “n” in the tree with a right descendant at level “d”, all the left descendants of “n” that are leaves, are also at level “d”\nC) Both (A) & (B)\nD) None of the above\n\nAnswer: C\nBoth (A) & (B)"
+},
+{
+  "input_text": "Topic: Sorting\nDifficulty: Easy\nContext: Sorting algorithms are used to reorder elements in a list based on comparison criteria. Merging two sorted arrays is a common subroutine in merge sort and takes linear time proportional to the sum of the sizes of the arrays. If two sorted lists of sizes m and n are merged, it takes O(m + n) time to combine them into one sorted list.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Time required to merge two sorted lists of size m and n, is ……\nChoices:\nA) O(m | n)\nB) O(m + n)\nC) O(m log n)\nD) O(n log m)\n\nAnswer: B\nO(m + n)"
+},
+{
+  "input_text": "Topic: Graph\nDifficulty: Easy\nContext: A graph is Eulerian if it contains a closed trail that visits every edge exactly once. A necessary and sufficient condition for a graph to be Eulerian is that it is connected and every vertex has an even degree. This property helps determine whether an Eulerian circuit exists in a given graph.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: For which of the following combinations of the degrees of vertices would the connected graph be Eulerian?\na) 1,2,3\nb) 2,3,4\nc) 2,4,5\nd) 1,3,5\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Linked List\nDifficulty: Easy\nContext: A linked list is a linear data structure consisting of nodes, where each node contains data and a reference (or pointer) to the next node in the sequence. It enables efficient insertion and deletion of elements and is widely used in dynamic memory management.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: A linear collection of data elements where the linear node is given by means of pointer is called?\na) Linked list\nb) Node list\nc) Primitive list\nd) Unordered list\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: A complete undirected graph with n vertices contains n(n−1)/2 edges. A spanning tree of a graph connects all vertices with exactly (n−1) edges and no cycles. In a weighted graph, a minimum spanning tree (MST) is a tree with the lowest possible sum of edge weights. The maximum possible weight of an MST occurs when the (n−1) smallest edges are chosen.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Let G be a complete undirected graph on 4 vertices, having 6 edges with weights being 1, 2, 3, 4, 5, and 6. The maximum possible weight that a minimum weight spanning tree of G can have is:\nChoices:\nA) 6\nB) 7\nC) 8\nD) 9\n\nAnswer: B\n7"
+},
+{
+  "input_text": "Topic: Array\nDifficulty: Easy\nContext: During the compilation of a program, symbol tables are used to store information about variables, functions, objects, etc. Efficient implementations of symbol tables often use self-organizing lists, which adjust dynamically based on access patterns to reduce average lookup time.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Symbol tables during compilation of program is efficiently implemented using __________\na) a singly linked list\nb) a doubly linked list\nc) a self organizing list\nd) an array\n\nAnswer: c"
+},
+{
+  "input_text": "Topic: Theory\nDifficulty: Easy\nContext: Postfix (Reverse Polish Notation) expressions eliminate the need for parentheses by using operator precedence and associativity rules. Operators with higher precedence are applied before those with lower precedence, and associativity determines the order when precedence is equal. Understanding these rules is key to converting between postfix and infix forms.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Consider the postfix expression 4 5 6 a b 7 8 a c, where a, b, c are operators. Operator a has higher precedence over operators b and c. Operators b and c are right associative. Then, equivalent infix expression is:\na) 4 a 5 6 b 7 8 a c\nb) 4 a 5 c 6 b 7 a 8\nc) 4 b 5 a 6 c 7 a 8\nd) 4 a 5 b 6 c 7 a 8\n\nAnswer: c"
+},
+{
+  "input_text": "Topic: Linked List\nDifficulty: Easy\nContext: A linked list is a dynamic data structure composed of nodes, each containing data and a pointer to the next node. In C/C++, passing a pointer to the head of a linked list into a function by value does not affect the original head outside the function, but if not handled carefully, the function may modify the pointer, leading to confusion in code behavior.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Consider the following function to traverse a linked list:\n// C++ version of traverse function\nvoid traverse(Node *head) {\n    while (head != NULL) {\n        printf(\"%d  \", head->data);\n        head = head->next;\n    }\n}\nChoices:\nA) The function may crash when the linked list is empty\nB) The function doesn't print the last node when the linked list is not empty\nC) The function is implemented incorrectly because it changes head\nD) None of the above\n\nAnswer: C\nThe function is implemented incorrectly because it changes head"
+},
+{
+  "input_text": "Topic: Hashing\nDifficulty: Easy\nContext: A hash tree, also known as a Merkle tree, is a tree in which each leaf node contains a hash of a data block, and each non-leaf node contains a hash of its child nodes. It is widely used in blockchain and distributed systems to verify data integrity efficiently.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Hash tree is also known as _____\na) Merkle tree\nb) T -tree\nc) Hash table\nd) Bx-tree\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Queue\nDifficulty: Easy\nContext: A priority queue is a special type of queue in which elements are ordered based on their priority. A Cartesian tree is a binary tree derived from a sequence of numbers, combining properties of both binary search trees and heaps. By combining a Cartesian tree with a priority queue and removing the minimum element at each step, the sequence can be sorted, mimicking the behavior of a priority queue sort.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What happens if we apply the below operations on an input sequence?\ni. Construct a Cartesian tree for input sequence\nii. Put the root element of above tree in a priority queue\niii. if(priority queue is not empty) then\niv. Search and delete minimum value in priority queue\nv. Add that to output\nvi. Add Cartesian tree children of above node to priority queue\n\na) Constructs a Cartesian tree\nb) Sorts the input sequence\nc) Does nothing\nd) Produces some random output\n\nAnswer: b"
+},
+{
+  "input_text": "Topic: Linked List\nDifficulty: Easy\nContext: A memory-efficient doubly linked list can be implemented using XOR (exclusive OR) of previous and next node addresses. This technique, known as XOR linked list, saves space by storing a single pointer per node that encodes both previous and next pointers using bitwise XOR.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: How do you calculate the pointer difference in a memory-efficient doubly linked list?\na) head xor tail\nb) pointer to previous node xor pointer to next node\nc) pointer to previous node – pointer to next node\nd) pointer to next node – pointer to previous node\n\nAnswer: b"
+},
+{
+  "input_text": "Topic: Stack\nDifficulty: Easy\nContext: In postfix expression evaluation (Reverse Polish Notation), operands are pushed onto the stack. When an operator is encountered, the last two operands are popped, the operation is applied, and the result is pushed back onto the stack. This method is commonly used in compilers and calculators.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: While evaluating a postfix expression, when an operator is encountered, what is the correct operation to be performed?\na) Push it directly onto the stack\nb) Pop 2 operands, evaluate them, and push the result onto the stack\nc) Pop the entire stack\nd) Ignore the operator\n\nAnswer: b"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: A weight-balanced tree is a type of balanced binary tree in which the weight (often measured by the number of nodes or size of subtrees) of left and right subtrees at each node maintains a specific proportion. This is governed by a balance factor 'a', ensuring the tree remains efficiently balanced for operations like insertions and deletions.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What is the condition for a tree to be weight-balanced, where a is a factor and n is a node?\na) weight[n.left] >= a*weight[n] and weight[n.right] >= a*weight[n]\nb) weight[n.left] >= a*weight[n.right] and weight[n.right] >= a*weight[n]\nc) weight[n.left] >= a*weight[n.left] and weight[n.right] >= a*weight[n]\nd) weight[n] is a non-zero\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Array\nDifficulty: Easy\nContext: Arrays are fixed-size data structures that allow direct access to elements using indices. However, they have some limitations, such as fixed size and inefficient insertions or deletions at arbitrary positions. Random access, on the other hand, is a major advantage as it allows constant-time retrieval.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Which of the following is not a disadvantage to the usage of array?\na) Fixed size\nb) There are chances of wastage of memory space if elements inserted in an array are lesser than the allocated size\nc) Insertion based on position\nd) Accessing elements at specified positions\n\nAnswer: d"
+},
+{
+  "input_text": "Topic: Theory\nDifficulty: Easy\nContext: In hashing, a collision occurs when two different keys are mapped to the same hash value or index in a hash table. Collisions are inherent in hash functions and are typically handled through techniques like chaining or open addressing.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Collision is caused due to the presence of two keys having the same value.\na) True\nb) False\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Heap\nDifficulty: Easy\nContext: A min heap is a complete binary tree where the value of each node is less than or equal to the values of its children. This ensures that the smallest element is always at the root, and such trees are used in priority queues and efficient sorting algorithms.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Min heap is a complete binary tree.\na) True\nb) False\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Heap\nDifficulty: Easy\nContext: A treap is a data structure that combines properties of binary search trees and heaps. It is also called a randomized binary search tree. Each node has a key (for BST property) and a randomly assigned priority (for heap property). The structure maintains both properties simultaneously.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: A treap is a cartesian tree with ___________\na) additional value, which is a priority value to the key generated randomly\nb) additional value, which is a priority value to the key generated sequentially\nc) additional heap rule\nd) additional operations like remove a range of elements\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Queue\nDifficulty: Easy\nContext: A queue is a FIFO (First-In-First-Out) data structure. When implemented using recursion, elements can be removed from the front and reinserted at the rear to reverse the order of elements. This technique can be used to reverse a queue using recursion.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Suppose you are given an implementation of a queue of integers.\nConsider the following function:\n\nvoid f(queue<int> &Q) {\n    int i;\n    if (!Q.empty()) {\n        i = Q.front();\n        Q.pop();\n        f(Q);\n        Q.push(i);\n    }\n}\n\nChoices:\nA) Leaves the queue Q unchanged\nB) Reverses the order of the elements in the queue Q\nC) Deletes the element at the front of the queue Q and inserts it at the rear keeping the other elements in the same order\nD) Empties the queue Q\n\nAnswer: B\nReverses the order of the elements in the queue Q"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: In a binary tree, internal nodes are nodes that have at least one child. A node of degree 1 has only one child, and a node of degree 2 has two children. The number of leaf nodes in a binary tree can be derived from the structure using various tree properties and formulas.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: In a binary tree, the number of internal nodes of degree 1 is 5, and the number of internal nodes of degree 2 is 10. The number of leaf nodes in the binary tree is:\nChoices:\nA) 10\nB) 11\nC) 12\nD) 15\n\nAnswer: B\n11"
+},
+{
+  "input_text": "Topic: Array\nDifficulty: Easy\nContext: Arrays in C++ are fixed-size containers for storing sequential elements. Recursive functions can manipulate arrays by modifying their elements. A classic problem is to reverse an array using recursion, where the function swaps elements from both ends and recurses toward the center.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What will be the output of the following code?\n\n#include <bits/stdc++.h> \nusing namespace std; \n\nvoid func(int arr[], int left, int right) \n{ \n    if (left >= right) \n        return; \n\n    int temp = arr[left];  \n    arr[left] = arr[right]; \n    arr[right] = temp; \n\n    func(arr, left + 1, right - 1);  \n}      \n\nvoid printArray(int arr[], int size) \n{ \n    for (int i = 0; i < size; i++) \n        cout << arr[i] << \" \"; \n} \n\nint main() \n{ \n    int arr[] = {1,2,3,4}; \n    int n = sizeof(arr) / sizeof(arr[0]); \n    func(arr, 0, n-1); \n    printArray(arr, n); \n    return 0; \n}\n\nChoices:\na) 1 2 3 4\nb) 4 3 2 1\nc) 1 4 2 3\nd) 4 1 2 3\n\nAnswer: b"
+},
+{
+  "input_text": "Topic: Theory\nDifficulty: Easy\nContext: Postfix (Reverse Polish) expressions are evaluated using a stack. Operands are pushed onto the stack, and when an operator is encountered, the appropriate number of operands are popped, the operation is applied, and the result is pushed back. In the expression ab*cd*+, values are substituted and operations follow the postfix order.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What is the result of the following postfix expression?\nab*cd*+ where a=2, b=2, c=3, d=4.\na) 16\nb) 12\nc) 14\nd) 10\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Graph\nDifficulty: Easy\nContext: In graph theory, a multigraph allows multiple edges between the same set of vertices. When such graphs also allow self-loops—edges that connect a vertex to itself—they are referred to as pseudographs. These structures are useful in modeling certain real-world networks and edge-weighted systems.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: MultiGraphs having self-loops are called PseudoGraphs?\na) True\nb) False\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Theory\nDifficulty: Easy\nContext: Recursive functions are functions that call themselves with modified parameters. The function in the question calculates the factorial of a number. The factorial of a number n (denoted as n!) is the product of all positive integers less than or equal to n.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What value does function mystery return when called with a value of 4?\n\nint mystery ( int number ) {\n    if ( number <= 1 )\n        return 1;\n    else\n        return number * mystery( number – 1 );\n}\n\nChoices:\nA) 0\nB) 1\nC) 4\nD) 24\n\nAnswer: D\n24"
+},
+{
+  "input_text": "Topic: Array\nDifficulty: Easy\nContext: In dynamic programming and combinatorics, reaching the end of an array can be modeled by counting the number of valid jumps from each position based on allowed step values. This type of problem appears in variants of the staircase or jump game problems.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: In how many different ways can we reach the end of the array arr[]={1,3,5,8,9}?\na) 1\nb) 2\nc) 3\nd) 4\n\nAnswer: d"
+},
+{
+  "input_text": "Topic: Array\nDifficulty: Easy\nContext: Reversing an array involves swapping elements from the two ends toward the center. The number of swaps required is ⌊n/2⌋ for an array of length n. If n is odd, the middle element doesn't require a swap.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: How many swaps are required for reversing an array having n elements where n is an odd number?\na) (n-1)/2\nb) n/2\nc) (n/2) – 1\nd) (n+1)/2\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Array\nDifficulty: Easy\nContext: Quick sort is a divide-and-conquer sorting algorithm that selects a pivot and partitions the array such that elements less than or equal to the pivot go to the left, and those greater go to the right. This partitioning process is repeated recursively to sort the array efficiently.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: The sorting technique where array to be sorted is partitioned again and again in such a way that all elements less than or equal to partitioning element appear before it and those which are greater appear after it, is called ……\nChoices: ['A\\nMerge sort', 'B\\nQuick sort \\n (A) Merge sort \\n (B) Quick sort', 'C\\nSelection sort', 'D\\nNone of these']\n\nAnswer: B\nQuick sort \n (A) Merge sort \n (B) Quick sort"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: AA-trees are a form of balanced binary search tree that simplify the balancing logic of red-black trees. Though they perform fewer types of rotations (only right and left skew), they may require more frequent rotations to maintain balance, particularly in worst-case insertion sequences.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: AA-Trees make more rotations than a red-black tree.\na) True\nb) False\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Heap\nDifficulty: Easy\nContext: Heap allocation refers to memory that is dynamically allocated at runtime. Programming languages that allow dynamic data structures (e.g., linked lists, trees) require heap allocation because the size and structure of such data are not known at compile time.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Which languages necessarily need heap allocation in the runtime environment?\nChoices: ['A\\nThose that support recursion', 'B\\nThose that use dynamic scoping', 'C\\nThose that use global variables', 'D\\nThose that allow dynamic data structures']\n\nAnswer: D\nThose that allow dynamic data structures"
+},
+{
+  "input_text": "Topic: Array\nDifficulty: Easy\nContext: Reversing an array inverts the order of its elements, while rotation shifts the elements cyclically. The output of reversal and rotation differs in most cases, as they are fundamentally different operations. Therefore, applying both will not consistently produce the same result.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: When array reversal and rotation are applied to the same array, the output produced will also be the same every time.\na) True\nb) False\n\nAnswer: b"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: In a complete binary tree, every level is completely filled except possibly the last. A full binary tree with n leaf nodes contains 2n - 1 total nodes, based on the structural properties of binary trees.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: A full binary tree with n leaf nodes contains how many total nodes?\nChoices: ['A\\nn nodes', 'B\\nlog 2 n nodes', 'C\\n2n –1 node', 'D\\n2 n nodes']\n\nAnswer: C\n2n –1 node"
+},
+{
+  "input_text": "Topic: Array\nDifficulty: Easy\nContext: A hash tree, also known as a Merkle tree, is used in blockchain systems and digital currencies like Bitcoin and Ethereum to efficiently and securely verify the integrity of large datasets. Each non-leaf node is a hash of its child nodes, enabling quick and tamper-evident verification.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Where is the hash tree used?\na) in digital currency\nb) in sorting of large data\nc) for indexing in databases\nd) in encryption of data\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: A complete binary tree is a binary tree in which all levels are fully filled except possibly the last, which is filled from left to right. If a complete binary tree has n leaf nodes, it has a total of 2n - 1 nodes.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: A complete binary tree with n leaf nodes has ________\nChoices: ['A\\nn+1 nodes', 'B\\n2n-1 nodes', 'C\\n2n+1 nodes', 'D\\nn(n-1)/2 nodes']\n\nAnswer: B\n2n-1 nodes"
+},
+{
+  "input_text": "Topic: Heap\nDifficulty: Easy\nContext: A skew heap is a variant of a binary heap that is self-adjusting, with no structural constraints like leftist heaps. This makes the relationship between skew heaps and leftist heaps similar to that between splay trees (self-adjusting) and AVL trees (strictly balanced).\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: The relationship of skew heaps to leftist heaps is analogous to that of?\na) Splay tree and AVL tree\nb) Red black tree and AVL tree\nc) Binary tree and Splay tree\nd) Binary tree and Red black tree\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: A balanced binary tree ensures that the height of the tree remains logarithmic with respect to the number of elements. This allows for efficient search, insertion, and deletion operations, all of which run in O(log n) worst-case time.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: A balanced binary tree with n items allows the lookup of an item in ____ worst-case time.\na) O(log n)\nb) O(nlog 2)\nc) O(n)\nd) O(1)\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Array\nDifficulty: Easy\nContext: In C, arrays can be initialized during declaration using curly braces and a comma-separated list of values. The correct syntax for initializing an array of three integers is `int arr[3] = {1, 2, 3};`.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: How do you initialize an array in C?\na) int arr[3] = (1,2,3);\nb) int arr(3) = {1,2,3};\nc) int arr[3] = {1,2,3};\nd) int arr(3) = (1,2,3);\n\nAnswer: c"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: A simple connected graph with n vertices and n edges forms a single cycle. The number of different spanning trees in such a graph depends on how many edges can be removed without disconnecting the graph. It can be shown that such a graph has at least 3 spanning trees.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What is the largest integer m such that every simple connected graph with n vertices and n edges contains at least m different spanning trees?\nChoices: ['A\\n1', 'B\\n2', 'C\\n3', 'D\\nn']\n\nAnswer: C\n3"
+},
+{
+  "input_text": "Topic: Stack\nDifficulty: Easy\nContext: A stack can be used to reverse a string. In a palindrome check, each character is pushed onto a stack and then popped to reverse the string. If the original string and the reversed string match, it is a palindrome.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Select the appropriate code which tests for a palindrome.\na)\n<code with proper stack pop reversal logic>\nb)\n<code using peek instead of pop>\nc)\n<code with extra pop causing string truncation>\nd)\n<code with incorrect reverse logic and reversed condition>\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Hashing\nDifficulty: Easy\nContext: Linear probing is a collision resolution technique in open addressing where the next index is computed as `(hash + f(i)) mod table_size`, where `f(i) = i`. So the probing function is linear, and the hash function used is typically `H(x) = (key + i) % table_size`.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What is the hash function used in linear probing?\na) H(x)= key mod table size\nb) H(x)= (key+ F(i2)) mod table size\nc) H(x)= (key+ F(i)) mod table size\nd) H(x)= X mod 17\n\nAnswer: c"
+},
+{
+  "input_text": "Topic: Array\nDifficulty: Easy\nContext: An inversion in an array is a pair of indices (i, j) such that i < j and A[i] > A[j]. The expected number of inversions in a randomly ordered array of n distinct elements is n(n-1)/4, which is half of the worst-case (reversed array) count.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Let A[1...n] be an array of n distinct numbers. If i < j and A[i] > A[j], then the pair (i, j) is called an inversion of A. What is the expected number of inversions in any permutation on n elements?\nChoices: ['A\\nn(n-1)/2', 'B\\nn(n-1)/4', 'C\\nn(n+1)/4', 'D\\n2n[logn]']\n\nAnswer: B\nn(n-1)/4"
+},
+{
+  "input_text": "Topic: Heap\nDifficulty: Easy\nContext: A skew heap is a form of self-adjusting heap that does not impose any structural constraints like leftist heaps. Swapping during merge operations is done unconditionally, without maintaining specific balance factors, hence no fixed constraints are required.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: In skew heaps, certain constraints are to be met in order to perform swapping.\na) True\nb) False\n\nAnswer: b"
+},
+{
+  "input_text": "Topic: Stack\nDifficulty: Easy\nContext: A stack is a Last-In-First-Out (LIFO) data structure. When reading characters of a string and pushing them onto a stack, popping them out results in reversing the string. This is a common technique used to reverse strings or check for palindromes.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Consider the following pseudocode that uses a stack:\n\n# Declare a stack of characters\nword = \"example\"  # Replace with the word you want to read\nchar_stack = []\n\n# While there are more characters in the word to read\nfor c in word:\n    char_stack.append(c)  # Push the character on the stack\n\n# While the stack is not empty\nwhile char_stack:\n    c = char_stack.pop()  # Pop a character off the stack\n    print(c, end='')  # Write the character to the screen\n\nChoices: ['A\\ngeeksquizgeeksquiz', 'B\\nziuqskeeg', 'C\\ngeeksquiz', 'D\\nziuqskeegziuqskeeg']\n\nAnswer: B\nziuqskeeg"
+},
+{
+  "input_text": "Topic: Theory\nDifficulty: Easy\nContext: When finding both the smallest and largest elements in an array, a more efficient approach than scanning twice can be used. By comparing elements in pairs, the number of comparisons can be reduced. The optimal method requires about n + (n/2 - 1) comparisons.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: The total comparisons in finding both smallest and largest elements are:\na) 2*n + 2\nb) n + ((n+1)/2) - 2\nc) n + logn\nd) n^2\n\nAnswer: b"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: Tree traversals define the order in which nodes are visited. In postorder traversal, the left subtree is visited first, then the right subtree, and finally the node itself. This is often used in deleting trees or evaluating postfix expressions.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What does the following piece of code do?\n\npublic void func(Tree root)\n{\n    func(root.left());\n    func(root.right());\n    System.out.println(root.data());\n}\n\na) Preorder traversal\nb) Inorder traversal\nc) Postorder traversal\nd) Level order traversal\n\nAnswer: c"
+},
+{
+  "input_text": "Topic: Theory\nDifficulty: Easy\nContext: Infix expressions use standard operator precedence and parentheses. To convert an infix expression to postfix (Reverse Polish Notation), operators are placed after their operands according to precedence and associativity. This avoids the need for parentheses.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What is the corresponding postfix expression for the given infix expression?\n\nChoices:\na) ab*cdef/^*g-h+\nb) abcdef^/*g*h*+\nc) abcd*^ed/g*-h*+\nd) abc*de^fg/*-*h+\n\nAnswer: b"
+},
+{
+  "input_text": "Topic: Graph\nDifficulty: Easy\nContext: A plane graph is a graph drawn on a plane without any edge crossings. Euler’s formula states that for any connected plane graph, V - E + R = 2. If a plane graph has multiple connected components, the formula generalizes to V - E + R = C + 1, where C is the number of components.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Given a plane graph, G having 2 connected components, 6 vertices, 7 edges and 4 regions, what will be the number of connected components?\na) 1\nb) 2\nc) 3\nd) 4\n\nAnswer: b"
+},
+{
+  "input_text": "Topic: Theory\nDifficulty: Easy\nContext: The given C++ program performs a depth-first traversal (DFS) on a graph represented by an adjacency matrix. Starting from vertex 0, it recursively visits all unvisited neighbors. The output corresponds to the order in which the DFS visits the vertices based on the adjacency matrix.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What would be the output of the following C++ program if the given input is:\n\n0 0 0 1 1\n0 0 0 0 1\n0 0 0 1 0\n1 0 1 0 0\n1 1 0 0 0\n\n<code snippet follows DFS on a 5x5 matrix>\n\nChoices:\na) 0 2 3 1 4\nb) 0 3 2 4 1\nc) 0 2 3 4 1\nd) 0 3 2 1 4\n\nAnswer: b"
+},
+{
+  "input_text": "Topic: Stack\nDifficulty: Easy\nContext: A stack is a Last-In-First-Out (LIFO) data structure. When reading characters of a string and pushing them onto a stack, popping them out results in reversing the string. This is a common technique used to reverse strings or check for palindromes.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Consider the following pseudocode that uses a stack:\n\n# Declare a stack of characters\nword = \"example\"  # Replace with the word you want to read\nchar_stack = []\n\n# While there are more characters in the word to read\nfor c in word:\n    char_stack.append(c)  # Push the character on the stack\n\n# While the stack is not empty\nwhile char_stack:\n    c = char_stack.pop()  # Pop a character off the stack\n    print(c, end='')  # Write the character to the screen\n\nChoices: ['A\\ngeeksquizgeeksquiz', 'B\\nziuqskeeg', 'C\\ngeeksquiz', 'D\\nziuqskeegziuqskeeg']\n\nAnswer: B\nziuqskeeg"
+},
+{
+  "input_text": "Topic: Theory\nDifficulty: Easy\nContext: When finding both the smallest and largest elements in an array, a more efficient approach than scanning twice can be used. By comparing elements in pairs, the number of comparisons can be reduced. The optimal method requires about n + (n/2 - 1) comparisons.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: The total comparisons in finding both smallest and largest elements are:\na) 2*n + 2\nb) n + ((n+1)/2) - 2\nc) n + logn\nd) n^2\n\nAnswer: b"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: Tree traversals define the order in which nodes are visited. In postorder traversal, the left subtree is visited first, then the right subtree, and finally the node itself. This is often used in deleting trees or evaluating postfix expressions.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What does the following piece of code do?\n\npublic void func(Tree root)\n{\n    func(root.left());\n    func(root.right());\n    System.out.println(root.data());\n}\n\na) Preorder traversal\nb) Inorder traversal\nc) Postorder traversal\nd) Level order traversal\n\nAnswer: c"
+},
+{
+  "input_text": "Topic: Theory\nDifficulty: Easy\nContext: Infix expressions use standard operator precedence and parentheses. To convert an infix expression to postfix (Reverse Polish Notation), operators are placed after their operands according to precedence and associativity. This avoids the need for parentheses.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What is the corresponding postfix expression for the given infix expression?\n\nChoices:\na) ab*cdef/^*g-h+\nb) abcdef^/*g*h*+\nc) abcd*^ed/g*-h*+\nd) abc*de^fg/*-*h+\n\nAnswer: b"
+},
+{
+  "input_text": "Topic: Graph\nDifficulty: Easy\nContext: A plane graph is a graph drawn on a plane without any edge crossings. Euler’s formula states that for any connected plane graph, V - E + R = 2. If a plane graph has multiple connected components, the formula generalizes to V - E + R = C + 1, where C is the number of components.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Given a plane graph, G having 2 connected components, 6 vertices, 7 edges and 4 regions, what will be the number of connected components?\na) 1\nb) 2\nc) 3\nd) 4\n\nAnswer: b"
+},
+{
+  "input_text": "Topic: Theory\nDifficulty: Easy\nContext: The given C++ program performs a depth-first traversal (DFS) on a graph represented by an adjacency matrix. Starting from vertex 0, it recursively visits all unvisited neighbors. The output corresponds to the order in which the DFS visits the vertices based on the adjacency matrix.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What would be the output of the following C++ program if the given input is:\n\n0 0 0 1 1\n0 0 0 0 1\n0 0 0 1 0\n1 0 1 0 0\n1 1 0 0 0\n\n<code snippet follows DFS on a 5x5 matrix>\n\nChoices:\na) 0 2 3 1 4\nb) 0 3 2 4 1\nc) 0 2 3 4 1\nd) 0 3 2 1 4\n\nAnswer: b"
+},
+{
+  "input_text": "Topic: Theory\nDifficulty: Easy\nContext: In an infix expression, operators are placed between operands. This is the common human-readable format for arithmetic expressions. The recursive pattern of producing left expression → operator → right expression characterizes infix notation.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: The expression obtained by recursively producing a left expression, followed by an operator, followed by recursively producing a right expression is called?\na) prefix expression\nb) infix expression\nc) postfix expression\nd) parenthesized expression\n\nAnswer: b"
+},
+{
+  "input_text": "Topic: Array\nDifficulty: Easy\nContext: The Rope data structure is a binary tree used to efficiently store and manipulate very long strings. In programming, a Rope is also known as a Cord. It allows for efficient concatenation and substring operations.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Which of the following is also known as Rope data structure?\na) Cord\nb) String\nc) Array\nd) Linked List\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: Two balanced binary search trees with m and n elements can be merged into one balanced BST in O(m+n) time. The process typically involves converting both trees to sorted arrays, merging them, and reconstructing a balanced BST from the merged array.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Two balanced binary trees are given with m and n elements respectively. They can be merged into a balanced binary search tree in ____ time.\na) O(m+n)\nb) O(mn)\nc) O(m)\nd) O(mlog n)\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: The number of binary trees that can be formed with a given set of nodes and a specific traversal sequence depends on the properties of binary trees and Catalan numbers. For 3 nodes with a fixed postorder traversal (e.g., N, M, L), only a limited number of trees can match that sequence.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What is the possible number of binary trees that can be created with 3 nodes, giving the sequence N, M, L when traversed in post-order?\na) 15\nb) 3\nc) 5\nd) 8"
+},
+{
+  "input_text": "Topic: Array\nDifficulty: Easy\nContext: In C, arrays are initialized using curly braces. The correct syntax to initialize a three-element integer array is `int arr[3] = {1, 2, 3};`. Using parentheses instead of braces is syntactically incorrect.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: How do you initialize an array in C?\na) int arr[3] = (1,2,3);\nb) int arr(3) = {1,2,3};\nc) int arr[3] = {1,2,3};\nd) int arr(3) = (1,2,3);\n\nAnswer: c"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: A full binary tree is a tree in which every node has either 0 or 2 children. In such a tree, if the number of internal nodes is I, then the number of leaves (L) is always L = I + 1. This is a fundamental property derived from the structure of full binary trees.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: In a full binary tree if number of internal nodes is I, then number of leaves L are?\na) L = 2*I\nb) L = I + 1\nc) L = I – 1\nd) L = 2*I – 1\n\nAnswer: b"
+},
+{
+  "input_text": "Topic: Linked List\nDifficulty: Easy\nContext: In a singly linked list, accessing the k-th element from the beginning can be done in O(1) time if a pointer to the head is maintained and traversed. However, finding the k-th element from the end generally requires a full traversal of the list or use of two pointers, making the time complexity O(n).\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What are the time complexities of finding 8th element from beginning and 8th element from end in a singly linked list? Let n be the number of nodes in linked list, you may assume that n > 8.\nChoices: ['A\\nO(n) and O(n)', 'B\\nO(1) and O(1)', 'C\\nO(n) and O(1)', 'D\\nO(1) and O(n)']\n\nAnswer: D\nO(1) and O(n)"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: B-trees and B+ trees are used in databases and file systems to maintain sorted data and allow searches, insertions, and deletions in logarithmic time. B+ trees usually have a greater fanout than B-trees and support simpler deletion. However, B+ trees do not necessarily have greater depth than B-trees, making that statement false.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Which of the following is false?\na) Compared to B-tree, B+ -tree has larger fanout\nb) Deletion in B-tree is more complicated than in B+ -tree\nc) B+ -tree has greater depth than corresponding B-tree\nd) Both B-tree and B+ -tree have same search and insertion efficiencies\n\nAnswer: c"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: AA-trees are a form of balanced binary search trees that simplify the balancing operations of red-black trees. The tree structure is designed to consider only two shapes when performing rotations: skew and split, which simplifies rebalancing. Thus, only 2 structural shapes need to be handled.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: How many different shapes does maintenance of AA-Tree need to consider?\na) 7\nb) 5\nc) 2\nd) 3\n\nAnswer: c"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: A suffix tree is a specialized data structure that allows efficient operations on substrings of a string, such as pattern matching, longest repeated substring, or finding substrings in linear time. This makes it ideal for fast string operations.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Which tree allows fast implementation of string operation?\na) Rope Tree\nb) Suffix Tree\nc) Tango Tree\nd) Top Tree\n\nAnswer: b"
+},
+{
+  "input_text": "Topic: Array\nDifficulty: Easy\nContext: Separate chaining is a method used in hashing to handle collisions by maintaining a linked list of all elements that hash to the same index. Although effective in managing collisions, this technique requires additional memory due to the use of pointers and linked lists.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Which of the following is a disadvantage of using separate chaining using linked lists?\na) It requires many pointers\nb) It requires linked lists\nc) It uses array\nd) It does not resolve collision\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Graph\nDifficulty: Easy\nContext: An edge cluster in graph theory typically refers to a grouping of edges that are densely connected or form a small subgraph. If an edge cluster is defined as a minimal group, it usually starts with a single edge connecting two vertices.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: How many edges are present in Edge cluster?\na) 0\nb) 1\nc) 2\nd) 4\n\nAnswer: b"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: A Cartesian tree is a binary tree derived from a sequence of values where the in-order traversal yields the original sequence and each node follows heap property. It is not height-balanced, and if the input values are distinct, the Cartesian tree is uniquely determined.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Which of the below statements are true?\ni. Cartesian tree is not a height balanced tree\nii. Cartesian tree of a sequence of unique numbers can be uniquely generated\n\na) both statements are true\nb) only i. is true\nc) only ii. is true\nd) both are false\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Stack\nDifficulty: Easy\nContext: In Java, the Stack class from `java.util` throws an `EmptyStackException` if a pop operation is attempted on an empty stack. This exception is a subclass of `RuntimeException` and is thrown at runtime.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What happens when you pop from an empty stack while implementing using the Stack ADT in Java?\na) Undefined error\nb) Compiler displays a warning\nc) EmptyStackException is thrown\nd) NoStackException is thrown\n\nAnswer: c"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: A 2-3 tree is a balanced search tree in which every internal node has either two or three children. The height of a 2-3 tree with n elements lies between log base 3 of (n+1) and log base 2 of (n+1), ensuring logarithmic search time.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: The height of a 2-3 tree with n elements is ______\na) between (n/2) and (n/3)\nb) (n/6)\nc) between (n) and log2(n + 1)\nd) between log3(n + 1) and log2(n + 1)\n\nAnswer: d"
+},
+{
+  "input_text": "Topic: Array\nDifficulty: Easy\nContext: A sparse array is a data structure that efficiently stores and processes arrays with a large number of zero or default values. Instead of allocating space for every element, it stores only non-zero values and their positions, making it memory-efficient compared to a naive array.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What is the difference between a normal (naive) array and a sparse array?\na) Sparse array can hold more elements than a normal array\nb) Sparse array is memory efficient\nc) Sparse array is dynamic\nd) A naive array is more efficient\n\nAnswer: b"
+},
+{
+  "input_text": "Topic: Stack\nDifficulty: Easy\nContext: Parentheses matching is a common problem in compiler design and expression parsing. A stack data structure is ideal for this task, as it allows tracking of opening symbols and matching them with closing ones in a Last-In-First-Out (LIFO) manner.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Which of the following data structures can be used for parentheses matching?\na) n-ary tree\nb) queue\nc) priority queue\nd) stack\n\nAnswer: d"
+},
+{
+  "input_text": "Topic: Queue\nDifficulty: Easy\nContext: To print the right view of a binary tree, level order traversal using a queue is used. The rightmost node at each level is printed. In the provided C++ code, the queue must be properly initialized with the root node. If not, the traversal won't begin.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What is wrong in the below code of printing Right View of a binary tree using the Queue data structure?\n\n#include <iostream>\n#include <queue>\nusing namespace std;\n\nclass Node {\npublic:\n    int data;\n    Node* left;\n    Node* right;\n    Node(int val) : data(val), left(nullptr), right(nullptr) {}\n};\n\nvoid printRightView(Node* root) {\n    if (root == nullptr) return;\n\n    queue<Node*> q;\n    q.push(root);\n    while (!q.empty()) {\n        int n = q.size();\n        for (int i = 0; i < n; i++) {\n            Node* x = q.front();\n            q.pop();\n            if (i == n - 1) {\n                cout << x->data << \" \";\n            }\n            if (x->left) {\n                q.push(x->left);\n            }\n            if (x->right) {\n                q.push(x->right);\n            }\n        }\n    }\n}\n\nChoices: ['A\\nWe have not initialized anything in the Queue', 'B\\nQueue will never be empty.', 'C\\nleft and right nodes of the tree are null.', 'D\\nNone']\n\nAnswer: A\nWe have not initialized anything in the Queue"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: In a balanced binary search tree, summing all elements between two values L and H requires traversing only relevant branches. The tightest time bound depends on the number of such elements (m) and the tree's properties, leading to a time complexity involving logarithmic and linear components.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Suppose we have a balanced binary search tree T holding n numbers. We are given two numbers L and H and wish to sum up all the numbers in T that lie between L and H. Suppose there are m such numbers in T. If the tightest upper bound on the time to compute the sum is O(n^a log^b n + m·log^d n), the value of a + 10b + 100c + 1000d is ____.\nChoices: ['A\\n60', 'B\\n110', 'C\\n210', 'D\\n50']\n\nAnswer: B\n110"
+},
+{
+  "input_text": "Topic: Array\nDifficulty: Easy\nContext: The trace of a matrix is defined as the sum of its diagonal elements from the top-left to the bottom-right. This is commonly calculated by iterating over the matrix where row and column indices are equal (i == j).\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What does the following piece of code do?\n\nfor(int i = 0; i < row; i++)\n{  \n    for(int j = 0; j < column; j++)\n    {\n        if(i == j)\n            sum = sum + (array[i][j]);\n    }\n}\nSystem.out.println(sum);\n\na) Normal of a matrix\nb) Trace of a matrix\nc) Square of a matrix\nd) Transpose of a matrix\n\nAnswer: b"
+},
+{
+  "input_text": "Topic: Hashing\nDifficulty: Easy\nContext: In separate chaining hashing, collisions are resolved using linked lists. The load factor is defined as the number of elements divided by the number of buckets. A load factor of 1 is typically optimal, meaning the number of elements is equal to the number of buckets.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What should be the load factor for separate chaining hashing?\na) 0.5\nb) 1\nc) 1.5\nd) 2\n\nAnswer: b"
+},
+{
+  "input_text": "Topic: Array\nDifficulty: Easy\nContext: Rotating an array by k positions involves moving the elements such that each element shifts by k places. For example, rotating [1, 2, 3, 4, 5] by 2 positions to the left results in [3, 4, 5, 1, 2].\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What will be the resulting array after rotating arr[]={1, 2, 3, 4, 5} by 2?\na) 2, 1, 3, 4, 5\nb) 3, 4, 5, 1, 2\nc) 4, 5, 1, 2, 3\nd) 1, 2, 3, 5, 4\n\nAnswer: b"
+},
+{
+  "input_text": "Topic: Hashing\nDifficulty: Easy\nContext: Universal hashing is a method where the hash function is chosen at random from a family of functions. This randomization provides good average-case performance and protects against worst-case scenarios caused by poor hash function choices.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Which scheme uses a randomization approach?\na) hashing by division\nb) hashing by multiplication\nc) universal hashing\nd) open addressing\n\nAnswer: c"
+},
+{
+  "input_text": "Topic: Linked List\nDifficulty: Easy\nContext: A doubly linked list allows traversal in both forward and backward directions using two pointers per node. While more flexible, it requires extra space and pointer handling, making it more complex to implement than a singly linked list.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Which of the following is false about a doubly linked list?\na) We can navigate in both the directions\nb) It requires more space than a singly linked list\nc) The insertion and deletion of a node take a bit longer\nd) Implementing a doubly linked list is easier than singly linked list\n\nAnswer: d"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: In a Directed Acyclic Graph (DAG), the shortest paths from a single source can be computed efficiently using topological sorting. Once the vertices are sorted, the shortest paths can be calculated in linear time with respect to the number of vertices and edges.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Which of the following algorithms can be used to efficiently calculate single source shortest paths in a Directed Acyclic Graph?\nChoices: ['A\\nDijkstra', 'B\\nBellman-Ford', 'C\\nTopological Sort', 'D\\nStrongly Connected Component']\n\nAnswer: C\nTopological Sort"
+},
+{
+  "input_text": "Topic: Linked List\nDifficulty: Easy\nContext: Many recursive algorithms can be rewritten in a non-recursive way using an explicit stack. This is common when converting recursive implementations to iterative versions for better memory control or performance.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What data structure would you most likely see in non-recursive implementation of a recursive algorithm?\na) Stack\nb) Linked List\nc) Tree\nd) Queue\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Stack\nDifficulty: Easy\nContext: To convert a decimal number to binary using a stack, the number is repeatedly divided by 2, and the remainders are pushed onto the stack. Popping the stack gives the binary representation in the correct order.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Using stacks, how do you obtain the binary representation of a number?\n<Options contain multiple code snippets>\n\nAnswer: c"
+},
+{
+  "input_text": "Topic: Linked List\nDifficulty: Easy\nContext: In the linked list implementation of a queue, the `rear` pointer is updated when a new node is inserted. The `front` pointer remains unchanged unless the queue is empty before insertion.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: In linked list implementation of a queue, front and rear pointers are tracked. Which of these pointers will change during an insertion into a NONEMPTY queue?\na) Only front pointer\nb) Only rear pointer\nc) Both front and rear pointer\nd) No pointer will be changed\n\nAnswer: b"
+},
+{
+  "input_text": "Topic: Stack\nDifficulty: Easy\nContext: Balanced parentheses can be verified using a stack by pushing opening brackets and popping when matching closing brackets are found. If the stack is empty at the end and no mismatch occurred, the string is balanced. Time complexity is O(n).\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Write a piece of code which returns true if the string contains balanced parenthesis, false otherwise.\n<Options contain multiple Java code snippets>\n\na) O(logn)\nb) O(n)\nc) O(1)\nd) O(nlogn)\n\nAnswer: b"
+},
+{
+  "input_text": "Topic: Array\nDifficulty: Easy\nContext: In Java, arrays are instantiated using the `new` keyword followed by the type and size in square brackets. For example: `int arr[] = new int[3];` allocates an array of 3 integers.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: How do you instantiate an array in Java?\na) int arr[] = new int(3);\nb) int arr[];\nc) int arr[] = new int[3];\nd) int arr() = new int(3);\n\nAnswer: c"
+},
+{
+  "input_text": "Topic: Queue\nDifficulty: Easy\nContext: A circular queue is a linear data structure in which the last position is connected back to the first to make a circle. It is also known as a ring buffer and is used in buffering and scheduling.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Circular Queue is also known as ________\na) Ring Buffer\nb) Square Buffer\nc) Rectangle Buffer\nd) Curve Buffer\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Stack\nDifficulty: Easy\nContext: A stack is a Last-In-First-Out (LIFO) data structure, meaning the last element pushed onto the stack is the first one to be popped off. So if A, B, C, and D are pushed in that order, the removal order will be D, C, B, A.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: If the elements “A”, “B”, “C” and “D” are placed in a stack and are deleted one at a time, what is the order of removal?\na) ABCD\nb) DCBA\nc) DCAB\nd) ABDC\n\nAnswer: b"
+},
+{
+  "input_text": "Topic: Sorting\nDifficulty: Easy\nContext: When merging multiple sorted files, the number of comparisons depends on the total number of elements and the strategy used. Optimal merging of 4 files with 15, 3, 9, and 8 elements minimizes comparisons to 15 when using an efficient strategy like Huffman coding or binary merging trees.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: The total number of comparisons required to merge 4 sorted files containing 15, 3, 9 and 8 records into a single sorted file is ______.\nChoices: ['A\\n66', 'B\\n39', 'C\\n15', 'D\\n3']\n\nAnswer: C\n15"
+},
+{
+  "input_text": "Topic: Theory\nDifficulty: Easy\nContext: In a binary search tree (BST), the left child has a value less than its parent, but in general binary trees this condition may not hold. Thus, the statement only applies to BSTs, not to all trees.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Left child of parent node has value lesser than the parent node.\na) True\nb) False\n\nAnswer: b"
+},
+{
+  "input_text": "Topic: Heap\nDifficulty: Easy\nContext: In a max-heap, the largest key is always located at the root node because each parent must be greater than or equal to its children. This structure supports efficient maximum retrieval in constant time.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: In a max-heap, the element with the greatest key is always in which node?\na) Leaf node\nb) First node of left sub tree\nc) Root node\nd) First node of right sub tree\n\nAnswer: c"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: The Top Tree data structure is used to dynamically maintain information in trees. It relies on the divide and conquer paradigm by breaking trees into clusters and solving problems in a recursive fashion.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Which algorithm is used in the top tree data structure?\na) Divide and Conquer\nb) Greedy\nc) Backtracking\nd) Branch\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: A full binary tree is a binary tree in which every node has either 0 or 2 children. In such trees, the number of total nodes is given by the formula 2n - 1, where n is the number of leaves.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: A full binary tree with n leaves contains ______.\nChoices: ['A\\nn nodes', 'B\\nlog n2 nodes', 'C\\n2n – 1 nodes', 'D\\n2n nodes']\n\nAnswer: C\n2n – 1 nodes"
+},
+{
+  "input_text": "Topic: Stack\nDifficulty: Easy\nContext: In algorithms that use stacks (e.g., expression evaluation, syntax checking), it is expected that the stack is empty at the end if all operations are properly matched. If the stack is not empty, it indicates an error such as unbalanced parentheses.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: An error is reported when the stack is not empty at the end.\na) True\nb) False\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Graph\nDifficulty: Easy\nContext: An Inverter Graph is a type of Directed Acyclic Graph (DAG), used in applications like digital logic and dataflow modeling where the graph represents dependencies that must not form cycles.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: An Inverter Graph is a type of __________\na) Multigraph\nb) Cyclic Graph\nc) Directed Acyclic Graph\nd) Directed Acyclic Word Graph\n\nAnswer: c"
+},
+{
+  "input_text": "Topic: Linked List\nDifficulty: Easy\nContext: Linked lists are dynamic data structures ideal for situations where data sizes change frequently. They allow for efficient insertion and deletion operations, making them well-suited for structures that frequently grow and shrink.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Linked lists are best suited ______\nA. for relatively permanent collections of data.\nB. for the size of the structure and the data in the structure are constantly changing.\nC. data structure\nD. for none of the above situations\n\nAnswer: B"
+},
+{
+  "input_text": "Topic: Queue\nDifficulty: Easy\nContext: In linked list implementation of a queue, available nodes are often managed using a separate free list called the AVAIL list. When inserting a new node, one is taken from this AVAIL list and linked into the queue.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: In case of insertion into a linked queue, a node borrowed from the __________ list is inserted in the queue.\na) AVAIL\nb) FRONT\nc) REAR\nd) NULL\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Graph\nDifficulty: Easy\nContext: A pseudograph is a graph that allows both multiple edges between nodes and loops (edges that connect a vertex to itself). In an adjacency matrix, loops are indicated by non-zero entries along the diagonal.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Given Adjacency matrices, determine which of them are PseudoGraphs?\ni) {{1,0} {0,1}}\nii) {{0,1} {1,0}}\niii) {{0,0,1} {0,1,0} {1,0,0}}\na) only i)\nb) ii) and iii)\nc) i) and iii)\nd) i), ii), and iii)\n\nAnswer: c"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: In a decision tree that sorts n elements, the height of the tree corresponds to the minimum number of comparisons needed in the worst case. Since at least n - 1 comparisons are required, the height is in Ω(n).\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Any decision tree that sorts n elements has height\nChoices: ['A\\nΩ(n)', 'B\\nΩ(log n)', 'C\\nΩ(n log n)', 'D\\nΩ(n²)']\n\nAnswer: A\nΩ(n)"
+},
+{
+  "input_text": "Topic: Graph\nDifficulty: Easy\nContext: In a hypergraph, an edge (called a hyperedge) can connect any number of vertices. The degree of a vertex is the number of hyperedges it belongs to. The degree sequence is the list of vertex degrees sorted in non-increasing order.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What is the degree sequence of the given HyperGraph, in non-increasing order?\nV = {v1,v2,v3,v4,v5,v6}, E = {{v1,v4,v5}, {v2,v3,v4,v5}, {v2}, {v1}, {v1,v6}}\na) 3,2,1,1,1,1\nb) 3,2,2,2,1,1\nc) 3,2,2,2,2,1\nd) 3,2,2,1,1,1\n\nAnswer: b"
+},
+{
+  "input_text": "Topic: Stack\nDifficulty: Easy\nContext: A queue can be implemented using two stacks. One stack is used for enqueue operations and the other for dequeue, allowing the queue to maintain its First-In-First-Out (FIFO) property using Last-In-First-Out (LIFO) stacks.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: The minimum number of stacks needed to implement a queue is:\nChoices: ['A\\n3', 'B\\n1', 'C\\n2', 'D\\n4']\n\nAnswer: C\n2"
+},
+{
+  "input_text": "Topic: Sorting\nDifficulty: Easy\nContext: Topological sorting of a Directed Acyclic Graph (DAG) involves ordering its vertices such that for every directed edge u → v, u appears before v. It can be done in linear time using Depth First Search (DFS) or Kahn’s algorithm.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: The topological sorting of any DAG can be done in ________ time.\na) cubic\nb) quadratic\nc) linear\nd) logarithmic\n\nAnswer: c"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: The number of distinct binary search trees (BSTs) that can be formed with n distinct keys is given by the nth Catalan number. For 4 keys, the number is C(4) = 14.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: How many distinct binary search trees can be created out of 4 distinct keys?\nChoices: ['A\\n4', 'B\\n14', 'C\\n24', 'D\\n42']\n\nAnswer: B\n14"
+},
+{
+  "input_text": "Topic: Queue\nDifficulty: Easy\nContext: A priority queue is a special type of queue where each element has a priority. Elements with higher priority are dequeued before those with lower priority. Priority queues can be implemented as ascending or descending order queues depending on whether the highest or lowest value has the highest priority.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Which of the following is the type of priority queue?\nChoices: ['A\\nAscending Order Priority Queue', 'B\\nDescending order Priority Queue', 'C\\nDeque', 'D\\nBoth A and B.']\n\nAnswer: D\nBoth A and B."
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: A binary tree is a binary search tree (BST) if an in-order traversal of the tree results in a sorted (non-decreasing) sequence of values. This property helps distinguish BSTs from other binary trees.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: One can determine whether a binary tree is a binary search tree by traversing it in ________.\nChoices: ['A\\nPre-order', 'B\\nIn-order', 'C\\nPost-order', 'D\\nAny of these']\n\nAnswer: B\nIn-order"
+},
+{
+  "input_text": "Topic: Linked List\nDifficulty: Easy\nContext: DNA sequence alignment is commonly solved using dynamic programming algorithms like Needleman-Wunsch or Smith-Waterman, not traditional string-matching algorithms like Rabin-Karp or KMP, which are better suited for exact matching rather than similarity-based alignment.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: In DNA sequence alignment, which string-matching algorithm is commonly used to identify similarities between two DNA sequences efficiently?\nChoices: ['A\\nRabin-Karp algorithm', 'B\\nKnuth-Morris-Pratt algorithm', 'C\\nZ function', 'D\\nNone of the above']\n\nAnswer: D\nNone of the above"
+},
+{
+  "input_text": "Topic: Array\nDifficulty: Easy\nContext: Arrays allow fast random access due to contiguous memory allocation and have better cache locality. Linked lists allow faster insertion and deletion but lack random access and generally have higher access time due to pointer traversal.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Which of the following points is/are not true about linked list data structure when it is compared with an array?\na) Arrays have better cache locality that can make them better in terms of performance\nb) It is easy to insert and delete elements in linked list\nc) Random access is not allowed in a typical implementation of linked lists\nd) Access of elements in linked list takes less time than compared to arrays\n\nAnswer: d"
+},
+{
+  "input_text": "Topic: Linked List\nDifficulty: Easy\nContext: A skip list is a data structure that allows fast search within an ordered sequence of elements. It uses multiple layers of linked lists to achieve average-case logarithmic time complexity for search, insertion, and deletion operations.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What is a skip list?\na) A linked list with size value in nodes\nb) A linked list that allows faster search within an ordered sequence\nc) A linked list that allows slower search within an ordered sequence\nd) A tree which is in the form of linked list\n\nAnswer: b"
+},
+{
+  "input_text": "Topic: Array\nDifficulty: Easy\nContext: Arrays are data structures used to store multiple elements of the same type in contiguous memory. They support indexing, which makes access efficient, and are preferred when working with homogeneous data.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What are the advantages of arrays?\na) Objects of mixed data types can be stored\nb) Elements in an array cannot be sorted\nc) Index of first element of an array is 1\nd) Easier to store elements of same data type\n\nAnswer: d"
+},
+{
+  "input_text": "Topic: Array\nDifficulty: Easy\nContext: In the array representation of a complete binary tree (1-indexed), the children of a node at index w are located at indices 2w and 2w + 1. This layout allows efficient traversal without using pointers.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What are the children for node ‘w’ of a complete-binary tree in an array representation?\na) 2w and 2w+1\nb) 2+w and 2-w\nc) w+1/2 and w/2\nd) w-1/2 and w+1/2\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: In a binary search tree (BST), the maximum element is always found by traversing the rightmost path starting from the root, since all right children have greater values.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: How will you find the maximum element in a binary search tree?\na)\n\npublic void max(Tree root)\n{\n while(root.left() != null)\n {\n  root = root.left();\n }\n System.out.println(root.data());\n}\nb)\n\npublic void max(Tree root)\n{\n while(root != null)\n {\n  root = root.left();\n }\n System.out.println(root.data());\n}\nc)\n\npublic void max(Tree root)\n{\n while(root.right() != null)\n {\n  root = root.right();\n }\n System.out.println(root.data());\n}\nd)\n\npublic void max(Tree root)\n{\n while(root != null)\n {\n  root = root.right();\n }\n System.out.println(root.data());\n}\n\nAnswer: c"
+},
+{
+  "input_text": "Topic: Graph\nDifficulty: Easy\nContext: Two graphs are isomorphic if there exists a one-to-one correspondence between their vertex sets that preserves edge connectivity. If their incidence matrices (vertex-edge representation) are structurally the same under some permutation, they are isomorphic.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: The graphs G1 and G2 with their incidence matrices given are isomorphic.\na) True\nb) False\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: Red-Black trees and AVL trees are both self-balancing binary search trees. Red-Black trees are less rigidly balanced but require fewer rotations. AVL trees store balance factors in each node, which can increase space and time complexity for updates.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Why prefer red-black trees over AVL trees?\na) Because red-black is more rigidly balanced\nb) AVL tree stores balance factor in every node which costs space\nc) AVL tree fails at scale\nd) Red-black is more efficient\n\nAnswer: b"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: If the weights of all edges in a graph are multiplied by a positive constant, the relative order of path weights remains the same. Therefore, the shortest path remains unchanged; only the total cost scales accordingly.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Is the following statement valid about shortest paths? Given a graph, suppose we have calculated shortest path from a source to all other vertices. If we modify the graph such that weights of all edges become double the original weight, then the shortest path remains same, only the total weight of path changes.\nChoices: ['A\\nTrue', 'B\\nFalse']\n\nAnswer: A\nTrue"
+},
+{
+  "input_text": "Topic: Graph\nDifficulty: Easy\nContext: A graph can be drawn in many ways, with different visual representations based on layout, orientation, and position of nodes and edges. However, the structure (connectivity) remains the same. Hence, a graph does not have a unique drawing representation.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: All graphs have unique representation on paper.\na) True\nb) False\n\nAnswer: b"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: In the complete graph with 100 vertices and edge weights equal to the absolute difference of vertex indices, the minimum spanning tree (MST) can be formed by connecting consecutive nodes: (v1, v2), (v2, v3), ..., (v99, v100). The sum of these 99 edges is the weight of the MST.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Consider a graph G = (V, E), where V = {v1, v2, ..., v100}, E = {(vi, vj) | 1 ≤ i < j ≤ 100} and the weight of edge (vi, vj) is |i − j|. The weight of the minimum spanning tree of G is ________.\nChoices: ['A\\n99', 'B\\n100', 'C\\n98', 'D\\n101']\n\nAnswer: A\n99"
+},
+{
+  "input_text": "Topic: Hashing\nDifficulty: Easy\nContext: A hash table is a data structure that allows efficient insertion, deletion, and search of data. It maps keys to values using a hash function and is commonly used in associative arrays and databases.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Which of the following operations are done in a hash table?\na) Insert only\nb) Search only\nc) Insert and search\nd) Replace\n\nAnswer: c"
+},
+{
+  "input_text": "Topic: Theory\nDifficulty: Easy\nContext: Auxiliary space refers to extra space or temporary space used by an algorithm. In the given code, a temporary array of size `d` is used to rotate the elements, so the auxiliary space complexity is O(d).\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What will be the auxiliary space complexity of the following code?\n\n#include <iostream>\nusing namespace std;\nint main()\n{\n    int arr[] = {1,2,3,4,5,6};\n    int n = sizeof(arr)/sizeof(arr[0]);\n    int d = 4;\n    int temp[10];\n\n    for (int i = 0; i < d; i++)\n        temp[i] = arr[i];\n\n    int j = 0;\n    for (int i = d; i < n; i++, j++)\n        arr[j] = arr[i];\n\n    int k = 0;\n    for (int i = n - d; i < n; i++, k++)\n        arr[i] = temp[k];\n\n    for (int i = 0; i < n; i++)\n        cout << arr[i] << \" \";\n    return 0;\n}\n\na) O(1)\nb) O(n)\nc) O(d)\nd) O(n*d)\n\nAnswer: c"
+},
+{
+  "input_text": "Topic: Array\nDifficulty: Easy\nContext: In Java, the `BitSet` class from the `java.util` package can be used to represent a bit array, where individual bits can be set, cleared, and queried efficiently.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Which class in Java can be used to represent bit array?\na) BitSet\nb) BitVector\nc) BitArray\nd) BitStream\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: In formal language theory, each parse tree corresponds to a leftmost and a rightmost derivation. Therefore, the number of parse trees equals the number of leftmost and rightmost derivation trees.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Which of the following is correct with respect to a parse tree for a given grammar?\na) n parse tree = n leftmost derivation tree = n rightmost derivation tree\nb) n parse tree = n leftmost derivation tree\nc) n parse tree = n rightmost derivation tree\nd) n parse tree = n non-terminals\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Heap\nDifficulty: Easy\nContext: A d-heap is a generalization of a binary heap where each node can have d children. Operations like insert, delete, and create can be performed efficiently. However, finding an arbitrary element (not the min/max) is not directly supported.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Which operation cannot be directly performed in a d-heap?\na) insert\nb) delete\nc) find\nd) create\n\nAnswer: c"
+},
+{
+  "input_text": "Topic: String\nDifficulty: Easy\nContext: A palindrome is a string that reads the same backward as forward. Examples include “madam” and “racecar”. This property can be checked by comparing the string with its reversed version.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What is a palindromic string?\nChoices: ['A\\nThe string of length 0', 'B\\nThe string having a special character.', 'C\\nThe string having an uppercase letter', 'D\\nThe string whose reversed string is equal to the original string.']\n\nAnswer: D\nThe string whose reversed string is equal to the original string."
+},
+{
+  "input_text": "Topic: Linked List\nDifficulty: Easy\nContext: A triply linked list is a variation of a linked list where each node contains three pointers—previous, next, and top. Proper initialization of these pointers and head/tail references is crucial for maintaining structure during insertion.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Consider the following algorithm to insert an element in a triply linked list.\n\ninitializing previous, next and top pointers to null\npointing the head and tail to the node created\npointing previous, next and top pointers to the node created\ninitializing the head and tail to null\ninitializing previous, next and top pointers to null\ninitializing the head and tail to null\npointing previous, next and top pointers to the node\n\nd)\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: Dijkstra and Bellman-Ford algorithms both compute the shortest path in weighted graphs with positive weights. Although the actual path may differ, the total weight of the shortest path from a source to a destination remains the same.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Is the following statement valid?\nGiven a graph where all edges have positive weights, the shortest paths produced by Dijkstra and Bellman-Ford algorithms may be different, but the path weight would always be the same.\nChoices: ['A\\nTrue', 'B\\nFalse']\n\nAnswer: A\nTrue"
+},
+{
+  "input_text": "Topic: Linked List\nDifficulty: Easy\nContext: In a doubly linked list, each node has two pointers—`prev` and `next`. When inserting a node, four pointers are typically updated: the new node’s two pointers and one each from its neighboring nodes. Thus, the number of affected pointers is 4.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: In a doubly linked list, the number of pointers affected for an insertion operation will be:\nChoices: ['A\\n5', 'B\\n0', 'C\\n1', 'D\\nNone of these']\n\nAnswer: D\nNone of these"
+},
+{
+  "input_text": "Topic: Theory\nDifficulty: Easy\nContext: The provided code inserts a new node at the end of a singly linked list by traversing from the head to the last node and updating the last node’s `next` pointer to point to the new node.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What is the functionality of the following code?\n\npublic void function(Node node)\n{\n if(size == 0)\n  head = node;\n else\n {\n  Node temp, cur;\n  for(cur = head; (temp = cur.getNext()) != null; cur = temp);\n  cur.setNext(node);\n }\n size++;\n}\n\na) Inserting a node at the beginning of the list\nb) Deleting a node at the beginning of the list\nc) Inserting a node at the end of the list\nd) Deleting a node at the end of the list\n\nAnswer: c"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: Splay trees are a type of self-adjusting binary search tree where recently accessed elements are moved to the root. This provides better performance for sequences of non-uniform access and simplifies implementation compared to more strictly balanced trees.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Why prefer splay trees?\na) Easier to program\nb) Space efficiency\nc) Easier to program and faster access to recently accessed items\nd) Quick searching\n\nAnswer: c"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: In a K-ary tree, the height is defined as the number of edges from the root to the deepest leaf. If the tree has only the root node, the height is 0 since there are no edges.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What is the height of a K-ary tree having only a root node?\na) 1\nb) 0\nc) 2\nd) 3\n\nAnswer: b"
+},
+{
+  "input_text": "Topic: Array\nDifficulty: Easy\nContext: Transposing a matrix involves swapping elements across its diagonal, i.e., converting row elements to column elements and vice versa. The given code snippet does this by swapping A[i][j] with A[j][i] for all i < j.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Let A be a matrix of size n x n. Consider the following program. What is the expected output?\n\nvoid fun(int A[][N])\n{\n    for (int i = 0; i < N; i++)\n        for (int j = i + 1; j < N; j++)\n            swap(A[i][j], A[j][i]);\n}\n\nChoices: ['A\\nMatrix A', 'B\\nDiagonal of matrix A', 'C\\nTranspose of matrix A', 'D\\nNone']\n\nAnswer: C\nTranspose of matrix A"
+},
+{
+  "input_text": "Topic: Hashing\nDifficulty: Easy\nContext: Hashing is used in digital signature systems, not to encrypt or decrypt the signature directly, but to generate a fixed-size hash of the message that is encrypted with a private key. This allows verification using the corresponding public key.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Hashing can be used to encrypt and decrypt digital signatures.\na) True\nb) False\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Theory\nDifficulty: Easy\nContext: In expressions, operator precedence and associativity determine the order of evaluation. Operators like ^ (exponentiation) have higher precedence than *, +, and -; associativity determines how operators of the same precedence are grouped. Postfix conversion uses this to generate correct operator placement.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Assume that the operators +, -, × are left associative and ^ is right associative. The order of precedence (from highest to lowest) is ^, ×, +, -. The postfix expression for the infix expression a + b × c – d ^ e ^ f is?\na) a b c × + d e f ^ ^ –\nb) a b c × + d e ^ f ^ –\nc) a b + c × d – e ^ f ^\nd) – + a × b c ^ ^ d e f\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: In a B-tree, the number of disk accesses required for a search operation depends on the height of the tree. The height h is logarithmic in the number of keys n with respect to the minimum degree t, giving a complexity of Θ(logₜ n).\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: The number of disk page accesses in a B-tree search, where h is height, n is the number of keys, and t is the minimum degree, is:\nChoices: ['A\\nΘ(logn h * t)', 'B\\nΘ(logt n * h)', 'C\\nΘ(logh n)', 'D\\nΘ(logt n)']\n\nAnswer: D\nΘ(logt n)"
+},
+{
+  "input_text": "Topic: Linked List\nDifficulty: Easy\nContext: Linked lists are ideal for dynamic memory usage and efficient insertions or deletions. However, they are not well-suited for binary search since binary search relies on random access, which linked lists do not support.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Linked lists are not suitable for the implementation of ___________\na) Insertion sort\nb) Radix sort\nc) Polynomial manipulation\nd) Binary search\n\nAnswer: d"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: An AA-tree is a form of balanced binary search tree that simulates red-black tree behavior by using levels instead of colors. Recursive coding is a programming preference, not a structural rule of AA-trees, which is why that option is incorrect.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Of the following rules that are followed by an AA-tree, which of the following is incorrect?\n1- Only right children can be red\n2- Procedures are coded recursively\n3- Instead of storing colors, the level of a node is stored\n4- There should not be any left children\n\na) 1\nb) 2\nc) 3\nd) 4\n\nAnswer: b"
+},
+{
+  "input_text": "Topic: Array\nDifficulty: Easy\nContext: In a binary min-heap, the parent node must always be less than or equal to its child nodes. If a line in the construction violates this heap property (e.g., a parent is greater than a child), that line is considered incorrect.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: For construction of a binary heap with the property that the parent node has value less than child node, which line is incorrect? (Lines indexed from 1)\na) Line – 3\nb) Line – 5\nc) Line – 6\nd) Line – 7\n\nAnswer: c"
+},
+{
+  "input_text": "Topic: Theory\nDifficulty: Easy\nContext: A treap is a binary search tree (based on keys) that also maintains heap property based on priority. The root node always has the highest priority because it must be greater than its children with respect to heap ordering.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Which node has the lowest priority in a treap?\na) Root node\nb) Leaf node\nc) Null node\nd) Centre node\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Theory\nDifficulty: Easy\nContext: Operator precedence determines the order in which operators are evaluated in expressions. Among the given options, the bitwise NOT '~' and XOR '^' have higher precedence than arithmetic operators like '+' and '*'.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Which of these operators have the highest order of precedence?\na) ‘(‘ and ‘)’\nb) ‘*’ and ‘/’\nc) ‘~’ and ‘^’\nd) ‘+’ and ‘-‘\n\nAnswer: c"
+},
+{
+  "input_text": "Topic: Array\nDifficulty: Easy\nContext: A suffix array is a sorted array of all suffixes of a string. If constructed using comparison-based sorting algorithms like merge sort, it will take O(n² log n) time due to repeated comparisons of strings of length up to n.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: If a comparison-based sorting algorithm is used to construct the suffix array, what will be the time required to construct the suffix array?\na) O(n log n)\nb) O(n²)\nc) O(n² log n)\nd) O(n²) + O(log n)\n\nAnswer: c"
+},
+{
+  "input_text": "Topic: Stack\nDifficulty: Easy\nContext: When simulating a stack using a priority queue, to ensure LIFO behavior, elements inserted later must have higher priority. This is achieved by assigning strictly decreasing keys to newer elements so that they are removed first using DELETEMIN.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: A priority queue Q is used to implement a stack S that stores characters. PUSH(C) is implemented as INSERT(Q, C, K), where K is an integer key chosen by the implementation. POP is implemented as DELETEMIN(Q). For a sequence of operations, the keys chosen are in:\nChoices: ['A\\nNon-increasing order', 'B\\nNon-decreasing order', 'C\\nStrictly increasing order', 'D\\nStrictly decreasing order']\n\nAnswer: D\nStrictly decreasing order"
+},
+{
+  "input_text": "Topic: Stack\nDifficulty: Easy\nContext: In a linked list-based stack implementation, the pop operation removes the top element by accessing the first node and moving the reference to the next node. This maintains correct LIFO behavior and avoids skipping nodes.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Given below is the Node class to perform basic list operations and a Stack class with a no-arg constructor.\nSelect from the options the appropriate pop() operation that can be included in the Stack class. Also, ‘first’ is the top-of-the-stack.\n\n<Multiple pop() implementations provided>\n\nd)\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: A 2-d tree (or kd-tree in 2 dimensions) is an extension of a binary search tree where each level alternates the key used for comparison (e.g., x and y coordinates). Insertion follows similar logic as a binary search tree.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Insertion into a 2-d tree is a trivial extension of insertion into a binary search tree.\na) true\nb) false\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Theory\nDifficulty: Easy\nContext: Prefix expressions (also known as Polish notation) are evaluated from right to left. The expression +-9 2 7 is interpreted as: subtract 2 from 7, then add -9 to the result: -9 + (2 - 7) = -9 + (-5) = -14.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Using the evaluation of prefix algorithm, evaluate +-9 2 7.\na) 10\nb) 4\nc) 17\nd) 14\n\nAnswer: d"
+},
+{
+  "input_text": "Topic: Linked List\nDifficulty: Easy\nContext: Linked lists differ from arrays in that they allow dynamic resizing and efficient insertions/deletions, but they lack random access. Arrays, on the other hand, offer better cache performance and allow direct element access by index.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Which of the following points is/are true about Linked List data structure when it is compared with array?\nChoices: ['A\\nArrays have better cache locality that can make them better in terms of performance.', 'B\\nIt is easy to insert and delete elements in Linked List', 'C\\nRandom access is not allowed in a typical implementation of Linked Lists', 'D\\nThe size of array has to be pre-decided, linked lists can change their size any time.', 'E\\nAll of the above']\n\nAnswer: E\nAll of the above"
+},
+{
+  "input_text": "Topic: Heap\nDifficulty: Easy\nContext: In binomial heaps or Fibonacci heaps, merging two trees of order k results in a single tree of order k+1, which has a height increased by one due to the new root-child relationship.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What is the order of the resultant heap after merging two trees of order k?\na) 2*k\nb) k+1\nc) k*k\nd) k+logk\n\nAnswer: b"
+},
+{
+  "input_text": "Topic: Hashing\nDifficulty: Easy\nContext: A hash function satisfies the simple uniform hashing condition if each key is equally likely to be hashed to any of the slots. The function h(k) = floor(km), where m is a constant and 0 < m < 1, is an example that attempts to spread keys uniformly.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Which hash function satisfies the condition of simple uniform hashing?\na) h(k) = lowerbound(km)\nb) h(k) = upperbound(mk)\nc) h(k) = lowerbound(k)\nd) h(k) = upperbound(k)\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Stack\nDifficulty: Easy\nContext: When parsing expressions using a stack to match brackets or parentheses, failure to find a matching closing or opening bracket indicates an imbalance, which is treated as an error in the parser or compiler.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: When the corresponding end bracket/braces/parentheses is not found, what happens?\na) The stack is popped\nb) Ignore the parentheses\nc) An error is reported\nd) It is treated as an exception\n\nAnswer: c"
+},
+{
+  "input_text": "Topic: Hashing\nDifficulty: Easy\nContext: A good hashing function distributes keys uniformly across the hash table, avoiding clustering caused by predictable patterns. Therefore, a good hash should be independent of any patterns in the data.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: A good hash approach is to derive the hash value that is expected to be dependent on any patterns that might exist in the data.\na) True\nb) False\n\nAnswer: b"
+},
+{
+  "input_text": "Topic: Theory\nDifficulty: Easy\nContext: The provided C++ code reverses the first `k` elements in an array if `k <= n`. It swaps the values symmetrically within the first `k` elements. For the input {1, 2, 3, 4, 5} and k = 3, it produces {3, 2, 1, 4, 5}.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What will be the output of the following code?\n\n#include <bits/stdc++.h> \nusing namespace std; \nvoid func(int a[], int n, int k) \n{ \n if (k <= n) \n { \n  for (int i = 0; i < k/2; i++) \n  swap(a[i], a[k-i-1]); \n } \n} \nint main() \n{ \n int a[] = {1, 2, 3, 4, 5}; \n int n = sizeof(a) / sizeof(int), k = 3; \n func(a, n, k); \n for (int i = 0; i < n; ++i) \n  cout << a[i]<<\" \";\n return 0; \n}\n\na) 3 2 1 4 5\nb) 5 4 3 2 1\nc) 1 2 5 4 3\nd) error\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: An AVL tree is a self-balancing binary search tree where the height is logarithmic in the number of nodes. The maximum height for `p` nodes is O(log p), ensuring fast search, insertion, and deletion.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What is the maximum height of an AVL tree with p nodes?\na) p\nb) log(p)\nc) log(p)/2\nd) p⁄2\n\nAnswer: b"
+},
+{
+  "input_text": "Topic: Array\nDifficulty: Easy\nContext: In a normal array, all elements including nulls are counted in the size. In contrast, a sparse array efficiently stores only non-null or non-zero elements. So, the size is 6 in the normal case and 2 in the sparse representation.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Suppose the contents of an array A are, A = {1, null, null, null, null, 10};\nWhat would be the size of the array considering it as a normal array and a sparse array?\na) 6 and 6\nb) 6 and 2\nc) 2 and 6\nd) 2 and 2\n\nAnswer: b"
+},
+{
+  "input_text": "Topic: Graph\nDifficulty: Easy\nContext: In an undirected graph, an adjacency list uses O(V + E) space, where V is the number of vertices and E is the number of edges. This is more space-efficient than adjacency matrices for sparse graphs.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Space complexity for an adjacency list of an undirected graph having large values of V (vertices) and E (edges) is ___________\na) O(E)\nb) O(V*V)\nc) O(E + V)\nd) O(V)\n\nAnswer: c"
+},
+{
+  "input_text": "Topic: Array\nDifficulty: Easy\nContext: To check if an expression has balanced parentheses, a stack is used. Each time an opening symbol is encountered, it is pushed to the stack. A closing symbol pops the top element. If the stack is empty at the end, the expression is balanced.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: The data structure required to check whether an expression contains a balanced parenthesis is?\na) Queue\nb) Stack\nc) Tree\nd) Array\n\nAnswer: b"
+},
+{
+  "input_text": "Topic: Heap\nDifficulty: Easy\nContext: A heap is a complete binary tree that satisfies the heap property. In a max-heap, the parent node is greater than or equal to its children. In a min-heap, the parent is less than or equal to its children.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Heap exhibits the property of a binary tree?\na) True\nb) False\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Theory\nDifficulty: Easy\nContext: Postfix (or Reverse Polish Notation) expressions do not require parentheses and can be evaluated from left to right using a stack, making them easier and faster for computers to process than infix expressions.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: It is easier for a computer to process a postfix expression than an infix expression.\na) True\nb) False\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Linked List\nDifficulty: Easy\nContext: A XOR linked list is a memory-efficient version of a doubly linked list where each node stores the XOR of the memory addresses of the previous and next nodes. This allows traversal in both directions using XOR operations.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What does a XOR linked list have?\na) Every node stores the XOR of addresses of previous and next nodes\nb) Actual memory address of the next node\nc) Every node stores the XOR of addresses of previous and next two nodes\nd) Every node stores XOR of 0 and the current node address\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Theory\nDifficulty: Easy\nContext: In circular linked lists, inserting a node at the head requires updating the new node's next pointer and reconnecting the last node to the new head. The correct implementation ensures circular linkage and pointer updates.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Choose the code snippet which inserts a node to the head of the list?\n<Multiple insertHead() function implementations provided>\n\nd)\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: In binary tree rotations, a right rotation repositions nodes to maintain balance. The given pseudocode updates pointers to rotate a node to the right, making its left child the new root of the subtree.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What output does the below pseudo code produce?\n\nTree_node function(Tree_node x)\n{\n    Tree_node y = x.left;\n    x.left = y.right;\n    y.right = x;\n    return y;\n}\n\na) Right rotation of subtree\nb) Left rotation of subtree\nc) Zig-zag operation\nd) Zig-zig operation\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Theory\nDifficulty: Easy\nContext: Prefix notation (Polish notation) places the operator before its operands. For the expression a | b & c, the AND operation is evaluated first, followed by OR, resulting in | a & b c → |a&bc.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What would be the Prefix notation for the given equation?\na) a|&bc\nb) &|abc\nc) |a&bc\nd) ab&|c\n\nAnswer: c"
+},
+{
+  "input_text": "Topic: Theory\nDifficulty: Easy\nContext: When performing XOR on pointers (such as in XOR linked lists), proper type casting is required to ensure memory addresses are manipulated correctly. Missing a cast results in type mismatch errors.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What’s wrong with this code which returns XOR of two node addresses?\na) Nothing wrong. Everything is fine\nb) Type casting at return is missing\nc) Parameters are wrong\nd) Total logic is wrong\n\nAnswer: b"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: The van Emde Boas (vEB) tree is a tree-based data structure that supports fast predecessor/successor queries. It was invented by Peter van Emde Boas.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Who invented the vEB tree, also known as the van Emde Boas Tree?\na) Peter Van Emde Boas\nb) Samuel F. B. Morse\nc) Friedrich Clemens Gerke\nd) Alexander Morse\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Heap\nDifficulty: Easy\nContext: A weak heap is a variant of the binary heap that is used in the weak heap sort algorithm. It is also known as a relaxed heap due to its weaker structural constraints compared to binary heaps.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What is the other name of a weak heap?\na) Min-heap\nb) Max-heap\nc) Relaxed-heap\nd) Leonardo heap\n\nAnswer: c"
+},
+{
+  "input_text": "Topic: Theory\nDifficulty: Easy\nContext: Matrix multiplication satisfies associative and distributive properties but is not commutative. That is, A × B ≠ B × A in general. Therefore, the commutative property does not hold for matrix multiplication.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Which of the following property does not hold for matrix multiplication?\na) Associative\nb) Distributive\nc) Commutative\nd) Additive Inverse\n\nAnswer: c"
+},
+{
+  "input_text": "Topic: Queue\nDifficulty: Easy\nContext: Common types of queues include ordinary queue (FIFO), circular queue (wrap-around structure), and priority queue (based on priority). A 'single-ended queue' is not a standard type of queue.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Which of the following is not a type of queue?\na) Priority queue\nb) Circular queue\nc) Single-ended queue\nd) Ordinary queue\n\nAnswer: c"
+},
+{
+  "input_text": "Topic: Theory\nDifficulty: Easy\nContext: In column-major order, the elements of a matrix are stored column by column in memory. For a 3×3 matrix with elements arranged as:\na b c\nd e f\ng h i\nThe order of elements in memory will be: a, d, g, b, e, h, c, f, i → adgbehcfi.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: If column-major order is used, how is the following matrix stored in memory?\na b c\nd e f\ng h i\n\na) ihgfedcba\nb) abcdefghi\nc) cfibehadg\nd) adgbehcfi\n\nAnswer: d"
+},
+{
+  "input_text": "Topic: Heap\nDifficulty: Easy\nContext: A max-heap maintains the property that each parent node is greater than or equal to its children. Inserting 1 and then 7 into a heap that has level-order [10, 8, 5, 3, 2] results in a new structure that reorders to preserve the heap property.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: A priority queue is implemented as a max-heap. Initially, it has 5 elements. The level-order traversal of the heap is: 10, 8, 5, 3, 2. Two new elements 1 and 7 are inserted into the heap in that order. The level-order traversal of the heap after the insertion of the elements is:\nChoices: ['A\\n10, 8, 7, 3, 2, 1, 5', 'B\\n10, 8, 7, 2, 3, 1, 5', 'C\\n10, 8, 7, 1, 2, 3, 5', 'D\\n10, 8, 7, 5, 3, 2, 1']\n\nAnswer: A\n10, 8, 7, 3, 2, 1, 5"
+},
+{
+  "input_text": "Topic: Queue\nDifficulty: Easy\nContext: A descending priority queue gives higher priority to larger elements. It can be efficiently implemented using a max-heap, where the largest element is always at the root and removed first.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: A descending priority queue can be implemented using ______\na) Max heap\nb) Min heap\nc) Min-max heap\nd) Trie\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Hashing\nDifficulty: Easy\nContext: In double hashing, two hash functions h1(k) and h2(k) are used to calculate probe sequences. A typical implementation is: h1(k) = k mod m, and h2(k) = 1 + (k mod m’), where m and m’ are constants chosen to reduce clustering.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What are the values of h1(k) and h2(k) in the hash function?\na)\n\nh1(k) = m mod k\n    h2(k) = 1 + (m’ mod k)\nb)\n\nh1(k) = 1 + (m mod k)\n    h2(k) = m’ mod k\nc)\n\nh1(k) = 1 + (k mod m)\n    h2(k) = k mod m\nd)\n\nh1(k) = k mod m\n    h2(k) = 1 + (k mod m’)\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Heap\nDifficulty: Easy\nContext: A max-heap ensures that the maximum element is at the root. To build a max-heap from an array, the heapify procedure swaps elements to restore the heap property. The number of swaps required depends on how far elements are from satisfying the property.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: The minimum number of interchanges needed to convert the array 89, 19, 40, 17, 12, 10, 2, 5, 7, 11, 6, 9, 70 into a heap with the maximum element at the root is:\nChoices: ['A\\n0', 'B\\n1', 'C\\n2', 'D\\n3']\n\nAnswer: C\n2"
+},
+{
+  "input_text": "Topic: Search\nDifficulty: Easy\nContext: Direct addressing is a technique where data is stored at an index equal to its key. Since it allows direct access without traversal, the search time complexity is O(1).\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What is the search complexity in direct addressing?\na) O(n)\nb) O(log n)\nc) O(n log n)\nd) O(1)\n\nAnswer: d"
+},
+{
+  "input_text": "Topic: Theory\nDifficulty: Easy\nContext: In postfix (Reverse Polish) notation, operators follow their operands. For infix expressions like (A + B) * (C * D − E) * F / G, proper conversion uses operator precedence and associativity rules to generate the postfix form.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: The postfix form of the expression (A + B) * (C * D − E) * F / G is:\nChoices: ['A\\nAB+ CD*E − FG /**', 'B\\nAB + CD* E − F **G /', 'C\\nAB + CD* E − *F *G /', 'D\\nAB + CDE * − * F *G /']\n\nAnswer: A\nAB+ CD*E − FG /**"
+},
+{
+  "input_text": "Topic: Theory\nDifficulty: Easy\nContext: In hashing with open addressing, the probe sequence determines which slots to inspect. The sequence often depends on the key (k) and constants (e.g., in quadratic probing), but ultimately the key determines the pattern of probing.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: On what value does the probe sequence depend?\na) c1\nb) k\nc) c2\nd) m\n\nAnswer: b"
+},
+{
+  "input_text": "Topic: Heap\nDifficulty: Easy\nContext: In a min-heap, the minimum element is always at the root, so FindMin() takes O(1) time. Deleting the minimum involves replacing the root with the last element and re-heapifying, which takes O(log n).\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: The procedure FindMin() to find the minimum element and the procedure DeleteMin() to delete the minimum element in a min-heap take _________\na) Logarithmic and linear time respectively\nb) Constant and linear time respectively\nc) Constant and quadratic time respectively\nd) Constant and logarithmic time respectively\n\nAnswer: d"
+},
+{
+  "input_text": "Topic: Theory\nDifficulty: Easy\nContext: In C, dynamic memory allocation is performed using `malloc()`. When creating a new node for a linked list, the correct syntax involves using `sizeof(NODE)` and casting the return value to a pointer of the appropriate type.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Consider the following definition in C programming language:\n\nstruct node\n{\n    int data;\n    struct node * next;\n};\ntypedef struct node NODE;\nNODE *ptr;\n\nWhich of the following C code is used to create a new node?\na) ptr = (NODE*)malloc(sizeof(NODE));\nb) ptr = (NODE*)malloc(NODE);\nc) ptr = (NODE*)malloc(sizeof(NODE*));\nd) ptr = (NODE)malloc(sizeof(NODE));\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Array\nDifficulty: Easy\nContext: If only push and pop operations are allowed, simulating an enqueue operation in an array-based queue (via two stacks) involves moving elements from one stack to another and back. Each move takes time, and multiple moves are required to insert an element.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: You are on a planet where computational power is slow. You have an array of size 10. You want to enqueue an element using only push and pop operations (each takes 1 second). What is the total time required to perform the enqueue operation?\na) 20\nb) 40\nc) 42\nd) 43\n\nAnswer: d"
+},
+{
+  "input_text": "Topic: Array\nDifficulty: Easy\nContext: Arrays are fixed-size data structures. One of their main disadvantages is that memory may be wasted if the number of inserted elements is significantly smaller than the allocated size.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What are the disadvantages of arrays?\na) Data structures like queue or stack cannot be implemented\nb) There are chances of wastage of memory space if elements inserted in an array are fewer than the allocated size\nc) Index value of an array can be negative\nd) Elements are sequentially accessed\n\nAnswer: b"
+},
+{
+  "input_text": "Topic: Hashing\nDifficulty: Easy\nContext: Based on the birthday paradox, in a hash table of size 20, inserting 10 keys leads to a collision probability exceeding 0.5. This concept illustrates how quickly collisions can occur even in modestly filled hash tables.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Consider a hash function that distributes keys uniformly. The hash table size is 20. After hashing how many keys will the probability that any new key collides with an existing one exceed 0.5?\nChoices: ['A\\n5', 'B\\n6', 'C\\n7', 'D\\n10']\n\nAnswer: D\n10"
+},
+{
+  "input_text": "Topic: Array\nDifficulty: Easy\nContext: The minimum number of jumps to reach the end of an array depends on the value at each index. If certain sections are blocked by 0 and no forward path exists, it's impossible to reach the end.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What will be the minimum number of jumps required to reach the end of the array arr[] = {1,2,0,0,3,6,8,5}?\na) 1\nb) 2\nc) 3\nd) Not possible to reach the end\n\nAnswer: d"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: A top tree is a type of data structure used in dynamic trees. If a tree has only a single vertex, there are no edges to break or cluster, hence no valid top trees can be formed.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: How many top trees are there in a tree with a single vertex?\na) 0\nb) 1\nc) 2\nd) 3\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Graph\nDifficulty: Easy\nContext: The provided code is an implementation of the Floyd-Warshall algorithm, which computes the shortest paths between all pairs of vertices in a weighted graph. The algorithm updates a distance matrix based on the transitive property of shortest paths.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What would be the value of the distance matrix after the execution of the given code?\n\n#include <bits/stdc++.h>\n#define INF 1000000\nint graph[V][V] = { {0, 7, INF, 4},\n                    {INF, 0, 13, INF},\n                    {INF, INF, 0, 12},\n                    {INF, INF, INF, 0} };\n \nint distance[V][V], i, j, k;\n \nfor (i = 0; i < V; i++)\n    for (j = 0; j < V; j++)\n        distance[i][j] = graph[i][j];\n \nfor (k = 0; k < V; k++)\n    for (i = 0; i < V; i++)\n        for (j = 0; j < V; j++)\n            if (distance[i][k] + distance[k][j] < distance[i][j])\n                distance[i][j] = distance[i][k] + distance[k][j];\n\nAnswer: b"
+},
+{
+  "input_text": "Topic: Heap\nDifficulty: Easy\nContext: In a binary heap, the number of nodes at height h in an n-element heap can be calculated using the formula ceil(n / 2^(h+1)). This is derived from the complete binary tree structure of the heap.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: The number of nodes of height h in any n-element heap is __________.\nChoices: ['A\\nh', 'B\\n2h', 'C\\nceil(n/2h)', 'D\\nceil(n/2^(h+1))']\n\nAnswer: D\nceil(n/2^(h+1))"
+},
+{
+  "input_text": "Topic: Graph\nDifficulty: Easy\nContext: A Directed Acyclic Word Graph (DAWG) is a data structure used in string algorithms. It is particularly useful in applications like pattern recognition and string matching due to its compact representation of substrings.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: In which of the following does a Directed Acyclic Word Graph find its application?\na) String Matching\nb) Number Sorting\nc) Manipulations on numbers\nd) Pattern Printing\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Linked List\nDifficulty: Easy\nContext: A triply linked list extends a doubly linked list by including a third pointer. This extra pointer, often named `top`, can be used for specialized navigational or hierarchical operations, and it is typically positioned logically as an additional link from the node.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Where does a triply linked list contain an extra pointer in comparison to a doubly linked list?\na) Top of the node\nb) Bottom of the node\nc) Before the node\nd) After the node\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: In tree terminology, the height of a node is defined as the number of edges on the longest path from the node to a leaf. The height of a root node in any tree (including ternary trees) is 0 if the node has no children.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What is the height of the root node of a ternary tree?\na) 1\nb) 2\nc) 3\nd) 0\n\nAnswer: d"
+},
+{
+  "input_text": "Topic: Hashing\nDifficulty: Easy\nContext: MinHash is a probabilistic technique for efficiently estimating the similarity between datasets. It is commonly used in applications like association rule learning, document similarity, and clustering.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Is MinHash used as a tool for association rule learning?\na) True\nb) False\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: Tree traversals define the order in which nodes are visited. Level-order traversal, also known as breadth-first traversal, visits nodes level by level from left to right, typically implemented using a queue.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Which traversal's pseudo code is written here?\nChoices: ['A\\nLevel order', 'B\\nPre-order', 'C\\nPost-order', 'D\\nIn-order']\n\nAnswer: A\nLevel order"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: Auxiliary trees are temporary or helper trees used during tree operations. The 'join' operation combines two auxiliary trees into one while preserving the properties of the tree structure.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Which operation is used to combine two auxiliary trees?\na) Join\nb) Combinatorial\nc) Add\nd) Concatenation\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Linked List\nDifficulty: Easy\nContext: A linked list is a linear data structure where each element (node) points to the next node using a pointer. This allows dynamic memory allocation and flexible insertion/deletion operations.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: A linear collection of data elements where the linear node is given by means of a pointer is called ________.\nChoices: ['A\\nLinked list', 'B\\nNode list', 'C\\nPrimitive list', 'D\\nNone of these']\n\nAnswer: A\nLinked list"
+},
+{
+  "input_text": "Topic: Theory\nDifficulty: Easy\nContext: Free lists manage available memory blocks. Allocation strategies like best fit, first fit, and worst fit differ in how memory is chosen. Among these, first fit is generally considered the simplest to implement.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What are different ways of implementing free lists and which is simple among them?\na) best fit, first fit, worst fit, simple-first fit\nb) best fit, first fit, worst fit, simple-best fit\nc) best fit, first fit, worst fit, simple-worst fit\nd) best fit simple-best fit\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Stack\nDifficulty: Easy\nContext: When two stacks share a single array growing from opposite ends, the condition for stack overflow occurs when their tops are about to collide. That is, when top1 == top2 - 1.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: A single array A[1..MAXSIZE] is used to implement two stacks growing from opposite ends. If top1 and top2 point to the top elements of each stack and top1 < top2, what is the condition for “stack full”?\nChoices: ['A\\n(top1 = MAXSIZE/2) and (top2 = MAXSIZE/2+1)', 'B\\ntop1 + top2 + 1 = MAXSIZE', 'C\\n(top1 = MAXSIZE/2) or (top2 = MAXSIZE)', 'D\\ntop1 = top2 - 1']\n\nAnswer: D\ntop1 = top2 - 1"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: A binary tree is a hierarchical structure in which each node can have at most two children—commonly referred to as the left and right child. This is a defining property of binary trees.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What is the maximum number of children that a binary tree node can have?\na) 0\nb) 1\nc) 2\nd) 3\n\nAnswer: c"
+},
+{
+  "input_text": "Topic: Heap\nDifficulty: Easy\nContext: Fibonacci heaps offer better amortized time complexity for decrease-key and delete operations than other heap types. Although more complex to implement, they are theoretically faster in certain scenarios, such as Dijkstra's algorithm with many decrease-key operations.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Out of the following given options, which is the fastest algorithm?\na) Fibonacci heap\nb) Pairing heap\nc) d-ary heap\nd) Binary heap\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: An expression tree is a type of binary tree used to represent expressions. Operands are stored in leaves, and operators are stored in internal nodes. The structure obeys the binary tree property.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: An expression tree is a kind of?\na) Binary search tree\nb) Fibonacci tree\nc) Binary tree\nd) Treap\n\nAnswer: c"
+},
+{
+  "input_text": "Topic: Theory\nDifficulty: Easy\nContext: In C++, the `delete` operator releases memory allocated by `new`, but it doesn't delete the pointer itself. After the delete operation, the pointer still exists and should be set to `nullptr` to avoid dangling pointer issues.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Given that the line `delete newPtr;` just executed, what can you conclude?\nChoices: ['A\\nThe memory referenced by newPtr is released only if it is needed by the system.', 'B\\nThe pointer newPtr is of type void *.', 'C\\nThe pointer newPtr only exists if there was an error freeing the memory.', 'D\\nThe pointer newPtr still exists.']\n\nAnswer: D\nThe pointer newPtr still exists."
+},
+{
+  "input_text": "Topic: Stack\nDifficulty: Easy\nContext: A stack can be implemented using two queues. One queue is used to store the elements and the second helps simulate the Last-In-First-Out (LIFO) behavior by rearranging the elements during pop or push operations.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: To implement a stack using queues (with only enqueue and dequeue operations), how many queues will you need?\na) 1\nb) 2\nc) 3\nd) 4\n\nAnswer: b"
+},
+{
+  "input_text": "Topic: Theory\nDifficulty: Easy\nContext: To convert a postfix expression to prefix, reverse the postfix, swap operators/operands accordingly, and apply precedence rules. For AB+CD-* the prefix form is *+AB-CD.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: The prefix expression of the postfix expression AB+CD-* is __________\na) (A+B)*(C-D)\nb) +AB*-CD\nc) A+*BCD-\nd) *+AB-CD\n\nAnswer: d"
+},
+{
+  "input_text": "Topic: Stack\nDifficulty: Easy\nContext: Balancing symbols such as parentheses, braces, or brackets is a common problem in compilers and expression parsing. A stack is the ideal data structure for this task due to its LIFO behavior, allowing correct matching of opening and closing symbols.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Which is the most appropriate data structure for applying the balancing of symbols algorithm?\na) Stack\nb) Queue\nc) Tree\nd) Graph\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Graph\nDifficulty: Easy\nContext: A bipartite graph with `n` vertices can have at most ⌊n²/4⌋ edges. This maximum is achieved when the vertex set is divided equally into two parts. For 10 vertices, the maximum is (5 × 5) = 25 edges.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What is the maximum number of edges in a bipartite graph having 10 vertices?\na) 24\nb) 21\nc) 25\nd) 16\n\nAnswer: c"
+},
+{
+  "input_text": "Topic: Array\nDifficulty: Easy\nContext: A suffix array is a sorted array of all suffixes of a string. Compared to suffix trees, suffix arrays are more space efficient as they use linear space and simpler structures, making them preferable for large-scale string processing.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Suffix array is space efficient compared to the suffix tree.\na) True\nb) False\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Graph\nDifficulty: Easy\nContext: A graph is bipartite if its vertices can be divided into two disjoint sets such that no edge connects vertices within the same set. While all paths are bipartite, not all cyclic graphs are—especially those with an odd number of vertices in the cycle.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: All paths and cyclic graphs are bipartite graphs.\na) True\nb) False\n\nAnswer: b"
+},
+{
+  "input_text": "Topic: Array\nDifficulty: Easy\nContext: Dynamic arrays grow and shrink automatically based on their usage. To avoid wasting space, if the size of the array drops below a certain threshold (commonly 30% of the allocated size), the array is deallocated or shrunk.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: The size of the dynamic array is deallocated if the array size is less than _________% of the backend physical size.\na) 30\nb) 40\nc) 10\nd) 20\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Heap\nDifficulty: Easy\nContext: In a binomial heap, the decrease-key operation adjusts the value of a node and may require restructuring the heap to maintain the heap property. This process takes O(log n) time because the heap is organized as a collection of binomial trees.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Time taken in decreasing the node value in a binomial heap is:\na) O(n)\nb) O(1)\nc) O(log n)\nd) O(n log n)\n\nAnswer: c"
+},
+{
+  "input_text": "Topic: Theory\nDifficulty: Easy\nContext: The evaluation of prefix expressions (Polish notation) is guided by operator precedence and associativity. This determines the correct order in which operands and operators are processed during computation.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What determines the order of evaluation of a prefix expression?\na) Precedence and associativity\nb) Precedence only\nc) Associativity only\nd) Depends on the parser\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Stack\nDifficulty: Easy\nContext: Converting an infix expression to postfix (Reverse Polish Notation) involves using a stack to manage operators based on their precedence and associativity, ensuring correct evaluation order.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: One can convert an infix expression to a postfix expression using a ________.\nChoices: ['A\\nStack', 'B\\nQueue', 'C\\nDeque', 'D\\nNone of these']\n\nAnswer: A\nStack"
+},
+{
+  "input_text": "Topic: Hashing\nDifficulty: Easy\nContext: Linear probing is a collision resolution technique in hashing. It is widely used in applications such as database indexing, cache management, and compiler symbol tables where fast lookups and space efficiency are needed.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What are the applications of linear probing?\nChoices: ['A\\nDatabases', 'B\\nCaching', 'C\\nCompiler Design', 'D\\nAll of the above']\n\nAnswer: D\nAll of the above"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: A complete binary tree of depth `d` has (2^d - 1) nodes and (2^{d+1} - 1) pointers in total. The number of unused (null) pointers corresponds to the number of leaves, which in a complete tree is (2^d). For depth 5, that is 32 leaves, each having 2 null children pointers, so 16 unused pointers.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: The number of unused pointers in a complete binary tree of depth 5 is:\nChoices: ['A\\n4', 'B\\n8', 'C\\n16', 'D\\n32']\n\nAnswer: C\n16"
+},
+{
+  "input_text": "Topic: Stack\nDifficulty: Easy\nContext: A stack follows the Last-In-First-Out (LIFO) principle, where the last item added is the first to be removed. A real-world analogy is a stack of chairs or plates, where the topmost item is accessed first.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Which of the following real-world scenarios would you associate with a stack data structure?\na) Piling up of chairs one above the other\nb) People standing in a line to be serviced at a counter\nc) Offer services based on the priority of the customer\nd) Tatkal Ticket Booking in IRCTC\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Hashing\nDifficulty: Easy\nContext: Universal hashing refers to a class of hash functions that minimize the probability of collision by choosing a function at random from a family of hash functions. It offers better average performance than traditional methods like division or multiplication.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Which hashing scheme provides good performance?\na) Open addressing\nb) Universal hashing\nc) Hashing by division\nd) Hashing by multiplication\n\nAnswer: b"
+},
+{
+  "input_text": "Topic: Theory\nDifficulty: Easy\nContext: Postfix expressions (also called Reverse Polish Notation) are evaluated using a stack. In the expression `ab + cd / -`, substitute values (a=5, b=4, c=9, d=3) → (5+4) - (9/3) = 9 - 3 = 6.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Evaluate the postfix expression ab + cd / - where a=5, b=4, c=9, d=3.\na) 23\nb) 15\nc) 6\nd) 10\n\nAnswer: c"
+},
+{
+  "input_text": "Topic: Queue\nDifficulty: Easy\nContext: This question seems to reference a scenario with a queue modified by a parameter `k`, but no operation is specified. However, assuming it refers to a special queue operation (like priority or limited position enqueue), a choice can still be evaluated based on custom logic provided with `k`.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Consider the following operation along with Enqueue and Dequeue operations on queues, where k is a global parameter.\nChoices: ['A\\nA', 'B\\nB', 'C\\nC', 'D\\nD']\n\nAnswer: A"
+},
+{
+  "input_text": "Topic: Theory\nDifficulty: Easy\nContext: Prefix expressions (Polish Notation) place operators before their operands. The expression `++a*bc*+defg` has this format, making it a prefix expression.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: ++a*bc*+defg is a?\na) Postfix expression\nb) Infix expression\nc) Prefix expression\nd) Invalid expression\n\nAnswer: c"
+},
+{
+  "input_text": "Topic: Linked List\nDifficulty: Easy\nContext: Deleting a linked list involves traversing it and deallocating memory for each node. This can be done in-place without needing additional memory, making the space complexity O(1).\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What is the space complexity for deleting a linked list?\na) O(1)\nb) O(n)\nc) Either O(1) or O(n)\nd) O(log n)\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: In nearest neighbor search using kd-trees, three primary concepts are crucial: (1) pruning using bounding boxes, (2) recursive traversal, and (3) backtracking to search the opposite subtree if necessary. These techniques optimize search in multidimensional spaces.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: How many prime concepts are available in nearest neighbor search in a kd tree?\na) 1\nb) 2\nc) 3\nd) 4\n\nAnswer: c"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: In a 2-dimensional kd-tree, the root node is typically chosen based on the value of the first dimension. Often, to break ties or for simplicity, the first node inserted (or an arbitrary odd-positioned node) is used as the root.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: In a two-dimensional search tree, the root is arbitrarily chosen to be?\na) Even\nb) Odd\nc) Depends on subtrees\nd) 1\n\nAnswer: b"
+},
+{
+  "input_text": "Topic: Linked List\nDifficulty: Easy\nContext: Linked lists support dynamic memory usage and allow insertions and deletions at any position. This is a major advantage over arrays, which require shifting elements.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: In general, linked lists allow:\nChoices: ['A\\nInsertions and removals anywhere.', 'B\\nInsertions and removals only at one end.', 'C\\nInsertions at the back and removals from the front.', 'D\\nNone of the above.']\n\nAnswer: A\nInsertions and removals anywhere."
+},
+{
+  "input_text": "Topic: Heap\nDifficulty: Easy\nContext: In a binary min-heap, the maximum element resides in the leaf nodes. For a complete binary tree with 1023 elements, 512 nodes are leaves. Finding the maximum among them requires 511 comparisons.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Consider the array representation of a binary min-heap containing 1023 elements. The minimum number of comparisons required to find the maximum in the heap is:\nChoices: ['A\\n510', 'B\\n511', 'C\\n512', 'D\\n255']\n\nAnswer: B\n511"
+},
+{
+  "input_text": "Topic: Theory\nDifficulty: Easy\nContext: In disjoint set union (union-find), rank is used to limit the depth of trees. A node with rank r must have at least 2^r descendants. This ensures logarithmic time performance with union by rank.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: When executing a sequence of Unions, a node of rank r must have at least 2^r descendants.\na) True\nb) False\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Theory\nDifficulty: Easy\nContext: Converting infix to prefix notation requires applying operator precedence and associativity in reverse. Given a complex expression, proper reordering of operators and operands produces the correct prefix (Polish) notation.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What would be the Prefix notation for the given equation?\na) -+a*/^bcdef\nb) -+a*/bc^def\nc) -+a*b/c^def\nd) -a+*/bc^def\n\nAnswer: b"
+},
+{
+  "input_text": "Topic: Graph\nDifficulty: Easy\nContext: In an undirected simple graph with (n) vertices, each pair of distinct vertices can have at most one edge, resulting in (n(n-1)/2) edges. In a directed graph, each pair can have two directed edges (one in each direction), leading to (n(n-1)) possible non-zero entries in the adjacency matrix.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What is the maximum number of possible non-zero values in an adjacency matrix of a simple graph with n vertices?\na) (n*(n-1))/2\nb) (n*(n+1))/2\nc) n*(n-1)\nd) n*(n+1)\n\nAnswer: c"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: To convert a binary tree into its mirror image, you recursively swap the left and right subtrees. This is typically performed during a pre-order traversal, where the current node is processed before its children.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: A binary tree can be converted into its mirror image by traversing it in ________.\nChoices: ['A\\nIn-order', 'B\\nPre-order', 'C\\nPost-order', 'D\\nAny order']\n\nAnswer: B\nPre-order"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: Level-order traversal is a breadth-first traversal of a tree. It visits nodes level by level and is implemented using a queue to process nodes in FIFO order.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Level order traversal of a tree is formed with the help of:\na) Breadth-first search\nb) Depth-first search\nc) Dijkstra’s algorithm\nd) Prim’s algorithm\n\nAnswer: a"
+},
+{
+  "input_text": "Topic: Array\nDifficulty: Easy\nContext: Parallel arrays store related data across multiple arrays using a shared index. While useful in languages that don’t support records, they can be inefficient for insertion and deletion due to the need to maintain synchronization across arrays.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: Which of the following is a disadvantage of parallel arrays over traditional arrays?\na) When a language does not support records, parallel arrays can be used\nb) Increased locality of reference\nc) Ideal cache behaviour\nd) Insertion and deletion becomes tedious\n\nAnswer: d"
+},
+{
+  "input_text": "Topic: Tree\nDifficulty: Easy\nContext: The height of a tree node is the number of edges on the longest path to a leaf. In a K-ary tree, the height of the root depends on the total number of levels. For some tree definitions, if the tree has multiple levels and the root is at level 0, then its height may be 3.\nTask: Generate a multiple-choice question on the given topic and difficulty using the provided context.",
+  "target_text": "Question: What is the height of the root node of a K-ary tree?\na) 1\nb) 2\nc) 3\nd) 0\n\nAnswer: c"
+}
+]

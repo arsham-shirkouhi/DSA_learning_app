@@ -7,21 +7,21 @@ import json
 def main():
     global tokenizer
     
-    with open("./datasets/smartly_formatted_and_fixed_quiz_data.json") as f:
-        data = json.load(f)
+    with open('./datasets/final.json', 'r', encoding='utf-8') as f:
+            data = json.load(f)
         
     dataset = Dataset.from_list(data)
-    dataset = dataset.train_test_split(test_size=0.2)
+    dataset = dataset.train_test_split(test_size=0.1)
     
     tokenizer = T5Tokenizer.from_pretrained("google/flan-t5-base")
     model = T5ForConditionalGeneration.from_pretrained("google/flan-t5-base")
     
     tokenized = dataset.map(tokenize, batched=True)
-    tokenized_train = tokenized["train"]
-    tokenized_eval = tokenized["test"]
+    tokenized_train = tokenized["train"].shuffle(seed=42)
+    tokenized_eval = tokenized["test"].shuffle(seed=42)
 
     training_args = Seq2SeqTrainingArguments(
-    output_dir="./outputs_bart",
+    output_dir="./outputs_T5",
     per_device_train_batch_size=4,
     per_device_eval_batch_size=4,
     num_train_epochs=10,

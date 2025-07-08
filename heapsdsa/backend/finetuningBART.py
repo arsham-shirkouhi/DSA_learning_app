@@ -7,7 +7,7 @@ import json
 def main():
     global tokenizer
     
-    with open("./datasets/quiz_generation_format.json") as f:
+    with open("./datasets/smartly_formatted_and_fixed_quiz_data.json") as f:
         data = json.load(f)
         
     dataset = Dataset.from_list(data)
@@ -17,8 +17,8 @@ def main():
     model = BartForConditionalGeneration.from_pretrained("facebook/bart-base")
     
     tokenized = dataset.map(tokenize, batched=True)
-    tokenized_train = tokenized["train"]
-    tokenized_eval = tokenized["test"]
+    tokenized_train = tokenized["train"].shuffle(seed=42)
+    tokenized_eval = tokenized["test"].shuffle(seed=42)
 
     training_args = Seq2SeqTrainingArguments(
     output_dir="./outputs_bart",

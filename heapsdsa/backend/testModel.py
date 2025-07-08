@@ -86,7 +86,7 @@ def bart_model():
         print(f"\n📝 Question {i+1}:\n{result.strip()}")
 
 def T5_model():
-    checkpoint_path = "./outputs_T5/checkpoint-398"
+    checkpoint_path = "./outputs_T5/checkpoint-520"
 
     # Load tokenizer and model
     tokenizer = T5Tokenizer.from_pretrained("google/flan-t5-base")
@@ -98,7 +98,11 @@ def T5_model():
     model = model.to(device)
 
     # Prompt
-    prompt = "Generate a question on topic=Array and difficulty=Hard about data structures with multiple choices"
+    prompt = """
+                Topic: "Array"
+                Difficulty: "Easy"
+                Generate a multiple-choice question on the given topic and difficulty
+                """
     inputs = tokenizer(prompt, return_tensors="pt").to(device)
 
     # Generate
