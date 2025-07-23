@@ -86,7 +86,7 @@ def bart_model():
         print(f"\n📝 Question {i+1}:\n{result.strip()}")
 
 def T5_model():
-    checkpoint_path = "./outputs_T5/checkpoint-520"
+    checkpoint_path = "./outputs_T5/checkpoint-1293"
 
     # Load tokenizer and model
     tokenizer = T5Tokenizer.from_pretrained("google/flan-t5-base")
@@ -98,11 +98,22 @@ def T5_model():
     model = model.to(device)
 
     # Prompt
-    prompt = """
-                Topic: "Array"
-                Difficulty: "Easy"
-                Generate a multiple-choice question on the given topic and difficulty
-                """
+    prompt = """Topic: Stack
+            Difficulty: Easy
+            Context: A stack is a Last-In-First-Out (LIFO) data structure used in function calls and parsing expressions.
+            Task: Generate a multiple-choice question on the given topic and difficulty using the provided context.
+            Question: Which operation removes the top element from a stack?
+            a) push
+            b) pop
+            c) peek
+            d) insert
+            Answer: b
+
+            Topic: Tree
+            Difficulty: Easy
+            Context: A tree is a hierarchical data structure in which each node has zero or more child nodes, commonly used to represent parent-child relationships.
+            Task: Generate a multiple-choice question on the given topic and difficulty using the provided context."""
+
     inputs = tokenizer(prompt, return_tensors="pt").to(device)
 
     # Generate
