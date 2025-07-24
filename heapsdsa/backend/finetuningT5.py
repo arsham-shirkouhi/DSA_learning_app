@@ -1,3 +1,8 @@
+import json
+import difflib
+import torch
+from functools import partial
+from datasets import Dataset
 from transformers import (
     T5ForConditionalGeneration,
     T5Tokenizer,
@@ -5,33 +10,86 @@ from transformers import (
     Seq2SeqTrainingArguments,
     DataCollatorForSeq2Seq
 )
-from datasets import Dataset
-import json
-import difflib
-import torch
+
+
+def tokenize_batch(examples, tokenizer):
+    """Tokenize inputs and targets using the provided tokenizer."""
+    inputs = tokenizer(
+        examples["input_text"],
+        max_length=256,
+        truncation=True,
+        padding="max_length"
+    )
+    targets = tokenizer(
+        examples["target_text"],
+        max_length=192,
+        truncation=True,
+        padding="max_length"
+    )
+    inputs["labels"] = targets["input_ids"]
+    return inputs
+
+
+def compute_metrics(eval_preds, tokenizer):
+    """Compute fuzzy match and exact match metrics."""
+    preds, labels = eval_preds
+    # Unpack if necessary
+    if isinstance(preds, tuple):
+        preds = preds[0]
+    # Convert to numpy
+    if isinstance(preds, torch.Tensor):
+        preds = preds.cpu().numpy()
+    if isinstance(labels, torch.Tensor):
+        labels = labels.cpu().numpy()
+
+    # Clip out-of-vocab tokens, replace -100 with pad token
+    preds = [
+        [token if 0 <= token < tokenizer.vocab_size else tokenizer.pad_token_id for token in p]
+        for p in preds
+    ]
+    labels = [
+        [token if token != -100 else tokenizer.pad_token_id for token in l]
+        for l in labels
+    ]
+
+    decoded_preds = tokenizer.batch_decode(preds, skip_special_tokens=True)
+    decoded_labels = tokenizer.batch_decode(labels, skip_special_tokens=True)
+
+    # Sequence‐matching scores
+    scores = [
+        difflib.SequenceMatcher(None, p.strip(), l.strip()).ratio()
+        for p, l in zip(decoded_preds, decoded_labels)
+    ]
+
+    # Log a few examples
+    for p, l, s in zip(decoded_preds[:5], decoded_labels[:5], scores[:5]):
+        print(f"\nPRED:\n{p}\nLABEL:\n{l}\nFUZZY SIMILARITY: {s:.2f}\n---")
+
+    return {
+        "fuzzy_match_score": sum(scores) / len(scores),
+        "exact_match_accuracy": sum(p.strip() == l.strip() for p, l in zip(decoded_preds, decoded_labels)) / len(decoded_preds)
+    }
 
 
 def main():
-    # Load dataset
-    with open('./datasets/final.json', 'r', encoding='utf-8') as f:
+    # Load and split dataset
+    with open("./datasets/cleaned.json", "r", encoding="utf-8") as f:
         data = json.load(f)
+    ds = Dataset.from_list(data).train_test_split(test_size=0.1)
 
-    dataset = Dataset.from_list(data)
-    dataset = dataset.train_test_split(test_size=0.1)
-
-    # Load tokenizer and model
+    # Initialize tokenizer and model
     tokenizer = T5Tokenizer.from_pretrained("google/flan-t5-base", legacy=False, use_fast=True)
     model = T5ForConditionalGeneration.from_pretrained("google/flan-t5-base")
-
-    # Ensure padding token is set
+    # Ensure pad_token is set
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
 
-    # Tokenize
-    tokenize_fn = build_tokenize_fn(tokenizer)
-    tokenized = dataset.map(tokenize_fn, batched=True)
-    tokenized_train = tokenized["train"].shuffle(seed=42)
-    tokenized_eval = tokenized["test"].shuffle(seed=42)
+    # Tokenize datasets with bound tokenizer
+    tokenize_fn = partial(tokenize_batch, tokenizer=tokenizer)
+    tokenized = ds.map(tokenize_fn, batched=True)
+
+    train_ds = tokenized["train"].shuffle(seed=42)
+    eval_ds  = tokenized["test"].shuffle(seed=42)
 
     # Training arguments
     training_args = Seq2SeqTrainingArguments(
@@ -58,81 +116,21 @@ def main():
         label_pad_token_id=-100
     )
 
+    # Seq2SeqTrainer with compute_metrics bound to tokenizer
     trainer = Seq2SeqTrainer(
         model=model,
         args=training_args,
-        train_dataset=tokenized_train,
-        eval_dataset=tokenized_eval,
-        tokenizer=tokenizer,
+        train_dataset=train_ds,
+        eval_dataset=eval_ds,
         data_collator=data_collator,
-        compute_metrics=build_compute_metrics(tokenizer)
+        tokenizer=tokenizer,
+        compute_metrics=partial(compute_metrics, tokenizer=tokenizer)
     )
 
     # Train and evaluate
     trainer.train()
-    eval_results = trainer.evaluate()
-    print(eval_results)
-
-
-def build_tokenize_fn(tokenizer):
-    def tokenize(examples):
-        inputs = tokenizer(
-            examples["input_text"],
-            max_length=256,
-            truncation=True,
-            padding="max_length"
-        )
-        targets = tokenizer(
-            examples["target_text"],
-            max_length=192,
-            truncation=True,
-            padding="max_length"
-        )
-        inputs["labels"] = targets["input_ids"]
-        return inputs
-    return tokenize
-
-
-def build_compute_metrics(tokenizer):
-    def compute_metrics(eval_preds):
-        predictions, labels = eval_preds
-
-        # Convert to numpy if tensor
-        if isinstance(predictions, tuple):
-            predictions = predictions[0]
-        if isinstance(predictions, torch.Tensor):
-            predictions = predictions.cpu().numpy()
-        if isinstance(labels, torch.Tensor):
-            labels = labels.cpu().numpy()
-
-        # Clip token IDs to vocab range
-        predictions = [
-            [token if 0 <= token < tokenizer.vocab_size else tokenizer.pad_token_id for token in pred]
-            for pred in predictions
-        ]
-
-        # Replace -100 with pad_token_id in labels
-        labels = [
-            [token if token != -100 else tokenizer.pad_token_id for token in label]
-            for label in labels
-        ]
-
-        decoded_preds = tokenizer.batch_decode(predictions, skip_special_tokens=True)
-        decoded_labels = tokenizer.batch_decode(labels, skip_special_tokens=True)
-
-        scores = [
-            difflib.SequenceMatcher(None, pred.strip(), label.strip()).ratio()
-            for pred, label in zip(decoded_preds, decoded_labels)
-        ]
-
-        for p, l, s in zip(decoded_preds[:5], decoded_labels[:5], scores[:5]):
-            print(f"\nPRED:\n{p.strip()}\nLABEL:\n{l.strip()}\nFUZZY SIMILARITY: {s:.2f}\n---")
-
-        return {
-            "fuzzy_match_score": sum(scores) / len(scores),
-            "exact_match_accuracy": sum(p.strip() == l.strip() for p, l in zip(decoded_preds, decoded_labels)) / len(decoded_preds)
-        }
-    return compute_metrics
+    results = trainer.evaluate()
+    print(results)
 
 
 if __name__ == "__main__":
