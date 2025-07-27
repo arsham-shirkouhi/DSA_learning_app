@@ -86,7 +86,7 @@ def bart_model():
         print(f"\n📝 Question {i+1}:\n{result.strip()}")
 
 def T5_model():
-    checkpoint_path = "./outputs_T5/checkpoint-1197"
+    checkpoint_path = "./outputs_T5_enhanced/checkpoint-267"
 
     # Load tokenizer and model
     tokenizer = T5Tokenizer.from_pretrained("google/flan-t5-base")
@@ -98,10 +98,16 @@ def T5_model():
     model = model.to(device)
 
     # Prompt
-    prompt = """
-            Topic: Tree
-            Difficulty: Hard
-            Task: Generate a multiple-choice question on the given topic and difficulty."""
+    prompt = """Generate a multiple-choice question.
+        Topic: Tree
+        Difficulty: Hard
+
+        Requirements:
+        - Question must test understanding of the concept in the context
+        - Provide 4 DISTINCT answer choices labeled a), b), c), d)
+        - Only one answer should be correct
+        - Include the correct answer at the end
+        """
 
     inputs = tokenizer(prompt, return_tensors="pt").to(device)
 
