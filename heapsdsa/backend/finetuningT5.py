@@ -31,8 +31,10 @@ def parse_args():
     parser.add_argument("--gradient_accumulation_steps", type=int, default=4)
     parser.add_argument("--learning_rate", type=float, default=3e-4)
     parser.add_argument("--num_epochs", type=int, default=5)
-    parser.add_argument("--output_dir", type=str, default="./outputs_optimized")
-    parser.add_argument("--data_path", type=str, default="./datasets/augmented_dataset.json")
+    parser.add_argument("--output_dir", type=str, default="./trained_model/outputs_optimized")
+    parser.add_argument("--train_path", type=str, default="./datasets/RACE/race_train.json")
+    parser.add_argument("--test_path", type=str, default="./datasets/RACE/race_test.json")
+    parser.add_argument("--dev_path", type=str, default="./datasets/RACE/race_dev.json")
     parser.add_argument("--augment_data", action="store_true")
     parser.add_argument("--gradient_checkpointing", action="store_true")
     parser.add_argument("--seed", type=int, default=42)
@@ -241,7 +243,7 @@ def generate_samples(model, tokenizer, test_data, num_samples=5):
             outputs = model.generate(
                 **inputs,
                 max_length=256,
-                num_beams=5,
+                num_beams=8,
                 temperature=0.8,
                 do_sample=True,
                 top_p=0.9,
@@ -285,10 +287,20 @@ def main():
     args = parse_args()
     set_seed(args.seed)
     
-    # Load data
-    print(f"Loading dataset from {args.data_path}")
-    with open(args.data_path, "r", encoding="utf-8") as f:
-        data = json.load(f)
+    # Load training set
+    print(f"Loading dataset from {args.train_path}")
+    with open(args.train_path, "r", encoding="utf-8") as f:
+        train_data = json.load(f)
+        
+    # Load validation set
+    print(f"Loading dataset from {args.dev_path}")
+    with open(args.dev_path, "r", encoding="utf-8") as f:
+        val_data = json.load(f)
+     
+    # Load test set   
+    print(f"Loading dataset from {args.test_path}")
+    with open(args.test_path, "r", encoding="utf-8") as f:
+        test_data = json.load(f)
     
     # Augment if requested
     if args.augment_data:
@@ -302,9 +314,10 @@ def main():
     train_size = int(0.8 * len(data))
     val_size = int(0.1 * len(data))
     
-    train_data = data[:train_size]
-    val_data = data[train_size:train_size + val_size]
-    test_data = data[train_size + val_size:]
+    random.shuffle(train_data)
+    random.shuffle(val_data)
+    random.shuffle(test_data)
+    
     
     print(f"Splits - Train: {len(train_data)}, Val: {len(val_data)}, Test: {len(test_data)}")
     
@@ -361,7 +374,7 @@ def main():
         greater_is_better=True,
         predict_with_generate=True,
         generation_max_length=256,
-        generation_num_beams=5,
+        generation_num_beams=8,
         fp16=torch.cuda.is_available(),  # Only use if CUDA available
         optim="adamw_torch",
         max_grad_norm=1.0,

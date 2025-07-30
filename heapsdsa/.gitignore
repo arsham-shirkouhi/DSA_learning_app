@@ -49,3 +49,8 @@ results/
 outputs/
 outputs_bart/
 outputs_T5/
+
+race_dev.json
+race_test.json
+race_train.json
+RACE/
