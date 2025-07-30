@@ -26,13 +26,13 @@ def set_seed(seed=42):
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model_name", type=str, default="google/flan-t5-large")
+    parser.add_argument("--model_name", type=str, default="google/flan-t5-base")
     parser.add_argument("--batch_size", type=int, default=4)
     parser.add_argument("--gradient_accumulation_steps", type=int, default=4)
     parser.add_argument("--learning_rate", type=float, default=3e-4)
     parser.add_argument("--num_epochs", type=int, default=5)
     parser.add_argument("--output_dir", type=str, default="./outputs_optimized")
-    parser.add_argument("--data_path", type=str, default="./datasets/cleaned_copy.json")
+    parser.add_argument("--data_path", type=str, default="./datasets/augmented_dataset.json")
     parser.add_argument("--augment_data", action="store_true")
     parser.add_argument("--gradient_checkpointing", action="store_true")
     parser.add_argument("--seed", type=int, default=42)
@@ -124,7 +124,6 @@ def shuffle_choices(text):
         
     except:
         return None
-
 def preprocess_function(examples, tokenizer, max_input_length=384, max_target_length=256):
     """Tokenize with better length handling."""
     inputs = tokenizer(
@@ -141,11 +140,12 @@ def preprocess_function(examples, tokenizer, max_input_length=384, max_target_le
         padding="max_length",
     )
     
+    # This is to manually tokenize -- use data collator to automatically tokenize and remove the hassle of manually tweaking it
     # Replace padding token id's of labels by -100
-    targets["input_ids"] = [
-        [(t if t != tokenizer.pad_token_id else -100) for t in target]
-        for target in targets["input_ids"]
-    ]
+    # targets["input_ids"] = [
+    #     [(t if t != tokenizer.pad_token_id else -100) for t in target]
+    #     for target in targets["input_ids"]
+    # ]
     
     inputs["labels"] = targets["input_ids"]
     return inputs
@@ -373,7 +373,6 @@ def main():
     data_collator = DataCollatorForSeq2Seq(
         tokenizer=tokenizer,
         model=model,
-        padding=True,
         pad_to_multiple_of=8,
         label_pad_token_id=-100
     )
