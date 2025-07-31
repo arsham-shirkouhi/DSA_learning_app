@@ -1,9 +1,11 @@
 import json
+import difflib
 import torch
 import argparse
-import random
-import numpy as np
-import difflib
+import wandb
+from datetime import datetime
+from functools import partial
+from dataclasses import dataclass
 from datasets import Dataset
 from transformers import (
     T5ForConditionalGeneration,
@@ -13,423 +15,336 @@ from transformers import (
     DataCollatorForSeq2Seq,
     EarlyStoppingCallback
 )
+from nltk.translate.bleu_score import sentence_bleu
 from rouge_score import rouge_scorer
-from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
-import re
 
-def set_seed(seed=42):
-    """Set all random seeds."""
-    random.seed(seed)
-    np.random.seed(seed)
-    torch.manual_seed(seed)
-    torch.cuda.manual_seed_all(seed)
+
+@dataclass
+class ModelConfig:
+    """Configuration class for model training parameters."""
+    model_name: str = "google/flan-t5-large"
+    max_input_length: int = 256
+    max_target_length: int = 192
+    batch_size: int = 4
+    gradient_accumulation_steps: int = 4
+    num_epochs: int = 3
+    learning_rate: float = 5e-5
+    warmup_steps: int = 500
+    eval_steps: int = 500
+    save_steps: int = 500
+    fp16: bool = True
+    gradient_checkpointing: bool = True
+    use_wandb: bool = True
+
 
 def parse_args():
-    parser = argparse.ArgumentParser()
+    """Parse command line arguments."""
+    parser = argparse.ArgumentParser(description="Fine-tune T5 model")
     parser.add_argument("--model_name", type=str, default="google/flan-t5-base")
-    parser.add_argument("--batch_size", type=int, default=4)
-    parser.add_argument("--gradient_accumulation_steps", type=int, default=4)
+    parser.add_argument("--batch_size", type=int, default=16)
+    parser.add_argument("--gradient_accumulation_steps", type=int, default=1)
+    parser.add_argument("--num_epochs", type=int, default=3)
     parser.add_argument("--learning_rate", type=float, default=3e-4)
-    parser.add_argument("--num_epochs", type=int, default=5)
-    parser.add_argument("--output_dir", type=str, default="./trained_model/outputs_optimized")
+    # parser.add_argument("--warmup_steps", type=int, default=500)
+    # parser.add_argument("--eval_steps", type=int, default=10000)
+    # parser.add_argument("--save_steps", type=int, default=10000)
+    parser.add_argument("--fp16", action="store_true", help="Use mixed precision training")
+    parser.add_argument("--gradient_checkpointing", action="store_true", help="Use gradient checkpointing")
+    parser.add_argument("--use_wandb", action="store_true", help="Use Weights & Biases for logging")
     parser.add_argument("--train_path", type=str, default="./datasets/RACE/race_train.json")
     parser.add_argument("--test_path", type=str, default="./datasets/RACE/race_test.json")
-    parser.add_argument("--dev_path", type=str, default="./datasets/RACE/race_dev.json")
-    parser.add_argument("--augment_data", action="store_true")
-    parser.add_argument("--gradient_checkpointing", action="store_true")
-    parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--val_path", type=str, default="./datasets/RACE/race_dev.json")
+    parser.add_argument("--output_dir", type=str, default="./outputs_T5_enhanced")
     return parser.parse_args()
 
-def augment_data(examples):
-    """Simple but effective data augmentation."""
-    augmented = []
-    
-    paraphrases = {
-        "Which of the following": ["Which option", "Select the correct option"],
-        "What is the": ["What's the", "Define the"],
-        "time complexity": ["computational complexity", "runtime"],
-        "space complexity": ["memory complexity", "storage requirement"],
-        "worst case": ["worst-case scenario", "pessimistic case"],
-        "best case": ["best-case scenario", "optimal case"],
-    }
-    
-    for example in examples:
-        augmented.append(example)
-        
-        # Create augmented versions
-        if random.random() < 0.5:
-            text = example["target_text"]
-            
-            # Apply one random paraphrase
-            for original, replacements in paraphrases.items():
-                if original in text:
-                    replacement = random.choice(replacements)
-                    new_text = text.replace(original, replacement)
-                    
-                    if new_text != text:
-                        augmented.append({
-                            "input_text": example["input_text"],
-                            "target_text": new_text
-                        })
-                        break
-        
-        # Shuffle choices occasionally
-        if "Choices:" in example["target_text"] and random.random() < 0.3:
-            shuffled = shuffle_choices(example["target_text"])
-            if shuffled and shuffled != example["target_text"]:
-                augmented.append({
-                    "input_text": example["input_text"],
-                    "target_text": shuffled
-                })
-    
-    return augmented
 
-def shuffle_choices(text):
-    """Shuffle MCQ choices while keeping the answer correct."""
-    try:
-        parts = text.split("Choices:")
-        if len(parts) != 2:
-            return None
-            
-        question_part = parts[0] + "Choices: "
-        rest = parts[1]
-        
-        if "Answer:" not in rest:
-            return None
-            
-        choices_part, answer_part = rest.split("Answer:")
-        answer_letter = answer_part.strip()
-        
-        # Extract choices
-        choices = re.findall(r'([a-d])\)\s*([^a-d\)]+)', choices_part)
-        if len(choices) < 4:
-            return None
-            
-        # Map old to content
-        choice_map = {letter: content.strip() for letter, content in choices}
-        correct_content = choice_map.get(answer_letter)
-        
-        if not correct_content:
-            return None
-            
-        # Shuffle contents
-        contents = list(choice_map.values())
-        random.shuffle(contents)
-        
-        # Find new position of correct answer
-        new_letters = ['a', 'b', 'c', 'd']
-        new_answer = new_letters[contents.index(correct_content)]
-        
-        # Rebuild
-        new_choices = " ".join([f"{new_letters[i]}) {contents[i]}" for i in range(len(contents))])
-        return f"{question_part}{new_choices} Answer: {new_answer}"
-        
-    except:
-        return None
-def preprocess_function(examples, tokenizer, max_input_length=384, max_target_length=256):
-    """Tokenize with better length handling."""
+def tokenize_batch(examples, tokenizer, config):
+    """Tokenize inputs and targets using the provided tokenizer with dynamic padding."""
     inputs = tokenizer(
         examples["input_text"],
-        max_length=max_input_length,
+        max_length=config.max_input_length,
         truncation=True,
-        padding="max_length",
+        padding=False  # Dynamic padding in collator
     )
-    
     targets = tokenizer(
         examples["target_text"],
-        max_length=max_target_length,
+        max_length=config.max_target_length,
         truncation=True,
-        padding="max_length",
+        padding=False  # Dynamic padding in collator
     )
-    
-    # This is to manually tokenize -- use data collator to automatically tokenize and remove the hassle of manually tweaking it
-    # Replace padding token id's of labels by -100
-    # targets["input_ids"] = [
-    #     [(t if t != tokenizer.pad_token_id else -100) for t in target]
-    #     for target in targets["input_ids"]
-    # ]
-    
     inputs["labels"] = targets["input_ids"]
     return inputs
 
+
 def compute_metrics(eval_preds, tokenizer):
-    """Comprehensive metrics."""
+    """Compute comprehensive metrics including fuzzy match, exact match, BLEU, and ROUGE."""
     preds, labels = eval_preds
     
+    # Unpack if necessary
     if isinstance(preds, tuple):
         preds = preds[0]
     
-    # Decode
+    # Convert to numpy
+    if isinstance(preds, torch.Tensor):
+        preds = preds.cpu().numpy()
+    if isinstance(labels, torch.Tensor):
+        labels = labels.cpu().numpy()
+
+    # Clip out-of-vocab tokens, replace -100 with pad token
+    preds = [
+        [token if 0 <= token < tokenizer.vocab_size else tokenizer.pad_token_id for token in p]
+        for p in preds
+    ]
+    labels = [
+        [token if token != -100 else tokenizer.pad_token_id for token in l]
+        for l in labels
+    ]
+
     decoded_preds = tokenizer.batch_decode(preds, skip_special_tokens=True)
-    labels = np.where(labels != -100, labels, tokenizer.pad_token_id)
     decoded_labels = tokenizer.batch_decode(labels, skip_special_tokens=True)
-    
-    # Format validation
-    format_scores = []
-    for pred in decoded_preds:
-        score = 0.0
-        if "Question:" in pred:
-            score += 0.25
-        if "Choices:" in pred:
-            score += 0.25
-        if re.search(r'[a-d]\)', pred):
-            score += 0.25
-        if "Answer:" in pred and re.search(r'Answer:\s*[a-d]', pred):
-            score += 0.25
-        format_scores.append(score)
-    
-    # Fuzzy matching
-    fuzzy_scores = []
-    for pred, label in zip(decoded_preds, decoded_labels):
-        score = difflib.SequenceMatcher(None, pred.strip(), label.strip()).ratio()
-        fuzzy_scores.append(score)
-    
-    # BLEU
-    smooth = SmoothingFunction().method1
+
+    # Sequence matching scores
+    fuzzy_scores = [
+        difflib.SequenceMatcher(None, p.strip(), l.strip()).ratio()
+        for p, l in zip(decoded_preds, decoded_labels)
+    ]
+
+    # BLEU scores
     bleu_scores = []
+    rouge_scorer_obj = rouge_scorer.RougeScorer(['rouge1', 'rouge2', 'rougeL'], use_stemmer=True)
+    rouge1_scores, rouge2_scores, rougeL_scores = [], [], []
+    
     for pred, label in zip(decoded_preds, decoded_labels):
+        # BLEU
         try:
-            score = sentence_bleu([label.split()], pred.split(), smoothing_function=smooth)
-            bleu_scores.append(score)
+            bleu = sentence_bleu([label.split()], pred.split())
+            bleu_scores.append(bleu)
         except:
             bleu_scores.append(0.0)
-    
-    # ROUGE
-    rouge = rouge_scorer.RougeScorer(['rouge1', 'rouge2', 'rougeL'], use_stemmer=True)
-    rouge_scores = {'rouge1': [], 'rouge2': [], 'rougeL': []}
-    
-    for pred, label in zip(decoded_preds, decoded_labels):
-        scores = rouge.score(label.strip(), pred.strip())
-        rouge_scores['rouge1'].append(scores['rouge1'].fmeasure)
-        rouge_scores['rouge2'].append(scores['rouge2'].fmeasure)
-        rouge_scores['rougeL'].append(scores['rougeL'].fmeasure)
-    
-    # Print examples
+        
+        # ROUGE
+        scores = rouge_scorer_obj.score(label.strip(), pred.strip())
+        rouge1_scores.append(scores['rouge1'].fmeasure)
+        rouge2_scores.append(scores['rouge2'].fmeasure)
+        rougeL_scores.append(scores['rougeL'].fmeasure)
+
+    # Log a few examples
     print("\n" + "="*50)
-    for i in range(min(3, len(decoded_preds))):
+    for i, (p, l, s) in enumerate(zip(decoded_preds[:3], decoded_labels[:3], fuzzy_scores[:3])):
         print(f"\nExample {i+1}:")
-        print(f"Pred: {decoded_preds[i][:150]}...")
-        print(f"Label: {decoded_labels[i][:150]}...")
-        print(f"Format: {format_scores[i]:.2f}, Fuzzy: {fuzzy_scores[i]:.2f}")
+        print(f"PRED: {p[:100]}...")
+        print(f"LABEL: {l[:100]}...")
+        print(f"FUZZY SIMILARITY: {s:.2f}")
     print("="*50 + "\n")
-    
+
     return {
-        "format_accuracy": np.mean(format_scores),
-        "fuzzy_match": np.mean(fuzzy_scores),
-        "exact_match": np.mean([p.strip() == l.strip() for p, l in zip(decoded_preds, decoded_labels)]),
-        "bleu": np.mean(bleu_scores),
-        "rouge1": np.mean(rouge_scores['rouge1']),
-        "rouge2": np.mean(rouge_scores['rouge2']),
-        "rougeL": np.mean(rouge_scores['rougeL']),
+        "fuzzy_match_score": sum(fuzzy_scores) / len(fuzzy_scores),
+        "exact_match_accuracy": sum(p.strip() == l.strip() for p, l in zip(decoded_preds, decoded_labels)) / len(decoded_preds),
+        "bleu": sum(bleu_scores) / len(bleu_scores) if bleu_scores else 0.0,
+        "rouge1": sum(rouge1_scores) / len(rouge1_scores),
+        "rouge2": sum(rouge2_scores) / len(rouge2_scores),
+        "rougeL": sum(rougeL_scores) / len(rougeL_scores),
     }
 
-def generate_samples(model, tokenizer, test_data, num_samples=5):
-    """Generate sample outputs with post-processing."""
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    model.to(device)
-    model.eval()
-    
-    samples = random.sample(test_data, min(num_samples, len(test_data)))
-    
-    print("\n" + "="*50)
-    print("Sample Generations:")
-    print("="*50)
-    
-    for i, sample in enumerate(samples):
-        inputs = tokenizer(sample["input_text"], return_tensors="pt", max_length=384, truncation=True)
-        inputs = {k: v.to(device) for k, v in inputs.items()}
-        
-        with torch.no_grad():
-            outputs = model.generate(
-                **inputs,
-                max_length=256,
-                num_beams=8,
-                temperature=0.8,
-                do_sample=True,
-                top_p=0.9,
-                repetition_penalty=1.2,
-                no_repeat_ngram_size=3,
-            )
-        
-        generated = tokenizer.decode(outputs[0], skip_special_tokens=True)
-        
-        # Post-process
-        generated = post_process_output(generated)
-        
-        print(f"\nExample {i+1}:")
-        print(f"Input: {sample['input_text']}")
-        print(f"Generated: {generated}")
-        print(f"Expected: {sample['target_text'][:150]}...")
 
-def post_process_output(text):
-    """Ensure proper MCQ format."""
-    # Ensure Question: prefix
-    if not text.strip().startswith("Question:"):
-        text = "Question: " + text.strip()
+def generate_predictions(model, tokenizer, texts, device):
+    """Generate predictions with custom parameters."""
+    model.eval()
+    inputs = tokenizer(texts, return_tensors="pt", padding=True, truncation=True, max_length=256)
+    inputs = {k: v.to(device) for k, v in inputs.items()}
     
-    # Add Choices: if missing
-    if "Choices:" not in text and re.search(r'[a-d]\)', text):
-        match = re.search(r'([a-d]\))', text)
-        if match:
-            pos = match.start()
-            text = text[:pos] + " Choices: " + text[pos:]
+    with torch.no_grad():
+        outputs = model.generate(
+            **inputs,
+            max_length=192,
+            num_beams=4,
+            temperature=0.7,
+            do_sample=True,
+            top_p=0.9,
+            repetition_penalty=1.2,
+            length_penalty=1.0,
+            early_stopping=True
+        )
     
-    # Ensure Answer: format
-    if "Answer:" not in text:
-        # Try to find answer pattern
-        answer_match = re.search(r'\b([a-d])\s*$', text)
-        if answer_match:
-            text = text[:answer_match.start()] + f"Answer: {answer_match.group(1)}"
-    
-    return text.strip()
+    return tokenizer.batch_decode(outputs, skip_special_tokens=True)
+
 
 def main():
+    """Main training function."""
+    # Parse arguments
     args = parse_args()
-    set_seed(args.seed)
-    
-    # Load training set
-    print(f"Loading dataset from {args.train_path}")
-    with open(args.train_path, "r", encoding="utf-8") as f:
-        train_data = json.load(f)
-        
-    # Load validation set
-    print(f"Loading dataset from {args.dev_path}")
-    with open(args.dev_path, "r", encoding="utf-8") as f:
-        val_data = json.load(f)
-     
-    # Load test set   
-    print(f"Loading dataset from {args.test_path}")
-    with open(args.test_path, "r", encoding="utf-8") as f:
-        test_data = json.load(f)
-    
-    # Augment if requested
-    if args.augment_data:
-        print("Applying data augmentation...")
-        original_size = len(data)
-        data = augment_data(data)
-        print(f"Dataset size: {original_size} -> {len(data)}")
-    
-    # Shuffle and split
-    random.shuffle(data)
-    train_size = int(0.8 * len(data))
-    val_size = int(0.1 * len(data))
-    
-    random.shuffle(train_data)
-    random.shuffle(val_data)
-    random.shuffle(test_data)
-    
-    
-    print(f"Splits - Train: {len(train_data)}, Val: {len(val_data)}, Test: {len(test_data)}")
-    
-    # Load model
-    print(f"Loading model: {args.model_name}")
-    tokenizer = T5Tokenizer.from_pretrained(args.model_name)
-    model = T5ForConditionalGeneration.from_pretrained(args.model_name)
-    
-    # Configure
-    tokenizer.pad_token = tokenizer.eos_token
-    model.config.pad_token_id = tokenizer.pad_token_id
-    
-    if args.gradient_checkpointing and hasattr(model, "gradient_checkpointing_enable"):
-        model.gradient_checkpointing_enable()
-        print("Gradient checkpointing enabled")
-    
-    # Create datasets
-    train_dataset = Dataset.from_list(train_data)
-    val_dataset = Dataset.from_list(val_data)
-    test_dataset = Dataset.from_list(test_data)
-    
-    # Tokenize
-    print("Tokenizing datasets...")
-    preprocess_fn = lambda x: preprocess_function(x, tokenizer)
-    
-    train_dataset = train_dataset.map(preprocess_fn, batched=True, remove_columns=["input_text", "target_text"])
-    val_dataset = val_dataset.map(preprocess_fn, batched=True, remove_columns=["input_text", "target_text"])
-    test_dataset = test_dataset.map(preprocess_fn, batched=True, remove_columns=["input_text", "target_text"])
-    
-    # Calculate steps
-    total_steps = len(train_dataset) // (args.batch_size * args.gradient_accumulation_steps) * args.num_epochs
-    eval_steps = max(50, total_steps // 10)  # Evaluate 10 times during training
-    
-    # Training arguments
-    training_args = Seq2SeqTrainingArguments(
-        output_dir=args.output_dir,
-        overwrite_output_dir=True,
-        per_device_train_batch_size=args.batch_size,
-        per_device_eval_batch_size=args.batch_size * 2,
+    config = ModelConfig(
+        model_name=args.model_name,
+        batch_size=args.batch_size,
         gradient_accumulation_steps=args.gradient_accumulation_steps,
-        num_train_epochs=args.num_epochs,
+        num_epochs=args.num_epochs,
         learning_rate=args.learning_rate,
-        warmup_steps=min(100, int(0.1 * total_steps)),
-        lr_scheduler_type="cosine",
-        weight_decay=0.01,
-        eval_strategy="steps",
-        eval_steps=eval_steps,
-        save_steps=eval_steps,
-        logging_steps=25,
-        logging_first_step=True,
-        save_total_limit=3,
-        load_best_model_at_end=True,
-        metric_for_best_model="fuzzy_match",
-        greater_is_better=True,
-        predict_with_generate=True,
-        generation_max_length=256,
-        generation_num_beams=8,
-        fp16=torch.cuda.is_available(),  # Only use if CUDA available
-        optim="adamw_torch",
-        max_grad_norm=1.0,
-        seed=args.seed,
-        report_to="none",  # Disable wandb/tensorboard for simplicity
+        # warmup_steps=args.warmup_steps,
+        # eval_steps=args.eval_steps,
+        # save_steps=args.save_steps,
+        fp16=args.fp16,
+        gradient_checkpointing=args.gradient_checkpointing,
+        use_wandb=args.use_wandb
     )
     
-    # Data collator
-    data_collator = DataCollatorForSeq2Seq(
-        tokenizer=tokenizer,
-        model=model,
-        pad_to_multiple_of=8,
-        label_pad_token_id=-100
-    )
+    # Initialize wandb if requested
+    if config.use_wandb:
+        wandb.init(
+            project="t5-finetuning",
+            name=f"{config.model_name.split('/')[-1]}_{datetime.now().strftime('%Y%m%d_%H%M%S')}",
+            config=config.__dict__
+        )
     
-    # Trainer
-    trainer = Seq2SeqTrainer(
-        model=model,
-        args=training_args,
-        train_dataset=train_dataset,
-        eval_dataset=val_dataset,
-        data_collator=data_collator,
-        tokenizer=tokenizer,
-        compute_metrics=lambda x: compute_metrics(x, tokenizer),
-        callbacks=[EarlyStoppingCallback(early_stopping_patience=3)]
-    )
-    
-    # Train
-    print(f"\nStarting training... Total steps: {total_steps}")
-    trainer.train()
-    
-    # Evaluate on test set
-    print("\nEvaluating on test set...")
-    test_results = trainer.evaluate(eval_dataset=test_dataset)
-    
-    print("\nTest Results:")
-    for key, value in test_results.items():
-        if not key.startswith("eval_"):
-            continue
-        metric_name = key.replace("eval_", "")
-        print(f"  {metric_name}: {value:.4f}")
-    
-    # Save model
-    print(f"\nSaving model to {args.output_dir}/final_model")
-    trainer.save_model(f"{args.output_dir}/final_model")
-    tokenizer.save_pretrained(f"{args.output_dir}/final_model")
-    
-    # Save metrics
-    with open(f"{args.output_dir}/test_results.json", "w") as f:
-        json.dump(test_results, f, indent=2)
-    
-    # Generate samples
-    generate_samples(model, tokenizer, test_data)
-    
-    print("\nTraining complete!")
+    try:
+        # Load and split dataset
+        print(f"Loading dataset from {args.train_path}")
+        with open(args.train_path, "r", encoding="utf-8") as f:
+            train_data = json.load(f)
+
+        print(f"Loading dataset from {args.val_path}")
+        with open(args.val_path, "r", encoding="utf-8") as f:
+            val_data = json.load(f)
+
+        print(f"Loading dataset from {args.test_path}")
+        with open(args.test_path, "r", encoding="utf-8") as f:
+            test_data = json.load(f)
+        
+        # Split into train/val/test (80/10/10)
+        # total_size = len(data)
+        # train_size = int(0.8 * total_size)
+        # val_size = int(0.1 * total_size)
+        
+        train_data = train_data[:30000]
+        # val_data = data[train_size:train_size + val_size]
+        # test_data = data[train_size + val_size:]
+        
+        print(f"Dataset sizes - Train: {len(train_data)}, Val: {len(val_data)}, Test: {len(test_data)}")
+        
+        # Create datasets
+        train_dataset = Dataset.from_list(train_data)
+        val_dataset = Dataset.from_list(val_data)
+        test_dataset = Dataset.from_list(test_data)
+
+        # Initialize tokenizer and model
+        print(f"Loading model and tokenizer: {config.model_name}")
+        tokenizer = T5Tokenizer.from_pretrained(config.model_name, legacy=False, use_fast=True)
+        model = T5ForConditionalGeneration.from_pretrained(config.model_name)
+        
+        # Enable gradient checkpointing if requested
+        if config.gradient_checkpointing:
+            model.gradient_checkpointing_enable()
+        
+        # Ensure pad_token is set
+        if tokenizer.pad_token is None:
+            tokenizer.pad_token = tokenizer.eos_token
+
+        # Tokenize datasets
+        tokenize_fn = partial(tokenize_batch, tokenizer=tokenizer, config=config)
+        train_dataset = train_dataset.map(tokenize_fn, batched=True)
+        val_dataset = val_dataset.map(tokenize_fn, batched=True)
+        test_dataset = test_dataset.map(tokenize_fn, batched=True)
+
+        # Shuffle datasets
+        train_dataset = train_dataset.shuffle(seed=42)
+        val_dataset = val_dataset.shuffle(seed=42)
+        test_dataset = test_dataset.shuffle(seed=42)
+
+        # Training arguments
+        training_args = Seq2SeqTrainingArguments(
+            output_dir=args.output_dir,
+            per_device_train_batch_size=config.batch_size,
+            per_device_eval_batch_size=config.batch_size,
+            gradient_accumulation_steps=config.gradient_accumulation_steps,
+            num_train_epochs=config.num_epochs,
+            learning_rate=config.learning_rate,
+            # warmup_steps=config.warmup_steps,
+            # eval_strategy="steps",
+            # eval_steps=config.eval_steps,
+            # save_strategy="steps",
+            # save_steps=config.save_steps,
+            save_total_limit=3,
+            load_best_model_at_end=False, # REMMEBER TO SET IT BACK TO TRUE WHEN MID EVALUATING DURING TRAINING
+            metric_for_best_model="fuzzy_match_score",
+            greater_is_better=True,
+            predict_with_generate=True,
+            generation_max_length=160,
+            generation_num_beams=4,
+            label_smoothing_factor=0.1,
+            fp16=config.fp16,
+            logging_dir=f"{args.output_dir}/logs",
+            logging_steps=50,
+            report_to=["wandb"] if config.use_wandb else ["tensorboard"],
+            run_name=f"t5_run_{datetime.now().strftime('%Y%m%d_%H%M%S')}",
+            push_to_hub=False,
+            remove_unused_columns=True,
+        )
+
+        # Data collator with dynamic padding
+        data_collator = DataCollatorForSeq2Seq(
+            tokenizer=tokenizer,
+            model=model,
+            padding=True,
+            label_pad_token_id=-100
+        )
+
+        # Initialize trainer with callbacks
+        trainer = Seq2SeqTrainer(
+            model=model,
+            args=training_args,
+            train_dataset=train_dataset,
+            eval_dataset=val_dataset,
+            data_collator=data_collator,
+            tokenizer=tokenizer,
+            compute_metrics=partial(compute_metrics, tokenizer=tokenizer),
+        )
+
+        # Train the model
+        print("Starting training...")
+        trainer.train()
+        
+        # Evaluate on test set
+        print("Evaluating on test set...")
+        test_results = trainer.evaluate(eval_dataset=test_dataset)
+        print(f"Test results: {test_results}")
+        
+        # Save final model
+        final_model_path = f"{args.output_dir}/final_model"
+        print(f"Saving final model to {final_model_path}")
+        trainer.save_model(final_model_path)
+        tokenizer.save_pretrained(final_model_path)
+        
+        # Save metrics
+        metrics_path = f"{args.output_dir}/final_metrics.json"
+        with open(metrics_path, "w") as f:
+            json.dump(test_results, f, indent=2)
+        print(f"Metrics saved to {metrics_path}")
+        
+        # Test generation on a few examples
+        print("\nTesting generation on sample inputs...")
+        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        model.to(device)
+        
+        sample_texts = [ex["input_text"] for ex in test_data[:3]]
+        predictions = generate_predictions(model, tokenizer, sample_texts, device)
+        
+        print("\nSample generations:")
+        for i, (inp, pred) in enumerate(zip(sample_texts, predictions)):
+            print(f"\nExample {i+1}:")
+            print(f"Input: {inp}")
+            print(f"Generated: {pred}")
+        
+        if config.use_wandb:
+            wandb.finish()
+            
+    except Exception as e:
+        print(f"Training failed: {e}")
+        # Save emergency checkpoint if possible
+        if 'trainer' in locals():
+            emergency_path = f"{args.output_dir}/emergency_checkpoint"
+            trainer.save_model(emergency_path)
+            print(f"Emergency checkpoint saved to {emergency_path}")
+        raise
+
 
 if __name__ == "__main__":
     main()
