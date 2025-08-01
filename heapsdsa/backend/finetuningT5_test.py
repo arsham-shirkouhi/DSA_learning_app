@@ -23,15 +23,15 @@ from rouge_score import rouge_scorer
 class ModelConfig:
     """Configuration class for model training parameters."""
     model_name: str = "google/flan-t5-large"
-    max_input_length: int = 256
-    max_target_length: int = 192
+    max_input_length: int = 256  # Increased for better context understanding
+    max_target_length: int = 128  # Increased for complete MCQ generation
     batch_size: int = 4
     gradient_accumulation_steps: int = 4
-    num_epochs: int = 3
-    learning_rate: float = 5e-5
-    warmup_steps: int = 500
-    eval_steps: int = 500
-    save_steps: int = 500
+    num_epochs: int = 5  # More epochs for better learning
+    learning_rate: float = 3e-5  # Slightly lower for stability
+    # warmup_steps: int = 500
+    # eval_steps: int = 500
+    # save_steps: int = 500
     fp16: bool = True
     gradient_checkpointing: bool = True
     use_wandb: bool = True
@@ -43,11 +43,11 @@ def parse_args():
     parser.add_argument("--model_name", type=str, default="google/flan-t5-base")
     parser.add_argument("--batch_size", type=int, default=8)
     parser.add_argument("--gradient_accumulation_steps", type=int, default=2)
-    parser.add_argument("--num_epochs", type=int, default=3)
-    parser.add_argument("--learning_rate", type=float, default=3e-4)
+    parser.add_argument("--num_epochs", type=int, default=5)
+    parser.add_argument("--learning_rate", type=float, default=3e-5)
     # parser.add_argument("--warmup_steps", type=int, default=500)
-    # parser.add_argument("--eval_steps", type=int, default=10000)
-    # parser.add_argument("--save_steps", type=int, default=10000)
+    # parser.add_argument("--eval_steps", type=int, default=500)
+    # parser.add_argument("--save_steps", type=int, default=500)
     parser.add_argument("--fp16", action="store_true", help="Use mixed precision training")
     parser.add_argument("--gradient_checkpointing", action="store_true", help="Use gradient checkpointing")
     parser.add_argument("--use_wandb", action="store_true", help="Use Weights & Biases for logging")
@@ -56,6 +56,19 @@ def parse_args():
     parser.add_argument("--val_path", type=str, default="./datasets/RACE/race_val.json")
     parser.add_argument("--output_dir", type=str, default="./outputs_T5_enhanced")
     return parser.parse_args()
+
+
+def preprocess_data(examples):
+    """Preprocess data to ensure proper format and add task prefix."""
+    processed = []
+    for ex in examples:
+        # Add more explicit instruction to help model understand the task
+        input_text = f"Generate a multiple choice question based on the following context. The question must be directly related to the information in the context.\n\nContext: {ex['input_text']}\n\nGenerate MCQ:"
+        processed.append({
+            'input_text': input_text,
+            'target_text': ex['target_text']
+        })
+    return processed
 
 
 def tokenize_batch(examples, tokenizer, config):
@@ -76,8 +89,26 @@ def tokenize_batch(examples, tokenizer, config):
     return inputs
 
 
-def compute_metrics(eval_preds, tokenizer):
-    """Compute comprehensive metrics including fuzzy match, exact match, BLEU, and ROUGE."""
+def compute_context_relevance(generated_question, context, tokenizer):
+    """Compute how relevant the generated question is to the context."""
+    # Tokenize both
+    context_tokens = set(context.lower().split())
+    question_tokens = set(generated_question.lower().split())
+    
+    # Remove common words
+    stop_words = {'the', 'a', 'an', 'is', 'are', 'was', 'were', 'what', 'which', 'who', 'when', 'where', 'how', 'of', 'in', 'to', 'for'}
+    context_tokens = context_tokens - stop_words
+    question_tokens = question_tokens - stop_words
+    
+    # Calculate overlap
+    overlap = len(context_tokens & question_tokens)
+    relevance = overlap / max(len(question_tokens), 1)
+    
+    return relevance
+
+
+def compute_metrics(eval_preds, tokenizer, eval_dataset=None):
+    """Compute comprehensive metrics including context relevance."""
     preds, labels = eval_preds
     
     # Unpack if necessary
@@ -114,7 +145,10 @@ def compute_metrics(eval_preds, tokenizer):
     rouge_scorer_obj = rouge_scorer.RougeScorer(['rouge1', 'rouge2', 'rougeL'], use_stemmer=True)
     rouge1_scores, rouge2_scores, rougeL_scores = [], [], []
     
-    for pred, label in zip(decoded_preds, decoded_labels):
+    # Context relevance scores (if dataset available)
+    relevance_scores = []
+    
+    for i, (pred, label) in enumerate(zip(decoded_preds, decoded_labels)):
         # BLEU
         try:
             bleu = sentence_bleu([label.split()], pred.split())
@@ -127,6 +161,15 @@ def compute_metrics(eval_preds, tokenizer):
         rouge1_scores.append(scores['rouge1'].fmeasure)
         rouge2_scores.append(scores['rouge2'].fmeasure)
         rougeL_scores.append(scores['rougeL'].fmeasure)
+        
+        # Context relevance (if we have access to the dataset)
+        if eval_dataset and i < len(eval_dataset):
+            context = eval_dataset[i]['input_text']
+            # Extract the actual context from the preprocessed input
+            if 'Context: ' in context:
+                context = context.split('Context: ')[1].split('\n\nGenerate MCQ:')[0]
+            relevance = compute_context_relevance(pred, context, tokenizer)
+            relevance_scores.append(relevance)
 
     # Log a few examples
     print("\n" + "="*50)
@@ -135,9 +178,11 @@ def compute_metrics(eval_preds, tokenizer):
         print(f"PRED: {p[:100]}...")
         print(f"LABEL: {l[:100]}...")
         print(f"FUZZY SIMILARITY: {s:.2f}")
+        if relevance_scores and i < len(relevance_scores):
+            print(f"CONTEXT RELEVANCE: {relevance_scores[i]:.2f}")
     print("="*50 + "\n")
 
-    return {
+    metrics = {
         "fuzzy_match_score": sum(fuzzy_scores) / len(fuzzy_scores),
         "exact_match_accuracy": sum(p.strip() == l.strip() for p, l in zip(decoded_preds, decoded_labels)) / len(decoded_preds),
         "bleu": sum(bleu_scores) / len(bleu_scores) if bleu_scores else 0.0,
@@ -145,29 +190,59 @@ def compute_metrics(eval_preds, tokenizer):
         "rouge2": sum(rouge2_scores) / len(rouge2_scores),
         "rougeL": sum(rougeL_scores) / len(rougeL_scores),
     }
+    
+    if relevance_scores:
+        metrics["context_relevance"] = sum(relevance_scores) / len(relevance_scores)
+    
+    return metrics
 
 
-def generate_predictions(model, tokenizer, texts, device):
-    """Generate predictions with custom parameters."""
+def generate_predictions(model, tokenizer, texts, device, config):
+    """Generate predictions with parameters matching training setup."""
     model.eval()
-    inputs = tokenizer(texts, return_tensors="pt", padding=True, truncation=True, max_length=256)
+    
+    # Add task prefix if not already present
+    processed_texts = []
+    for text in texts:
+        if not text.startswith("Generate a multiple choice question"):
+            text = f"Generate a multiple choice question based on the following context. The question must be directly related to the information in the context.\n\nContext: {text}\n\nGenerate MCQ:"
+        processed_texts.append(text)
+    
+    inputs = tokenizer(
+        processed_texts, 
+        return_tensors="pt", 
+        padding=True, 
+        truncation=True, 
+        max_length=config.max_input_length
+    )
     inputs = {k: v.to(device) for k, v in inputs.items()}
     
     with torch.no_grad():
         outputs = model.generate(
             **inputs,
-            max_length=192,
+            max_length=config.max_target_length,
             num_beams=4,
             temperature=0.7,
-            do_sample=False,
-            # top_p=0.9, 
-            repetition_penalty=2.0,
+            do_sample=False,  # Deterministic for consistency
+            repetition_penalty=1.8,  # Higher to prevent option repetition but not too high
             no_repeat_ngram_size=3,
             length_penalty=1.0,
-            early_stopping=True
+            early_stopping=True,
+            # Use encoder_repetition_penalty to allow context references
+            encoder_repetition_penalty=1.0,  # No penalty for input tokens
         )
     
     return tokenizer.batch_decode(outputs, skip_special_tokens=True)
+
+
+def validate_data_format(data_list):
+    """Validate that the data has the expected format."""
+    required_keys = ['input_text', 'target_text']
+    for i, item in enumerate(data_list[:5]):  # Check first 5 items
+        for key in required_keys:
+            if key not in item:
+                raise ValueError(f"Item {i} missing required key '{key}'")
+        print(f"Sample {i} - Input length: {len(item['input_text'])}, Target length: {len(item['target_text'])}")
 
 
 def main():
@@ -191,7 +266,7 @@ def main():
     # Initialize wandb if requested
     if config.use_wandb:
         wandb.init(
-            project="t5-finetuning",
+            project="t5-mcq-generation",
             name=f"{config.model_name.split('/')[-1]}_{datetime.now().strftime('%Y%m%d_%H%M%S')}",
             config=config.__dict__
         )
@@ -209,17 +284,15 @@ def main():
         print(f"Loading dataset from {args.test_path}")
         with open(args.test_path, "r", encoding="utf-8") as f:
             test_data = json.load(f)
-    
-        # Split into train/val/test (80/10/10)
-        # total_size = len(data)
-        # train_size = int(0.8 * total_size)
-        # val_size = int(0.1 * total_size)
         
-        train_data = train_data[:2000]
-        val_data = val_data[:500]
-        test_data = test_data[:500]
-        # val_data = data[train_size:train_size + val_size]
-        # test_data = data[train_size + val_size:]
+        # Validate data format
+        print("\nValidating data format...")
+        validate_data_format(train_data)
+        
+        # Preprocess data
+        train_data = preprocess_data(train_data[:1000])  # Increased dataset size
+        val_data = preprocess_data(val_data[:250])
+        test_data = preprocess_data(test_data[:250])
         
         print(f"Dataset sizes - Train: {len(train_data)}, Val: {len(val_data)}, Test: {len(test_data)}")
         
@@ -266,12 +339,12 @@ def main():
             # save_strategy="steps",
             # save_steps=config.save_steps,
             save_total_limit=3,
-            load_best_model_at_end=False, # REMMEBER TO SET IT BACK TO TRUE WHEN MID EVALUATING DURING TRAINING
-            metric_for_best_model="fuzzy_match_score",
+            # load_best_model_at_end=True,
+            # metric_for_best_model="fuzzy_match_score",
             greater_is_better=True,
             predict_with_generate=True,
-            generation_max_length=96, # was 160
-            generation_num_beams=2, # was 4
+            generation_max_length=config.max_target_length,  # Match inference
+            generation_num_beams=4,  # Match inference
             label_smoothing_factor=0.1,
             fp16=config.fp16,
             logging_dir=f"{args.output_dir}/logs",
@@ -280,6 +353,7 @@ def main():
             run_name=f"t5_run_{datetime.now().strftime('%Y%m%d_%H%M%S')}",
             push_to_hub=False,
             remove_unused_columns=True,
+
         )
 
         # Data collator with dynamic padding
@@ -298,7 +372,7 @@ def main():
             eval_dataset=val_dataset,
             data_collator=data_collator,
             tokenizer=tokenizer,
-            compute_metrics=partial(compute_metrics, tokenizer=tokenizer),
+            compute_metrics=partial(compute_metrics, tokenizer=tokenizer, eval_dataset=val_dataset),
         )
 
         # Train the model
@@ -328,7 +402,7 @@ def main():
         model.to(device)
         
         sample_texts = [ex["input_text"] for ex in test_data[:3]]
-        predictions = generate_predictions(model, tokenizer, sample_texts, device)
+        predictions = generate_predictions(model, tokenizer, sample_texts, device, config)
         
         print("\nSample generations:")
         for i, (inp, pred) in enumerate(zip(sample_texts, predictions)):

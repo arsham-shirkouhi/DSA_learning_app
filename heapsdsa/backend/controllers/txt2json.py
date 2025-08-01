@@ -23,4 +23,4 @@ def convert_race_folder_to_json(folder_path, output_file):
     print(f"Saved {len(dataset)} samples to {output_file}")
 
 # Example usage:
-convert_race_folder_to_json("./datasets/RACE/test","./datasets/RACE/race_test.json")
+convert_race_folder_to_json("./datasets/RACE/train/middle","./datasets/RACE/race_train.json")
