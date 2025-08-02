@@ -1,0 +1,17 @@
+{
+  "remaining_links": [],
+  "completed_topics": [
+    "Sorting Algorithms",
+    "Linked Lists In Data Structures",
+    "Trees In Data Structures",
+    "Stacks In Data Structures",
+    "Queues In Data Structures",
+    "Hashing",
+    "Heaps",
+    "Arrays In Data Structures",
+    "Binary Search Trees(B Tree)",
+    "Graphs"
+  ],
+  "total_questions_extracted": 1157,
+  "credits_exhausted_at": "2025-08-02 13:20:35"
+}

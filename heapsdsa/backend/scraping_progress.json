@@ -1,0 +1,22 @@
+{
+  "remaining_links": [],
+  "completed_topics": [
+    "Trees In Data Structures",
+    "Arrays In Data Structures",
+    "Graph Algorithms (Dfs, Bfs, Dijkstras, Etc)",
+    "String Matching",
+    "Linked Lists In Data Structures",
+    "Sorting Algorithms",
+    "Advanced Trees (Avl, Redblack, Btrees)",
+    "Stacks In Data Structures",
+    "Miscellaneous On Data Structures",
+    "Hashing",
+    "Heaps",
+    "Binary Search Trees(B Tree)",
+    "Searching Algorithms",
+    "Queues In Data Structures",
+    "Graphs"
+  ],
+  "last_completed": "Miscellaneous On Data Structures",
+  "total_questions_extracted": 2077
+}

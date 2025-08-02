@@ -1,0 +1,708 @@
+{
+  "used_tokens": 100500,
+  "budget": 100000,
+  "session_start": "2025-08-02T13:20:19.548005",
+  "usage_history": [
+    {
+      "timestamp": "2025-08-02T12:29:26.402980",
+      "tokens_used": 500,
+      "total_used": 51000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-trees-in-data-structures?section=1&page=10",
+      "description": "Scraping Trees In Data Structures page 10"
+    },
+    {
+      "timestamp": "2025-08-02T12:29:42.198173",
+      "tokens_used": 500,
+      "total_used": 51500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-trees-in-data-structures?section=2&page=1",
+      "description": "Scraping Trees In Data Structures page 1"
+    },
+    {
+      "timestamp": "2025-08-02T12:29:56.783763",
+      "tokens_used": 500,
+      "total_used": 52000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-trees-in-data-structures?section=2&page=2",
+      "description": "Scraping Trees In Data Structures page 2"
+    },
+    {
+      "timestamp": "2025-08-02T12:31:15.998477",
+      "tokens_used": 500,
+      "total_used": 52500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-trees-in-data-structures?section=2&page=4",
+      "description": "Scraping Trees In Data Structures page 4"
+    },
+    {
+      "timestamp": "2025-08-02T12:31:33.356698",
+      "tokens_used": 500,
+      "total_used": 53000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-trees-in-data-structures?section=2&page=5",
+      "description": "Scraping Trees In Data Structures page 5"
+    },
+    {
+      "timestamp": "2025-08-02T12:31:51.780612",
+      "tokens_used": 500,
+      "total_used": 53500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-trees-in-data-structures?section=2&page=6",
+      "description": "Scraping Trees In Data Structures page 6"
+    },
+    {
+      "timestamp": "2025-08-02T12:32:10.577515",
+      "tokens_used": 500,
+      "total_used": 54000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-trees-in-data-structures?section=2&page=7",
+      "description": "Scraping Trees In Data Structures page 7"
+    },
+    {
+      "timestamp": "2025-08-02T12:32:19.573906",
+      "tokens_used": 500,
+      "total_used": 54500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-trees-in-data-structures?section=2&page=8",
+      "description": "Scraping Trees In Data Structures page 8"
+    },
+    {
+      "timestamp": "2025-08-02T12:32:29.665769",
+      "tokens_used": 500,
+      "total_used": 55000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-trees-in-data-structures?section=2&page=9",
+      "description": "Scraping Trees In Data Structures page 9"
+    },
+    {
+      "timestamp": "2025-08-02T12:32:39.822041",
+      "tokens_used": 500,
+      "total_used": 55500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-trees-in-data-structures?section=2&page=10",
+      "description": "Scraping Trees In Data Structures page 10"
+    },
+    {
+      "timestamp": "2025-08-02T12:32:45.877511",
+      "tokens_used": 500,
+      "total_used": 56000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-trees-in-data-structures?section=3&page=1",
+      "description": "Scraping Trees In Data Structures page 1"
+    },
+    {
+      "timestamp": "2025-08-02T12:32:51.115992",
+      "tokens_used": 500,
+      "total_used": 56500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-trees-in-data-structures?section=3&page=2",
+      "description": "Scraping Trees In Data Structures page 2"
+    },
+    {
+      "timestamp": "2025-08-02T12:32:57.355328",
+      "tokens_used": 500,
+      "total_used": 57000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-trees-in-data-structures?section=4&page=1",
+      "description": "Scraping Trees In Data Structures page 1"
+    },
+    {
+      "timestamp": "2025-08-02T12:33:02.843472",
+      "tokens_used": 500,
+      "total_used": 57500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-trees-in-data-structures?section=4&page=2",
+      "description": "Scraping Trees In Data Structures page 2"
+    },
+    {
+      "timestamp": "2025-08-02T12:33:33.173235",
+      "tokens_used": 500,
+      "total_used": 58000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-binary-search-trees(b-tree)/",
+      "description": "Scraping Binary Search Trees(B Tree) page 1"
+    },
+    {
+      "timestamp": "2025-08-02T12:33:55.676213",
+      "tokens_used": 500,
+      "total_used": 58500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-binary-search-trees(b-tree)?section=1&page=2",
+      "description": "Scraping Binary Search Trees(B Tree) page 2"
+    },
+    {
+      "timestamp": "2025-08-02T12:34:21.135299",
+      "tokens_used": 500,
+      "total_used": 59000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-binary-search-trees(b-tree)?section=1&page=3",
+      "description": "Scraping Binary Search Trees(B Tree) page 3"
+    },
+    {
+      "timestamp": "2025-08-02T12:34:45.552703",
+      "tokens_used": 500,
+      "total_used": 59500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-binary-search-trees(b-tree)?section=1&page=4",
+      "description": "Scraping Binary Search Trees(B Tree) page 4"
+    },
+    {
+      "timestamp": "2025-08-02T12:35:10.173196",
+      "tokens_used": 500,
+      "total_used": 60000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-binary-search-trees(b-tree)?section=1&page=5",
+      "description": "Scraping Binary Search Trees(B Tree) page 5"
+    },
+    {
+      "timestamp": "2025-08-02T12:35:34.654321",
+      "tokens_used": 500,
+      "total_used": 60500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-binary-search-trees(b-tree)?section=1&page=6",
+      "description": "Scraping Binary Search Trees(B Tree) page 6"
+    },
+    {
+      "timestamp": "2025-08-02T12:35:57.787998",
+      "tokens_used": 500,
+      "total_used": 61000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-binary-search-trees(b-tree)?section=1&page=7",
+      "description": "Scraping Binary Search Trees(B Tree) page 7"
+    },
+    {
+      "timestamp": "2025-08-02T12:36:18.547910",
+      "tokens_used": 500,
+      "total_used": 61500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-binary-search-trees(b-tree)?section=1&page=8",
+      "description": "Scraping Binary Search Trees(B Tree) page 8"
+    },
+    {
+      "timestamp": "2025-08-02T12:36:38.181006",
+      "tokens_used": 500,
+      "total_used": 62000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-binary-search-trees(b-tree)?section=1&page=9",
+      "description": "Scraping Binary Search Trees(B Tree) page 9"
+    },
+    {
+      "timestamp": "2025-08-02T12:37:06.759186",
+      "tokens_used": 500,
+      "total_used": 62500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-binary-search-trees(b-tree)?section=1&page=10",
+      "description": "Scraping Binary Search Trees(B Tree) page 10"
+    },
+    {
+      "timestamp": "2025-08-02T12:37:25.758839",
+      "tokens_used": 500,
+      "total_used": 63000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-binary-search-trees(b-tree)?section=2&page=1",
+      "description": "Scraping Binary Search Trees(B Tree) page 1"
+    },
+    {
+      "timestamp": "2025-08-02T12:37:48.646346",
+      "tokens_used": 500,
+      "total_used": 63500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-binary-search-trees(b-tree)?section=2&page=2",
+      "description": "Scraping Binary Search Trees(B Tree) page 2"
+    },
+    {
+      "timestamp": "2025-08-02T12:38:14.078295",
+      "tokens_used": 500,
+      "total_used": 64000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-binary-search-trees(b-tree)?section=2&page=3",
+      "description": "Scraping Binary Search Trees(B Tree) page 3"
+    },
+    {
+      "timestamp": "2025-08-02T12:38:36.127082",
+      "tokens_used": 500,
+      "total_used": 64500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-binary-search-trees(b-tree)?section=2&page=4",
+      "description": "Scraping Binary Search Trees(B Tree) page 4"
+    },
+    {
+      "timestamp": "2025-08-02T12:38:59.211861",
+      "tokens_used": 500,
+      "total_used": 65000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-binary-search-trees(b-tree)?section=2&page=5",
+      "description": "Scraping Binary Search Trees(B Tree) page 5"
+    },
+    {
+      "timestamp": "2025-08-02T12:39:18.069027",
+      "tokens_used": 500,
+      "total_used": 65500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-binary-search-trees(b-tree)?section=2&page=6",
+      "description": "Scraping Binary Search Trees(B Tree) page 6"
+    },
+    {
+      "timestamp": "2025-08-02T12:39:32.338782",
+      "tokens_used": 500,
+      "total_used": 66000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-binary-search-trees(b-tree)?section=2&page=7",
+      "description": "Scraping Binary Search Trees(B Tree) page 7"
+    },
+    {
+      "timestamp": "2025-08-02T12:39:54.508312",
+      "tokens_used": 500,
+      "total_used": 66500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-binary-search-trees(b-tree)?section=2&page=8",
+      "description": "Scraping Binary Search Trees(B Tree) page 8"
+    },
+    {
+      "timestamp": "2025-08-02T12:40:16.817116",
+      "tokens_used": 500,
+      "total_used": 67000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-binary-search-trees(b-tree)?section=2&page=9",
+      "description": "Scraping Binary Search Trees(B Tree) page 9"
+    },
+    {
+      "timestamp": "2025-08-02T12:40:44.148837",
+      "tokens_used": 500,
+      "total_used": 67500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-binary-search-trees(b-tree)?section=2&page=10",
+      "description": "Scraping Binary Search Trees(B Tree) page 10"
+    },
+    {
+      "timestamp": "2025-08-02T12:41:01.956498",
+      "tokens_used": 500,
+      "total_used": 68000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-binary-search-trees(b-tree)?section=3&page=1",
+      "description": "Scraping Binary Search Trees(B Tree) page 1"
+    },
+    {
+      "timestamp": "2025-08-02T12:41:21.631741",
+      "tokens_used": 500,
+      "total_used": 68500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-binary-search-trees(b-tree)?section=3&page=2",
+      "description": "Scraping Binary Search Trees(B Tree) page 2"
+    },
+    {
+      "timestamp": "2025-08-02T12:41:42.839458",
+      "tokens_used": 500,
+      "total_used": 69000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-binary-search-trees(b-tree)?section=3&page=3",
+      "description": "Scraping Binary Search Trees(B Tree) page 3"
+    },
+    {
+      "timestamp": "2025-08-02T12:42:01.931431",
+      "tokens_used": 500,
+      "total_used": 69500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-binary-search-trees(b-tree)?section=3&page=4",
+      "description": "Scraping Binary Search Trees(B Tree) page 4"
+    },
+    {
+      "timestamp": "2025-08-02T12:42:22.806608",
+      "tokens_used": 500,
+      "total_used": 70000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-binary-search-trees(b-tree)?section=3&page=5",
+      "description": "Scraping Binary Search Trees(B Tree) page 5"
+    },
+    {
+      "timestamp": "2025-08-02T12:42:40.254517",
+      "tokens_used": 500,
+      "total_used": 70500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-binary-search-trees(b-tree)?section=3&page=6",
+      "description": "Scraping Binary Search Trees(B Tree) page 6"
+    },
+    {
+      "timestamp": "2025-08-02T12:43:01.427967",
+      "tokens_used": 500,
+      "total_used": 71000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-binary-search-trees(b-tree)?section=3&page=7",
+      "description": "Scraping Binary Search Trees(B Tree) page 7"
+    },
+    {
+      "timestamp": "2025-08-02T12:43:10.454462",
+      "tokens_used": 500,
+      "total_used": 71500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-binary-search-trees(b-tree)?section=3&page=8",
+      "description": "Scraping Binary Search Trees(B Tree) page 8"
+    },
+    {
+      "timestamp": "2025-08-02T12:43:16.117892",
+      "tokens_used": 500,
+      "total_used": 72000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-binary-search-trees(b-tree)?section=3&page=9",
+      "description": "Scraping Binary Search Trees(B Tree) page 9"
+    },
+    {
+      "timestamp": "2025-08-02T12:43:21.096981",
+      "tokens_used": 500,
+      "total_used": 72500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-binary-search-trees(b-tree)?section=3&page=10",
+      "description": "Scraping Binary Search Trees(B Tree) page 10"
+    },
+    {
+      "timestamp": "2025-08-02T12:43:26.638467",
+      "tokens_used": 500,
+      "total_used": 73000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-binary-search-trees(b-tree)?section=4&page=1",
+      "description": "Scraping Binary Search Trees(B Tree) page 1"
+    },
+    {
+      "timestamp": "2025-08-02T12:43:32.671712",
+      "tokens_used": 500,
+      "total_used": 73500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-binary-search-trees(b-tree)?section=4&page=2",
+      "description": "Scraping Binary Search Trees(B Tree) page 2"
+    },
+    {
+      "timestamp": "2025-08-02T12:43:37.555802",
+      "tokens_used": 500,
+      "total_used": 74000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-binary-search-trees(b-tree)?section=5&page=1",
+      "description": "Scraping Binary Search Trees(B Tree) page 1"
+    },
+    {
+      "timestamp": "2025-08-02T12:43:42.120694",
+      "tokens_used": 500,
+      "total_used": 74500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-binary-search-trees(b-tree)?section=5&page=2",
+      "description": "Scraping Binary Search Trees(B Tree) page 2"
+    },
+    {
+      "timestamp": "2025-08-02T12:44:06.677040",
+      "tokens_used": 500,
+      "total_used": 75000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-heaps/",
+      "description": "Scraping Heaps page 1"
+    },
+    {
+      "timestamp": "2025-08-02T12:44:23.440611",
+      "tokens_used": 500,
+      "total_used": 75500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-heaps?section=1&page=2",
+      "description": "Scraping Heaps page 2"
+    },
+    {
+      "timestamp": "2025-08-02T12:44:40.846910",
+      "tokens_used": 500,
+      "total_used": 76000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-heaps?section=1&page=3",
+      "description": "Scraping Heaps page 3"
+    },
+    {
+      "timestamp": "2025-08-02T12:45:00.157869",
+      "tokens_used": 500,
+      "total_used": 76500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-heaps?section=1&page=4",
+      "description": "Scraping Heaps page 4"
+    },
+    {
+      "timestamp": "2025-08-02T12:45:25.724750",
+      "tokens_used": 500,
+      "total_used": 77000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-heaps?section=1&page=5",
+      "description": "Scraping Heaps page 5"
+    },
+    {
+      "timestamp": "2025-08-02T12:45:48.085787",
+      "tokens_used": 500,
+      "total_used": 77500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-heaps?section=1&page=6",
+      "description": "Scraping Heaps page 6"
+    },
+    {
+      "timestamp": "2025-08-02T12:46:05.924274",
+      "tokens_used": 500,
+      "total_used": 78000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-heaps?section=1&page=7",
+      "description": "Scraping Heaps page 7"
+    },
+    {
+      "timestamp": "2025-08-02T12:46:26.173262",
+      "tokens_used": 500,
+      "total_used": 78500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-heaps?section=1&page=8",
+      "description": "Scraping Heaps page 8"
+    },
+    {
+      "timestamp": "2025-08-02T12:46:40.351516",
+      "tokens_used": 500,
+      "total_used": 79000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-heaps?section=1&page=9",
+      "description": "Scraping Heaps page 9"
+    },
+    {
+      "timestamp": "2025-08-02T12:47:02.614474",
+      "tokens_used": 500,
+      "total_used": 79500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-heaps?section=1&page=10",
+      "description": "Scraping Heaps page 10"
+    },
+    {
+      "timestamp": "2025-08-02T12:47:35.209366",
+      "tokens_used": 500,
+      "total_used": 80000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-heaps?section=2&page=1",
+      "description": "Scraping Heaps page 1"
+    },
+    {
+      "timestamp": "2025-08-02T12:47:58.529406",
+      "tokens_used": 500,
+      "total_used": 80500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-heaps?section=2&page=2",
+      "description": "Scraping Heaps page 2"
+    },
+    {
+      "timestamp": "2025-08-02T12:48:11.950581",
+      "tokens_used": 500,
+      "total_used": 81000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-heaps?section=2&page=3",
+      "description": "Scraping Heaps page 3"
+    },
+    {
+      "timestamp": "2025-08-02T12:48:26.945310",
+      "tokens_used": 500,
+      "total_used": 81500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-heaps?section=2&page=4",
+      "description": "Scraping Heaps page 4"
+    },
+    {
+      "timestamp": "2025-08-02T12:48:42.930903",
+      "tokens_used": 500,
+      "total_used": 82000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-heaps?section=2&page=5",
+      "description": "Scraping Heaps page 5"
+    },
+    {
+      "timestamp": "2025-08-02T12:48:56.848072",
+      "tokens_used": 500,
+      "total_used": 82500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-heaps?section=2&page=6",
+      "description": "Scraping Heaps page 6"
+    },
+    {
+      "timestamp": "2025-08-02T12:49:07.136091",
+      "tokens_used": 500,
+      "total_used": 83000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-heaps?section=2&page=7",
+      "description": "Scraping Heaps page 7"
+    },
+    {
+      "timestamp": "2025-08-02T12:49:12.799912",
+      "tokens_used": 500,
+      "total_used": 83500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-heaps?section=2&page=8",
+      "description": "Scraping Heaps page 8"
+    },
+    {
+      "timestamp": "2025-08-02T12:49:19.122089",
+      "tokens_used": 500,
+      "total_used": 84000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-heaps?section=2&page=9",
+      "description": "Scraping Heaps page 9"
+    },
+    {
+      "timestamp": "2025-08-02T12:50:14.415339",
+      "tokens_used": 500,
+      "total_used": 84500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-heaps?section=2&page=10",
+      "description": "Scraping Heaps page 10"
+    },
+    {
+      "timestamp": "2025-08-02T12:50:24.783513",
+      "tokens_used": 500,
+      "total_used": 85000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-heaps?section=3&page=1",
+      "description": "Scraping Heaps page 1"
+    },
+    {
+      "timestamp": "2025-08-02T12:50:33.625912",
+      "tokens_used": 500,
+      "total_used": 85500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-heaps?section=3&page=2",
+      "description": "Scraping Heaps page 2"
+    },
+    {
+      "timestamp": "2025-08-02T12:50:38.812878",
+      "tokens_used": 500,
+      "total_used": 86000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-heaps?section=4&page=1",
+      "description": "Scraping Heaps page 1"
+    },
+    {
+      "timestamp": "2025-08-02T12:50:45.915674",
+      "tokens_used": 500,
+      "total_used": 86500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-heaps?section=4&page=2",
+      "description": "Scraping Heaps page 2"
+    },
+    {
+      "timestamp": "2025-08-02T12:50:51.794733",
+      "tokens_used": 500,
+      "total_used": 87000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-heaps?section=4&page=3",
+      "description": "Scraping Heaps page 3"
+    },
+    {
+      "timestamp": "2025-08-02T12:50:57.533856",
+      "tokens_used": 500,
+      "total_used": 87500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-heaps?section=4&page=4",
+      "description": "Scraping Heaps page 4"
+    },
+    {
+      "timestamp": "2025-08-02T12:51:07.446175",
+      "tokens_used": 500,
+      "total_used": 88000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-heaps?section=5&page=1",
+      "description": "Scraping Heaps page 1"
+    },
+    {
+      "timestamp": "2025-08-02T12:51:13.219401",
+      "tokens_used": 500,
+      "total_used": 88500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-heaps?section=5&page=2",
+      "description": "Scraping Heaps page 2"
+    },
+    {
+      "timestamp": "2025-08-02T12:51:38.206155",
+      "tokens_used": 500,
+      "total_used": 89000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-hashing/",
+      "description": "Scraping Hashing page 1"
+    },
+    {
+      "timestamp": "2025-08-02T12:52:02.884268",
+      "tokens_used": 500,
+      "total_used": 89500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-hashing?section=1&page=2",
+      "description": "Scraping Hashing page 2"
+    },
+    {
+      "timestamp": "2025-08-02T12:52:33.118921",
+      "tokens_used": 500,
+      "total_used": 90000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-hashing?section=1&page=3",
+      "description": "Scraping Hashing page 3"
+    },
+    {
+      "timestamp": "2025-08-02T12:53:54.438488",
+      "tokens_used": 500,
+      "total_used": 90500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-hashing?section=1&page=5",
+      "description": "Scraping Hashing page 5"
+    },
+    {
+      "timestamp": "2025-08-02T12:54:06.061605",
+      "tokens_used": 500,
+      "total_used": 91000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-hashing?section=1&page=6",
+      "description": "Scraping Hashing page 6"
+    },
+    {
+      "timestamp": "2025-08-02T12:54:24.588152",
+      "tokens_used": 500,
+      "total_used": 91500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-hashing?section=1&page=7",
+      "description": "Scraping Hashing page 7"
+    },
+    {
+      "timestamp": "2025-08-02T12:54:45.805453",
+      "tokens_used": 500,
+      "total_used": 92000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-hashing?section=1&page=8",
+      "description": "Scraping Hashing page 8"
+    },
+    {
+      "timestamp": "2025-08-02T12:55:03.714032",
+      "tokens_used": 500,
+      "total_used": 92500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-hashing?section=1&page=9",
+      "description": "Scraping Hashing page 9"
+    },
+    {
+      "timestamp": "2025-08-02T12:55:17.587118",
+      "tokens_used": 500,
+      "total_used": 93000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-hashing?section=1&page=10",
+      "description": "Scraping Hashing page 10"
+    },
+    {
+      "timestamp": "2025-08-02T12:55:31.582056",
+      "tokens_used": 500,
+      "total_used": 93500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-hashing?section=2&page=1",
+      "description": "Scraping Hashing page 1"
+    },
+    {
+      "timestamp": "2025-08-02T12:55:45.423703",
+      "tokens_used": 500,
+      "total_used": 94000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-hashing?section=2&page=2",
+      "description": "Scraping Hashing page 2"
+    },
+    {
+      "timestamp": "2025-08-02T12:56:00.123241",
+      "tokens_used": 500,
+      "total_used": 94500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-hashing?section=2&page=3",
+      "description": "Scraping Hashing page 3"
+    },
+    {
+      "timestamp": "2025-08-02T12:57:12.648587",
+      "tokens_used": 500,
+      "total_used": 95000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-hashing?section=2&page=5",
+      "description": "Scraping Hashing page 5"
+    },
+    {
+      "timestamp": "2025-08-02T12:57:26.562122",
+      "tokens_used": 500,
+      "total_used": 95500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-hashing?section=2&page=6",
+      "description": "Scraping Hashing page 6"
+    },
+    {
+      "timestamp": "2025-08-02T12:57:38.203446",
+      "tokens_used": 500,
+      "total_used": 96000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-hashing?section=2&page=7",
+      "description": "Scraping Hashing page 7"
+    },
+    {
+      "timestamp": "2025-08-02T12:58:47.708802",
+      "tokens_used": 500,
+      "total_used": 96500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-hashing?section=2&page=9",
+      "description": "Scraping Hashing page 9"
+    },
+    {
+      "timestamp": "2025-08-02T12:58:53.276335",
+      "tokens_used": 500,
+      "total_used": 97000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-hashing?section=3&page=1",
+      "description": "Scraping Hashing page 1"
+    },
+    {
+      "timestamp": "2025-08-02T12:59:07.306812",
+      "tokens_used": 500,
+      "total_used": 97500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-hashing?section=3&page=3",
+      "description": "Scraping Hashing page 3"
+    },
+    {
+      "timestamp": "2025-08-02T12:59:12.401897",
+      "tokens_used": 500,
+      "total_used": 98000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-hashing?section=4&page=1",
+      "description": "Scraping Hashing page 1"
+    },
+    {
+      "timestamp": "2025-08-02T12:59:18.389707",
+      "tokens_used": 500,
+      "total_used": 98500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-hashing?section=4&page=2",
+      "description": "Scraping Hashing page 2"
+    },
+    {
+      "timestamp": "2025-08-02T12:59:23.196731",
+      "tokens_used": 500,
+      "total_used": 99000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-hashing?section=5&page=1",
+      "description": "Scraping Hashing page 1"
+    },
+    {
+      "timestamp": "2025-08-02T12:59:28.049344",
+      "tokens_used": 500,
+      "total_used": 99500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-hashing?section=5&page=2",
+      "description": "Scraping Hashing page 2"
+    },
+    {
+      "timestamp": "2025-08-02T12:59:56.508271",
+      "tokens_used": 500,
+      "total_used": 100000,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-graphs/",
+      "description": "Scraping Graphs page 1"
+    },
+    {
+      "timestamp": "2025-08-02T13:20:35.689934",
+      "tokens_used": 500,
+      "total_used": 100500,
+      "url": "https://www.examveda.com/data-structure/practice-mcq-question-on-sorting-algorithms/",
+      "description": "Scraping Sorting Algorithms page 1"
+    }
+  ],
+  "last_updated": "2025-08-02T13:20:35.689934"
+}
