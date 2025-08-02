@@ -1,0 +1,102 @@
+[
+    {
+        "answer": "b",
+        "choices": {
+            "a": "O(n)",
+            "b": "O(1)",
+            "c": "O(log n)",
+            "d": "O(n log n)"
+        },
+        "question": "What is the time complexity of accessing an element in an array by index?"
+    },
+    {
+        "answer": "c",
+        "choices": {
+            "a": "int array[];",
+            "b": "array{int};",
+            "c": "int array[10];",
+            "d": "int array();"
+        },
+        "question": "Which of the following is the correct way to declare an array in C?"
+    },
+    {
+        "answer": "a",
+        "choices": {
+            "a": "0",
+            "b": "null",
+            "c": "-1",
+            "d": "undefined"
+        },
+        "question": "What is the default value of an integer array in Java?"
+    },
+    {
+        "answer": "b",
+        "choices": {
+            "a": "array.size();",
+            "b": "array.length;",
+            "c": "array.length();",
+            "d": "array.size;"
+        },
+        "question": "How do you find the length of an array in Java?"
+    },
+    {
+        "answer": "a",
+        "choices": {
+            "a": "int array[3] = {1, 2, 3};",
+            "b": "int array = new int[3];",
+            "c": "int array(3) = {1, 2, 3};",
+            "d": "int array[] = new int[3];"
+        },
+        "question": "Which of the following correctly initializes an array in C++?"
+    },
+    {
+        "answer": "a",
+        "choices": {
+            "a": "O(1)",
+            "b": "O(n)",
+            "c": "O(log n)",
+            "d": "O(n log n)"
+        },
+        "question": "What is the time complexity of inserting an element at the end of an array?"
+    },
+    {
+        "answer": "b",
+        "choices": {
+            "a": "Arrays are dynamic in size",
+            "b": "Arrays have a fixed size",
+            "c": "Arrays cannot store primitive data types",
+            "d": "Arrays elements are always initialized"
+        },
+        "question": "Which of the following statements is true about arrays?"
+    },
+    {
+        "answer": "b",
+        "choices": {
+            "a": "An array with multiple data types",
+            "b": "An array containing multiple arrays",
+            "c": "An array with a flexible size",
+            "d": "An array with elements of different types"
+        },
+        "question": "What is a multidimensional array?"
+    },
+    {
+        "answer": "a",
+        "choices": {
+            "a": "Row-major order",
+            "b": "Column-major order",
+            "c": "Random order",
+            "d": "Both row-major and column-major order"
+        },
+        "question": "How are elements stored in a 2D array in memory?"
+    },
+    {
+        "answer": "a",
+        "choices": {
+            "a": "array[2]",
+            "b": "array[3]",
+            "c": "array(2)",
+            "d": "array.get(2)"
+        },
+        "question": "What is the correct way to access the third element of an array?"
+    }
+]
