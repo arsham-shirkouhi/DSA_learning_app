@@ -21,6 +21,7 @@ itsdangerous==2.2.0
 Jinja2==3.1.6
 jsonpatch==1.33
 jsonpointer==3.0.0
+jsonschema==4.21.1
 langchain==0.3.25
 langchain-community==0.3.24
 langchain-core==0.3.63
@@ -33,6 +34,7 @@ mypy_extensions==1.1.0
 numpy==2.2.6
 orjson==3.10.18
 packaging==24.2
+playwright==1.42.0
 propcache==0.3.1
 pydantic==2.11.5
 pydantic-settings==2.9.1

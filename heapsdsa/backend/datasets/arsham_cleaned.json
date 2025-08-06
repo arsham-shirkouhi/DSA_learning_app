@@ -3263,3 +3263,1399 @@
         "input_text": "Generate a data structure MCQ | Topic: Tree | Context: Tree traversals define the order in which nodes are visited. In postorder traversal, the left subtree is visited first, then the right subtree, and finally the node itself. This is often used in deleting trees or evaluating postfix expressions.",
         "target_text": "Question: What does the following piece of code do?\npublic void func(Tree root)\n{\n func(root.left());\n func(root.right());\n System.out.println(root.data());\n}\nChoices:\na) Preorder traversal\nb) Inorder traversal\nc) Postorder traversal\nd) Level order traversal\nAnswer: c"
     },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Graph | Context: A plane graph is a graph drawn on a plane without any edge crossings. Euler's formula states that for any connected plane graph, V - E + R = 2. If a plane graph has multiple connected components, the formula generalizes to V - E + R = C + 1, where C is the number of components.",
+        "target_text": "Question: Given a plane graph, G having 2 connected components, 6 vertices, 7 edges and 4 regions, what will be the number of connected components?\nChoices:\na) 1\nb) 2\nc) 3\nd) 4\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: The given C++ program performs a depth-first traversal (DFS) on a graph represented by an adjacency matrix. Starting from vertex 0, it recursively visits all unvisited neighbors. The output corresponds to the order in which the DFS visits the vertices based on the adjacency matrix.",
+        "target_text": "Question: What would be the output of the following C++ program if the given input is\n0 0 0 1 1\n0 0 0 0 1\n0 0 0 1 0\n1 0 1 0 0\n1 1 0 0 0\n \n#include <bits/stdc++.h>\nusing namespace std;\nbool visited[5];\nint G[5][5];\n \nvoid fun(int i)\n{\n cout<<i<<"";\n visited[i]=true;\n for(int j=0;j<5;j++)\n if(!visited[j]&&G[i][j]==1)\n fun(j);\n}\n \nint main()\n{ \n for(int i=0;i<5;i++)\n for(int j=0;j<5;j++)\n cin>>G[i][j];\n \n for(int i=0;i<5;i++)\n visited[i]=0;\n \n fun(0);\n return 0;\n}\nChoices:\na) 0 2 3 1 4\nb) 0 3 2 4 1\nc) 0 2 3 4 1\nd) 0 3 2 1 4\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: In an infix expression, operators are placed between operands. This is the common human-readable format for arithmetic expressions. The recursive pattern of producing left expression -> operator -> right expression characterizes infix notation.",
+        "target_text": "Question: The expression obtained by recursively producing a left expression, followed by an operator, followed by recursively producing a right expression is called?\nChoices:\na) prefix expression\nb) infix expression\nc) postfix expression\nd) parenthesized expression\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: The Rope data structure is a binary tree used to efficiently store and manipulate very long strings. In programming, a Rope is also known as a Cord. It allows for efficient concatenation and substring operations.",
+        "target_text": "Question: Which of the following is also known as Rope data structure?\nChoices:\na) cord\nb) string\nc) array\nd) linked list\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: Two balanced binary search trees with m and n elements can be merged into one balanced BST in O(m+n) time. The process typically involves converting both trees to sorted arrays, merging them, and reconstructing a balanced BST from the merged array.",
+        "target_text": "Question: Two balanced binary trees are given with m and n elements respectively. They can be merged into a balanced binary search tree in __________ time.\nChoices:\na) o(m+n)\nb) o(mn)\nc) o(m)\nd) o(mlog n)\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: The number of binary trees that can be formed with a given set of nodes and a specific traversal sequence depends on the properties of binary trees and Catalan numbers. For 3 nodes with a fixed postorder traversal (e.g., N, M, L), only a limited number of trees can match that sequence.",
+        "target_text": "Question: What is the possible number of binary trees that can be created with 3 nodes, giving the sequence N, M, L when traversed in post-order?\nChoices:\na) 15\nb) 3\nc) 5\nd) 8\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: A full binary tree is a tree in which every node has either 0 or 2 children. In such a tree, if the number of internal nodes is I, then the number of leaves (L) is always L = I + 1. This is a fundamental property derived from the structure of full binary trees.",
+        "target_text": "Question: In a full binary tree if number of internal nodes is I, then number of leaves L are?\nChoices:\na) l = 2i\nb) l = i + 1\nc) l = i - 1\nd) l = 2i - 1\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: In a singly linked list, accessing the k-th element from the beginning can be done in O(1) time if a pointer to the head is maintained and traversed. However, finding the k-th element from the end generally requires a full traversal of the list or use of two pointers, making the time complexity O(n).",
+        "target_text": "Question: What are the time complexities of finding 8th element from beginning and 8th element from end in a singly linked list? Let n be the number of nodes in linked list, you may assume that n > 8.\nChoices:\na) o(n) and o(n)\nb) o(1) and o(1)\nc) o(n) and o(1)\nd) o(1) and o(n)\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: B-trees and B+ trees are used in databases and file systems to maintain sorted data and allow searches, insertions, and deletions in logarithmic time. B+ trees usually have a greater fanout than B-trees and support simpler deletion. However, B+ trees do not necessarily have greater depth than B-trees, making that statement False.",
+        "target_text": "Question: Which of the following is false?\nChoices:\na) compared to b-tree, b+ -tree has larger fanout\nb) deletion in b-tree is more complicated than in b+ -tree\nc) b+ -tree has greater depth than corresponding b-tree\nd) both b-tree and b+ -tree have same search and insertion efficiencies\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: AA-trees are a form of balanced binary search trees that simplify the balancing operations of red-black trees. The tree structure is designed to consider only two shapes when performing rotations: skew and split, which simplifies rebalancing. Thus, only 2 structural shapes need to be handled.",
+        "target_text": "Question: How many different shapes does maintenance of AA-Tree need to consider?\nChoices:\na) 7\nb) 5\nc) 2\nd) 3\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: A suffix tree is a specialized data structure that allows efficient operations on substrings of a string, such as pattern matching, longest repeated substring, or finding substrings in linear time. This makes it ideal for fast string operations.",
+        "target_text": "Question: Which tree allows fast implementation of string operation?\nChoices:\na) rope tree\nb) suffix tree\nc) tango tree\nd) top tree\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: Separate chaining is a method used in hashing to handle collisions by maintaining a linked list of all elements that hash to the same index. Although effective in managing collisions, this technique requires additional memory due to the use of pointers and linked lists.",
+        "target_text": "Question: Which of the following is a disadvantage of using separate chaining using linked lists?\nChoices:\na) it requires many pointers\nb) it requires linked lists\nc) it uses array\nd) it does not resolve collision\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Graph | Context: An edge cluster in graph theory typically refers to a grouping of edges that are densely connected or form a small subgraph. If an edge cluster is defined as a minimal group, it usually starts with a single edge connecting two vertices.",
+        "target_text": "Question: How many edges are present in edge cluster?\nChoices:\na) 0\nb) 1\nc) 2\nd) 4\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: A Cartesian tree is a binary tree derived from a sequence of values where the in-order traversal yields the original sequence and each node follows heap property. It is not height-balanced, and if the input values are distinct, the Cartesian tree is uniquely determined.",
+        "target_text": "Question: Which of the below statements are true?\ni. cartesian tree is not a height balanced tree\nii. cartesian tree of a sequence of unique numbers can be uniquely generated\nChoices:\na) both statements are true\nb) only i. is true\nc) only ii. is true\nd) both are false\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Stack | Context: In Java, the Stack class from java.util throws an EmptyStackException if a pop operation is attempted on an empty stack. This exception is a subclass of RuntimeException and is thrown at runtime.",
+        "target_text": "Question: What happens when you pop from an empty stack while implementing using the stack adt in java?\nChoices:\na) undefined error\nb) compiler displays a warning\nc) emptystackexception is thrown\nd) nostackexception is thrown\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: A 2-3 tree is a balanced search tree in which every internal node has either two or three children. The height of a 2-3 tree with n elements lies between log base 3 of (n+1) and log base 2 of (n+1), ensuring logarithmic search time.",
+        "target_text": "Question: The height of a 2-3 tree with n elements is __________\nChoices:\na) between (n/2) and (n/3)\nb) (n/6)\nc) between (n) and log2(n + 1)\nd) between log3(n + 1) and log2(n + 1)\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: A sparse array is a data structure that efficiently stores and processes arrays with a large number of zero or default values. Instead of allocating space for every element, it stores only non-zero values and their positions, making it memory-efficient compared to a naive array.",
+        "target_text": "Question: What is the difference between a normal (naive) array and a sparse array?\nChoices:\na) sparse array can hold more elements than a normal array\nb) sparse array is memory efficient\nc) sparse array is dynamic\nd) a naive array is more efficient\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Queue | Context: To print the right view of a binary tree, level order traversal using a queue is used. The rightmost node at each level is printed. In the provided C++ code, the queue must be properly initialized with the root node. If not, the traversal won't begin.",
+        "target_text": "Question: What is wrong in the below code of printing right view of a binary tree using the queue data structure?\n#include <iostream>\n#include <queue>\nusing namespace std;\nclass Node {\npublic:\n int data;\n Node* left;\n Node* right;\n Node(int val) : data(val), left(nullptr), right(nullptr) {}\n};\nvoid printRightView(Node* root) {\n if (root == nullptr) return;\n queue<Node*> q;\n q.push(root);\n while (!q.empty()) {\n int n = q.size();\n for (int i = 0; i < n; i++) {\n Node* x = q.front();\n q.pop();\n if (i == n - 1) {\n cout << x->data << "";\n }\n if (x->left) {\n q.push(x->left);\n }\n if (x->right) {\n q.push(x->right);\n }\n }\n }\n}\nChoices:\na) we have not initialized anything in the queue\nb) queue will never be empty.\nc) left and right nodes of the tree are null.\nd) none\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: The trace of a matrix is defined as the sum of its diagonal elements from the top-left to the bottom-right. This is commonly calculated by iterating over the matrix where row and column indices are equal (i == j).",
+        "target_text": "Question: What does the following piece of code do?\nfor(int i = 0; i < row; i++)\n{ \n for(int j = 0; j < column; j++)\n {\n if(i == j)\n sum = sum + (array[i][j]);\n }\n}\nSystem.out.println(sum);\nChoices:\na) normal of a matrix\nb) trace of a matrix\nc) square of a matrix\nd) transpose of a matrix\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Hashing | Context: In separate chaining hashing, collisions are resolved using linked lists. The load factor is defined as the number of elements divided by the number of buckets. A load factor of 1 is typically optimal, meaning the number of elements is equal to the number of buckets.",
+        "target_text": "Question: What should be the load factor for separate chaining hashing?\nChoices:\na) 0.5\nb) 1\nc) 1.5\nd) 2\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: Rotating an array by k positions involves moving the elements such that each element shifts by k places. For example, rotating [1, 2, 3, 4, 5] by 2 positions to the left results in [3, 4, 5, 1, 2].",
+        "target_text": "Question: What will be the resulting array after rotating arr[]={1, 2, 3, 4, 5} by 2?\nChoices:\na) 2, 1, 3, 4, 5\nb) 3, 4, 5, 1, 2\nc) 4, 5, 1, 2, 3\nd) 1, 2, 3, 5, 4\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Hashing | Context: Universal hashing is a method where the hash function is chosen at random from a family of functions. This randomization provides good average-case performance and protects against worst-case scenarios caused by poor hash function choices.",
+        "target_text": "Question: Which scheme uses a randomization approach?\nChoices:\na) hashing by division\nb) hashing by multiplication\nc) universal hashing\nd) open addressing\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: A doubly linked list allows traversal in both forward and backward directions using two pointers per node. While more flexible, it requires extra space and pointer handling, making it more complex to implement than a singly linked list.",
+        "target_text": "Question: Which of the following is false about a doubly linked list?\nChoices:\na) we can navigate in both the directions\nb) it requires more space than a singly linked list\nc) the insertion and deletion of a node take a bit longer\nd) implementing a doubly linked list is easier than singly linked list\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: In a Directed Acyclic Graph (DAG), the shortest paths from a single source can be computed efficiently using topological sorting. Once the vertices are sorted, the shortest paths can be calculated in linear time with respect to the number of vertices and edges.",
+        "target_text": "Question: Which of the following algorithms can be used to efficiently calculate single source shortest paths in a directed acyclic graph?\nChoices:\na) dijkstra\nb) bellman-ford\nc) topological sort\nd) strongly connected component\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: Many recursive algorithms can be rewritten in a non-recursive way using an explicit stack. This is common when converting recursive implementations to iterative versions for better memory control or performance.",
+        "target_text": "Question: What data structure would you most likely see in non-recursive implementation of a recursive algorithm?\nChoices:\na) stack\nb) linked list\nc) tree\nd) queue\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: In the linked list implementation of a queue, the rear pointer is updated when a new node is inserted. The front pointer remains unchanged unless the queue is empty before insertion.",
+        "target_text": "Question: In linked list implementation of a queue, front and rear pointers are tracked. Which of these pointers will change during an insertion into a NONEMPTY queue?\nChoices:\na) only front pointer\nb) only rear pointer\nc) both front and rear pointer\nd) no pointer will be changed\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Queue | Context: A circular queue is a linear data structure in which the last position is connected back to the first to make a circle. It is also known as a ring buffer and is used in buffering and scheduling.",
+        "target_text": "Question: Circular Queue is also known as __________\nChoices:\na) ring buffer\nb) square buffer\nc) rectangle buffer\nd) curve buffer\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Stack | Context: A stack is a Last-In-First-Out (LIFO) data structure, meaning the last element pushed onto the stack is the first one to be popped off. So if A, B, C, and D are pushed in that order, the removal order will be D, C, B, A.",
+        "target_text": "Question: If the elements 'A', 'B', 'C' and 'D' are placed in a stack and are deleted one at a time, what is the order of removal?\nChoices:\na) abcd\nb) dcba\nc) dcab\nd) abdc\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: In a binary search tree (BST), the left child has a value less than its parent, but in general binary trees this condition may not hold. Thus, the statement only applies to BSTs, not to all trees.",
+        "target_text": "Question: Left child of parent node has value lesser than the parent node.\nChoices:\na) true\nb) false\nc) only in binary search trees\nd) only in heaps\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Heap | Context: In a max-heap, the largest key is always located at the root node because each parent must be greater than or equal to its children. This structure supports efficient maximum retrieval in constant time.",
+        "target_text": "Question: In a max-heap, the element with the greatest key is always in which node?\nChoices:\na) leaf node\nb) first node of left sub tree\nc) root node\nd) first node of right sub tree\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: The Top Tree data structure is used to dynamically maintain information in trees. It relies on the divide and conquer paradigm by breaking trees into clusters and solving problems in a recursive fashion.",
+        "target_text": "Question: Which algorithm is used in the top tree data structure?\nChoices:\na) divide and conquer\nb) greedy\nc) backtracking\nd) branch\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: A full binary tree is a binary tree in which every node has either 0 or 2 children. In such trees, the number of total nodes is given by the formula 2n - 1, where n is the number of leaves.",
+        "target_text": "Question: A full binary tree with n leaves contains __________.\nChoices:\na) n nodes\nb) log n2 nodes\nc) 2n - 1 nodes\nd) 2n nodes\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Stack | Context: In algorithms that use stacks (e.g., expression evaluation, syntax checking), it is expected that the stack is empty at the end if all operations are properly matched. If the stack is not empty, it indicates an error such as unbalanced parentheses.",
+        "target_text": "Question: An error is reported when the stack is not empty at the end.\nChoices:\na) true\nb) false\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Graph | Context: An Inverter Graph is a type of Directed Acyclic Graph (DAG), used in applications like digital logic and dataflow modeling where the graph represents dependencies that must not form cycles.",
+        "target_text": "Question: An Inverter Graph is a type of __________\nChoices:\na) multigraph\nb) cyclic graph\nc) directed acyclic graph\nd) directed acyclic word graph\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: Linked lists are dynamic data structures ideal for situations where data sizes change frequently. They allow for efficient insertion and deletion operations, making them well-suited for structures that frequently grow and shrink.",
+        "target_text": "Question: Linked lists are best suited __________\nChoices:\na) for relatively permanent collections of data.\nb) for the size of the structure and the data in the structure are constantly changing.\nc) data structure\nd) for none of the above situations\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Queue | Context: In linked list implementation of a queue, available nodes are often managed using a separate free list called the AVAIL list. When inserting a new node, one is taken from this AVAIL list and linked into the queue.",
+        "target_text": "Question: In case of insertion into a linked queue, a node borrowed from the __________ list is inserted in the queue.\nChoices:\na) avail\nb) front\nc) rear\nd) null\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Graph | Context: A pseudograph is a graph that allows both multiple edges between nodes and loops (edges that connect a vertex to itself). In an adjacency matrix, loops are indicated by non-zero entries along the diagonal.",
+        "target_text": "Question: Given Adjacency matrices, determine which of them are PseudoGraphs?\ni) {{1,0} {0,1}}\nii) {{0,1} {1,0}}\niii) {{0,0,1} {0,1,0} {1,0,0}}\nChoices:\na) only i\nb) ii and iii\nc) i and iii\nd) i, ii, and iii\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: In a decision tree that sorts n elements, the height of the tree corresponds to the minimum number of comparisons needed in the worst case. Since at least n - 1 comparisons are required, the height is in Ω(n).",
+        "target_text": "Question: Any decision tree that sorts n elements has height\nChoices:\na) Ω(n)\nb) Ω(log n)\nc) Ω(n log n)\nd) Ω(n^2)\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Graph | Context: In a hypergraph, an edge (called a hyperedge) can connect any number of vertices. The degree of a vertex is the number of hyperedges it belongs to. The degree sequence is the list of vertex degrees sorted in non-increasing order.",
+        "target_text": "Question: What is the degree sequence of the given HyperGraph, in non-increasing order?\nV = {v1,v2,v3,v4,v5,v6}, E = {{v1,v4,v5}, {v2,v3,v4,v5}, {v2}, {v1}, {v1,v6}}\nChoices:\na) 3,2,1,1,1,1\nb) 3,2,2,2,1,1\nc) 3,2,2,2,2,1\nd) 3,2,2,1,1,1\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Sorting | Context: Topological sorting of a Directed Acyclic Graph (DAG) involves ordering its vertices such that for every directed edge u -> v, u appears before v. It can be done in linear time using Depth First Search (DFS) or Kahn's algorithm.",
+        "target_text": "Question: The topological sorting of any DAG can be done in __________ time.\nChoices:\na) cubic\nb) quadratic\nc) linear\nd) logarithmic\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: The number of distinct binary search trees (BSTs) that can be formed with n distinct keys is given by the nth Catalan number. For 4 keys, the number is C(4) = 14.",
+        "target_text": "Question: How many distinct binary search trees can be created out of 4 distinct keys?\nChoices:\na) 4\nb) 14\nc) 24\nd) 42\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Queue | Context: A priority queue is a special type of queue where each element has a priority. Elements with higher priority are dequeued before those with lower priority. Priority queues can be implemented as ascending or descending order queues depending on whether the highest or lowest value has the highest priority.",
+        "target_text": "Question: Which of the following is the type of priority queue?\nChoices:\na) ascending order priority queue\nb) descending order priority queue\nc) deque\nd) both a and b\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: A binary tree is a binary search tree (BST) if an in-order traversal of the tree results in a sorted (non-decreasing) sequence of values. This property helps distinguish BSTs from other binary trees.",
+        "target_text": "Question: One can determine whether a binary tree is a binary search tree by traversing it in __________.\nChoices:\na) pre-order\nb) in-order\nc) post-order\nd) any of these\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: DNA sequence alignment is commonly solved using dynamic programming algorithms like Needleman-Wunsch or Smith-Waterman, not traditional string-matching algorithms like Rabin-Karp or KMP, which are better suited for exact matching rather than similarity-based alignment.",
+        "target_text": "Question: In DNA sequence alignment, which string-matching algorithm is commonly used to identify similarities between two DNA sequences efficiently?\nChoices:\na) rabin-karp algorithm\nb) knuth-morris-pratt algorithm\nc) z function\nd) none of the above\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: Arrays allow fast random access due to contiguous memory allocation and have better cache locality. Linked lists allow faster insertion and deletion but lack random access and generally have higher access time due to pointer traversal.",
+        "target_text": "Question: Which of the following points is/are not true about linked list data structure when it is compared with an array?\nChoices:\na) arrays have better cache locality that can make them better in terms of performance\nb) it is easy to insert and delete elements in linked list\nc) random access is not allowed in a typical implementation of linked lists\nd) access of elements in linked list takes less time than compared to arrays\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: A skip list is a data structure that allows fast search within an ordered sequence of elements. It uses multiple layers of linked lists to achieve average-case logarithmic time complexity for search, insertion, and deletion operations.",
+        "target_text": "Question: What is a skip list?\nChoices:\na) a linked list with size value in nodes\nb) a linked list that allows faster search within an ordered sequence\nc) a linked list that allows slower search within an ordered sequence\nd) a tree which is in the form of linked list\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: Arrays are data structures used to store multiple elements of the same type in contiguous memory. They support indexing, which makes access efficient, and are preferred when working with homogeneous data.",
+        "target_text": "Question: What are the advantages of arrays?\nChoices:\na) objects of mixed data types can be stored\nb) elements in an array cannot be sorted\nc) index of first element of an array is 1\nd) easier to store elements of same data type\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: In a binary search tree (BST), the maximum element is always found by traversing the rightmost path starting from the root, since all right children have greater values.",
+        "target_text": "Question: How will you find the maximum element in a binary search tree?\nChoices:\na) \npublic void max(Tree root)\n{\n while(root.left() != null)\n {\n  root = root.left();\n }\n System.out.println(root.data());\n}\nb)\npublic void max(Tree root)\n{\n while(root != null)\n {\n  root = root.left();\n }\n System.out.println(root.data());\n}\nc)\npublic void max(Tree root)\n{\n while(root.right() != null)\n {\n  root = root.right();\n }\n System.out.println(root.data());\n}\nd)\npublic void max(Tree root)\n{\n while(root != null)\n {\n  root = root.right();\n }\n System.out.println(root.data());\n}\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: Red-Black trees and AVL trees are both self-balancing binary search trees. Red-Black trees are less rigidly balanced but require fewer rotations. AVL trees store balance factors in each node, which can increase space and time complexity for updates.",
+        "target_text": "Question: Why prefer red-black trees over AVL trees?\nChoices:\na) because red-black is more rigidly balanced\nb) avl tree stores balance factor in every node which costs space\nc) avl tree fails at scale\nd) red-black is more efficient\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: If the weights of all edges in a graph are multiplied by a positive constant, the relative order of path weights remains the same. Therefore, the shortest path remains unchanged; only the total cost scales accordingly.",
+        "target_text": "Question: Is the following statement valid about shortest paths? Given a graph, suppose we have calculated shortest path from a source to all other vertices. If we modify the graph such that weights of all edges become double the original weight, then the shortest path remains same, only the total weight of path changes.\nChoices:\na) true\nb) false\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Graph | Context: A graph can be drawn in many ways, with different visual representations based on layout, orientation, and position of nodes and edges. However, the structure (connectivity) remains the same. Hence, a graph does not have a unique drawing representation.",
+        "target_text": "Question: All graphs have unique representation on paper.\nChoices:\na) true\nb) false\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Hashing | Context: A hash table is a data structure that allows efficient insertion, deletion, and search of data. It maps keys to values using a hash function and is commonly used in associative arrays and databases.",
+        "target_text": "Question: Which of the following operations are done in a hash table?\nChoices:\na) Insert only\nb) Search only\nc) Insert and search\nd) Replace\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: In Java, the `BitSet` class from the `java.util` package can be used to represent a bit array, where individual bits can be set, cleared, and queried efficiently.",
+        "target_text": "Question: Which class in Java can be used to represent bit array?\nChoices:\na) bitset\nb) bitvector\nc) bitarray\nd) bitstream\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: In formal language theory, each parse tree corresponds to a leftmost and a rightmost derivation. Therefore, the number of parse trees equals the number of leftmost and rightmost derivation trees.",
+        "target_text": "Question: Which of the following is correct with respect to a parse tree for a given grammar?\nChoices:\na) n parse tree = n leftmost derivation tree = n rightmost derivation tree\nb) n parse tree = n leftmost derivation tree\nc) n parse tree = n rightmost derivation tree\nd) n parse tree = n non-terminals\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Heap | Context: A d-heap is a generalization of a binary heap where each node can have d children. Operations like insert, delete, and create can be performed efficiently. However, finding an arbitrary element (not the min/max) is not directly supported.",
+        "target_text": "Question: Which operation cannot be directly performed in a d-heap?\nChoices:\na) insert\nb) delete\nc) find\nd) create\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: String | Context: A palindrome is a string that reads the same backward as forward. Examples include 'madam' and 'racecar'. This property can be checked by comparing the string with its reversed version.",
+        "target_text": "Question: What is a palindromic string?\nChoices:\na) the string of length 0\nb) the string having a special character\nc) the string having an uppercase letter\nd) the string whose reversed string is equal to the original string\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: Dijkstra and Bellman-Ford algorithms both compute the shortest path in weighted graphs with positive weights. Although the actual path may differ, the total weight of the shortest path from a source to a destination remains the same.",
+        "target_text": "Question: Is the following statement valid?\nGiven a graph where all edges have positive weights, the shortest paths produced by Dijkstra and Bellman-Ford algorithms may be different, but the path weight would always be the same.\nChoices:\na) true\nb) false\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: In a doubly linked list, each node has two pointers--`prev` and `next`. When inserting a node, four pointers are typically updated: the new node's two pointers and one each from its neighboring nodes. Thus, the number of affected pointers is 4.",
+        "target_text": "Question: In a doubly linked list, the number of pointers affected for an insertion operation will be:\nChoices:\na) 5\nb) 0\nc) 1\nd) 4\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: The provided code inserts a new node at the end of a singly linked list by traversing from the head to the last node and updating the last node's `next` pointer to point to the new node.",
+        "target_text": "Question: What is the functionality of the following code?\npublic void function(Node node)\n{\n if(size == 0)\n  head = node;\n else\n {\n  Node temp, cur;\n  for(cur = head; (temp = cur.getNext()) != null; cur = temp);\n  cur.setNext(node);\n }\n size++;\n}\nChoices:\na) Inserting a node at the beginning of the list\nb) Deleting a node at the beginning of the list\nc) Inserting a node at the end of the list\nd) Deleting a node at the end of the list\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: Splay trees are a type of self-adjusting binary search tree where recently accessed elements are moved to the root. This provides better performance for sequences of non-uniform access and simplifies implementation compared to more strictly balanced trees.",
+        "target_text": "Question: Why prefer splay trees?\nChoices:\na) easier to program\nb) space efficiency\nc) easier to program and faster access to recently accessed items\nd) quick searching\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: In a K-ary tree, the height is defined as the number of edges from the root to the deepest leaf. If the tree has only the root node, the height is 0 since there are no edges.",
+        "target_text": "Question: What is the height of a K-ary tree having only a root node?\nChoices:\na) 1\nb) 0\nc) 2\nd) 3\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: Transposing a matrix involves swapping elements across its diagonal, i.e., converting row elements to column elements and vice versa. The given code snippet does this by swapping A[i][j] with A[j][i] for all i < j.",
+        "target_text": "Question: Let A be a matrix of size n x n. Consider the following program. What is the expected output?\nvoid fun(int A[][N])\n{\n    for (int i = 0; i < N; i++)\n        for (int j = i + 1; j < N; j++)\n            swap(A[i][j], A[j][i]);\n}\nChoices:\na) matrix a\nb) diagonal of matrix a\nc) transpose of matrix a\nd) none\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Hashing | Context: Hashing is used in digital signature systems, not to encrypt or decrypt the signature directly, but to generate a fixed-size hash of the message that is encrypted with a private key. This allows verification using the corresponding public key.",
+        "target_text": "Question: Hashing can be used to encrypt and decrypt digital signatures.\nChoices:\na) true\nb) false\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: In a B-tree, the number of disk accesses required for a search operation depends on the height of the tree. The height h is logarithmic in the number of keys n with respect to the minimum degree t, giving a complexity of θ(logₜ n).",
+        "target_text": "Question: The number of disk page accesses in a B-tree search, where h is height, n is the number of keys, and t is the minimum degree, is:\nChoices:\na) θ(logₙ h * t)\nb) θ(logₜ n * h)\nc) θ(logₕ n)\nd) θ(logₜ n)\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: A treap is a binary search tree (based on keys) that also maintains heap property based on priority. The root node always has the highest priority because it must be greater than its children with respect to heap ordering.",
+        "target_text": "Question: Which node has the lowest priority in a treap?\nChoices:\na) Root node\nb) Leaf node\nc) Null node\nd) Centre node\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: Operator precedence determines the order in which operators are evaluated in expressions. Among the given options, the bitwise NOT '~' and XOR '^' have higher precedence than arithmetic operators like '+' and '*'.",
+        "target_text": "Question: Which of these operators have the highest order of precedence?\nChoices:\na) '(' and ')'\nb) '*' and '/'\nc) '~' and '^'\nd) '+' and '-'\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: A suffix array is a sorted array of all suffixes of a string. If constructed using comparison-based sorting algorithms like merge sort, it will take O(n^2 log n) time due to repeated comparisons of strings of length up to n.",
+        "target_text": "Question: If a comparison-based sorting algorithm is used to construct the suffix array, what will be the time required to construct the suffix array?\nChoices:\na) O(n log n)\nb) O(n^2)\nc) O(n^2 log n)\nd) O(n^3)\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Stack | Context: When simulating a stack using a priority queue, to ensure LIFO behavior, elements inserted later must have higher priority. This is achieved by assigning strictly decreasing keys to newer elements so that they are removed first using DELETEMIN.",
+        "target_text": "Question: A priority queue Q is used to implement a stack S that stores characters. PUSH(C) is implemented as INSERT(Q, C, K), where K is an integer key chosen by the implementation. POP is implemented as DELETEMIN(Q). For a sequence of operations, the keys chosen are in:\nChoices:\na) Non-increasing order\nb) Non-decreasing order\nc) Strictly increasing order\nd) Strictly decreasing order\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: A 2-d tree (or kd-tree in 2 dimensions) is an extension of a binary search tree where each level alternates the key used for comparison (e.g., x and y coordinates). Insertion follows similar logic as a binary search tree.",
+        "target_text": "Question: Insertion into a 2-d tree is a trivial extension of insertion into a binary search tree.\nChoices:\na) True\nb) False\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: Prefix expressions (also known as Polish notation) are evaluated from right to left. The expression +-9 2 7 is interpreted as: subtract 2 from 7, then add -9 to the result: -9 + (2 - 7) = -9 + (-5) = -14.",
+        "target_text": "Question: Using the evaluation of prefix algorithm, evaluate +-9 2 7.\nChoices:\na) 10\nb) 4\nc) 17\nd) -14\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: Linked lists differ from arrays in that they allow dynamic resizing and efficient insertions/deletions, but they lack random access. Arrays, on the other hand, offer better cache performance and allow direct element access by index.",
+        "target_text": "Question: Which of the following points is/are True about Linked List data structure when it is compared with array?\nChoices:\na) Arrays have better cache locality that can make them better in terms of performance.\nb) It is easy to insert and delete elements in Linked List\nc) Random access is not allowed in a typical implementation of Linked Lists\nd) The size of array has to be pre-decided, linked lists can change their size any time\ne) All of the above\nAnswer: e"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Heap | Context: In binomial heaps or Fibonacci heaps, merging two trees of order k results in a single tree of order k+1, which has a height increased by one due to the new root-child relationship.",
+        "target_text": "Question: What is the order of the resultant heap after merging two trees of order k?\nChoices:\na) 2*k\nb) k+1\nc) k*k\nd) k+logk\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Hashing | Context: A hash function satisfies the simple uniform hashing condition if each key is equally likely to be hashed to any of the slots. The function h(k) = floor(km), where m is a constant and 0 < m < 1, is an example that attempts to spread keys uniformly.",
+        "target_text": "Question: Which hash function satisfies the condition of simple uniform hashing?\nChoices:\na) h(k) = lowerbound(km)\nb) h(k) = upperbound(mk)\nc) h(k) = lowerbound(k)\nd) h(k) = upperbound(k)\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Stack | Context: When parsing expressions using a stack to match brackets or parentheses, failure to find a matching closing or opening bracket indicates an imbalance, which is treated as an error in the parser or compiler.",
+        "target_text": "Question: When the corresponding end bracket/braces/parentheses is not found, what happens?\nChoices:\na) The stack is popped\nb) Ignore the parentheses\nc) An error is reported\nd) It is treated as an exception\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Hashing | Context: A good hashing function distributes keys uniformly across the hash table, avoiding clustering caused by predictable patterns. Therefore, a good hash should be independent of any patterns in the data.",
+        "target_text": "Question: A good hash approach is to derive the hash value that is expected to be dependent on any patterns that might exist in the data.\nChoices:\na) True\nb) False\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: The provided C++ code reverses the first `k` elements in an array if `k <= n`. It swaps the values symmetrically within the first `k` elements. For the input {1, 2, 3, 4, 5} and k = 3, it produces {3, 2, 1, 4, 5}.",
+        "target_text": "Question: What will be the output of the following code?\n#include <bits/stdc++.h> \nusing namespace std; \nvoid func(int a[], int n, int k) \n{ \n if (k <= n) \n { \n  for (int i = 0; i < k/2; i++) \n  swap(a[i], a[k-i-1]); \n } \n} \nint main() \n{ \n int a[] = {1, 2, 3, 4, 5}; \n int n = sizeof(a) / sizeof(int), k = 3; \n func(a, n, k); \n for (int i = 0; i < n; ++i) \n  cout << a[i]<<\" \";\n return 0; \n}\nChoices:\na) 3 2 1 4 5\nb) 5 4 3 2 1\nc) 1 2 5 4 3\nd) error\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: An AVL tree is a self-balancing binary search tree where the height is logarithmic in the number of nodes. The maximum height for `p` nodes is O(log p), ensuring fast search, insertion, and deletion.",
+        "target_text": "Question: What is the maximum height of an AVL tree with p nodes?\nChoices:\na) p\nb) log(p)\nc) log(p)/2\nd) p/2\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: In a normal array, all elements including nulls are counted in the size. In contrast, a sparse array efficiently stores only non-null or non-zero elements. So, the size is 6 in the normal case and 2 in the sparse representation.",
+        "target_text": "Question: Suppose the contents of an array A are, A = {1, null, null, null, null, 10};\nWhat would be the size of the array considering it as a normal array and a sparse array?\nChoices:\na) 6 and 6\nb) 6 and 2\nc) 2 and 6\nd) 2 and 2\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Graph | Context: In an undirected graph, an adjacency list uses O(V + E) space, where V is the number of vertices and E is the number of edges. This is more space-efficient than adjacency matrices for sparse graphs.",
+        "target_text": "Question: Space complexity for an adjacency list of an undirected graph having large values of V (vertices) and E (edges) is __________\nChoices:\na) O(E)\nb) O(V*V)\nc) O(E + V)\nd) O(V)\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: To check if an expression has balanced parentheses, a stack is used. Each time an opening symbol is encountered, it is pushed to the stack. A closing symbol pops the top element. If the stack is empty at the end, the expression is balanced.",
+        "target_text": "Question: The data structure required to check whether an expression contains a balanced parenthesis is?\nChoices:\na) Queue\nb) Stack\nc) Tree\nd) Array\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Heap | Context: A heap is a complete binary tree that satisfies the heap property. In a max-heap, the parent node is greater than or equal to its children. In a min-heap, the parent is less than or equal to its children.",
+        "target_text": "Question: Heap exhibits the property of a binary tree?\nChoices:\na) True\nb) False\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: Postfix (or Reverse Polish Notation) expressions do not require parentheses and can be evaluated from left to right using a stack, making them easier and faster for computers to process than infix expressions.",
+        "target_text": "Question: It is easier for a computer to process a postfix expression than an infix expression.\nChoices:\na) True\nb) False\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: A XOR linked list is a memory-efficient version of a doubly linked list where each node stores the XOR of the memory addresses of the previous and next nodes. This allows traversal in both directions using XOR operations.",
+        "target_text": "Question: What does a XOR linked list have?\nChoices:\na) Every node stores the XOR of addresses of previous and next nodes\nb) Actual memory address of the next node\nc) Every node stores the XOR of addresses of previous and next two nodes\nd) Every node stores XOR of 0 and the current node address\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: In binary tree rotations, a right rotation repositions nodes to maintain balance. The given pseudocode updates pointers to rotate a node to the right, making its left child the new root of the subtree.",
+        "target_text": "Question: What output does the below pseudo code produce?\nTree_node function(Tree_node x)\n{\n    Tree_node y = x.left;\n    x.left = y.right;\n    y.right = x;\n    return y;\n}\nChoices:\na) Right rotation of subtree\nb) Left rotation of subtree\nc) Zig-zag operation\nd) Zig-zig operation\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: Prefix notation (Polish notation) places the operator before its operands. For the expression a | b & c, the AND operation is evaluated first, followed by OR, resulting in | a & b c -> |a&bc.",
+        "target_text": "Question: What would be the Prefix notation for the given equation?\nChoices:\na) a|&bc\nb) &|abc\nc) |a&bc\nd) ab&|c\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: The van Emde Boas (vEB) tree is a tree-based data structure that supports fast predecessor/successor queries. It was invented by Peter van Emde Boas.",
+        "target_text": "Question: Who invented the vEB tree, also known as the van Emde Boas Tree?\nChoices:\na) Peter Van Emde Boas\nb) Samuel F. B. Morse\nc) Friedrich Clemens Gerke\nd) Alexander Morse\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Heap | Context: A weak heap is a variant of the binary heap that is used in the weak heap sort algorithm. It is also known as a relaxed heap due to its weaker structural constraints compared to binary heaps.",
+        "target_text": "Question: What is the other name of a weak heap?\nChoices:\na) min-heap\nb) max-heap\nc) relaxed-heap\nd) leonardo heap\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Queue | Context: Common types of queues include ordinary queue (FIFO), circular queue (wrap-around structure), and priority queue (based on priority). A 'single-ended queue' is not a standard type of queue.",
+        "target_text": "Question: Which of the following is not a type of queue?\nChoices:\na) Priority queue\nb) Circular queue\nc) Single-ended queue\nd) Ordinary queue\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: In column-major order, the elements of a matrix are stored column by column in memory. For a 3*3 matrix with elements arranged as:\na b c\nd e f\ng h i\nThe order of elements in memory will be: a, d, g, b, e, h, c, f, i -> adgbehcfi.",
+        "target_text": "Question: If column-major order is used, how is the following matrix stored in memory?\na b c\nd e f\ng h i\nChoices:\na) ihgfedcba\nb) abcdefghi\nc) cfibehadg\nd) adgbehcfi\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Heap | Context: A max-heap maintains the property that each parent node is greater than or equal to its children. Inserting 1 and then 7 into a heap that has level-order [10, 8, 5, 3, 2] results in a new structure that reorders to preserve the heap property.",
+        "target_text": "Question: A priority queue is implemented as a max-heap. Initially, it has 5 elements. The level-order traversal of the heap is: 10, 8, 5, 3, 2. Two new elements 1 and 7 are inserted into the heap in that order. The level-order traversal of the heap after the insertion of the elements is:\nChoices:\na) 10, 8, 5, 7, 2, 1, 3\nb) 10, 8, 7, 2, 3, 1, 5\nc) 10, 8, 7, 1, 2, 3, 5\nd) 10, 8, 7, 5, 3, 2, 1\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Queue | Context: A descending priority queue gives higher priority to larger elements. It can be efficiently implemented using a max-heap, where the largest element is always at the root and removed first.",
+        "target_text": "Question: A descending priority queue can be implemented using __________\nChoices:\na) Max heap\nb) Min heap\nc) Min-max heap\nd) Trie\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Heap | Context: A max-heap ensures that the maximum element is at the root. To build a max-heap from an array, the heapify procedure swaps elements to restore the heap property. The number of swaps required depends on how far elements are from satisfying the property.",
+        "target_text": "Question: The minimum number of interchanges needed to convert the array 89, 19, 40, 17, 12, 10, 2, 5, 7, 11, 6, 9, 70 into a heap with the maximum element at the root is:\nChoices:\na) 0\nb) 1\nc) 2\nd) 3\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Search | Context: Direct addressing is a technique where data is stored at an index equal to its key. Since it allows direct access without traversal, the search time complexity is O(1).",
+        "target_text": "Question: What is the search complexity in direct addressing?\nChoices:\na) O(n)\nb) O(log n)\nc) O(n log n)\nd) O(1)\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: In hashing with open addressing, the probe sequence determines which slots to inspect. The sequence often depends on the key (k) and constants (e.g., in quadratic probing), but ultimately the key determines the pattern of probing.",
+        "target_text": "Question: On what value does the probe sequence depend?\nChoices:\na) c1\nb) k\nc) c2\nd) m\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Heap | Context: In a min-heap, the minimum element is always at the root, so FindMin() takes O(1) time. Deleting the minimum involves replacing the root with the last element and re-heapifying, which takes O(log n).",
+        "target_text": "Question: The procedure FindMin() to find the minimum element and the procedure DeleteMin() to delete the minimum element in a min-heap take __________\nChoices:\na) constant and linear time respectively\nb) constant and linear time respectively\nc) constant and quadratic time respectively\nd) constant and logarithmic time respectively\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: In C, dynamic memory allocation is performed using `malloc()`. When creating a new node for a linked list, the correct syntax involves using `sizeof(NODE)` and casting the return value to a pointer of the appropriate type.",
+        "target_text": "Question: Consider the following definition in C programming language:\nstruct node\n{\n    int data;\n    struct node * next;\n};\ntypedef struct node NODE;\nNODE *ptr;\nWhich of the following C code is used to create a new node?\nChoices:\na) ptr = (NODE*)malloc(sizeof(NODE));\nb) ptr = (NODE*)malloc(NODE);\nc) ptr = (NODE*)malloc(sizeof(NODE*));\nd) ptr = (NODE)malloc(sizeof(NODE));\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: If only push and pop operations are allowed, simulating an enqueue operation in an array-based queue (via two stacks) involves moving elements from one stack to another and back. Each move takes time, and multiple moves are required to insert an element.",
+        "target_text": "Question: You are on a planet where computational power is slow. You have an array of size 10. You want to enqueue an element using only push and pop operations (each takes 1 second). What is the total time required to perform the enqueue operation?\nChoices:\na) 20\nb) 40\nc) 42\nd) 43\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Hashing | Context: Based on the birthday paradox, in a hash table of size 20, inserting 10 keys leads to a collision probability exceeding 0.5. This concept illustrates how quickly collisions can occur even in modestly filled hash tables.",
+        "target_text": "Question: Consider a hash function that distributes keys uniformly. The hash table size is 20. After hashing how many keys will the probability that any new key collides with an existing one exceed 0.5?\nChoices:\na) 5\nb) 6\nc) 7\nd) 10\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: The minimum number of jumps to reach the end of an array depends on the value at each index. If certain sections are blocked by 0 and no forward path exists, it's impossible to reach the end.",
+        "target_text": "Question: What will be the minimum number of jumps required to reach the end of the array arr[] = {1,2,0,0,3,6,8,5}?\nChoices:\na) 1\nb) 2\nc) 3\nd) Not possible to reach the end\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: A top tree is a type of data structure used in dynamic trees. If a tree has only a single vertex, there are no edges to break or cluster, hence no valid top trees can be formed.",
+        "target_text": "Question: How many top trees are there in a tree with a single vertex?\nChoices:\na) 0\nb) 1\nc) 2\nd) 3\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Heap | Context: In a binary heap, the number of nodes at height h in an n-element heap can be calculated using the formula ceil(n / 2^(h+1)). This is derived from the complete binary tree structure of the heap.",
+        "target_text": "Question: The number of nodes of height h in any n-element heap is __________.\nChoices:\na) h\nb) 2h\nc) ceil(n/2h)\nd) ceil(n/2^(h+1))\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: A triply linked list extends a doubly linked list by including a third pointer. This extra pointer, often named `top`, can be used for specialized navigational or hierarchical operations, and it is typically positioned logically as an additional link from the node.",
+        "target_text": "Question: Where does a triply linked list contain an extra pointer in comparison to a doubly linked list?\nChoices:\na) top of the node\nb) bottom of the node\nc) before the node\nd) after the node\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: In tree terminology, the height of a node is defined as the number of edges on the longest path from the node to a leaf. The height of a root node in any tree (including ternary trees) is 0 if the node has no children.",
+        "target_text": "Question: What is the height of the root node of a ternary tree?\nChoices:\na) 1\nb) 2\nc) 3\nd) 0\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Hashing | Context: MinHash is a probabilistic technique for efficiently estimating the similarity between datasets. It is commonly used in applications like association rule learning, document similarity, and clustering.",
+        "target_text": "Question: Is MinHash used as a tool for association rule learning?\nChoices:\na) True\nb) False\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: Tree traversals define the order in which nodes are visited. Level-order traversal, also known as breadth-first traversal, visits nodes level by level from left to right, typically implemented using a queue.",
+        "target_text": "Question: Which traversal's pseudo code is written here?\nChoices:\na) level order\nb) pre-order\nc) post-order\nd) in-order\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: Auxiliary trees are temporary or helper trees used during tree operations. The 'join' operation combines two auxiliary trees into one while preserving the properties of the tree structure.",
+        "target_text": "Question: Which operation is used to combine two auxiliary trees?\nChoices:\na) join\nb) combinatorial\nc) add\nd) concatenation\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: A linked list is a linear data structure where each element (node) points to the next node using a pointer. This allows dynamic memory allocation and flexible insertion/deletion operations.",
+        "target_text": "Question: A linear collection of data elements where the linear node is given by means of a pointer is called __________.\nChoices:\na) linked list\nb) node list\nc) primitive list\nd) none of these\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: Free lists manage available memory blocks. Allocation strategies like best fit, first fit, and worst fit differ in how memory is chosen. Among these, first fit is generally considered the simplest to implement.",
+        "target_text": "Question: What are different ways of implementing free lists and which is simple among them?\nChoices:\na) best fit, first fit, worst fit; first fit is simplest\nb) best fit, first fit, worst fit; best fit is simplest\nc) best fit, first fit, worst fit; worst fit is simplest\nd) first fit, best fit, worst fit; worst fit is simplest\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Stack | Context: When two stacks share a single array growing from opposite ends, the condition for stack overflow occurs when their tops are about to collide. That is, when top1 == top2 - 1.",
+        "target_text": "Question: A single array A[1..MAXSIZE] is used to implement two stacks growing from opposite ends. If top1 and top2 point to the top elements of each stack and top1 < top2, what is the condition for 'stack full'?\nChoices:\na) (top1 = MAXSIZE/2) and (top2 = MAXSIZE/2+1)\nb) top1 + top2 + 1 = MAXSIZE\nc) (top1 = MAXSIZE/2) or (top2 = MAXSIZE)\nd) top1 = top2 - 1\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: A binary tree is a hierarchical structure in which each node can have at most two children--commonly referred to as the left and right child. This is a defining property of binary trees.",
+        "target_text": "Question: What is the maximum number of children that a binary tree node can have?\nChoices:\na) 0\nb) 1\nc) 2\nd) 3\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Heap | Context: Fibonacci heaps offer better amortized time complexity for decrease-key and delete operations than other heap types. Although more complex to implement, they are theoretically faster in certain scenarios, such as Dijkstra's algorithm with many decrease-key operations.",
+        "target_text": "Question: Out of the following given options, which is the fastest algorithm?\nChoices:\na) fibonacci heap\nb) pairing heap\nc) d-ary heap\nd) binary heap\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: An expression tree is a type of binary tree used to represent expressions. Operands are stored in leaves, and operators are stored in internal nodes. The structure obeys the binary tree property.",
+        "target_text": "Question: An expression tree is a kind of?\nChoices:\na) binary search tree\nb) fibonacci tree\nc) binary tree\nd) treap\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: In C++, the `delete` operator releases memory allocated by `new`, but it doesn't delete the pointer itself. After the delete operation, the pointer still exists and should be set to `nullptr` to avoid dangling pointer issues.",
+        "target_text": "Question: Given that the line `delete newPtr;` just executed, what can you conclude?\nChoices:\na) the memory referenced by newPtr is released only if it is needed by the system.\nb) the pointer newPtr is of type void *.\nc) the pointer newPtr only exists if there was an error freeing the memory.\nd) the pointer newPtr still exists.\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Stack | Context: A stack can be implemented using two queues. One queue is used to store the elements and the second helps simulate the Last-In-First-Out (LIFO) behavior by rearranging the elements during pop or push operations.",
+        "target_text": "Question: To implement a stack using queues (with only enqueue and dequeue operations), how many queues will you need?\nChoices:\na) 1\nb) 2\nc) 3\nd) 4\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: To convert a postfix expression to prefix, reverse the postfix, swap operators/operands accordingly, and apply precedence rules. For AB+CD-* the prefix form is *+AB-CD.",
+        "target_text": "Question: The prefix expression of the postfix expression AB+CD-* is __________\nChoices:\na) (A+B)*(C-D)\nb) +ab*-cd\nc) a+*bcd-\nd) *+ab-cd\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Stack | Context: Balancing symbols such as parentheses, braces, or brackets is a common problem in compilers and expression parsing. A stack is the ideal data structure for this task due to its LIFO behavior, allowing correct matching of opening and closing symbols.",
+        "target_text": "Question: Which is the most appropriate data structure for applying the balancing of symbols algorithm?\nChoices:\na) stack\nb) queue\nc) tree\nd) graph\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: A suffix array is a sorted array of all suffixes of a string. Compared to suffix trees, suffix arrays are more space efficient as they use linear space and simpler structures, making them preferable for large-scale string processing.",
+        "target_text": "Question: Suffix array is space efficient compared to the suffix tree.\nChoices:\na) true\nb) false\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Graph | Context: A graph is bipartite if its vertices can be divided into two disjoint sets such that no edge connects vertices within the same set. While all paths are bipartite, not all cyclic graphs are--especially those with an odd number of vertices in the cycle.",
+        "target_text": "Question: All paths and cyclic graphs are bipartite graphs.\nChoices:\na) true\nb) false\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: Dynamic arrays grow and shrink automatically based on their usage. To avoid wasting space, if the size of the array drops below a certain threshold (commonly 30% of the allocated size), the array is deallocated or shrunk.",
+        "target_text": "Question: The size of the dynamic array is deallocated if the array size is less than __________% of the backend physical size.\nChoices:\na) 30\nb) 40\nc) 10\nd) 20\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Heap | Context: In a binomial heap, the decrease-key operation adjusts the value of a node and may require restructuring the heap to maintain the heap property. This process takes O(log n) time because the heap is organized as a collection of binomial trees.",
+        "target_text": "Question: Time taken in decreasing the node value in a binomial heap is:\nChoices:\na) o(n)\nb) o(1)\nc) o(log n)\nd) o(n log n)\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: The evaluation of prefix expressions (Polish notation) is guided by operator precedence and associativity. This determines the correct order in which operands and operators are processed during computation.",
+        "target_text": "Question: What determines the order of evaluation of a prefix expression?\nChoices:\na) precedence and associativity\nb) precedence only\nc) associativity only\nd) depends on the parser\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Stack | Context: Converting an infix expression to postfix (Reverse Polish Notation) involves using a stack to manage operators based on their precedence and associativity, ensuring correct evaluation order.",
+        "target_text": "Question: One can convert an infix expression to a postfix expression using a __________.\nChoices:\na) stack\nb) queue\nc) deque\nd) none of these\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Hashing | Context: Linear probing is a collision resolution technique in hashing. It is widely used in applications such as database indexing, cache management, and compiler symbol tables where fast lookups and space efficiency are needed.",
+        "target_text": "Question: What are the applications of linear probing?\nChoices:\na) databases\nb) caching\nc) compiler design\nd) all of the above\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: A complete binary tree of depth `d` has (2^d - 1) nodes and (2^{d+1} - 1) pointers in total. The number of unused (null) pointers corresponds to the number of leaves, which in a complete tree is (2^d). For depth 5, that is 32 leaves, each having 2 null children pointers, so 16 unused pointers.",
+        "target_text": "Question: The number of unused pointers in a complete binary tree of depth 5 is:\nChoices:\na) 4\nb) 8\nc) 16\nd) 32\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Stack | Context: A stack follows the Last-In-First-Out (LIFO) principle, where the last item added is the first to be removed. A real-world analogy is a stack of chairs or plates, where the topmost item is accessed first.",
+        "target_text": "Question: Which of the following real-world scenarios would you associate with a stack data structure?\nChoices:\na) piling up of chairs one above the other\nb) people standing in a line to be serviced at a counter\nc) offer services based on the priority of the customer\nd) tatkal ticket booking in irctc\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Hashing | Context: Universal hashing refers to a class of hash functions that minimize the probability of collision by choosing a function at random from a family of hash functions. It offers better average performance than traditional methods like division or multiplication.",
+        "target_text": "Question: Which hashing scheme provides good performance?\nChoices:\na) open addressing\nb) universal hashing\nc) hashing by division\nd) hashing by multiplication\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: Deleting a linked list involves traversing it and deallocating memory for each node. This can be done in-place without needing additional memory, making the space complexity O(1).",
+        "target_text": "Question: What is the space complexity for deleting a linked list?\nChoices:\na) o(1)\nb) o(n)\nc) either o(1) or o(n)\nd) o(log n)\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: In nearest neighbor search using kd-trees, three primary concepts are crucial: (1) pruning using bounding boxes, (2) recursive traversal, and (3) backtracking to search the opposite subtree if necessary. These techniques optimize search in multidimensional spaces.",
+        "target_text": "Question: How many prime concepts are available in nearest neighbor search in a kd tree?\nChoices:\na) 1\nb) 2\nc) 3\nd) 4\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: In a 2-dimensional kd-tree, the root node is typically chosen based on the value of the first dimension. Often, to break ties or for simplicity, the first node inserted (or an arbitrary odd-positioned node) is used as the root.",
+        "target_text": "Question: In a two-dimensional search tree, the root is arbitrarily chosen to be?\nChoices:\na) even\nb) odd\nc) depends on subtrees\nd) random node\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: Linked lists support dynamic memory usage and allow insertions and deletions at any position. This is a major advantage over arrays, which require shifting elements.",
+        "target_text": "Question: In general, linked lists allow:\nChoices:\na) insertions and removals anywhere.\nb) insertions and removals only at one end.\nc) insertions at the back and removals from the front.\nd) none of the above.\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Heap | Context: In a binary min-heap, the maximum element resides in the leaf nodes. For a complete binary tree with 1023 elements, 512 nodes are leaves. Finding the maximum among them requires 511 comparisons.",
+        "target_text": "Question: Consider the array representation of a binary min-heap containing 1023 elements. The minimum number of comparisons required to find the maximum in the heap is:\nChoices:\na) 510\nb) 511\nc) 512\nd) 255\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: In disjoint set union (union-find), rank is used to limit the depth of trees. A node with rank r must have at least 2^r descendants. This ensures logarithmic time performance with union by rank.",
+        "target_text": "Question: When executing a sequence of Unions, a node of rank r must have at least 2^r descendants.\nChoices:\na) true\nb) false\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Graph | Context: In an undirected simple graph with (n) vertices, each pair of distinct vertices can have at most one edge, resulting in (n(n-1)/2) edges. In a directed graph, each pair can have two directed edges (one in each direction), leading to (n(n-1)) possible non-zero entries in the adjacency matrix.",
+        "target_text": "Question: What is the maximum number of possible non-zero values in an adjacency matrix of a simple graph with n vertices?\nChoices:\na) (n*(n-1))/2\nb) (n*(n+1))/2\nc) n*(n-1)\nd) n*(n+1)\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: To convert a binary tree into its mirror image, you recursively swap the left and right subtrees. This is typically performed during a pre-order traversal, where the current node is processed before its children.",
+        "target_text": "Question: A binary tree can be converted into its mirror image by traversing it in __________.\nChoices:\na) in-order\nb) pre-order\nc) post-order\nd) any order\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: Level-order traversal is a breadth-first traversal of a tree. It visits nodes level by level and is implemented using a queue to process nodes in FIFO order.",
+        "target_text": "Question: Level order traversal of a tree is formed with the help of:\nChoices:\na) breadth-first search\nb) depth-first search\nc) dijkstra's algorithm\nd) prim's algorithm\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: Parallel arrays store related data across multiple arrays using a shared index. While useful in languages that don't support records, they can be inefficient for insertion and deletion due to the need to maintain synchronization across arrays.",
+        "target_text": "Question: Which of the following is a disadvantage of parallel arrays over traditional arrays?\nChoices:\na) when a language does not support records, parallel arrays can be used\nb) increased locality of reference\nc) ideal cache behaviour\nd) insertion and deletion becomes tedious\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: The height of a tree node is the number of edges on the longest path to a leaf. In a K-ary tree, the height of the root depends on the total number of levels. For some tree definitions, if the tree has multiple levels and the root is at level 0, then its height may be 3.",
+        "target_text": "Question: What is the height of the root node of a K-ary tree?\nChoices:\na) 1\nb) 2\nc) 3\nd) 0\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: The given recursive function prints the data of a linked list node, then skips the next node (if it exists), and calls itself recursively. After returning from recursion, it prints the same node again. This produces a symmetric output from first, third, fifth, then in reverse.",
+        "target_text": "Question: What is the output of the following function if start is pointing to the first node of the linked list 1->2->3->4->5->6?\n#include <iostream>\nusing namespace std;\nstruct Node {\n    int data;\n    Node* next;\n    Node() { data = 0; next = nullptr; } \n};\nvoid fun(Node* start) {\n    if (start == nullptr)\n        return;\n    cout << start->data << \"  \";\n    \n    if (start->next != nullptr)\n        fun(start->next->next);\n    cout << start->data << \"  \";\n}\nChoices:\na) 1 4 6 6 4 1\nb) 1 3 5 1 3 5\nc) 1 2 3 5\nd) 1 3 5 5 3 1\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: In a minimum spanning tree (MST), the number of edges is always (V - 1). If the weight of each edge in the graph is increased by a constant, the structure of the MST remains the same, and the total weight increases by (V - 1) * constant.",
+        "target_text": "Question: Let G be a connected undirected graph with 100 vertices and 300 edges. The weight of a minimum spanning tree of G is 500. When the weight of each edge of G is increased by five, the weight of a minimum spanning tree becomes __________.\nChoices:\na) 1000\nb) 995\nc) 2000\nd) 1995\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Stack | Context: In bracket matching algorithms, opening brackets are pushed onto the stack. When a closing bracket is encountered, the top of the stack is popped to check for a match. This maintains balanced structure.",
+        "target_text": "Question: If the corresponding end bracket/braces/parentheses is encountered, which of the following is done?\nChoices:\na) push it onto the stack\nb) pop the stack\nc) throw an error\nd) treated as an exception\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: A suffix tree is a compressed trie of all suffixes of a given string. It is highly useful in text editors and search engines for string matching, substring search, and pattern recognition.",
+        "target_text": "Question: Can a suffix tree be used in string problems occurring in a text editor?\nChoices:\na) true\nb) false\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: Even if all edge weights in a graph are unique, multiple paths can have different weights, but uniqueness of edge weights does not guarantee that the shortest path between any two nodes is unique.",
+        "target_text": "Question: Is the following statement valid?\nGiven a weighted graph where weights of all edges are unique, there is always a unique shortest path from a source to destination.\nChoices:\na) true\nb) false\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: An inversion in an array is a pair of indices (i, j) such that i < j and arr[i] > arr[j]. A sorted array has zero such inversions, indicating it is already ordered.",
+        "target_text": "Question: How many inversions does a sorted array have?\nChoices:\na) 0\nb) 1\nc) 2\nd) cannot be determined\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Stack | Context: Recursion uses a call stack to keep track of function calls. Each recursive call is pushed onto the stack, increasing memory usage. Iteration, in contrast, does not rely on the call stack for execution.",
+        "target_text": "Question: Recursion uses more memory space than iteration because __________.\nChoices:\na) it uses stack instead of queue.\nb) every recursive call has to be stored.\nc) both a & b are true.\nd) none of the above.\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: An almost complete binary tree of depth 'd' is one where all levels are fully filled except possibly the last, and all leaves appear as far left as possible. It includes both the conditions described in options A and B.",
+        "target_text": "Question: A binary tree of depth 'd' is an almost complete binary tree if:\nChoices:\na) each leaf in the tree is either at level 'd' or at level 'd-1'\nb) for any node 'n' in the tree with a right descendant at level 'd', all the left descendants of 'n' that are leaves, are also at level 'd'\nc) both (a) & (b)\nd) none of the above\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Sorting | Context: Merging two sorted arrays of sizes m and n involves iterating over both arrays once, making comparisons and appending the smaller element. This takes linear time: θ(m + n).",
+        "target_text": "Question: Time required to merge two sorted lists of size m and n is __________.\nChoices:\na) θ(m | n)\nb) θ(m + n)\nc) θ(m log n)\nd) θ(n log m)\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: A complete undirected graph with 4 vertices has 6 edges. To form a minimum spanning tree (MST), we need (V-1) = 3 edges with the smallest weights. Choosing edges with weights 1, 2, and 3 gives the minimal total weight: 6.",
+        "target_text": "Question: Let G be a complete undirected graph on 4 vertices, having 6 edges with weights 1, 2, 3, 4, 5, and 6. What is the weight of the minimum spanning tree of G?\nChoices:\na) 6\nb) 7\nc) 8\nd) 9\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: A self-organizing list is a type of linked list that reorders elements based on access patterns to reduce average lookup time. It's used in symbol tables to improve compiler performance during variable/function lookup.",
+        "target_text": "Question: Symbol tables during compilation of a program are efficiently implemented using __________\nChoices:\na) a singly linked list\nb) a doubly linked list\nc) a self-organizing list\nd) an array\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Hashing | Context: A hash tree, also known as a Merkle tree, is a tree in which every leaf node is a hash of a data block and every non-leaf node is a hash of its children. It's widely used in blockchain and data verification.",
+        "target_text": "Question: A hash tree is also known as __________\nChoices:\na) merkle tree\nb) t-tree\nc) hash table\nd) bx-tree\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: A memory-efficient doubly linked list uses XOR linking, where each node contains a single pointer that stores the XOR of addresses of the previous and next nodes. This reduces memory usage by eliminating an extra pointer field.",
+        "target_text": "Question: How do you calculate the pointer difference in a memory-efficient doubly linked list?\nChoices:\na) head xor tail\nb) pointer to previous node xor pointer to next node\nc) pointer to previous node - pointer to next node\nd) pointer to next node - pointer to previous node\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Stack | Context: Postfix (Reverse Polish Notation) expressions are evaluated using a stack. When an operator is encountered, the top two operands are popped, the operation is performed, and the result is pushed back onto the stack.",
+        "target_text": "Question: While evaluating a postfix expression, when an operator is encountered, what is the correct operation to be performed?\nChoices:\na) push it directly onto the stack\nb) pop 2 operands, evaluate them and push the result onto the stack\nc) pop the entire stack\nd) ignore the operator\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: A weight-balanced tree ensures that the weight (or size) of the left and right subtrees of any node n is at least a certain fraction 'a' of the weight of the node itself. This helps in maintaining balanced access times.",
+        "target_text": "Question: What is the condition for a tree to be weight balanced, where 'a' is a factor and 'n' is a node?\nChoices:\na) weight[n.left] >= a * weight[n] and weight[n.right] >= a * weight[n]\nb) weight[n.left] >= a * weight[n.right] and weight[n.right] >= a * weight[n]\nc) weight[n.left] >= a * weight[n.left] and weight[n.right] >= a * weight[n]\nd) weight[n] is a non-zero\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Heap | Context: A treap is a randomized binary search tree that also satisfies the heap property using a priority value assigned randomly to each node. It is also known as a Cartesian tree with priorities.",
+        "target_text": "Question: A treap is a Cartesian tree with __________\nChoices:\na) additional value, which is a priority value to the key generated randomly\nb) additional value, which is a priority value to the key generated sequentially\nc) additional heap rule\nd) additional operations like remove a range of elements\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: In a binary tree, internal nodes are those with at least one child. The number of leaf nodes can be derived using the relation: L = N + 1, where L is leaf nodes and N is internal nodes with two children. Here, 5 nodes have one child, and 10 have two children, giving 11 leaf nodes.",
+        "target_text": "Question: In a binary tree, the number of internal nodes of degree 1 is 5, and the number of internal nodes of degree 2 is 10. The number of leaf nodes in the binary tree is:\nChoices:\na) 10\nb) 11\nc) 12\nd) 15\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: The given function is a recursive implementation of the factorial. For input 4, it computes 4 * 3 * 2 * 1 = 24.",
+        "target_text": "Question: What value does function mystery return when called with a value of 4?\nint mystery (int number) {\n    if (number <= 1)\n        return 1;\n    else\n        return number * mystery(number - 1);\n}\nChoices:\na) 0\nb) 1\nc) 4\nd) 24\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: Reversing an array requires swapping elements from both ends toward the center. For an array with n elements, floor(n/2) swaps are needed. If n is odd, this simplifies to (n-1)/2.",
+        "target_text": "Question: How many swaps are required for reversing an array having n elements where n is an odd number?\nChoices:\na) (n-1) / 2\nb) n / 2\nc) (n / 2) - 1\nd) (n + 1) / 2\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: Quick sort is a divide-and-conquer algorithm that partitions the array around a pivot element such that elements less than or equal to the pivot come before it, and elements greater come after it. This process is repeated recursively.",
+        "target_text": "Question: The sorting technique where the array to be sorted is partitioned again and again in such a way that all elements less than or equal to the partitioning element appear before it and those which are greater appear after it is called __________.\nChoices:\na) merge sort\nb) quick sort\nc) selection sort\nd) none of these\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: In a balanced binary tree, the height is minimized, ensuring logarithmic time complexity for search operations. Lookup in such a tree is efficient, with worst-case time O(log n).",
+        "target_text": "Question: A balanced binary tree with n items allows the lookup of an item in __________ worst-case time.\nChoices:\na) o(log n)\nb) o(n log 2)\nc) o(n)\nd) o(1)\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Hashing | Context: Linear probing is a collision resolution technique in open addressing where a key is placed at the next available location in the array. The formula is: H(x) = (key + F(i)) mod table size.",
+        "target_text": "Question: What is the hash function used in linear probing?\nChoices:\na) h(x) = key mod table size\nb) h(x) = (key + f(i^2)) mod table size\nc) h(x) = (key + f(i)) mod table size\nd) h(x) = x mod 17\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: Queues are widely used to simulate limited resource allocation in operating systems and networks, where processes or requests are handled in FIFO order as resources become available.",
+        "target_text": "Question: Queues serve a major role in __________\nChoices:\na) simulation of recursion\nb) simulation of arbitrary linked list\nc) simulation of limited resource allocation\nd) simulation of heap sort\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: In a binary tree, the number of nodes with two children is always one less than the number of leaves in a full binary tree. If a tree has 20 leaves, it will have 19 nodes with two children.",
+        "target_text": "Question: A binary tree T has 20 leaves. The number of nodes in T having two children is:\nChoices:\na) 18\nb) 19\nc) 17\nd) any number between 10 and 20\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: Postfix (or Reverse Polish) notation places operators after operands. For example, the infix expression (A + B) becomes AB+ in postfix notation.",
+        "target_text": "Question: In Postfix expressions, the operators come after the operands.\nChoices:\na) true\nb) false\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: In infix expressions, operators are placed between operands. When parsed recursively, the structure results in a left expression, followed by an operator, then a right expression, which defines infix notation.",
+        "target_text": "Question: The expression obtained by recursively producing a left expression, followed by an operator, followed by recursively producing a right expression is called?\nChoices:\na) prefix expression\nb) infix expression\nc) postfix expression\nd) parenthesized expression\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: A rope (or cord) is a data structure used for efficiently manipulating large strings. It is implemented as a binary tree of strings and is also referred to as a cord structure.",
+        "target_text": "Question: Which of the following is also known as the Rope data structure?\nChoices:\na) cord\nb) string\nc) array\nd) linked list\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: The number of binary trees that can be created with `n` distinct nodes follows the Catalan number sequence. For 3 nodes, the number of structurally unique binary trees is 5.",
+        "target_text": "Question: What is the possible number of binary trees that can be created with 3 nodes, giving the sequence N, M, L when traversed in post-order?\nChoices:\na) 15\nb) 3\nc) 5\nd) 8\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: In a full binary tree, each internal node has exactly two children. The number of leaves L in such a tree is always L = I + 1, where I is the number of internal nodes.",
+        "target_text": "Question: In a full binary tree, if the number of internal nodes is I, then the number of leaves L is?\nChoices:\na) l = 2* i\nb) l = i + 1\nc) l = i - 1\nd) l = 2* i - 1\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: Accessing the k-th element from the beginning of a singly linked list is O(1) if pointer starts from the head. Finding the k-th element from the end requires a traversal or two-pointer method, making it O(n).",
+        "target_text": "Question: What are the time complexities of finding the 8th element from the beginning and 8th element from the end in a singly linked list? Let n > 8.\nChoices:\na) O(n) and O(n)\nb) O(1) and O(1)\nc) O(n) and O(1)\nd) O(1) and O(n)\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: AA-Trees are a type of balanced binary search tree that simulate red-black trees using simpler rules. Maintenance of an AA-tree involves two operations: skew (right rotation) and split (left rotation), making the number of structural shapes to consider just two.",
+        "target_text": "Question: How many different shapes does maintenance of an AA-Tree need to consider?\nChoices:\na) 7\nb) 5\nc) 2\nd) 3\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: Suffix trees are used for efficient implementation of string operations such as substring search, longest common substring, and pattern matching. They allow these operations in linear time with respect to the string length.",
+        "target_text": "Question: Which tree allows fast implementation of string operations?\nChoices:\na) Rope Tree\nb) Suffix Tree\nc) Tango Tree\nd) Top Tree\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: Separate chaining is a method for handling collisions in hash tables using linked lists. Although it effectively resolves collisions, it increases pointer usage and memory overhead.",
+        "target_text": "Question: Which of the following is a disadvantage of using separate chaining with linked lists?\nChoices:\na) it requires many pointers\nb) it requires linked lists\nc) it uses array\nd) it does not resolve collision\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Graph | Context: An edge cluster in graph theory typically refers to a tightly connected group of nodes. The minimum number of edges to define such a cluster is one--connecting two nodes--hence, the simplest form includes one edge.",
+        "target_text": "Question: How many edges are present in an edge cluster?\nChoices:\na) 0\nb) 1\nc) 2\nd) 4\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: A 2-3 tree is a balanced search tree where each node can have two or three children. The height of a 2-3 tree with `n` elements lies between log₃(n + 1) and log2(n + 1), due to its structure supporting varying degrees.",
+        "target_text": "Question: The height of a 2-3 tree with n elements is __________\nChoices:\na) between (n/2) and (n/3)\nb) (n/6)\nc) between (n) and log2(n + 1)\nd) between log₃(n + 1) and log2(n + 1)\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: To compute the sum of values between two nodes L and H in a balanced BST, you skip subtrees that are completely out of range. The query takes time O(log n) for traversal and O(m) for m matching elements. The full time bound may include constants a, b, c, and d to model deeper operations.",
+        "target_text": "Question: Suppose we have a balanced binary search tree T holding n numbers. We are given two numbers L and H and wish to sum up all the numbers in T that lie between L and H. Suppose there are m such numbers in T. If the tightest upper bound on the time to compute the sum is O(n^a log^b n + m*c log^d n), the value of a + 10b + 100c + 1000d is __________.\nChoices:\na) 60\nb) 110\nc) 210\nd) 50\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Hashing | Context: Universal hashing is a technique that chooses the hash function at random from a carefully designed class of functions, offering better average-case performance by minimizing collision probability.",
+        "target_text": "Question: Which scheme uses a randomization approach?\nChoices:\na) Hashing by division\nb) Hashing by multiplication\nc) Universal hashing\nd) Open addressing\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: A doubly linked list contains two pointers per node: one to the next node and one to the previous. This allows bidirectional traversal but also increases space usage and complexity compared to a singly linked list.",
+        "target_text": "Question: Which of the following is False about a doubly linked list?\nChoices:\na) We can navigate in both directions\nb) It requires more space than a singly linked list\nc) The insertion and deletion of a node take a bit longer\nd) Implementing a doubly linked list is easier than a singly linked list\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: Recursive algorithms often use the system call stack to maintain state across function calls. A non-recursive version of such algorithms requires explicit use of a stack data structure to emulate this behavior.",
+        "target_text": "Question: What data structure would you most likely see in a non-recursive implementation of a recursive algorithm?\nChoices:\na) Stack\nb) Linked List\nc) Tree\nd) Queue\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: In a queue implemented with a linked list, new elements are added at the rear and removed from the front. During insertion into a non-empty queue, only the `rear` pointer is updated.",
+        "target_text": "Question: In a linked list implementation of a queue, front and rear pointers are tracked. Which of these pointers will change during an insertion into a NONEMPTY queue?\nChoices:\na) Only front pointer\nb) Only rear pointer\nc) Both front and rear pointer\nd) No pointer will be changed\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: In a binary search tree (BST), the left child must have a value less than the parent. The given statement implies this is True for all trees, which is incorrect. It only applies to BSTs, not general binary trees.",
+        "target_text": "Question: Left child of a parent node has value lesser than the parent node.\nChoices:\na) True\nb) False\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Heap | Context: In a max-heap, the heap property ensures that the largest element is always located at the root. This structure allows constant-time access to the maximum element.",
+        "target_text": "Question: In a max-heap, the element with the greatest key is always in which node?\nChoices:\na) Leaf node\nb) First node of left subtree\nc) Root node\nd) First node of right subtree\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: Linked lists are dynamic structures ideal for collections where the size may change frequently. They allow efficient insertion and deletion, making them suitable for non-permanent or frequently modified data.",
+        "target_text": "Question: Linked lists are best suited __________.\nChoices:\na) For relatively permanent collections of data.\nb) For the size of the structure and the data in the structure are constantly changing.\nc) Data structure\nd) For none of the above situations\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Graph | Context: A pseudograph is a graph that allows self-loops and multiple edges. An adjacency matrix representing a graph with non-zero diagonal entries indicates the presence of self-loops, identifying a pseudograph.",
+        "target_text": "Question: Given adjacency matrices, determine which of them are PseudoGraphs?\ni) {{1,0}, {0,1}}\nii) {{0,1}, {1,0}}\niii) {{0,0,1}, {0,1,0}, {1,0,0}}\nChoices:\na) only i)\nb) ii) and iii)\nc) i) and iii)\nd) i), ii), and iii)\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: Any decision tree that sorts n elements must have at least n leaves, and therefore a height of at least Ω(n) in the worst case, as each comparison decision leads to a distinct permutation of input.",
+        "target_text": "Question: Any decision tree that sorts n elements has height:\nChoices:\na) Ω(n)\nb) Ω(log n)\nc) Ω(n log n)\nd) Ω(n^2)\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Graph | Context: In a hypergraph, a hyperedge can connect any number of vertices. The degree of a vertex is the number of hyperedges it is part of. The degree sequence is the list of degrees sorted in non-increasing order.",
+        "target_text": "Question: What is the degree sequence of the given hypergraph in non-increasing order?\nV = {v1,v2,v3,v4,v5,v6}, E = {{v1,v4,v5}, {v2,v3,v4,v5}, {v2}, {v1}, {v1,v6}}\nChoices:\na) 3, 2, 1, 1, 1, 1\nb) 3, 2, 2, 2, 1, 1\nc) 3, 2, 2, 2, 2, 1\nd) 3, 2, 2, 1, 1, 1\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Sorting | Context: Topological sorting of a Directed Acyclic Graph (DAG) can be done in linear time using either Depth First Search (DFS) or Kahn's algorithm. The time complexity is O(V + E), where V is the number of vertices and E is the number of edges.",
+        "target_text": "Question: The topological sorting of any DAG can be done in __________ time.\nChoices:\na) Cubic\nb) Quadratic\nc) Linear\nd) Logarithmic\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: Arrays provide contiguous memory allocation and support random access. Linked lists allow flexible size but have slower access due to pointer traversal. Access speed is generally better in arrays.",
+        "target_text": "Question: Which of the following points is/are not True about the linked list data structure when compared with an array?\nChoices:\na) Arrays have better cache locality that can make them better in terms of performance\nb) It is easy to insert and delete elements in linked lists\nc) Random access is not allowed in a typical implementation of linked lists\nd) Access of elements in a linked list takes less time than in arrays\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: A skip list is a linked structure designed for fast search operations. It uses multiple levels of linked lists with skip pointers to allow logarithmic search time.",
+        "target_text": "Question: What is a skip list?\nChoices:\na) A linked list with size value in nodes\nb) A linked list that allows faster search within an ordered sequence\nc) A linked list that allows slower search within an ordered sequence\nd) A tree which is in the form of a linked list\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: If all edge weights in a graph are multiplied by a constant, the shortest path remains the same. This is because path weights scale proportionally and the relative path order does not change.",
+        "target_text": "Question: Is the following statement valid about shortest paths?\nGiven a graph, suppose we have calculated shortest paths from a source to all other vertices. If we modify the graph such that weights of all edges become double the original weight, then the shortest path remains the same--only the total weight of the path changes.\nChoices:\na) True\nb) False\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Heap | Context: In a d-heap (a generalization of a binary heap where each node has d children), operations like insert, delete, and create are well-defined. However, a generic `find` operation is not directly supported since heaps are not designed for search.",
+        "target_text": "Question: Which operation cannot be directly performed in a d-heap?\nChoices:\na) insert\nb) delete\nc) find\nd) create\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: In a K-ary tree, the height of a tree with only the root node is 0 because there are no edges from the root to any other node.",
+        "target_text": "Question: What is the height of a K-ary tree having only the root node?\nChoices:\na) 1\nb) 0\nc) 2\nd) 3\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: A B-tree of minimum degree t and height h has a search time complexity of θ(logₕ n), where n is the number of keys. This allows for efficient disk-based searching in large datasets.",
+        "target_text": "Question: The number of disk page accesses in a B-tree search, where h is height, n is the number of keys, and t is the minimum degree, is:\nChoices:\na) θ(log n h * t)\nb) θ(log t n * h)\nc) θ(log h n)\nd) θ(log t n)\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: AA-trees are simplified versions of red-black trees. They maintain balance using right-child-only 'red' links and a level field instead of colors. Coding practices (e.g., recursion) are not structural rules, hence statement 2 is incorrect.",
+        "target_text": "Question: Of the following rules that are followed by an AA-tree, which of the following is incorrect?\n1. Only right children can be red\n2. Procedures are coded recursively\n3. Instead of storing colors, the level of a node is stored\n4. There should not be any left children\nChoices:\na) 1\nb) 2\nc) 3\nd) 4\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Stack | Context: To implement a stack using a priority queue, each new item must be assigned a priority that ensures it is removed before earlier items. This is achieved by assigning strictly decreasing keys, so the last pushed item is removed first.",
+        "target_text": "Question: A priority queue Q is used to implement a stack S that stores characters. PUSH(C) is implemented as INSERT(Q, C, K) where K is a key. POP is implemented as DELETEMIN(Q). For a sequence of operations, the keys should be in:\nChoices:\na) Non-increasing order\nb) Non-decreasing order\nc) Strictly increasing order\nd) Strictly decreasing order\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: Compared to arrays, linked lists provide dynamic memory allocation, efficient insertion/deletion, and do not require a fixed size. However, they lack random access and have lower cache locality.",
+        "target_text": "Question: Which of the following points is/are true about the Linked List data structure when compared with arrays?\nChoices:\na) arrays have better cache locality that can make them better in terms of performance\nb) it is easy to insert and delete elements in linked list\nc) random access is not allowed in a typical implementation of linked lists\nd) the size of array has to be pre-decided, linked lists can change their size any time\ne) all of the above\nAnswer: e"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: A sparse array stores only non-null (or non-zero) elements, saving memory. In contrast, a normal array of length 6 stores all elements, including nulls. So its logical size is 6, but the sparse representation only stores 2 meaningful elements.",
+        "target_text": "Question: Suppose the contents of an array A are, A = {1, null, null, null, null, 10}; What would be the size of the array considering it as a normal array and a sparse array?\nChoices:\na) 6 and 6\nb) 6 and 2\nc) 2 and 6\nd) 2 and 2\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: In a XOR linked list, each node stores the XOR of the addresses of the previous and next nodes instead of maintaining two separate pointers. This saves memory in comparison to traditional doubly linked lists.",
+        "target_text": "Question: What does a XOR linked list have?\nChoices:\na) every node stores the xor of addresses of previous and next nodes\nb) actual memory address of next node\nc) every node stores the xor of addresses of previous and next two nodes\nd) every node stores xor of 0 and the current node address\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: The van Emde Boas (vEB) tree is a tree data structure that supports fast predecessor, successor, and minimum/maximum queries in O(log log U) time. It was introduced by Peter van Emde Boas.",
+        "target_text": "Question: Who invented the vEB tree, also known as Van Emde Boas Tree?\nChoices:\na) peter van emde boas\nb) samuel f. b. morse\nc) friedrich clemens gerke\nd) alexander morse\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Queue | Context: Queues are abstract data structures with several variations including ordinary queue (FIFO), circular queue (with wrap-around logic), and priority queue (based on priority levels). 'Single ended queue' is not a standard classification.",
+        "target_text": "Question: Which of the following is not a type of queue?\nChoices:\na) priority queue\nb) circular queue\nc) single ended queue\nd) ordinary queue\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: In column-major order, elements of a matrix are stored column by column in memory. For the matrix:\n```\na b c\nd e f\ng h i\n```\nthe order will be a, d, g, b, e, h, c, f, i.",
+        "target_text": "Question: If column-major order is used, how is the following matrix stored in memory?\n```\na b c\nd e f\ng h i\n```\nChoices:\na) ihgfedcba\nb) abcdefghi\nc) cfibehadg\nd) adgbehcfi\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Heap | Context: In a max-heap, new elements are inserted at the next available leaf position and then 'heapified up' to maintain the heap property. The level-order traversal changes depending on the heapification process.",
+        "target_text": "Question: A priority queue is implemented as a max-heap. Initially, it has 5 elements. The level-order traversal of the heap is: 10, 8, 5, 3, 2. Two new elements 1 and 7 are inserted into the heap in that order. What is the level-order traversal of the heap after insertion?\nChoices:\na) 10, 8, 7, 3, 2, 1, 5\nb) 10, 8, 7, 2, 3, 1, 5\nc) 10, 8, 7, 1, 2, 3, 5\nd) 10, 8, 7, 5, 3, 2, 1\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Heap | Context: In a heap data structure, a binary heap can be of two types: max-heap and min-heap. Operations like insertion, deletion, and finding the minimum/maximum element have specific time complexities depending on the heap type.",
+        "target_text": "Question: The minimum number of interchanges needed to convert the array 89, 19, 40, 17, 12, 10, 2, 5, 7, 11, 6, 9, 70 into a heap with the maximum element at the root is\nChoices:\na) 0\nb) 1\nc) 2\nd) 3\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: Arrays are linear data structures that store elements in contiguous memory locations. They allow indexed access, but resizing and dynamic operations can be inefficient compared to other structures like lists.",
+        "target_text": "Question: Associative arrays can be implemented using __________\nChoices:\na) b-tree\nb) a doubly linked list\nc) a single linked list\nd) a self balancing binary search tree\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: A tree is a hierarchical data structure consisting of nodes. Trees are used to represent data with hierarchical relationships and have various types such as binary trees, AVL trees, and B-trees.",
+        "target_text": "Question: In parse trees, every internal node represents a non-terminal and every leaf node represents a terminal.\nChoices:\na) true\nb) false\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: In hashing theory, probe sequences like linear and quadratic probing determine how collisions are resolved. Expression evaluation and conversion also fall under theory topics, such as converting infix to postfix using stacks.",
+        "target_text": "Question: What is the other name for a postfix expression?\nChoices:\na) normal polish notation\nb) reverse polish notation\nc) warsaw notation\nd) infix notation\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Heap | Context: In a heap data structure, a binary heap can be of two types: max-heap and min-heap. Operations like insertion, deletion, and finding the minimum/maximum element have specific time complexities depending on the heap type.",
+        "target_text": "Question: Which of the following is the implementation of the ternary tree?\nChoices:\na) avl tree\nb) ternary heap\nc) hash table\nd) dictionary\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: Arrays are linear data structures that store elements in contiguous memory locations. They allow indexed access, but resizing and dynamic operations can be inefficient compared to other structures like lists.",
+        "target_text": "Question: What is the expected error for estimating the Jaccard index using MinHash scheme for k different hash functions?\nChoices:\na) o (log k!)\nb) o (k!)\nc) o (k^2)\nd) o (1/√k)\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: A tree is a hierarchical data structure consisting of nodes. Trees are used to represent data with hierarchical relationships and have various types such as binary trees, AVL trees, and B-trees.",
+        "target_text": "Question: The maximum number of binary trees that can be formed with three unlabelled nodes is:\nChoices:\na) 1\nb) 5\nc) 4\nd) 3\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: A tree is a hierarchical data structure consisting of nodes. Trees are used to represent data with hierarchical relationships and have various types such as binary trees, AVL trees, and B-trees.",
+        "target_text": "Question: Abstract syntax tree is an input to which phase of compiler?\nChoices:\na) lexical analysis\nb) syntax analysis\nc) semantic analysis\nd) intermediate code generation\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Hashing | Context: Hashing is used to map data to fixed-size values using a hash function. Efficient hashing minimizes collisions, and the probability of collisions can be analyzed using principles from probability theory.",
+        "target_text": "Question: Who invented the MinHash technique?\nChoices:\na) weiner\nb) samuel f. b. morse\nc) friedrich clemens gerke\nd) andrei broder\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: A linked list is a linear data structure where elements are stored in nodes, each containing a reference to the next. Variants like singly, doubly, and triply linked lists vary by the number of pointers per node.",
+        "target_text": "Question: Consider a linked list of n elements. What is the time taken to insert an element after an element pointed by some pointer?\nChoices:\na) o(1)\nb) o(log2 n)\nc) o(n)\nd) o(n log2 n)\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: A tree is a hierarchical data structure consisting of nodes. Trees are used to represent data with hierarchical relationships and have various types such as binary trees, AVL trees, and B-trees.",
+        "target_text": "Question: A program to search a contact from phone directory can be implemented efficiently using __________\nChoices:\na) a bst\nb) a trie\nc) a balanced bst\nd) a binary tree\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: Arrays are linear data structures that store elements in contiguous memory locations. They allow indexed access, but resizing and dynamic operations can be inefficient compared to other structures like lists.",
+        "target_text": "Question: What is the other name or Van Emde Boas Tree data structure?\nChoices:\na) van emde boas array\nb) van emde boas stack\nc) van emde boas priority queue\nd) van emde boas heap\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Sorting | Context: Sorting algorithms arrange elements in a particular order (ascending or descending). Adaptive sorting algorithms improve performance when data is partially sorted.",
+        "target_text": "Question: An adaptive sorting algorithm __________\nChoices:\na) adapts to new computers\nb) takes advantage of already sorted elements\nc) takes input which is already sorted\nd) none of these\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: Arrays are linear data structures that store elements in contiguous memory locations. They allow indexed access, but resizing and dynamic operations can be inefficient compared to other structures like lists.",
+        "target_text": "Question: Which of the following is not a disadvantage of bit array?\nChoices:\na) without compression, they might become sparse\nb) accessing individual bits is expensive\nc) compressing bit array to byte/word array, the machine also has to support byte/word addressing\nd) storing and manipulating in the register set for long periods of time\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: A tree is a hierarchical data structure consisting of nodes. Trees are used to represent data with hierarchical relationships and have various types such as binary trees, AVL trees, and B-trees.",
+        "target_text": "Question: B Trees are generally\nChoices:\na) very deep and narrow\nb) very wide and shallow\nc) very deep and very wide\nd) cannot say\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: A tree is a hierarchical data structure consisting of nodes. Trees are used to represent data with hierarchical relationships and have various types such as binary trees, AVL trees, and B-trees.",
+        "target_text": "Question: What is an AVL tree?\nChoices:\na) a tree which is balanced and is a height balanced tree\nb) a tree which is unbalanced and is a height balanced tree\nc) a tree with three children\nd) a tree with atmost 3 children\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: In hashing theory, probe sequences like linear and quadratic probing determine how collisions are resolved. Expression evaluation and conversion also fall under theory topics, such as converting infix to postfix using stacks.",
+        "target_text": "Question: What is the use of the bin data structure?\nChoices:\na) to have efficient insertion\nb) to have efficient deletion\nc) to have efficient region query\nd) to have efficient traversal\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Stack | Context: A stack is a linear data structure following the Last In First Out (LIFO) principle. It supports operations like push and pop and can be implemented using arrays or linked lists. Stack memory is also used in function calls and recursion.",
+        "target_text": "Question: To convert the postfix expression into the infix expression we use stack and scan the postfix expression from left to right.\nChoices:\na) true\nb) false\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: Arrays are linear data structures that store elements in contiguous memory locations. They allow indexed access, but resizing and dynamic operations can be inefficient compared to other structures like lists.",
+        "target_text": "Question: What is the load factor?\nChoices:\na) average array size\nb) average key size\nc) average chain length\nd) average hash table length\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: A tree is a hierarchical data structure consisting of nodes. Trees are used to represent data with hierarchical relationships and have various types such as binary trees, AVL trees, and B-trees.",
+        "target_text": "Question: Which pattern is used to evaluate abstract syntax tree?\nChoices:\na) visitor pattern\nb) singleton pattern\nc) proxy pattern\nd) adapter pattern\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: Arrays are linear data structures that store elements in contiguous memory locations. They allow indexed access, but resizing and dynamic operations can be inefficient compared to other structures like lists.",
+        "target_text": "Question: Which of the following is an advantage of parallel arrays?\nChoices:\na) poor locality of reference for non-sequential access\nb) very little direct language support\nc) expensive to shrink or grow\nd) increased locality of reference\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: A linked list is a linear data structure where elements are stored in nodes, each containing a reference to the next. Variants like singly, doubly, and triply linked lists vary by the number of pointers per node.",
+        "target_text": "Question: Recursive procedures are implemented by   using __________ data structure.\nChoices:\na) queues\nb) stacks\nc) linked lists\nd) strings\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: A tree is a hierarchical data structure consisting of nodes. Trees are used to represent data with hierarchical relationships and have various types such as binary trees, AVL trees, and B-trees.",
+        "target_text": "Question: Can child node be always called Leaf node in the K-ary tree?\nChoices:\na) true\nb) false\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: A tree is a hierarchical data structure consisting of nodes. Trees are used to represent data with hierarchical relationships and have various types such as binary trees, AVL trees, and B-trees.",
+        "target_text": "Question: A balance factor in AVL tree is used to check __________\nChoices:\na) what rotation to make\nb) if all child nodes are at same level\nc) when the last rotation occurred\nd) if the tree is unbalanced\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: Arrays are linear data structures that store elements in contiguous memory locations. They allow indexed access, but resizing and dynamic operations can be inefficient compared to other structures like lists.",
+        "target_text": "Question: Quick sort running time depends on the   selection of __________\nChoices:\na) size of array\nb) pivot element\nc) sequence of values\nd) none of the above\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: A tree is a hierarchical data structure consisting of nodes. Trees are used to represent data with hierarchical relationships and have various types such as binary trees, AVL trees, and B-trees.",
+        "target_text": "Question: Which type of binary search tree is imitated for construction of tango tree?\nChoices:\na) complete binary search tree\nb) perfect binary search tree\nc) balanced binary search tree\nd) degenerate binary search tree\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: A tree is a hierarchical data structure consisting of nodes. Trees are used to represent data with hierarchical relationships and have various types such as binary trees, AVL trees, and B-trees.",
+        "target_text": "Question: In order traversal of binary search tree will produce __________\nChoices:\na) unsorted list\nb) reverse of input\nc) sorted list\nd) none of the above\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Stack | Context: A stack is a linear data structure following the Last In First Out (LIFO) principle. It supports operations like push and pop and can be implemented using arrays or linked lists. Stack memory is also used in function calls and recursion.",
+        "target_text": "Question: Reversing a word using stack can be used to find if the given word is a palindrome or not.\nChoices:\na) true\nb) false\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: Arrays are linear data structures that store elements in contiguous memory locations. They allow indexed access, but resizing and dynamic operations can be inefficient compared to other structures like lists.",
+        "target_text": "Question: The number of items used by the dynamic array contents is its __________\nChoices:\na) physical size\nb) capacity\nc) logical size\nd) random size\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Hashing | Context: Hashing is used to map data to fixed-size values using a hash function. Efficient hashing minimizes collisions, and the probability of collisions can be analyzed using principles from probability theory.",
+        "target_text": "Question: __________ is not a theoretical problem but actually occurs in real implementations of probing.\nChoices:\na) hashing\nb) clustering\nc) rehashing\nd) collision\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Heap | Context: In a heap data structure, a binary heap can be of two types: max-heap and min-heap. Operations like insertion, deletion, and finding the minimum/maximum element have specific time complexities depending on the heap type.",
+        "target_text": "Question: Which of the following has search efficiency of Ω(1)?\nChoices:\na) tree\nb) heap\nc) hash table\nd) linked-list\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: In hashing theory, probe sequences like linear and quadratic probing determine how collisions are resolved. Expression evaluation and conversion also fall under theory topics, such as converting infix to postfix using stacks.",
+        "target_text": "Question: Dijkstra's Algorithm will work for both negative and positive weights?\nChoices:\na) true\nb) false\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: Arrays are linear data structures that store elements in contiguous memory locations. They allow indexed access, but resizing and dynamic operations can be inefficient compared to other structures like lists.",
+        "target_text": "Question: What will be the auxiliary space complexity of the code to rotate an array by using the reversal algorithm (d = number of rotations)?\nChoices:\na) o(1)\nb) o(n)\nc) o(d)\nd) o(n*d)\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: A tree is a hierarchical data structure consisting of nodes. Trees are used to represent data with hierarchical relationships and have various types such as binary trees, AVL trees, and B-trees.",
+        "target_text": "Question: Is Top tree used for maintaining Dynamic set of trees called forest.\nChoices:\na) true\nb) false\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: A linked list is a linear data structure where elements are stored in nodes, each containing a reference to the next. Variants like singly, doubly, and triply linked lists vary by the number of pointers per node.",
+        "target_text": "Question: Consider an implementation of unsorted single linked list. Suppose it has its representation with a head and a tail pointer (i.e. pointers to the first and last nodes of the linked list). Given the representation, which of the following operation can not be implemented in O(1) time ?\nChoices:\na) insertion at the front of the linked list.\nb) insertion at the end of the linked list.\nc) deletion of the front node of the linked list.\nd) deletion of the last node of the linked list.\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Graph | Context: Graphs are collections of nodes connected by edges. They can be directed or undirected and are used to model pairwise relations. Algorithms like Floyd-Warshall and Dijkstra compute shortest paths. Topological sorting applies to Directed Acyclic Graphs (DAGs).",
+        "target_text": "Question: Which of the given statement is True?\nChoices:\na) all acyclic directed graphs have topological sortings and all cyclic directed graphs have none\nb) all cyclic directed graphs have topological sortings\nc) all directed graphs have topological sortings\nd) none of the above\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: Arrays are linear data structures that store elements in contiguous memory locations. They allow indexed access, but resizing and dynamic operations can be inefficient compared to other structures like lists.",
+        "target_text": "Question: What is direct addressing?\nChoices:\na) Distinct array position for every possible key\nb) Fewer array positions than keys\nc) Fewer keys than array positions\nd) Same array position for all keys\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: A tree is a hierarchical data structure consisting of nodes. Trees are used to represent data with hierarchical relationships and have various types such as binary trees, AVL trees, and B-trees.",
+        "target_text": "Question: What is the range of β in finding the length of the longest path in a randomized binary search tree?\nChoices:\na) (-1, 0)\nb) (1, 0)\nc) (0, 5)\nd) (0, 1)\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Graph | Context: Graphs are collections of nodes connected by edges. They can be directed or undirected and are used to model pairwise relations. Algorithms like Floyd-Warshall and Dijkstra compute shortest paths. Simple graphs do not allow loops or multiple edges.",
+        "target_text": "Question: Which of the following properties does a simple graph not hold?\nChoices:\na) must be connected\nb) must be unweighted\nc) must have no loops or multiple edges\nd) must be undirected\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: A tree is a hierarchical data structure consisting of nodes. Trees are used to represent data with hierarchical relationships and have various types such as binary trees, AVL trees, and B-trees.",
+        "target_text": "Question: Can leaf node be called child node in a K-ary tree?\nChoices:\na) True\nb) False\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Queue | Context: A queue is a linear data structure that follows the First In First Out (FIFO) principle. It supports operations like enqueue (insert) and dequeue (remove), commonly used in scheduling and buffering.",
+        "target_text": "Question: Given a queue with a linked list implementation. the Rear pointer points to the rear node of the queue. and the front node of the queue points to the front node of the queue, Which of the following operations is impossible to do in O(1) time?\nChoices:\na) delete the front item from the list.\nb) delete the rear from the list.\nc) insert at the front of the list.\nd) none\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Stack | Context: A stack is a linear data structure following the Last In First Out (LIFO) principle. It supports operations like push and pop and can be implemented using arrays or linked lists. Stack memory is also used in function calls and recursion.",
+        "target_text": "Question: How many stacks are required for evaluation of prefix expression?\nChoices:\na) one\nb) two\nc) three\nd) four\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: A tree is a hierarchical data structure consisting of nodes. Trees are used to represent data with hierarchical relationships and have various types such as binary trees, AVL trees, and B-trees. AA-trees are a balanced binary search tree variant using skew and split operations.",
+        "target_text": "Question: In an AA-tree, we process split first, followed by a skew.\nChoices:\na) True\nb) False\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: In hashing theory, probe sequences like linear and quadratic probing determine how collisions are resolved. Expression evaluation and conversion also fall under theory topics, such as converting infix to postfix using stacks.",
+        "target_text": "Question: Path Compression algorithm performs in which of the following operations?\nChoices:\na) Create operation\nb) Insert operation\nc) Find operation\nd) Delete operation\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: Arrays are linear data structures that store elements in contiguous memory locations. They allow indexed access, but resizing and dynamic operations can be inefficient compared to other structures like lists.",
+        "target_text": "Question: Given an array of element 5, 7, 9, 1, 3, 10, 8, 4. Which of the following are the correct sequences of elements after inserting all the elements in a min-heap?\nChoices:\na) 1,3,4,5,7,8,9,10\nb) 1,4,3,9,8,5,7,10\nc) 1,3,4,5,8,7,9,10\nd) 1,3,8,4,5,10,9,7\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Hashing | Context: Hashing is used to map data to fixed-size values using a hash function. Efficient hashing minimizes collisions, and collision handling techniques such as open addressing and separate chaining are key to practical implementations.",
+        "target_text": "Question: What are the methods to handle collision:\nChoices:\na) separate chaining\nb) open addressing\nc) both of the above\nd) none of the above\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: In hashing theory, probe sequences like linear and quadratic probing determine how collisions are resolved. Expression evaluation and conversion also fall under theory topics, such as converting infix to postfix using stacks.",
+        "target_text": "Question: Which of the following is not the rearranging method used to implement self-organizing lists?\nChoices:\na) count method\nb) move to front method\nc) ordering method\nd) least frequently used\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: Arrays are linear data structures that store elements in contiguous memory locations. Sparse arrays are used when most elements are zero and can be optimized in memory by only storing non-zero entries.",
+        "target_text": "Question: When do you use a sparse array?\nChoices:\na) when there are unique elements in the array\nb) when the array has more occurrence of zero elements\nc) when the data type of elements differ\nd) when elements are sorted\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Graph | Context: The incidence matrix of a connected graph has a rank that depends on the number of vertices and the structure of the graph. For a connected graph with n vertices, the rank is at most n-1.",
+        "target_text": "Question: If a connected Graph (G) contains n vertices what would be the rank of its incidence matrix?\nChoices:\na) n-1\nb) values greater than n are possible\nc) values less than n-1 are possible\nd) insufficient information is given\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Hashing | Context: Hashing is used to map data to fixed-size values using a hash function. Efficient hashing minimizes collisions, and the probability of collisions can be analyzed using principles from probability theory.",
+        "target_text": "Question: What is the average retrieval time when n keys hash to the same slot?\nChoices:\na) Θ(n)\nb) Θ(n²)\nc) Θ(n log n)\nd) o(n²)\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: Arrays are linear data structures that store elements in contiguous memory locations. JavaScript provides many built-in array methods, including reverse(), sort(), and slice().",
+        "target_text": "Question: Which of the following is the predefined function for array reversal in javascript?\nChoices:\na) reverse()\nb) arr_reverse()\nc) array_reverse()\nd) rev()\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Graph | Context: Graphs are collections of nodes connected by edges. They can be directed or undirected and are used to model pairwise relations. The degree sum formula for undirected graphs states that the sum of degrees equals twice the number of edges.",
+        "target_text": "Question: For an undirected graph with n vertices and e   edges, the sum of the degree of each vertex is equal   to:\nChoices:\na) 2n\nb) (2n-1)/2\nc) 2e\nd) e2/2\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: A weight-balanced tree is a binary tree in which each node maintains balance based on subtree sizes. The height of such trees can be bounded using logarithmic relationships.",
+        "target_text": "Question: A weight-balanced tree is a binary tree in which for each node the number of nodes in the left subtree is at least half and at most twice the number of nodes in the right subtree. The maximum possible height (number of nodes on the path from the root to the farthest leaf) of such a tree on n nodes is best described by which of the following?\nChoices:\na) log_2 n\nb) log_{4/3} n\nc) log_3 n\nd) log_{3/2} n\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Graph | Context: The adjacency matrix of a graph with n vertices is an n x n matrix. Each entry indicates the presence or absence of an edge.",
+        "target_text": "Question: The number of elements in the adjacency matrix of a graph having 7 vertices is __________\nChoices:\na) 7\nb) 14\nc) 36\nd) 49\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Hashing | Context: Hashing is used to map data to fixed-size values using a hash function. Efficient hashing minimizes collisions, and the probability of collisions can be analyzed using principles from probability theory.",
+        "target_text": "Question: The goal of hashing is to produce a search that   takes __________\nChoices:\na) o(1) time\nb) o(n2) time\nc) o(log n) time\nd) o(n log n) time\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: A B+ tree is a type of self-balancing search tree where all records are stored at the leaf level and internal nodes only store keys. It remains balanced because the paths from the root to all leaves are of the same length.",
+        "target_text": "Question: B+ Trees are considered BALANCED because\nChoices:\na) the lengths of the paths from the root to all leaf nodes are all equal.\nb) the lengths of the paths from the root to all leaf nodes differ from each other by at most 1.\nc) the number of children of any two non-leaf sibling nodes differ by at most 1.\nd) the number of records in any two leaf nodes differ by at most 1.\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: A linked list is a linear data structure where each element is stored in a node containing a pointer to the next node. Searching through a linked list is a linear-time operation.",
+        "target_text": "Question: Linked list search complexity is __________\nChoices:\na) Ω(1)\nb) Ω(n)\nc) Ω(log n)\nd) Ω(log log n)\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: Arrays are linear data structures that store elements in contiguous memory locations. They allow indexed access, but resizing and dynamic operations can be inefficient compared to other structures like lists.",
+        "target_text": "Question: Which of the following is the limitation of the array?\nChoices:\na) elements can be accessed from anywhere.\nb) the size of the array is fixed.\nc) indexing starts from zero.\nd) memory waste if an array's elements are smaller than the size allotted to them\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Graph | Context: Graphs can be represented using adjacency matrices or lists. Matrix representations offer efficient lookups at the cost of higher space complexity.",
+        "target_text": "Question: Which of the following is an advantage of matrices?\nChoices:\na) internal complexity\nb) searching through a matrix is complex\nc) not space efficient\nd) constant-time edge lookup\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: A linked list is a linear data structure where each element is stored in a node containing a pointer to the next. Trie data structures, though tree-based, can outperform linked lists and BSTs for dictionary word searches.",
+        "target_text": "Question: Which of the following is the efficient data structure for searching words in dictionaries?\nChoices:\na) bst\nb) linked list\nc) balanced bst\nd) trie\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: Arrays are linear data structures that store elements in contiguous memory locations. They allow indexed access, but resizing and dynamic operations can be inefficient compared to other structures like lists.",
+        "target_text": "Question: What will be the minimum number of jumps required to reach the end of the array arr[] ={0,1,3,6,3,6,8,5}?\nChoices:\na) 1\nb) 2\nc) 3\nd) not possible to reach the end\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Stack | Context: A stack is a linear data structure used in expression evaluation, symbol balancing, and function call tracking. It operates on the LIFO principle.",
+        "target_text": "Question: Which of the following is not an application of stack?\nChoices:\na) evaluation of postfix expression\nb) conversion of infix to postfix expression\nc) balancing symbols\nd) line at ticket counter\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: A linked list is a linear data structure where each node contains data and a reference to the next node. In a queue implemented using a linked list, new elements are typically added at the tail (rear).",
+        "target_text": "Question: In linked list implementation of a queue, where does a new element be inserted?\nChoices:\na) at the head of the linked list\nb) at the centre position in the linked list\nc) at the tail of the linked list\nd) at any position in the linked list\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Queue | Context: A queue is a linear data structure that follows the First In First Out (FIFO) principle. It supports operations like enqueue (insert) and dequeue (remove), commonly used in scheduling and buffering.",
+        "target_text": "Question: A priority queue can efficiently implemented using which of the following data structures? Assume that the number of insert and peek (operation to see the current highest priority item) and extraction (remove the highest priority item) operations are almost same.\nChoices:\na) array\nb) linked list\nc) heap data structures like binary heap, fibonacci heap\nd) none of the above\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: A B-tree is a self-balancing tree data structure. During insertions, a node may split if it exceeds its capacity. The number of splits depends on how often insertions cause overflow.",
+        "target_text": "Question: A B-tree of order 4 is built from scratch by 10 successive insertions. What is the maximum number of node splitting operations that may take place?\nChoices:\na) 3\nb) 4\nc) 5\nd) 6\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Heap | Context: A heap is a binary tree where each node follows a specific heap property. In a min-heap, each parent is less than or equal to its children. In a max-heap, the opposite is True.",
+        "target_text": "Question: The ascending heap property is __________\nChoices:\na) a[parent(i)] = a[i]\nb) a[parent(i)] <= a[i]\nc) a[parent(i)] >= a[i]\nd) a[parent(i)] > 2 * a[i]\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Graph | Context: Graphs are collections of nodes connected by edges. They can be directed or undirected and are used to model pairwise relations. The incidence matrix of a simple graph has columns that sum to 2 for each edge.",
+        "target_text": "Question: The column sum in an incidence matrix for a simple graph is __________\nChoices:\na) depends on number of edges\nb) always greater than 2\nc) equal to 2\nd) equal to the number of edges\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Hashing | Context: Hashing is used to map data to fixed-size values using a hash function. Efficient hashing minimizes collisions. Double hashing is an open addressing technique that reduces clustering.",
+        "target_text": "Question: Double hashing is one of the best methods available for open addressing.\nChoices:\na) true\nb) false\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Queue | Context: A queue is a linear data structure that follows the First In First Out (FIFO) principle. Common operations include enqueue (insertion), dequeue (removal), and peek (access front without removing).",
+        "target_text": "Question: Which of the following is NOT a common operation in a queue data structure?\nChoices:\na) enqueue\nb) dequeue\nc) peek\nd) shuffle\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: Inversions in an array occur when a pair of elements is out of order. Counting inversions is useful in analyzing sorting algorithms like merge sort.",
+        "target_text": "Question: Which of the following form inversion in the array arr = {1,5,4,2}?\nChoices:\na) (5,4), (5,2)\nb) (5,4), (5,2), (4,2)\nc) (1,5), (1,4), (1,2)\nd) (1,5)\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Heap | Context: A Cartesian tree is a binary tree derived from a sequence of numbers. It satisfies the heap property and its in-order traversal yields the original sequence.",
+        "target_text": "Question: What is a Cartesian tree?\nChoices:\na) a skip list in the form of tree\nb) a tree which obeys cartesian product\nc) a tree which obeys heap property and whose inorder traversal yields the given sequence\nd) a tree which obeys heap property only\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Heap | Context: In a heap data structure, a binary heap can be of two types: max-heap and min-heap. Operations like insertion, deletion, and finding the minimum/maximum element have specific time complexities depending on the heap type.",
+        "target_text": "Question: In what time can a leftist heap be built?\nChoices:\na) o(n)\nb) o(n log n)\nc) o(log n)\nd) o(m log n)\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: Suffix trees are used in string matching and compression. Farach's algorithm is one of the linear-time algorithms that can construct suffix trees efficiently, especially in external memory settings.",
+        "target_text": "Question: Who among the following algorithm is used in external memory and compression of the suffix tree?\nChoices:\na) weiner's algorithm\nb) farach's algorithm\nc) ukkonen's algorithm\nd) alexander morse\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Queue | Context: Queues are FIFO data structures, but self-balancing binary search trees can be used for efficient implementations of priority queues due to ordered access and rebalancing features.",
+        "target_text": "Question: A self - balancing binary search tree can be used to implement __________\nChoices:\na) priority queue\nb) hash table\nc) heap sort\nd) priority queue and heap sort\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: Stacks can be implemented using arrays or linked lists. Stacks follow LIFO (Last In First Out) behavior, unlike queues which follow FIFO.",
+        "target_text": "Question: Which of the following statements about stacks   is incorrect?\nChoices:\na) stacks can be implemented using linked lists.\nb) stacks are first-in, first-out (FIFO) data structures.\nc) new nodes can only be added to the top of the stack.\nd) the last node (at the bottom) of a stack has a null (0) link.\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: A tree is a hierarchical data structure consisting of nodes. AVL trees and 2-3 trees are both self-balancing, but they differ in how they manage balance and insertion.",
+        "target_text": "Question: AVL trees provide better insertion than 2-3 trees.\nChoices:\na) true\nb) false\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Graph | Context: In propositional logic, directed acyclic graphs (DAGs) can represent expressions and computations. Leaves in such graphs may represent boolean constants or variables.",
+        "target_text": "Question: In a Propositional Directed Acyclic Graph Leaves maybe labelled with a boolean variable.\nChoices:\na) True\nb) False\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: AVL trees are height-balanced binary search trees. The difference in height between left and right subtrees of every node is at most 1.",
+        "target_text": "Question: In __________, the difference between the height of   the left sub tree and height of the right tree, for each   node, is almost one.\nChoices:\na) Binary search tree\nb) AVL - tree\nc) Complete tree\nd) Threaded binary tree\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Search | Context: Searching algorithms are used to retrieve data from structures. Binary search is an efficient method to find elements in sorted arrays with time complexity O(log n).",
+        "target_text": "Question: The complexity of searching an element from a   set of n elements using Binary search algorithm is __________\nChoices:\na) O(n)\nb) O(log n)\nc) O(n2)\nd) O(n log n)\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: A full binary tree can be uniquely constructed using both preorder and postorder traversals. One traversal alone is not sufficient.",
+        "target_text": "Question: A full binary tree can be generated using __________\nChoices:\na) post-order and pre-order traversal\nb) pre-order traversal\nc) post-order traversal\nd) in-order traversal\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Heap | Context: A pairing heap is a type of heap-ordered multiway tree. It supports many priority queue operations efficiently and is simpler to implement than Fibonacci heaps.",
+        "target_text": "Question: How is a pairing heap represented?\nChoices:\na) binary tree\nb) fibonacci tree\nc) heap ordered tree\nd) treap\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: In any rooted tree, the node with no ancestors is the root. All other nodes are descendants.",
+        "target_text": "Question: How many nodes in a tree have no ancestors?\nChoices:\na) 0\nb) 1\nc) 2\nd) n\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: Union-find data structures with union by size and path compression techniques achieve nearly constant time complexity, amortized over a series of m operations on n elements.",
+        "target_text": "Question: What is the worst-case running time of unions done by size and path compression?\nChoices:\na) o(n)\nb) o(logn)\nc) o(n logn)\nd) o(m logn)\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: Abstract Syntax Trees (ASTs) are used in compilers to represent the structure of source code. Operators are represented as internal nodes and operands as leaves.",
+        "target_text": "Question: In an abstract syntax tree, each internal node represents an operand and each leaf node represents an operator.\nChoices:\na) true\nb) false\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: Unrolled linked lists store multiple elements per node, reducing memory allocation and access overhead, which improves insertion and deletion performance.",
+        "target_text": "Question: Insertion and deletion are much faster in an unrolled linked list than in a singly linked list.\nChoices:\na) true\nb) false\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: Arrays can represent binary trees in sequential memory where the height determines the number of elements. A tree of height l has up to 2^l - 1 nodes.",
+        "target_text": "Question: What must be the ideal size of array if the height of tree is 'l'?\nChoices:\na) 2^l - 1\nb) l - 1\nc) l\nd) 2^l\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: In a full binary tree, every node has either 0 or 2 children. A full binary tree with 2n+1 total nodes always contains exactly n non-leaf (internal) nodes.",
+        "target_text": "Question: A full binary tree with 2n+1 nodes contain __________.\nChoices:\na) n leaf nodes\nb) n non-leaf nodes\nc) n-1 leaf nodes\nd) n-1 non-leaf nodes\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: Expression trees can be built from prefix, infix, or postfix expressions. Only infix cannot uniquely determine an expression tree.",
+        "target_text": "Question: Only infix expression can be made into an expression tree.\nChoices:\na) true\nb) false\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: In separate chaining, each hash bucket contains a list of all elements that hash to the same bucket. A doubly linked list is often used for chaining in hash tables.",
+        "target_text": "Question: Which of the following technique stores data in a separate entity in case of a collision?\nChoices:\na) open addressing\nb) chaining using doubly linked list\nc) linear probing\nd) double hashing\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: A Binary Search Tree (BST) is a binary tree where the left subtree contains only nodes with keys less than the parent node and the right subtree only nodes with keys greater. The number of distinct BSTs that can be formed with n keys is the nth Catalan number.",
+        "target_text": "Question: How many distinct BSTs can be constructed with 3 distinct keys?\nChoices:\na) 4\nb) 5\nc) 6\nd) 9\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Hashing | Context: Hashing is used to map data to fixed-size values using a hash function. Poor hash functions can lead to clustering, especially when the modulus operator is used with closely packed keys.",
+        "target_text": "Question: Which of the following hash functions is most likely to cause clustering in a hash table? Here k is the input key value and m is hash table size. You may assume that all four hash functions generate valid indexes in the hash table.\nChoices:\na) h(k) = k % m\nb) h(k) = floor(m * (k mod 1))\nc) h(k) = k\nd) h(k) = ((k / m) + k * m) + k % m\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Stack | Context: MinHash is a probabilistic technique for estimating similarity between sets. It was originally used to cluster web documents based on shared content (like shingles or n-grams).",
+        "target_text": "Question: Which technique was firstly used clustering documents using the similarity of two words or strings?\nChoices:\na) minhash\nb) stack\nc) priority queue\nd) pat tree\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: Bitwise XOR is used to toggle specific bits in a binary representation. It flips a bit from 0 to 1 or from 1 to 0.",
+        "target_text": "Question: Which of the following bitwise operations will you use to toggle a particular bit?\nChoices:\na) or\nb) and\nc) xor\nd) not\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Stack | Context: MinHash was used in the AltaVista search engine to detect duplicate pages. It's a fast method to compute Jaccard similarity between large sets.",
+        "target_text": "Question: Which technique was firstly used to remove duplicate web pages from search results in AltaVista search engine?\nChoices:\na) minhash\nb) stack\nc) priority queue\nd) pat tree\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: A tree is a hierarchical data structure consisting of nodes. Splay trees are self-adjusting binary search trees where recently accessed elements are moved to the root for fast access.",
+        "target_text": "Question: In which of the following self-balancing binary search trees is the recently accessed element moved to the root for quick future access?\nChoices:\na) avl tree\nb) aa tree\nc) splay tree\nd) red-black tree\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Hashing | Context: Hashing is used to map data to fixed-size values using a hash function. Collision resolution techniques like separate chaining, linear probing, and quadratic probing manage collisions, whereas hashing itself is the overall process.",
+        "target_text": "Question: Which of the following is not a collision resolution technique?\nChoices:\na) separate chaining\nb) linear probing\nc) quadratic probing\nd) hashing\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: The symbol balancing algorithm checks whether parentheses, brackets, and braces are balanced. It is typically implemented using a stack.",
+        "target_text": "Question: Which of the following statement is incorrect with respect to balancing symbols algorithm?\nChoices:\na) {[()]}\nb) ([ )]\nc) {( )}\nd) {[ ]}\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: Linear search is a sequential search technique, while binary search divides the search space. Binary search is more efficient in large, sorted arrays.",
+        "target_text": "Question: Linear search is highly inefficient compared to binary search when dealing with:\nChoices:\na) small, unsorted arrays\nb) small, sorted arrays\nc) large, unsorted arrays\nd) large, sorted arrays\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Hashing | Context: Separate chaining is a common technique used in hash tables where each bucket is a linked list. A typical hash function for this method is x mod table size.",
+        "target_text": "Question: Which of the following is the hashing function for separate chaining?\nChoices:\na) h(x) = (hash(x) + f(i)) mod table size\nb) h(x) = hash(x) + i^2 mod table size\nc) h(x) = x mod table size\nd) h(x) = x mod (table size * 2)\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Stack | Context: Threaded binary trees reduce the need for stack and queue memory by using NULL pointers to point to in-order predecessor or successor. Efficiency, not memory size, is a primary concern.",
+        "target_text": "Question: Identify the reason which doesn't play a key role to use threaded binary trees?\nChoices:\na) the storage required by stack and queue is more\nb) the pointers in most of nodes of a binary tree are null\nc) it is difficult to find a successor node\nd) they occupy less size\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Hashing | Context: In simple uniform hashing, every key is equally likely to hash to any slot, which makes the expected search time constant.",
+        "target_text": "Question: In simple uniform hashing, what is the search complexity?\nChoices:\na) o(n)\nb) o(logn)\nc) o(nlogn)\nd) o(1)\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Hashing | Context: Randomized hashing techniques like universal and double hashing reduce clustering and collision frequency by generating hashes independent of the data.",
+        "target_text": "Question: Collisions can be reduced by choosing a hash function randomly in a way that is independent of the keys that are actually to be stored.\nChoices:\na) true\nb) false\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: In memory storage, row-major order stores elements of a 2D array row by row. For a 3x3 matrix, the elements are stored sequentially as they appear row-wise.",
+        "target_text": "Question: If row-major order is used, how is the following matrix stored in memory?\na b c\nd e f\ng h i\nChoices:\na) ihgfedcba\nb) abcdefghi\nc) cfibehadg\nd) adgbehcfi\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: Inversions represent the number of pairs of elements that are out of order. A sorted array has zero inversions, which is the minimum.",
+        "target_text": "Question: Under what condition the number of inversions in an array are minimum?\nChoices:\na) when the array is sorted\nb) when the array is reverse sorted\nc) when the array is half sorted\nd) depends on the given array\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: In an AVL tree, after inserting a node, the balance factor of nodes along the path to the root may need to be updated. This ensures the tree remains balanced.",
+        "target_text": "Question: To restore the AVL property after inserting an element, we start at the insertion point and move towards the root of the tree. Is this statement true?\nChoices:\na) true\nb) false\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: Breadth First Traversal (BFS) is implemented using a queue. This data structure allows level-order traversal in graphs or trees.",
+        "target_text": "Question: The data structure required for Breadth First Traversal on a graph is?\nChoices:\na) stack\nb) array\nc) queue\nd) tree\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: In array-based representation of binary trees, left and right children of node at index i can be found at 2i+1 and 2i+2 respectively.",
+        "target_text": "Question: If binary trees are represented in arrays, what formula can be used to locate a left child, if the node has an index i?\nChoices:\na) 2i+1\nb) 2i+2\nc) 2i\nd) 4i\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Search | Context: Hashing-based searches use probing for insertion and lookup. On average, linear probing requires 2.5 probes for insertion and 1.5 for successful search.",
+        "target_text": "Question: How many probes are required on average for insertion and successful search?\nChoices:\na) 4 and 10\nb) 2 and 6\nc) 2.5 and 1.5\nd) 3.5 and 1.5\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Stack | Context: A stack is a linear data structure following the Last In First Out (LIFO) principle. It supports operations like push and pop and can be implemented using arrays or linked lists. Stack memory is also used in function calls and recursion.",
+        "target_text": "Question: What is the need for a circular queue?\nChoices:\na) effective usage of memory\nb) easier computations\nc) to delete elements based on priority\nd) implement LIFO principle in queues\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: Balanced parentheses checks often use stacks because of their LIFO structure, which mirrors the nesting of brackets. Arrays can store stack data.",
+        "target_text": "Question: One can determine whether an infix expression has balanced parenthesis or not by using __________\nChoices:\na) array\nb) queue\nc) stack\nd) tree\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: A heap is a special tree-based data structure that satisfies the heap property and can efficiently support priority queue operations.",
+        "target_text": "Question: Heap can be used as __________\nChoices:\na) priority queue\nb) stack\nc) a decreasing order array\nd) normal array\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: Quadratic probing is a collision resolution technique in open addressing where the hash index is computed as (h(k) + c1*i + c2*i^2) % table_size. Often simplified as f(i) = i^2.",
+        "target_text": "Question: Which of the following is the correct function definition for quadratic probing?\nChoices:\na) f(i)=i^2\nb) f(i)=i\nc) f(i)=i+1\nd) f(i)=i^2+1\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: String | Context: The `charAt()` method in Java's `String` class is used to return the character located at a specific index.",
+        "target_text": "Question: Which of these methods from the String class is used to extract a single character from an object of String?\nChoices:\na) CHARAT()\nb) charAt()\nc) CharAt()\nd) charAT()\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: A suffix tree is a compressed trie that contains all the suffixes of a given string. For a string of length n, the tree has n leaves and helps in efficient string pattern matching.",
+        "target_text": "Question: Which statement is correct of suffix tree with a string of length n?\nChoices:\na) The tree has n leaves.\nb) The tree has n roots\nc) Height of tree is n\nd) Depth of tree is n\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Graph | Context: Propositional Directed Acyclic Graphs (PDAGs) are used to represent Boolean functions efficiently. They help in logical inference and are fundamental in knowledge representation and reasoning systems.",
+        "target_text": "Question: In which of the following case does a Propositional Directed Acyclic Graph is used for?\nChoices:\na) representation of boolean functions\nb) string matching\nc) searching\nd) sorting of number\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: Red-Black trees are chosen for frequent insertions, AVL trees for fast lookups due to strict balancing, and B-trees for handling large datasets and disk-based storage.",
+        "target_text": "Question: When to choose Red-Black tree, AVL tree and B-trees?\nChoices:\na) many inserts, many searches and when managing more items respectively\nb) many searches, when managing more items respectively and many inserts respectively\nc) sorting, sorting and retrieval respectively\nd) retrieval, sorting and retrieval respectively\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: A weight balanced tree is a binary tree where each node stores the size (or weight) of its subtrees to maintain balance. It helps in ensuring efficient insertions, deletions, and access operations.",
+        "target_text": "Question: What is a weight balanced tree?\nChoices:\na) a binary tree that stores the sizes of subtrees in nodes\nb) a binary tree with an additional attribute of weight\nc) a height balanced binary tree\nd) a normal binary tree\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Heap | Context: In a binomial heap, the number of binomial trees with n nodes corresponds to the number of 1's in the binary representation of n, which is approximately log(n).",
+        "target_text": "Question: The number of trees in a binomial heap with n nodes is\nChoices:\na) log n\nb) n\nc) n log n\nd) n/2\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: A doubly linked list allows traversal in both directions and provides direct access to the previous node, which makes deletion of a known node location more efficient compared to a singly linked list.",
+        "target_text": "Question: Which of the following operations is performed more efficiently by doubly linked list than by linear linked list?\nChoices:\na) deleting a node whose location is given\nb) searching an unsorted list for a given item\nc) inserting a node after the node with a given location\nd) traversing the list to process each node\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Stack | Context: When converting expressions or evaluating them using a stack, operands are typically placed directly into the output stream or output list.",
+        "target_text": "Question: When an operand is read, which of the following is done?\nChoices:\na) it is placed on to the output\nb) it is placed in operator stack\nc) it is ignored\nd) operator stack is emptied\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: An optimal binary search tree minimizes the expected search cost based on known frequencies of access. It is constructed when the access pattern of the keys is known and remains unchanged.",
+        "target_text": "Question: What are the conditions for an optimal binary search tree and what is its advantage?\nChoices:\na) the tree should not be modified and you should know how often the keys are accessed, it improves the lookup cost\nb) you should know the frequency of access of the keys, improves the lookup time\nc) the tree can be modified and you should know the number of elements in the tree before hand, it improves the deletion time\nd) the tree should be just modified and improves the lookup time\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: It is possible to find the minimum number of steps to reach the end of an array using a greedy or dynamic programming approach in linear time, contrary to common belief.",
+        "target_text": "Question: It is not possible to find the minimum number of steps to reach the end of an array in linear time.\nChoices:\na) true\nb) false\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: A spanning tree of a connected graph with `n` vertices always contains exactly `n-1` edges. It is a subgraph that connects all the vertices without forming any cycle.",
+        "target_text": "Question: The spanning tree of connected graph with 10 vertices contains __________\nChoices:\na) 9 edges\nb) 11 edges\nc) 10 edges\nd) 9 vertices\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: In a linked list, overflow can occur if a node creation is attempted but there is no available memory (i.e., the free space pool is empty).",
+        "target_text": "Question: Overflow condition in linked list may occur when attempting to __________\nChoices:\na) create a node when free space pool is empty.\nb) traverse the nodes when free space pool is empty.\nc) create a node when linked list is empty.\nd) none of these.\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: Binary Search is the most efficient technique to search in a sorted array, requiring O(log n) time.",
+        "target_text": "Question: To search for an element in a sorted array, which searching technique can be used?\nChoices:\na) linear search\nb) jump search\nc) binary search\nd) fibonacci search\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Hashing | Context: Hashing is a technique used to map data (keys) to specific addresses in memory using hash functions. It enables constant-time average-case access.",
+        "target_text": "Question: Hashing is the problem of finding an appropriate mapping of keys into addresses.\nChoices:\na) true\nb) false\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: A single traversal like inorder, preorder, or postorder is not sufficient to uniquely reconstruct a binary tree. At least two traversals (such as inorder and preorder) are required.",
+        "target_text": "Question: Can a tree stored in an array using either one of inorder or post order or pre order traversals be again reformed?\nChoices:\na) yes just traverse through the array and form the tree\nb) no we need one more traversal to form a tree\nc) no in case of sparse trees\nd) yes by using both inorder and array elements\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: String | Context: In C/C++, the `strcmp()` function compares two strings. If both strings are identical, it returns `0`.",
+        "target_text": "Question: If two string s are identical, then strcmp() functions returns __________\nChoices:\na) -1\nb) 1\nc) yes\nd) 0\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: In a randomized binary search tree, the expected number of leaves is generally (n + 1)/3, assuming uniform insertion probabilities.",
+        "target_text": "Question: What is the expected number of leaves in a randomized binary search tree?\nChoices:\na) n + 1\nb) (n + 1)/3\nc) (n + 1)/2\nd) n + 3\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: A stack is a Last-In First-Out (LIFO) structure. Saying it is FIFO is incorrect. Stacks are commonly implemented using linked lists where the top points to the most recently added node.",
+        "target_text": "Question: Which of the following statement(s) about stack data structure is/are NOT correct?\nChoices:\na) linked list are used for implementing stacks\nb) top of the stack always contain the new node\nc) stack is the fifo data structure\nd) null link is present in the last node at the bottom of the stack\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Graph | Context: A complete graph with n vertices has an edge between every pair of distinct vertices. The number of edges is given by the formula (n*(n-1))/2.",
+        "target_text": "Question: What is the number of edges present in a complete graph having n vertices?\nChoices:\na) (n*(n+1))/2\nb) (n*(n-1))/2\nc) n\nd) information given is insufficient\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: Bit arrays are memory-efficient data structures that enable compact storage and bit-level operations. However, accessing individual bits can be slower due to bit masking and shifting.",
+        "target_text": "Question: Which of the following is not an advantage of bit array?\nChoices:\na) exploit bit level parallelism\nb) maximal use of data cache\nc) can be stored and manipulated in the register set for long periods of time\nd) accessing individual elements is easy\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: In a randomized binary search tree (RBST), the expected depth of a node is approximately 2 * log(n) + O(1), based on probabilistic balancing during insertion.",
+        "target_text": "Question: What is the expected depth of a node in a randomized binary search tree?\nChoices:\na) log n\nb) n!\nc) n²\nd) 2 log n + o(1)\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: In threaded binary trees, null pointers are replaced with special pointers (threads) to the in-order predecessor or successor. A single-threaded tree has one such pointer, while a double-threaded tree has two.",
+        "target_text": "Question: What are double and single threaded trees?\nChoices:\na) when both left, right nodes are having null pointers and only right node is null pointer respectively\nb) having 2 and 1 node\nc) using single and double linked lists\nd) using heaps and priority queues\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: In a k-d tree, the 'k' refers to the number of dimensions. It is a space-partitioning data structure for organizing points in a k-dimensional space.",
+        "target_text": "Question: In a k-d tree, k originally meant?\nChoices:\na) number of dimensions\nb) size of tree\nc) length of node\nd) weight of node\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: Cartesian trees are used in scenarios requiring range minimum queries and lowest common ancestor computations. They combine properties of a heap and binary search tree.",
+        "target_text": "Question: Cartesian trees are most suitable for?\nChoices:\na) searching\nb) finding nth element\nc) minimum range query and lowest common ancestors\nd) self balancing a tree\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: A suffix tree can be constructed using a suffix array and an LCP (Longest Common Prefix) array, which together allow efficient representation and search in strings.",
+        "target_text": "Question: LCP array and __________ is used to construct suffix tree.\nChoices:\na) hash tree\nb) hash trie\nc) suffix array\nd) balanced tree\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Heap | Context: In a min heap, the value of the parent node is always less than or equal to its child nodes. This ensures the minimum element is always at the root.",
+        "target_text": "Question: In a min heap:\nChoices:\na) minimum values are stored.\nb) child nodes have less value than parent nodes.\nc) parent nodes have less value than child nodes.\nd) maximum value is contained by the root node.\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: Suffix trees are widely used in bioinformatics for tasks like DNA sequence alignment, pattern matching, and repeat finding.",
+        "target_text": "Question: Can suffix tree be used in bioinformatics problems and solutions.\nChoices:\na) true\nb) false\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: In a randomized binary search tree, the longest path during insertion can be analyzed probabilistically. The expected maximum depth for inserting a node is around 4.311 * log(x).",
+        "target_text": "Question: What is the longest length path for a node x in random binary search tree for the insertion process?\nChoices:\na) log x\nb) x²\nc) x!\nd) 4.311 log x\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Heap | Context: Searching for a specific element in a heap requires scanning each node, as heaps are not designed for search operations. Therefore, the worst-case time complexity is O(n).",
+        "target_text": "Question: What is the time complexity of searching in a heap?\nChoices:\na) o(logn)\nb) o(n)\nc) o(1)\nd) o(nlogn)\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Heap | Context: Heap data structures are widely used in various real-world applications such as medical systems (task scheduling), file compression (Huffman coding), and stock market analysis (priority queues).",
+        "target_text": "Question: What are the applications of the heap data structure?\nChoices:\na) medical applications\nb) file compression\nc) stock market\nd) all of these\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: The time complexity for multiplying two matrices of order m*n and n*p using standard matrix multiplication is O(mnp), where m, n, and p are the respective dimensions.",
+        "target_text": "Question: The complexity of multiplying two matrices of order m*n and n*p is __________.\nChoices:\na) mnp\nb) mp\nc) mn\nd) np\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Queue | Context: Circular queues optimize memory use by treating the queue as a circular buffer. They are beneficial in memory management, traffic systems, and CPU scheduling.",
+        "target_text": "Question: Which of the following is/are advantages of circular queue?\nChoices:\na) memory management\nb) traffic system\nc) cpu scheduling\nd) all of the above\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: In direct addressing, each key has a unique position in an array, meaning there's a one-to-one correspondence between keys and array indices. This allows constant-time access but requires large arrays if the key range is large.",
+        "target_text": "Question: What is direct addressing?\nChoices:\na) distinct array position for every possible key\nb) fewer array positions than keys\nc) fewer keys than array positions\nd) distinct array positions for keys based on priority\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: Priority scheduling can cause issues like starvation and indefinite blocking for low-priority processes. However, interrupt handling is a standard OS function and not a specific disadvantage of this scheduling.",
+        "target_text": "Question: What is not a disadvantage of priority scheduling in operating systems?\nChoices:\na) a low priority process might have to wait indefinitely for the cpu\nb) if the system crashes, the low priority systems may be lost permanently\nc) interrupt handling\nd) indefinite blocking\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Stack | Context: Circular queues are used to optimize memory usage by wrapping around when the end of the array is reached, unlike linear queues which can waste space after deletions.",
+        "target_text": "Question: What is the need for a circular queue?\nChoices:\na) easier computations\nb) implement lifo principle in queues\nc) effective usage of memory\nd) to delete elements based on priority\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: In a binary search tree (BST), an inorder traversal visits the nodes in sorted (increasing) order. This property makes it useful for producing sorted output.",
+        "target_text": "Question: What is the speciality about the inorder traversal of a binary search tree?\nChoices:\na) it traverses in a non increasing order\nb) it traverses in an increasing order\nc) it traverses in a random fashion\nd) it traverses based on priority of the node\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: Computational geometry is a field of computer science that deals with the study and development of algorithms to solve geometric problems. It plays an important role in computer graphics, robotics, and more.",
+        "target_text": "Question: What is computational geometry?\nChoices:\na) study of geometry using a computer\nb) study of geometry\nc) study of algorithms\nd) study of algorithms related to geometry\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Stack | Context: In evaluating infix expressions using stacks, the precedence of operators determines the evaluation order. Higher precedence should not trigger immediate evaluation--only lower or equal precedence should.",
+        "target_text": "Question: Which of the following statement is incorrect with respect to evaluation of infix expression algorithm?\nChoices:\na) operand is pushed on to the stack\nb) if the precedence of operator is higher, pop two operands and evaluate\nc) if the precedence of operator is lower, pop two operands and evaluate\nd) the result is pushed on to the operand stack\nAnswer: b"
+    },
