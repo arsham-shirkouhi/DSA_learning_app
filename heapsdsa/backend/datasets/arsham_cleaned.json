@@ -5259,3 +5259,152 @@
         "input_text": "Generate a data structure MCQ | Topic: Heap | Context: In a ternary heap, increasing a key's priority may require bubbling it up through levels. The height is log base 3 of n, and with up to 3 comparisons per level, time is O(3 log n / log 3).",
         "target_text": "Question: What is the time complexity for increasing priority of key in a minimum ternary heap of n elements?\nChoices:\na) o(log n / log 3)\nb) o(3 log n / log 3)\nc) o(n)\nd) o(1)\nAnswer: b"
     },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: Dynamic Programming uses memoization to store intermediate results of subproblems, which helps avoid redundant computations and improve efficiency.",
+        "target_text": "Question: Which of the following uses memorization?\nChoices:\na) Greedy approach\nb) Divide and conquer approach\nc) Dynamic programming approach\nd) None of the above\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: The Van Emde Boas tree supports operations like finding the minimum and maximum in constant O(1) time due to its structure and recursive splitting of the universe.",
+        "target_text": "Question: What is the time complexity for finding a maximum and minimum integer in Van Emde Boas data structure?\nChoices:\na) o(log m!)\nb) o(m!)\nc) o(1)\nd) o(log log m)\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: String | Context: Finding all maximal palindromes in a string can be done in linear time O(n) using Manacher's algorithm.",
+        "target_text": "Question: What is a time complexity for finding all the maximal palindrome in a string?\nChoices:\na) θ(n)\nb) θ(n!)\nc) θ(1)\nd) θ(log n!)\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Sorting | Context: Interpolation search is efficient on uniformly distributed, sorted data. It achieves a time complexity of θ(log log n) in the best case when distribution is ideal.",
+        "target_text": "Question: If the data collection is in sorted form and equally distributed then the run time complexity of interpolation search is __________\nChoices:\na) θ(n)\nb) θ(1)\nc) θ(log n)\nd) θ(log log n)\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: Inserting at the beginning of a triply linked list (similar to a doubly linked list but with an extra pointer) still takes O(1) time when the pointer to the head is known.",
+        "target_text": "Question: Which among the following is the time complexity for inserting at the beginning of a triply linked list?\nChoices:\na) o(n)\nb) o(1)\nc) o(log n)\nd) o(n^2)\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: String | Context: Rope data structures enable efficient string manipulation. Splitting a string in a rope (balanced binary tree) can be done in O(log n) time.",
+        "target_text": "Question: What is the time complexity for splitting the string into two new strings in the rope data structure?\nChoices:\na) O(n^2)\nb) O(n!)\nc) O(log n)\nd) O(1)\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: Finding x-pattern occurrences of length n can be done in θ(n + x) time using pattern matching algorithms like KMP or Aho-Corasick.",
+        "target_text": "Question: What is a time complexity for x pattern occurrence of length n?\nChoices:\na) o(log n!)\nb) θ(n!)\nc) o(n^2)\nd) θ(n + x)\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Sorting | Context: Quick Sort uses the Divide and Conquer paradigm, where the array is partitioned recursively based on pivots.",
+        "target_text": "Question: Quick sort algorithm is an example of __________.\nChoices:\na) greedy approach\nb) improved binary search\nc) dynamic programming\nd) divide and conquer\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: In a singly linked list, deleting a node is O(1) if a pointer to the node and its previous node is already available. This is the best-case time complexity.",
+        "target_text": "Question: What is the best case time complexity of deleting a node in a Singly Linked list?\nChoices:\na) O(n)\nb) O(n^2)\nc) O(n log n)\nd) O(1)\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: In the worst case, deleting an element from an unsorted data structure may require scanning all elements, resulting in O(n) time.",
+        "target_text": "Question: What is the worst case time complexity of delete operation (n is the number of candidates)?\nChoices:\na) O(1)\nb) O(n)\nc) O(log n)\nd) O(n log n)\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: In a hash table using chaining with doubly linked lists, insertion is done at the head or tail in O(1) time, and search operations can also be optimized to O(1) under ideal hashing.",
+        "target_text": "Question: What is the time complexity of search function in a hash table using a doubly linked list?\nChoices:\na) O(1)\nb) O(n)\nc) O(log n)\nd) O(n log n)\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Stack | Context: A skew heap uses recursion to perform merges. A recursive implementation can fail if the stack depth exceeds limits, especially in degenerate cases. Hence, stack space becomes a limitation.",
+        "target_text": "Question: Why would a recursive implementation fail in skew heaps?\nChoices:\na) skew heaps are self adjusting\nb) efficiency gets reduced\nc) lack of stack space\nd) time complexity\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: Red-Black Trees provide logarithmic time complexity for insert, delete, and search operations, including finding predecessor and successor.",
+        "target_text": "Question: What are the operations that could be performed in O(log n) time complexity by red-black tree?\nChoices:\na) insertion, deletion, finding predecessor, successor\nb) only insertion\nc) only finding predecessor, successor\nd) for sorting\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: Free memory blocks in memory management systems are typically maintained in a circular linked list and organized by increasing address to support merging of adjacent blocks.",
+        "target_text": "Question: How are free blocks linked together mostly and in what addressing order?\nChoices:\na) circular linked list and increasing addressing order\nb) linked list and decreasing addressing order\nc) linked list and in no addressing order\nd) none of the mentioned\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: Performing θ(n) delete, O(log n) insert and find, and θ(n) decrease-key operations on a sorted doubly linked list gives an overall complexity of O(n log n).",
+        "target_text": "Question: n items are stored in a sorted doubly linked list. For a delete operation, a pointer is provided to the record to be deleted. For a decrease-key operation, a pointer is provided to the record on which the operation is to be performed. An algorithm performs the following operations on the list in this order: θ(n) delete, θ(log n) insert, θ(log n) find, and θ(n) decrease-key. What is the time complexity of all these operations put together?\nChoices:\na) θ(log² n)\nb) θ(n)\nc) θ(n log n)\nd) θ(n² log n)\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: Circular linked lists are often used in CPU scheduling, such as round-robin schedulers, to allocate time slices to multiple processes in a loop.",
+        "target_text": "Question: Which of the following application makes use of a circular linked list?\nChoices:\na) recursive function calls\nb) undo operation in a text editor\nc) implement hash tables\nd) allocating cpu to resources\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: The naive nearest neighbor search in an unsorted list of N items requires scanning all points, resulting in O(N) time in the worst case.",
+        "target_text": "Question: What is the worst case time complexity of finding the nearest neighbour?\nChoices:\na) o(n)\nb) o(n log n)\nc) o(log n)\nd) o(n^3)\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: Maintaining dynamic sets of weighted trees using advanced data structures (like union-find with union by rank and path compression) can be achieved in O(log n) time.",
+        "target_text": "Question: What is the time complexity for maintaining a dynamic set of weighted trees?\nChoices:\na) o(n)\nb) o(n^2)\nc) o(log n)\nd) o(n!)\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: In a circular linked list, the last node's 'next' pointer points back to the head instead of NULL, ensuring the list loops continuously.",
+        "target_text": "Question: What differentiates a circular linked list from a normal linked list?\nChoices:\na) you cannot have the 'next' pointer point to null in a circular linked list\nb) it is faster to traverse the circular linked list\nc) in a circular linked list, each node points to the previous node instead of the next node\nd) head node is known in circular linked list\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: In an unrolled linked list, insertion may require shifting elements in the array part or splitting nodes, which could take linear time O(n) in the worst case.",
+        "target_text": "Question: Which among the following is the time complexity for inserting an element in an unrolled linked list?\nChoices:\na) o(1)\nb) o(n)\nc) o(log n)\nd) o(n^2)\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Heap | Context: In a ternary heap (where each node has 3 children), decreasing a key's priority involves bubbling up, taking θ(log n / log 3) time.",
+        "target_text": "Question: What is the time complexity for decreasing priority of key in a minimum ternary heap of n elements?\nChoices:\na) O(log n / log 3)\nb) O(n!)\nc) O(n)\nd) O(1)\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Queue | Context: In a priority queue implemented using a linear array, insertion based on key requires scanning for the correct position, leading to O(n) time complexity.",
+        "target_text": "Question: What is the time complexity to insert a node based on key in a priority queue?\nChoices:\na) o(n log n)\nb) o(log n)\nc) o(n)\nd) o(n^2)\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Heap | Context: Pairing heaps are self-adjusting heaps. Their time complexity analysis was inspired by that of splay trees, which also use amortized analysis.",
+        "target_text": "Question: Pairing heaps time complexity was inspired by that of?\nChoices:\na) splay tree\nb) treap\nc) red-black tree\nd) avl tree\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Hashing | Context: In chaining with a list head, inserting at the beginning of the linked list takes constant time O(1) under ideal hashing assumptions.",
+        "target_text": "Question: What is the time complexity of insert function in a hash table using list head?\nChoices:\na) o(1)\nb) o(n)\nc) o(log n)\nd) o(n log n)\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Search | Context: Van Emde Boas trees offer fast operations for search, insert, and delete in O(log log M) time, where M is the universe size.",
+        "target_text": "Question: What is the time complexity for searching a key or integer in Van Emde Boas data structure?\nChoices:\na) o(m!)\nb) o(log m!)\nc) o(log log m)\nd) o(m^2)\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Hashing | Context: Hashing provides O(1) time complexity on average for search operations, assuming a good hash function and low collision rate.",
+        "target_text": "Question: Which searching technique takes O(1) time complexity for searching the data?\nChoices:\na) binary search\nb) linear search\nc) avl tree search\nd) hashing\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Sorting | Context: In the worst case (e.g., sorted input), Quick Sort's partitioning may lead to unbalanced recursion, giving time complexity O(n^2/2).",
+        "target_text": "Question: In worst case Quick Sort has order __________.\nChoices:\na) o(n log n)\nb) o(n^2/2)\nc) o(log n)\nd) o(n^2/4)\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: Inserting n elements into a sorted linked list one by one requires traversal for each insert, resulting in a total time of θ(n²) in the worst case.",
+        "target_text": "Question: What is the worst case time complexity of inserting n elements into an empty linked list, if the linked list needs to be maintained in sorted order?\nChoices:\na) θ(n)\nb) θ(n log n)\nc) θ(n²)\nd) θ(1)\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: Converting prefix notation to infix using a stack-based approach processes each token once, resulting in O(n) time where n is the number of symbols.",
+        "target_text": "Question: The time complexity of converting a prefix notation to infix notation is __________\nChoices:\na) o(n) where n is the length of the equation\nb) o(n) where n is number of operands\nc) o(1)\nd) o(log n) where n is length of the equation\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: The Tower of Hanoi problem has exponential time complexity O(2^n), making it one of the slowest recursive algorithms with the highest runtime.",
+        "target_text": "Question: Program with highest run-time complexity is __________\nChoices:\na) tower of hanoi\nb) fibonacci series\nc) prime number series\nd) none of these\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: Van Emde Boas trees support operations like insert, delete, and search in O(log log M) time, where M is the universe size.",
+        "target_text": "Question: What is the time complexity for inserting a key or integer in Van Emde Boas data structure?\nChoices:\na) o(log m!)\nb) o(m!)\nc) o(m^2)\nd) o(log log m)\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: The θ (Θ) notation in asymptotic analysis represents the tight bound, usually associated with the average case but also applies when upper and lower bounds match.",
+        "target_text": "Question: The θ notation in asymptotic evaluation represents __________\nChoices:\na) base case\nb) average case\nc) worst case\nd) null case\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: Red-Black trees are preferred over AVL trees in scenarios with frequent insertions and deletions because they require fewer rotations and offer faster amortized performance.",
+        "target_text": "Question: When would it be optimal to prefer Red-black trees over AVL trees?\nChoices:\na) when there are more insertions or deletions\nb) when more search is needed\nc) when tree must be balanced\nd) when log(nodes) time complexity is needed\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: Evaluating a postfix expression (Reverse Polish Notation) using a stack processes each token once, leading to linear time complexity O(n).",
+        "target_text": "Question: What is the time complexity of evaluation of postfix expression algorithm?\nChoices:\na) o(n)\nb) o(n log n)\nc) o(n^2)\nd) o(m log n)\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: The Floyd-Warshall algorithm applies dynamic programming to solve the all-pairs shortest path problem in a weighted graph.",
+        "target_text": "Question: The Floyd-Warshall algorithm for all-pair shortest paths computation is based on:\nChoices:\na) greedy paradigm\nb) divide-and-conquer paradigm\nc) dynamic programming paradigm\nd) none of the above\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: In naive merging of two sorted arrays (or lists), each element must be compared and placed into a new array, resulting in a worst-case time complexity of O(N).",
+        "target_text": "Question: The worst case analysis for a naive merge is given as?\nChoices:\na) o(n)\nb) o(log n)\nc) o(n log n)\nd) o(n^2)\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: In a binary search tree (BST), the worst case occurs when the tree becomes skewed, leading to O(n) complexity. The average case for balanced BSTs is O(log n).",
+        "target_text": "Question: What are the worst case and average case complexities of a binary search tree?\nChoices:\na) o(n), o(n)\nb) o(log n), o(log n)\nc) o(log n), o(n)\nd) o(n), o(log n)\nAnswer: d"
+    }
+]
