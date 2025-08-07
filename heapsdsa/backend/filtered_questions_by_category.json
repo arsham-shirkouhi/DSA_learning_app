@@ -1,5 +1,5 @@
 {
-  "total_questions": 2077,
+  "total_questions": 2024,
   "topics_covered": [
     "Stack",
     "Array",
@@ -22,22 +22,6 @@
         "b": "O(1)",
         "c": "O(log n)",
         "d": "O(n log n"
-      },
-      "page_number": 1,
-      "section_number": 1,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-arrays-in-data-structures/",
-      "app_category": "Array",
-      "topic": "Arrays In Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-arrays-in-data-structures/"
-    },
-    {
-      "txt": "Which of the following is the correct way to declare an array in C?",
-      "ans": "c",
-      "opt": {
-        "a": "int array[];",
-        "b": "array{int};",
-        "c": "int array[10];",
-        "d": "int array();"
       },
       "page_number": 1,
       "section_number": 1,
@@ -319,22 +303,6 @@
       "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-arrays-in-data-structures/"
     },
     {
-      "txt": "How do you access the last element of an array in JavaScript?",
-      "ans": "c",
-      "opt": {
-        "a": "array[length]",
-        "b": "array[-1]",
-        "c": "array[array.length - 1]",
-        "d": "array.getLast()"
-      },
-      "page_number": 3,
-      "section_number": 1,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-arrays-in-data-structures?section=1&page=3",
-      "app_category": "Array",
-      "topic": "Arrays In Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-arrays-in-data-structures/"
-    },
-    {
       "txt": "What is the time complexity of merging two sorted arrays?",
       "ans": "d",
       "opt": {
@@ -374,22 +342,6 @@
         "b": "Python",
         "c": "JavaScript",
         "d": "C"
-      },
-      "page_number": 3,
-      "section_number": 1,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-arrays-in-data-structures?section=1&page=3",
-      "app_category": "Array",
-      "topic": "Arrays In Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-arrays-in-data-structures/"
-    },
-    {
-      "txt": "What is the output of the following C code: int array[5] = {1, 2, 3, 4, 5}; printf(\"%d\", array[2]);",
-      "ans": "c",
-      "opt": {
-        "a": "1",
-        "b": "2",
-        "c": "3",
-        "d": "4"
       },
       "page_number": 3,
       "section_number": 1,
@@ -621,22 +573,6 @@
       "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-arrays-in-data-structures/"
     },
     {
-      "txt": "Where does the GNU C compiler allocates memory for variable-length arrays?",
-      "ans": "b",
-      "opt": {
-        "a": "Tree",
-        "b": "Stack",
-        "c": "Linked List",
-        "d": "Queue"
-      },
-      "page_number": 6,
-      "section_number": 1,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-arrays-in-data-structures?section=1&page=6",
-      "app_category": "Array",
-      "topic": "Arrays In Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-arrays-in-data-structures/"
-    },
-    {
       "txt": "Which of the following is not an application of sorted array?",
       "ans": "d",
       "opt": {
@@ -749,22 +685,6 @@
       "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-arrays-in-data-structures/"
     },
     {
-      "txt": "What will be the output of the following code?",
-      "ans": "b",
-      "opt": {
-        "a": "3 2 1 4 5",
-        "b": "3 4 5 1 2",
-        "c": "5 4 3 2 1",
-        "d": "error"
-      },
-      "page_number": 7,
-      "section_number": 1,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-arrays-in-data-structures?section=1&page=7",
-      "app_category": "Array",
-      "topic": "Arrays In Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-arrays-in-data-structures/"
-    },
-    {
       "txt": "Which of the following is the correct syntax to declare an ArrayList in Java?",
       "ans": "a",
       "opt": {
@@ -852,22 +772,6 @@
         "b": "2 7 4 9 8 0 5 1 6 3",
         "c": "2 4 9 0 5 7 8 1 6 3",
         "d": "2 8 7 0 5 1 6 9 4 3"
-      },
-      "page_number": 7,
-      "section_number": 1,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-arrays-in-data-structures?section=1&page=7",
-      "app_category": "Array",
-      "topic": "Arrays In Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-arrays-in-data-structures/"
-    },
-    {
-      "txt": "What does the following piece of code do?",
-      "ans": "b",
-      "opt": {
-        "a": "Normal of a matrix",
-        "b": "Trace of a matrix",
-        "c": "Square of a matrix",
-        "d": "Transpose of a matrix"
       },
       "page_number": 7,
       "section_number": 1,
@@ -1115,22 +1019,6 @@
       "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-arrays-in-data-structures/"
     },
     {
-      "txt": "Choose the appropriate code that counts the number of non-zero(non-null) elements in the sparse array.",
-      "ans": "a",
-      "opt": {
-        "a": "public int count() {\n        int count = 0;\n        for (List cur = this.next; (cur != null); cur = cur.next) {\n            count++;\n        }\n        return count;\n}",
-        "b": "public int count() {\n        int count = 0;\n        for (List cur = this; (cur != null); cur = cur.next) {\n            count++;\n        }\n        return count;\n}",
-        "c": "public int count() {\n        int count = 1;\n        for (List cur = this.next; (cur != null); cur = cur.next) {\n            count++;\n        }\n        return count;\n}",
-        "d": "public int count() {\n    int count = 1;\n    for (List cur = this.next; (cur != null); cur = cur.next.next) {\n        count++;\n    }\n    return count;\n}"
-      },
-      "page_number": 9,
-      "section_number": 1,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-arrays-in-data-structures?section=1&page=9",
-      "app_category": "Array",
-      "topic": "Arrays In Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-arrays-in-data-structures/"
-    },
-    {
       "txt": "Which of the following is a disadvantage of dynamic arrays?",
       "ans": "d",
       "opt": {
@@ -1186,54 +1074,6 @@
         "b": "n/2",
         "c": "(n/2) - 1",
         "d": "(n+1)/2"
-      },
-      "page_number": 10,
-      "section_number": 1,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-arrays-in-data-structures?section=1&page=10",
-      "app_category": "Array",
-      "topic": "Arrays In Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-arrays-in-data-structures/"
-    },
-    {
-      "txt": "What is the space complexity of the code that uses merge sort for determining the number of inversions in an array?",
-      "ans": "a",
-      "opt": {
-        "a": "O(n)",
-        "b": "O(log n)",
-        "c": "O(1)",
-        "d": "O(n log n"
-      },
-      "page_number": 10,
-      "section_number": 1,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-arrays-in-data-structures?section=1&page=10",
-      "app_category": "Array",
-      "topic": "Arrays In Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-arrays-in-data-structures/"
-    },
-    {
-      "txt": "What will be the auxiliary space complexity of the code to rotate an array by using the reversal algorithm (d = number of rotations)?",
-      "ans": "a",
-      "opt": {
-        "a": "O(1)",
-        "b": "O(n)",
-        "c": "O(d)",
-        "d": "O(n*d)"
-      },
-      "page_number": 10,
-      "section_number": 1,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-arrays-in-data-structures?section=1&page=10",
-      "app_category": "Array",
-      "topic": "Arrays In Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-arrays-in-data-structures/"
-    },
-    {
-      "txt": "What is the time complexity of the code that uses self balancing BST for determining the number of inversions in an array?",
-      "ans": "d",
-      "opt": {
-        "a": "O(n2)",
-        "b": "O(n)",
-        "c": "O(log n)",
-        "d": "O(n log n"
       },
       "page_number": 10,
       "section_number": 1,
@@ -1305,22 +1145,6 @@
       "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-arrays-in-data-structures/"
     },
     {
-      "txt": "What will be the time complexity of the following code?",
-      "ans": "a",
-      "opt": {
-        "a": "O(k)",
-        "b": "O(n)",
-        "c": "O(k log k)",
-        "d": "O(n log n"
-      },
-      "page_number": 1,
-      "section_number": 2,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-arrays-in-data-structures?section=2&page=1",
-      "app_category": "Array",
-      "topic": "Arrays In Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-arrays-in-data-structures/"
-    },
-    {
       "txt": "Which among the following is the worst-case time complexity for appending an element in a variable-length array?",
       "ans": "a",
       "opt": {
@@ -1374,22 +1198,6 @@
         "b": "O(n2)",
         "c": "O(mnlogn)",
         "d": "O(mlogn"
-      },
-      "page_number": 1,
-      "section_number": 2,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-arrays-in-data-structures?section=2&page=1",
-      "app_category": "Array",
-      "topic": "Arrays In Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-arrays-in-data-structures/"
-    },
-    {
-      "txt": "What is the functionality of the following piece of code?",
-      "ans": "b",
-      "opt": {
-        "a": "Store the element in the specified position",
-        "b": "Get the element from the specified position",
-        "c": "Alter the element in the specified position",
-        "d": "Removes the element from the specified position"
       },
       "page_number": 1,
       "section_number": 2,
@@ -1539,38 +1347,6 @@
       "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-arrays-in-data-structures/"
     },
     {
-      "txt": "What will be the worst case time complexity of the following code?",
-      "ans": "d",
-      "opt": {
-        "a": "O(n1/2)",
-        "b": "O(n)",
-        "c": "O(n3/2)",
-        "d": "O(n2)"
-      },
-      "page_number": 3,
-      "section_number": 2,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-arrays-in-data-structures?section=2&page=3",
-      "app_category": "Array",
-      "topic": "Arrays In Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-arrays-in-data-structures/"
-    },
-    {
-      "txt": "Matrix A when multiplied with Matrix C gives the Identity matrix I, what is C?",
-      "ans": "b",
-      "opt": {
-        "a": "Identity matrix",
-        "b": "Inverse of A",
-        "c": "Square of A",
-        "d": "Transpose of A"
-      },
-      "page_number": 3,
-      "section_number": 2,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-arrays-in-data-structures?section=2&page=3",
-      "app_category": "Array",
-      "topic": "Arrays In Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-arrays-in-data-structures/"
-    },
-    {
       "txt": "What is meant by physical size in a dynamic array?",
       "ans": "c",
       "opt": {
@@ -1651,20 +1427,6 @@
       "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-arrays-in-data-structures/"
     },
     {
-      "txt": "The time complexity of the code that determines the number of inversions in an array using self balancing BST is lesser than that of the code that uses loops for the same purpose.",
-      "ans": "a",
-      "opt": {
-        "a": "true",
-        "b": "false"
-      },
-      "page_number": 3,
-      "section_number": 2,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-arrays-in-data-structures?section=2&page=3",
-      "app_category": "Array",
-      "topic": "Arrays In Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-arrays-in-data-structures/"
-    },
-    {
       "txt": "What does the number of inversions in an array indicate?",
       "ans": "b",
       "opt": {
@@ -1688,22 +1450,6 @@
         "b": "4,2,3,5",
         "c": "5,4,2,3",
         "d": "2,4,5,3"
-      },
-      "page_number": 4,
-      "section_number": 2,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-arrays-in-data-structures?section=2&page=4",
-      "app_category": "Array",
-      "topic": "Arrays In Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-arrays-in-data-structures/"
-    },
-    {
-      "txt": "What will be the auxiliary space complexity of the following code?",
-      "ans": "c",
-      "opt": {
-        "a": "O(1)",
-        "b": "O(n)",
-        "c": "O(d)",
-        "d": "O(n*d)"
       },
       "page_number": 4,
       "section_number": 2,
@@ -1820,22 +1566,6 @@
       "page_number": 4,
       "section_number": 2,
       "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-arrays-in-data-structures?section=2&page=4",
-      "app_category": "Array",
-      "topic": "Arrays In Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-arrays-in-data-structures/"
-    },
-    {
-      "txt": "Consider the following piece of code in C++. What does the following code implement?",
-      "ans": "a",
-      "opt": {
-        "a": "Variable-length array",
-        "b": "Fixed-size array",
-        "c": "Dynamic memory allocation",
-        "d": "Error"
-      },
-      "page_number": 5,
-      "section_number": 2,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-arrays-in-data-structures?section=2&page=5",
       "app_category": "Array",
       "topic": "Arrays In Data Structures",
       "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-arrays-in-data-structures/"
@@ -2094,22 +1824,6 @@
         "b": "n/2",
         "c": "(n/2) - 1",
         "d": "(n+1)/2"
-      },
-      "page_number": 7,
-      "section_number": 2,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-arrays-in-data-structures?section=2&page=7",
-      "app_category": "Array",
-      "topic": "Arrays In Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-arrays-in-data-structures/"
-    },
-    {
-      "txt": "Consider the following piece of code in C++, how many elements will be stored in the array 'arr' if the user enters the values of a, b, c and d as 10, 20, 30, and 40 respectively?",
-      "ans": "c",
-      "opt": {
-        "a": "30",
-        "b": "40",
-        "c": "50",
-        "d": "60"
       },
       "page_number": 7,
       "section_number": 2,
@@ -2853,22 +2567,6 @@
       "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-linked-lists-in-data-structures/"
     },
     {
-      "txt": "Consider the following pseudocode of insertion in XOR list and write the approximate code snippet of it.",
-      "ans": "a",
-      "opt": {
-        "a": "node* next = XOR ((*head_ref)->npx,  NULL);\n  (*head_ref)->npx = XOR (new_node, next);",
-        "b": "node* next = XOR ((*head_ref)->npx,  NULL);\n  (*head_ref) = XOR (new_node, next);",
-        "c": "node* next = XOR ((*head_ref)->npx,  NULL);\n  (*head_ref)->npx->npx = XOR (new_node, next);",
-        "d": "node* next = XOR ((*head_ref),  NULL);\n  (*head_ref)->npx = XOR (new_node, next);"
-      },
-      "page_number": 5,
-      "section_number": 1,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-linked-lists-in-data-structures?section=1&page=5",
-      "app_category": "Linked List",
-      "topic": "Linked Lists In Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-linked-lists-in-data-structures/"
-    },
-    {
       "txt": "Which among the following is a typical declaration of an unrolled linked list in C?",
       "ans": "a",
       "opt": {
@@ -2876,22 +2574,6 @@
         "b": "#define SIZE N\nstruct node\n{\n    int arr[SIZE];\n    struct node *prev;\n    struct node *top;\n};",
         "c": "#define SIZE N\nstruct node\n{\n    int node_count;\n    struct node *next;\n};",
         "d": "#define SIZE N\nstruct node\n{\n    int node_count;\n    int arr[SIZE];\n};"
-      },
-      "page_number": 6,
-      "section_number": 1,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-linked-lists-in-data-structures?section=1&page=6",
-      "app_category": "Linked List",
-      "topic": "Linked Lists In Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-linked-lists-in-data-structures/"
-    },
-    {
-      "txt": "Assume there is a free list which contains nodes and is filled with a value if it is already assigned and the value will be the size of requested block else will be 0. The above code represents what?",
-      "ans": "a",
-      "opt": {
-        "a": "code for first fit",
-        "b": "code for best fit",
-        "c": "code for worst fit",
-        "d": "none of the mentioned"
       },
       "page_number": 6,
       "section_number": 1,
@@ -4457,22 +4139,6 @@
       "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-stacks-in-data-structures/"
     },
     {
-      "txt": "What would be the Prefix notation and Postfix notation for the given equation? A+B+C",
-      "ans": "a",
-      "opt": {
-        "a": "++ABC and AB+C+",
-        "b": "AB+C+ and ++ABC",
-        "c": "ABC++ and AB+C+",
-        "d": "ABC+ and ABC+"
-      },
-      "page_number": 6,
-      "section_number": 1,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-stacks-in-data-structures?section=1&page=6",
-      "app_category": "Stack",
-      "topic": "Stacks In Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-stacks-in-data-structures/"
-    },
-    {
       "txt": "Is the given statement ((A+B) + [C-D]] valid with respect to balancing of symbols?",
       "ans": "b",
       "opt": {
@@ -5459,22 +5125,6 @@
       "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-stacks-in-data-structures/"
     },
     {
-      "txt": "In the given C snippet, find the statement number that has error.",
-      "ans": "c",
-      "opt": {
-        "a": "1",
-        "b": "9",
-        "c": "10",
-        "d": "11"
-      },
-      "page_number": 4,
-      "section_number": 2,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-stacks-in-data-structures?section=2&page=4",
-      "app_category": "Stack",
-      "topic": "Stacks In Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-stacks-in-data-structures/"
-    },
-    {
       "txt": "Operations required for reversing a word or a string using stack are push() and pop().",
       "ans": "a",
       "opt": {
@@ -5704,22 +5354,6 @@
         "b": "tap",
         "c": "atp",
         "d": "apt"
-      },
-      "page_number": 6,
-      "section_number": 2,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-stacks-in-data-structures?section=2&page=6",
-      "app_category": "Stack",
-      "topic": "Stacks In Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-stacks-in-data-structures/"
-    },
-    {
-      "txt": "What is the time complexity of the following code?",
-      "ans": "b",
-      "opt": {
-        "a": "O(logn)",
-        "b": "O(n)",
-        "c": "O(1)",
-        "d": "O(nlogn)"
       },
       "page_number": 6,
       "section_number": 2,
@@ -8307,22 +7941,6 @@
       "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-trees-in-data-structures/"
     },
     {
-      "txt": "Which node is the child node of Node C in the following K-ary tree?",
-      "ans": "c",
-      "opt": {
-        "a": "A",
-        "b": "C",
-        "c": "G",
-        "d": "H"
-      },
-      "page_number": 8,
-      "section_number": 1,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-trees-in-data-structures?section=1&page=8",
-      "app_category": "Tree",
-      "topic": "Trees In Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-trees-in-data-structures/"
-    },
-    {
       "txt": "Assume +, -, *, / are usual arithmetic operator, + has highest precedence and right associative and -, *, / have equal precedence and left associative. What is the output of the expression 23 * 3 - 6 + 11 - 2 * 8 / 4?",
       "ans": "b",
       "opt": {
@@ -10859,22 +10477,6 @@
       "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-binary-search-trees(b-tree)/"
     },
     {
-      "txt": "What is wrong with below code for inorder traversal of inorder threaded binary tree:",
-      "ans": "a",
-      "opt": {
-        "a": "inordersuccessor instead of inorderpredecessor must be done",
-        "b": "code is correct",
-        "c": "it is code for post order",
-        "d": "it is code for pre order"
-      },
-      "page_number": 8,
-      "section_number": 1,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-binary-search-trees(b-tree)?section=1&page=8",
-      "app_category": "Tree",
-      "topic": "Binary Search Trees(B Tree)",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-binary-search-trees(b-tree)/"
-    },
-    {
       "txt": "AA-Trees makes more rotations than a red-black tree.",
       "ans": "a",
       "opt": {
@@ -11467,22 +11069,6 @@
       "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-binary-search-trees(b-tree)/"
     },
     {
-      "txt": "What does the following piece of code do? public void func(Tree root) { func(root.left()); func(root.right()); System.out.println(root.data()); }",
-      "ans": "c",
-      "opt": {
-        "a": "Preorder traversal",
-        "b": "Inorder traversal",
-        "c": "Postorder traversal",
-        "d": "Level order traversal"
-      },
-      "page_number": 2,
-      "section_number": 2,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-binary-search-trees(b-tree)?section=2&page=2",
-      "app_category": "Tree",
-      "topic": "Binary Search Trees(B Tree)",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-binary-search-trees(b-tree)/"
-    },
-    {
       "txt": "Which of the following trees is similar to that of an AA-Tree?",
       "ans": "d",
       "opt": {
@@ -11710,22 +11296,6 @@
         "b": "N = L + 1",
         "c": "N = L - 1",
         "d": "N = 2*L - 1"
-      },
-      "page_number": 4,
-      "section_number": 2,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-binary-search-trees(b-tree)?section=2&page=4",
-      "app_category": "Tree",
-      "topic": "Binary Search Trees(B Tree)",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-binary-search-trees(b-tree)/"
-    },
-    {
-      "txt": "Why the below pseudo code where x is a value, wt is weight factor and t is root node can't insert?",
-      "ans": "a",
-      "opt": {
-        "a": "when x>t. element Rotate-with-left-child should take place and vice versa",
-        "b": "the logic is incorrect",
-        "c": "the condition for rotating children is wrong",
-        "d": "insertion cannot be performed in weight balanced trees"
       },
       "page_number": 4,
       "section_number": 2,
@@ -12054,20 +11624,6 @@
       "opt": {
         "a": "True",
         "b": "False"
-      },
-      "page_number": 6,
-      "section_number": 2,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-binary-search-trees(b-tree)?section=2&page=6",
-      "app_category": "Tree",
-      "topic": "Binary Search Trees(B Tree)",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-binary-search-trees(b-tree)/"
-    },
-    {
-      "txt": "Does the above code can check if a binary search tree is an AVL tree?",
-      "ans": "a",
-      "opt": {
-        "a": "yes",
-        "b": "no"
       },
       "page_number": 6,
       "section_number": 2,
@@ -12424,22 +11980,6 @@
       "page_number": 8,
       "section_number": 2,
       "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-binary-search-trees(b-tree)?section=2&page=8",
-      "app_category": "Tree",
-      "topic": "Binary Search Trees(B Tree)",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-binary-search-trees(b-tree)/"
-    },
-    {
-      "txt": "What is the below pseudo code trying to do, where pt is a node pointer and root pointer?",
-      "ans": "a",
-      "opt": {
-        "a": "insert a new node",
-        "b": "delete a node",
-        "c": "search a node",
-        "d": "count the number of nodes"
-      },
-      "page_number": 9,
-      "section_number": 2,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-binary-search-trees(b-tree)?section=2&page=9",
       "app_category": "Tree",
       "topic": "Binary Search Trees(B Tree)",
       "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-binary-search-trees(b-tree)/"
@@ -15138,22 +14678,6 @@
         "b": "centre path",
         "c": "right path",
         "d": "root"
-      },
-      "page_number": 9,
-      "section_number": 1,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-heaps?section=1&page=9",
-      "app_category": "Heap",
-      "topic": "Heaps",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-heaps/"
-    },
-    {
-      "txt": "Given the code, choose the correct option that is consistent with the code. (Here A is the heap)",
-      "ans": "a",
-      "opt": {
-        "a": "It is the build function of max heap",
-        "b": "It is the build function of min heap",
-        "c": "It is general build function of any heap",
-        "d": "It is used to search element in any heap"
       },
       "page_number": 9,
       "section_number": 1,
@@ -21523,22 +21047,6 @@
       "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-string-matching/"
     },
     {
-      "txt": "What is the output of the following code snippet?",
-      "ans": "d",
-      "opt": {
-        "a": "Hello World",
-        "b": "Hello",
-        "c": "World",
-        "d": "Error"
-      },
-      "page_number": 8,
-      "section_number": 1,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-string-matching?section=1&page=8",
-      "app_category": "String",
-      "topic": "String Matching",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-string-matching/"
-    },
-    {
       "txt": "Which of the following is a string matching algorithm?",
       "ans": "a",
       "opt": {
@@ -25085,22 +24593,6 @@
       "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-graph-algorithms-(dfs,-bfs,-dijkstras,-etc)/"
     },
     {
-      "txt": "What is the pseudo code to compute the shortest path in Dijkstra's algorithm?",
-      "ans": "c",
-      "opt": {
-        "a": "if(T[w].Known) if(T[v].Dist + C(v,w) < T[w].Dist) { Increase (T[w].Dist to T[v].Dist +C(v,w)); T[w].path=v; }",
-        "b": "if(!T[w].Known) if(T[v].Dist + C(v,w) > T[w].Dist) { Decrease(T[w].Dist to T[v].Dist +C(v,w); T[w].path=v; }",
-        "c": "if(!T[w].Known) if(T[v].Dist + C(v,w) < T[w].Dist) { Decrease(T[w].Dist to T[v].Dist +C(v,w)); T[w].path=v; }",
-        "d": "if(T[w].Known) if(T[v].Dist + C(v,w) < T[w].Dist) { Increase(T[w].Dist to T[v].Dist); T[w].path=v; }"
-      },
-      "page_number": 1,
-      "section_number": 2,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-graph-algorithms-(dfs,-bfs,-dijkstras,-etc)?section=2&page=1",
-      "app_category": "Graph",
-      "topic": "Graph Algorithms (Dfs, Bfs, Dijkstras, Etc)",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-graph-algorithms-(dfs,-bfs,-dijkstras,-etc)/"
-    },
-    {
       "txt": "What procedure is being followed in Floyd Warshall Algorithm?",
       "ans": "b",
       "opt": {
@@ -25448,22 +24940,6 @@
       "page_number": 3,
       "section_number": 2,
       "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-graph-algorithms-(dfs,-bfs,-dijkstras,-etc)?section=2&page=3",
-      "app_category": "Graph",
-      "topic": "Graph Algorithms (Dfs, Bfs, Dijkstras, Etc)",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-graph-algorithms-(dfs,-bfs,-dijkstras,-etc)/"
-    },
-    {
-      "txt": "Given pseudo code of Dijkstra's Algorithm. What happens when \"While Q != 0\" is changed to \"while Q>1\"?",
-      "ans": "b",
-      "opt": {
-        "a": "While loop gets executed for v times",
-        "b": "While loop gets executed for v-1 times",
-        "c": "While loop gets executed only once",
-        "d": "While loop does not get executed"
-      },
-      "page_number": 4,
-      "section_number": 2,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-graph-algorithms-(dfs,-bfs,-dijkstras,-etc)?section=2&page=4",
       "app_category": "Graph",
       "topic": "Graph Algorithms (Dfs, Bfs, Dijkstras, Etc)",
       "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-graph-algorithms-(dfs,-bfs,-dijkstras,-etc)/"
@@ -28247,22 +27723,6 @@
       "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures/"
     },
     {
-      "txt": "What will be the time complexity of the given code?",
-      "ans": "b",
-      "opt": {
-        "a": "O(n2)",
-        "b": "O(n * n!)",
-        "c": "O(n!)",
-        "d": "O(n log n)"
-      },
-      "page_number": 6,
-      "section_number": 2,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures?section=2&page=6",
-      "app_category": "Theory",
-      "topic": "Miscellaneous On Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures/"
-    },
-    {
       "txt": "Square root decomposition technique is only applicable when the number of indices in an array is a perfect square.",
       "ans": "b",
       "opt": {
@@ -28284,22 +27744,6 @@
         "b": "{B, C, D, F}",
         "c": "{A, E, F, G}",
         "d": "{C, D, F, I}"
-      },
-      "page_number": 6,
-      "section_number": 2,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures?section=2&page=6",
-      "app_category": "Theory",
-      "topic": "Miscellaneous On Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures/"
-    },
-    {
-      "txt": "Given below is the pseudocode of floyd's cycle detection algorithm. Which of the following best suits the blank?",
-      "ans": "c",
-      "opt": {
-        "a": "same speed",
-        "b": "one fourth the speed of another",
-        "c": "twice the speed of another",
-        "d": "thrice the speed of another"
       },
       "page_number": 6,
       "section_number": 2,
@@ -28405,22 +27849,6 @@
       "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures/"
     },
     {
-      "txt": "What is meant by the single dash in Morse code?",
-      "ans": "b",
-      "opt": {
-        "a": "A",
-        "b": "T",
-        "c": "Z",
-        "d": "E"
-      },
-      "page_number": 7,
-      "section_number": 2,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures?section=2&page=7",
-      "app_category": "Theory",
-      "topic": "Miscellaneous On Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures/"
-    },
-    {
       "txt": "How many unique colors will be required for vertex coloring of the following graph?",
       "ans": "c",
       "opt": {
@@ -28490,22 +27918,6 @@
         "b": "Kruskal's algorithm",
         "c": "Dijkstra's algorithm",
         "d": "Ford-Fulkerson algorithm"
-      },
-      "page_number": 8,
-      "section_number": 2,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures?section=2&page=8",
-      "app_category": "Theory",
-      "topic": "Miscellaneous On Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures/"
-    },
-    {
-      "txt": "What is the Morse code for the distress signal is SOS?",
-      "ans": "a",
-      "opt": {
-        "a": "3 Dots, 3Dashes, and 3 Dots",
-        "b": "3 Dots, 3 Dashes, and 2 Dots",
-        "c": "3 Dots, 2 Dashes, and 3 Dots",
-        "d": "2 Dots, 3 Dashes, and 3 Dots"
       },
       "page_number": 8,
       "section_number": 2,
@@ -29809,22 +29221,6 @@
       "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures/"
     },
     {
-      "txt": "For which device was Morse code developed for?",
-      "ans": "a",
-      "opt": {
-        "a": "Telegraphy",
-        "b": "Stethoscope",
-        "c": "Telephone",
-        "d": "SONAR"
-      },
-      "page_number": 8,
-      "section_number": 3,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures?section=3&page=8",
-      "app_category": "Theory",
-      "topic": "Miscellaneous On Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures/"
-    },
-    {
       "txt": "Which of the following statement is incorrect with respect to generalizing the solution using the inclusion-exclusion principle?",
       "ans": "c",
       "opt": {
@@ -29889,22 +29285,6 @@
       "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures/"
     },
     {
-      "txt": "What will be the output for the given code?",
-      "ans": "b",
-      "opt": {
-        "a": "true",
-        "b": "false",
-        "c": "0",
-        "d": "error"
-      },
-      "page_number": 8,
-      "section_number": 3,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures?section=3&page=8",
-      "app_category": "Theory",
-      "topic": "Miscellaneous On Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures/"
-    },
-    {
       "txt": "When was the first solution to Eight Queen Puzzle published?",
       "ans": "a",
       "opt": {
@@ -29928,20 +29308,6 @@
         "b": "2",
         "c": "3",
         "d": "4"
-      },
-      "page_number": 8,
-      "section_number": 3,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures?section=3&page=8",
-      "app_category": "Theory",
-      "topic": "Miscellaneous On Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures/"
-    },
-    {
-      "txt": "If Matrix X is of order A*B and Matrix Y is of order C*D, and B=C then the order of the Matrix X*Y is A*D?",
-      "ans": "a",
-      "opt": {
-        "a": "True",
-        "b": "False"
       },
       "page_number": 8,
       "section_number": 3,
@@ -30387,38 +29753,6 @@
       "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures/"
     },
     {
-      "txt": "Which of the following is the base case for the above recursive code?",
-      "ans": "a",
-      "opt": {
-        "a": "if(n == 0)",
-        "b": "return 0",
-        "c": "return n + recursive_sum(n - 1)",
-        "d": "if(n == 1)"
-      },
-      "page_number": 2,
-      "section_number": 4,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures?section=4&page=2",
-      "app_category": "Theory",
-      "topic": "Miscellaneous On Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures/"
-    },
-    {
-      "txt": "What will be the output for the following code?",
-      "ans": "c",
-      "opt": {
-        "a": "1 2, 1 2,2 2,",
-        "b": "1 2, 2 1, 2 2,",
-        "c": "1 2, 2 2,",
-        "d": "1 2, 2 2, 2 1,"
-      },
-      "page_number": 2,
-      "section_number": 4,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures?section=4&page=2",
-      "app_category": "Theory",
-      "topic": "Miscellaneous On Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures/"
-    },
-    {
       "txt": "Which among the following algorithms can be used to decide which page should be replaced when the new page comes in?",
       "ans": "c",
       "opt": {
@@ -30426,38 +29760,6 @@
         "b": "DSW algorithm",
         "c": "Page replacement algorithm",
         "d": "Aging algorithm"
-      },
-      "page_number": 2,
-      "section_number": 4,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures?section=4&page=2",
-      "app_category": "Theory",
-      "topic": "Miscellaneous On Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures/"
-    },
-    {
-      "txt": "What will be the recurrence relation of the following code?",
-      "ans": "d",
-      "opt": {
-        "a": "T(n) = T(n/2) + n",
-        "b": "T(n) = T(n-1) + n",
-        "c": "T(n) = T(n-1) + O(1)",
-        "d": "T(n) = T(n/2) + O(1)"
-      },
-      "page_number": 2,
-      "section_number": 4,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures?section=4&page=2",
-      "app_category": "Theory",
-      "topic": "Miscellaneous On Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures/"
-    },
-    {
-      "txt": "What will be the time complexity of the code to print combinations?",
-      "ans": "d",
-      "opt": {
-        "a": "O(n)",
-        "b": "O(n2)",
-        "c": "O(n log n)",
-        "d": "O(2n)"
       },
       "page_number": 2,
       "section_number": 4,
@@ -30639,22 +29941,6 @@
       "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures/"
     },
     {
-      "txt": "What is the auxiliary space complexity of the given code?",
-      "ans": "b",
-      "opt": {
-        "a": "O(1)",
-        "b": "O(n)",
-        "c": "O(log n)",
-        "d": "O(n log n)"
-      },
-      "page_number": 4,
-      "section_number": 4,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures?section=4&page=4",
-      "app_category": "Theory",
-      "topic": "Miscellaneous On Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures/"
-    },
-    {
       "txt": "The chromatic number of star graph with 3 vertices is greater than that of a tree with same number of vertices.",
       "ans": "b",
       "opt": {
@@ -30692,22 +29978,6 @@
         "b": "transposition cipher",
         "c": "symmetric cipher",
         "d": "asymmetric cipher"
-      },
-      "page_number": 4,
-      "section_number": 4,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures?section=4&page=4",
-      "app_category": "Theory",
-      "topic": "Miscellaneous On Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures/"
-    },
-    {
-      "txt": "What is the length of the dot in Morse code?",
-      "ans": "d",
-      "opt": {
-        "a": "1 Unit",
-        "b": "7 Units",
-        "c": "5 Units",
-        "d": "3 Units"
       },
       "page_number": 4,
       "section_number": 4,
@@ -30770,22 +30040,6 @@
       "opt": {
         "a": "true",
         "b": "false"
-      },
-      "page_number": 5,
-      "section_number": 4,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures?section=4&page=5",
-      "app_category": "Theory",
-      "topic": "Miscellaneous On Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures/"
-    },
-    {
-      "txt": "Which letter of the English alphabet has the shortest code in Morse Code?",
-      "ans": "d",
-      "opt": {
-        "a": "A",
-        "b": "C",
-        "c": "B",
-        "d": "E"
       },
       "page_number": 5,
       "section_number": 4,
@@ -30868,22 +30122,6 @@
       "page_number": 5,
       "section_number": 4,
       "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures?section=4&page=5",
-      "app_category": "Theory",
-      "topic": "Miscellaneous On Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures/"
-    },
-    {
-      "txt": "Consider the following recursive implementation of the binary search: Which of the following lines should be added to complete the above code?",
-      "ans": "d",
-      "opt": {
-        "a": "hi = mid - 1",
-        "b": "mid = (lo + hi)/2",
-        "c": "mid = lo - 1",
-        "d": "lo = mid + 1"
-      },
-      "page_number": 6,
-      "section_number": 4,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures?section=4&page=6",
       "app_category": "Theory",
       "topic": "Miscellaneous On Data Structures",
       "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures/"
@@ -30990,22 +30228,6 @@
         "b": "3",
         "c": "180",
         "d": "6"
-      },
-      "page_number": 6,
-      "section_number": 4,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures?section=4&page=6",
-      "app_category": "Theory",
-      "topic": "Miscellaneous On Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures/"
-    },
-    {
-      "txt": "What will be the worst case time complexity of code to find sum in given query range (l,r) in an array of size n with q number of such queries when we apply MO's algorithm?",
-      "ans": "c",
-      "opt": {
-        "a": "O(n*q)",
-        "b": "O(n)",
-        "c": "O((q+n)√n)",
-        "d": "O(q*√n)"
       },
       "page_number": 6,
       "section_number": 4,
@@ -31159,22 +30381,6 @@
       "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures/"
     },
     {
-      "txt": "Which word tells a word rate of Morse code's shorter code durations for common characters such as \"e\" and \"t\"?",
-      "ans": "a",
-      "opt": {
-        "a": "PARIS",
-        "b": "CODEX",
-        "c": "PARCOD",
-        "d": "SPACE"
-      },
-      "page_number": 7,
-      "section_number": 4,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures?section=4&page=7",
-      "app_category": "Theory",
-      "topic": "Miscellaneous On Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures/"
-    },
-    {
       "txt": "Encryption in Route cipher is done . . . . . . . .",
       "ans": "c",
       "opt": {
@@ -31317,22 +30523,6 @@
       "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures/"
     },
     {
-      "txt": "What is the time complexity of the following code used to convert a decimal number to its binary equivalent?",
-      "ans": "d",
-      "opt": {
-        "a": "O(1",
-        "b": "O(n)",
-        "c": "O(n2)",
-        "d": "O(logn)"
-      },
-      "page_number": 9,
-      "section_number": 4,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures?section=4&page=9",
-      "app_category": "Theory",
-      "topic": "Miscellaneous On Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures/"
-    },
-    {
       "txt": "Which of the following is a disadvantage of quickselect?",
       "ans": "d",
       "opt": {
@@ -31432,22 +30622,6 @@
       "opt": {
         "a": "True",
         "b": "False"
-      },
-      "page_number": 9,
-      "section_number": 4,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures?section=4&page=9",
-      "app_category": "Theory",
-      "topic": "Miscellaneous On Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures/"
-    },
-    {
-      "txt": "Consider the following iterative implementation to find the nth fibonacci number? Which of the following lines should be added to complete the above code?",
-      "ans": "b",
-      "opt": {
-        "a": "c = b\n   b = a",
-        "b": "a = b\n   b = c",
-        "c": "b = c\n   a = b",
-        "d": "a = b\n   b = a"
       },
       "page_number": 9,
       "section_number": 4,
@@ -31590,22 +30764,6 @@
         "b": "T(n) = O(log n)",
         "c": "T(n) = O(n2log n)",
         "d": "cannot be solved using master's theorem"
-      },
-      "page_number": 10,
-      "section_number": 4,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures?section=4&page=10",
-      "app_category": "Theory",
-      "topic": "Miscellaneous On Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures/"
-    },
-    {
-      "txt": "A two-out-of-five code consists of . . . . . . . .",
-      "ans": "b",
-      "opt": {
-        "a": "Two 0s and three 1s",
-        "b": "Three 0s and two 1s",
-        "c": "Four 0s and one 1s",
-        "d": "One 0s and four 1s"
       },
       "page_number": 10,
       "section_number": 4,
@@ -31867,22 +31025,6 @@
       "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures/"
     },
     {
-      "txt": "The most common hamming codes are a generalized version of?",
-      "ans": "a",
-      "opt": {
-        "a": "Hamming(7, 4) code",
-        "b": "Hamming(8, 4) code",
-        "c": "Hamming(6, 3) code",
-        "d": "Hamming(5, 7) code"
-      },
-      "page_number": 2,
-      "section_number": 5,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures?section=5&page=2",
-      "app_category": "Theory",
-      "topic": "Miscellaneous On Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures/"
-    },
-    {
       "txt": "Topological sort can be applied to which of the following graphs?",
       "ans": "d",
       "opt": {
@@ -31894,22 +31036,6 @@
       "page_number": 2,
       "section_number": 5,
       "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures?section=5&page=2",
-      "app_category": "Theory",
-      "topic": "Miscellaneous On Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures/"
-    },
-    {
-      "txt": "What will be the output for following code?",
-      "ans": "a",
-      "opt": {
-        "a": "AB,BA,",
-        "b": "BA,AB,",
-        "c": "AB,BA",
-        "d": "BA,AB,"
-      },
-      "page_number": 3,
-      "section_number": 5,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures?section=5&page=3",
       "app_category": "Theory",
       "topic": "Miscellaneous On Data Structures",
       "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures/"
@@ -32073,22 +31199,6 @@
       "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures/"
     },
     {
-      "txt": "What will be the output of the code that generates permutations and also has the ability to handle duplicates, for the input str[ ]=\"AA\"?",
-      "ans": "a",
-      "opt": {
-        "a": "AA",
-        "b": "AA,AA",
-        "c": "A,A",
-        "d": "A"
-      },
-      "page_number": 4,
-      "section_number": 5,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures?section=5&page=4",
-      "app_category": "Theory",
-      "topic": "Miscellaneous On Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures/"
-    },
-    {
       "txt": "What will be the chromatic index for a complete graph having n vertices (consider n to be an odd number)?",
       "ans": "a",
       "opt": {
@@ -32231,22 +31341,6 @@
       "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures/"
     },
     {
-      "txt": "Consider the following pseudocode for the random page replacement algorithm. Which of the following best suits the blank? Start traversing the pages if pages < capacity { insert the pages until the size of the set reaches capacity or all the pages are processed maintain the pages in a queue increment page fault } else if { current page is present in the set do nothing } else { replace the current page with __________ store current page in the queue increment page fault } return page faults",
-      "ans": "a",
-      "opt": {
-        "a": "any random page",
-        "b": "recently used page",
-        "c": "least recently used page",
-        "d": "the first page of the frame"
-      },
-      "page_number": 5,
-      "section_number": 5,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures?section=5&page=5",
-      "app_category": "Theory",
-      "topic": "Miscellaneous On Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures/"
-    },
-    {
       "txt": "What is the minimum vertex cover for the following graph given below?",
       "ans": "a",
       "opt": {
@@ -32295,22 +31389,6 @@
       "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures/"
     },
     {
-      "txt": "What is the basic unit of time measurement in Morse code transmission?",
-      "ans": "a",
-      "opt": {
-        "a": "Dot duration",
-        "b": "Dash Duration",
-        "c": "Numeric Duration",
-        "d": "Space Duration"
-      },
-      "page_number": 6,
-      "section_number": 5,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures?section=5&page=6",
-      "app_category": "Theory",
-      "topic": "Miscellaneous On Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures/"
-    },
-    {
       "txt": "What is meant by number theory?",
       "ans": "a",
       "opt": {
@@ -32318,22 +31396,6 @@
         "b": "study of complex numbers",
         "c": "numerology",
         "d": "theory of origination of mathematics"
-      },
-      "page_number": 6,
-      "section_number": 5,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures?section=5&page=6",
-      "app_category": "Theory",
-      "topic": "Miscellaneous On Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures/"
-    },
-    {
-      "txt": "Given below is the pseudocode of the flooding algorithm. Node and message are denoted by n and m respectively. Which of the following best suits the blank? if m.id was seen before, discard else, add m.id to list of seen messages and ______",
-      "ans": "c",
-      "opt": {
-        "a": "discard the message",
-        "b": "forward the message in the direction from where it came.",
-        "c": "forward the message to all neighbors of n",
-        "d": "forward the message to the left neighbor of n"
       },
       "page_number": 6,
       "section_number": 5,
@@ -32508,22 +31570,6 @@
         "b": "LRU replacement algorithm",
         "c": "FIFO",
         "d": "Counting based"
-      },
-      "page_number": 7,
-      "section_number": 5,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures?section=5&page=7",
-      "app_category": "Theory",
-      "topic": "Miscellaneous On Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures/"
-    },
-    {
-      "txt": "What is the base case for the following code?",
-      "ans": "c",
-      "opt": {
-        "a": "return",
-        "b": "printf(\"%d \", n)",
-        "c": "if(n == 0)",
-        "d": "my_recursive_function(n-1)"
       },
       "page_number": 7,
       "section_number": 5,
@@ -32856,22 +31902,6 @@
         "b": "O(N log N)",
         "c": "O(N2)",
         "d": "O(log N)"
-      },
-      "page_number": 10,
-      "section_number": 5,
-      "page_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures?section=5&page=10",
-      "app_category": "Theory",
-      "topic": "Miscellaneous On Data Structures",
-      "source_url": "https://www.examveda.com/data-structure/practice-mcq-question-on-miscellaneous-on-data-structures/"
-    },
-    {
-      "txt": "Which of the following algorithms is the best approach for solving Huffman codes?",
-      "ans": "a",
-      "opt": {
-        "a": "greedy algorithm",
-        "b": "exhaustive search",
-        "c": "divide and conquer algorithm",
-        "d": "brute force algorithm"
       },
       "page_number": 10,
       "section_number": 5,

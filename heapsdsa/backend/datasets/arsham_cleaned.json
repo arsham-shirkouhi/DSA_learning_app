@@ -518,11 +518,11 @@
     {
         "input_text": "Generate a data structure MCQ | Topic: Array | Context: In array-based queue implementations, the queue becomes full when the rear index reaches the array's maximum size minus one.",
         "target_text": "Question: A normal queue, if implemented using an array of size MAX_SIZE, gets full when?\nChoices:\na) Rear = MAX_SIZE - 1\nb) Front = (rear + 1) mod MAX_SIZE\nc) Front = rear + 1\nd) Rear = front\nAnswer: a"
-    }
+    },
     {
         "input_text": "Generate a data structure MCQ | Topic: Graph | Context: Lexicographical order of strings stored in a trie is achieved by performing an inorder traversal over the trie.",
         "target_text": "Question: What traversal over trie gives the lexicographical sorting of the set of the strings?\nChoices:\na) postorder\nb) preorder\nc) inorder\nd) level order\nAnswer: c"
-    }
+    },
     {
         "input_text": "Generate a data structure MCQ | Topic: Tree | Context: Union-find with union by height optimizes disjoint-set structures. The depth of any tree in this scheme is logarithmic in size.",
         "target_text": "Question: What is the depth of any tree if the union operation is performed by height?\nChoices:\na) O(N)\nb) O(log N)\nc) O(N log N)\nd) O(M log N)\nAnswer: b"
@@ -573,7 +573,7 @@
     },
     {
         "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: Inserting an element after a given pointer in a linked list takes constant time as it only involves pointer manipulation.",
-        "target_text": "Question: In a linked list with n nodes, the time taken to insert an element after an element pointed by some pointer is __________\nChoices:\na) O(1)\nb) O(log n)\nc) O(n)\nd) O(n log n)\nAnswer: a",
+        "target_text": "Question: In a linked list with n nodes, the time taken to insert an element after an element pointed by some pointer is __________\nChoices:\na) O(1)\nb) O(log n)\nc) O(n)\nd) O(n log n)\nAnswer: a"
     },
     {
         "input_text": "Generate a data structure MCQ | Topic: Array | Context: For a sorted array, binary search can be used to find if an element appears more than n/2 times in Θ(log n) time.",
@@ -841,23 +841,23 @@
     },
     {
         "input_text": "Generate a data structure MCQ | Topic: Theory | Context: Evaluating prefix expressions involves scanning from right to left and applying operations to operands. This example is a complex prefix computation.",
-        "target_text": "Question: Find the output of the following prefix expression:\n* + 2 - 2 1 / - 4 2 + - 5 3 1\nChoices:\na) 2\nb) 12\nc) 10\nd) 4\nAnswer: a",
+        "target_text": "Question: Find the output of the following prefix expression:\n* + 2 - 2 1 / - 4 2 + - 5 3 1\nChoices:\na) 2\nb) 12\nc) 10\nd) 4\nAnswer: a"
     },
     {
         "input_text": "Generate a data structure MCQ | Topic: Heap | Context: When inserting a new value into a max heap, the value is added at the end and then bubbled up to maintain the heap property. This results in a reordering of elements.",
-        "target_text": "Question: Consider a max heap, represented by the array: 40, 30, 20, 10, 15, 16, 17, 8, 4. Now consider that a value 35 is inserted into this heap. After insertion, the new heap is:\nChoices:\na) 40, 30, 20, 10, 15, 16, 17, 8, 4, 35\nb) 40, 35, 20, 10, 30, 16, 17, 8, 4, 15\nc) 40, 30, 20, 10, 35, 16, 17, 8, 4, 15\nd) 40, 35, 20, 10, 15, 16, 17, 8, 4, 30\nAnswer: b",
+        "target_text": "Question: Consider a max heap, represented by the array: 40, 30, 20, 10, 15, 16, 17, 8, 4. Now consider that a value 35 is inserted into this heap. After insertion, the new heap is:\nChoices:\na) 40, 30, 20, 10, 15, 16, 17, 8, 4, 35\nb) 40, 35, 20, 10, 30, 16, 17, 8, 4, 15\nc) 40, 30, 20, 10, 35, 16, 17, 8, 4, 15\nd) 40, 35, 20, 10, 15, 16, 17, 8, 4, 30\nAnswer: b"
     },
     {
         "input_text": "Generate a data structure MCQ | Topic: Heap | Context: Pairing heaps are simple yet efficient heap structures. Their performance benefits stem from their simple operations, particularly meld, which allow fast amortized performance.",
-        "target_text": "Question: What is the reason for the efficiency of a pairing heap?\nChoices:\na) simplicity\nb) time-efficient\nc) space-efficient\nd) advanced\nAnswer: a",
+        "target_text": "Question: What is the reason for the efficiency of a pairing heap?\nChoices:\na) simplicity\nb) time-efficient\nc) space-efficient\nd) advanced\nAnswer: a"
     },
     {
         "input_text": "Generate a data structure MCQ | Topic: Tree | Context: The average depth of a binary tree refers to the average distance from the root to all nodes. For a randomly built tree, this depth is approximately O(sqrt(N)).",
-        "target_text": "Question: The average depth of a binary tree is given as?\nChoices:\na) O(N)\nb) O(√N)\nc) O(N²)\nd) O(log N)\nAnswer: b",
+        "target_text": "Question: The average depth of a binary tree is given as?\nChoices:\na) O(N)\nb) O(√N)\nc) O(N²)\nd) O(log N)\nAnswer: b"
     },
     {
         "input_text": "Generate a data structure MCQ | Topic: Array | Context: Postfix expressions are evaluated using a stack where operands are pushed and operators cause the last operands to be popped and evaluated.",
-        "target_text": "Question: The data structure required to evaluate a postfix expression is:\nChoices:\na) Queue\nb) Stack\nc) Array\nd) Linked List\nAnswer: b",
+        "target_text": "Question: The data structure required to evaluate a postfix expression is:\nChoices:\na) Queue\nb) Stack\nc) Array\nd) Linked List\nAnswer: b"
     },
     {
         "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: In a singly linked list, deleting the last element requires traversing the entire list to find the node before the last one, making the operation O(n).",
@@ -3188,10 +3188,6 @@
         "target_text": "Question: In a binary tree, the number of internal nodes of degree 1 is 5, and the number of internal nodes of degree 2 is 10. The number of leaf nodes in the binary tree is:\nChoices:\na) 10\nb) 11\nc) 12\nd) 15\nAnswer: b"
     },
     {
-        "input_text": "Generate a data structure MCQ | Topic: Array | Context: Arrays in C++ are fixed-size containers for storing sequential elements. Recursive functions can manipulate arrays by modifying their elements. A classic problem is to reverse an array using recursion, where the function swaps elements from both ends and recurses toward the center.",
-        "target_text": "Question: What will be the output of the following code?\n#include <bits/stdc++.h> \nusing namespace std; \nvoid func(int arr[], int left, int right) \n{ \n if (left >= right) \n return; \n int temp = arr[left]; \n arr[left] = arr[right]; \n arr[right] = temp; \n func(arr, left + 1, right - 1); \n} \nvoid printArray(int arr[], int size) \n{ \n for (int i = 0; i < size; i++) \n cout << arr[i] << ""; \n} \nint main() \n{ \n int arr[] = {1,2,3,4}; \n int n = sizeof(arr) / sizeof(arr[0]); \n func(arr, 0, n-1); \n printArray(arr, n); \n return 0; \n}\nChoices:\na) 1 2 3 4\nb) 4 3 2 1\nc) 1 4 2 3\nd) 4 1 2 3\nAnswer: b"
-    },
-    {
         "input_text": "Generate a data structure MCQ | Topic: Theory | Context: Postfix (Reverse Polish) expressions are evaluated using a stack. Operands are pushed onto the stack, and when an operator is encountered, the appropriate number of operands are popped, the operation is applied, and the result is pushed back. In the expression abcd+, values are substituted and operations follow the postfix order.",
         "target_text": "Question: What is the result of the following postfix expression?\nabcd+ where a=2, b=2, c=3, d=4.\nChoices:\na) 16\nb) 12\nc) 14\nd) 10\nAnswer: a"
     },
@@ -3268,10 +3264,6 @@
         "target_text": "Question: Given a plane graph, G having 2 connected components, 6 vertices, 7 edges and 4 regions, what will be the number of connected components?\nChoices:\na) 1\nb) 2\nc) 3\nd) 4\nAnswer: b"
     },
     {
-        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: The given C++ program performs a depth-first traversal (DFS) on a graph represented by an adjacency matrix. Starting from vertex 0, it recursively visits all unvisited neighbors. The output corresponds to the order in which the DFS visits the vertices based on the adjacency matrix.",
-        "target_text": "Question: What would be the output of the following C++ program if the given input is\n0 0 0 1 1\n0 0 0 0 1\n0 0 0 1 0\n1 0 1 0 0\n1 1 0 0 0\n \n#include <bits/stdc++.h>\nusing namespace std;\nbool visited[5];\nint G[5][5];\n \nvoid fun(int i)\n{\n cout<<i<<"";\n visited[i]=true;\n for(int j=0;j<5;j++)\n if(!visited[j]&&G[i][j]==1)\n fun(j);\n}\n \nint main()\n{ \n for(int i=0;i<5;i++)\n for(int j=0;j<5;j++)\n cin>>G[i][j];\n \n for(int i=0;i<5;i++)\n visited[i]=0;\n \n fun(0);\n return 0;\n}\nChoices:\na) 0 2 3 1 4\nb) 0 3 2 4 1\nc) 0 2 3 4 1\nd) 0 3 2 1 4\nAnswer: b"
-    },
-    {
         "input_text": "Generate a data structure MCQ | Topic: Theory | Context: In an infix expression, operators are placed between operands. This is the common human-readable format for arithmetic expressions. The recursive pattern of producing left expression -> operator -> right expression characterizes infix notation.",
         "target_text": "Question: The expression obtained by recursively producing a left expression, followed by an operator, followed by recursively producing a right expression is called?\nChoices:\na) prefix expression\nb) infix expression\nc) postfix expression\nd) parenthesized expression\nAnswer: b"
     },
@@ -3330,10 +3322,6 @@
     {
         "input_text": "Generate a data structure MCQ | Topic: Array | Context: A sparse array is a data structure that efficiently stores and processes arrays with a large number of zero or default values. Instead of allocating space for every element, it stores only non-zero values and their positions, making it memory-efficient compared to a naive array.",
         "target_text": "Question: What is the difference between a normal (naive) array and a sparse array?\nChoices:\na) sparse array can hold more elements than a normal array\nb) sparse array is memory efficient\nc) sparse array is dynamic\nd) a naive array is more efficient\nAnswer: b"
-    },
-    {
-        "input_text": "Generate a data structure MCQ | Topic: Queue | Context: To print the right view of a binary tree, level order traversal using a queue is used. The rightmost node at each level is printed. In the provided C++ code, the queue must be properly initialized with the root node. If not, the traversal won't begin.",
-        "target_text": "Question: What is wrong in the below code of printing right view of a binary tree using the queue data structure?\n#include <iostream>\n#include <queue>\nusing namespace std;\nclass Node {\npublic:\n int data;\n Node* left;\n Node* right;\n Node(int val) : data(val), left(nullptr), right(nullptr) {}\n};\nvoid printRightView(Node* root) {\n if (root == nullptr) return;\n queue<Node*> q;\n q.push(root);\n while (!q.empty()) {\n int n = q.size();\n for (int i = 0; i < n; i++) {\n Node* x = q.front();\n q.pop();\n if (i == n - 1) {\n cout << x->data << "";\n }\n if (x->left) {\n q.push(x->left);\n }\n if (x->right) {\n q.push(x->right);\n }\n }\n }\n}\nChoices:\na) we have not initialized anything in the queue\nb) queue will never be empty.\nc) left and right nodes of the tree are null.\nd) none\nAnswer: d"
     },
     {
         "input_text": "Generate a data structure MCQ | Topic: Array | Context: The trace of a matrix is defined as the sum of its diagonal elements from the top-left to the bottom-right. This is commonly calculated by iterating over the matrix where row and column indices are equal (i == j).",
