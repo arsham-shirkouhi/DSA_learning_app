@@ -4659,3 +4659,603 @@
         "input_text": "Generate a data structure MCQ | Topic: Stack | Context: In evaluating infix expressions using stacks, the precedence of operators determines the evaluation order. Higher precedence should not trigger immediate evaluation--only lower or equal precedence should.",
         "target_text": "Question: Which of the following statement is incorrect with respect to evaluation of infix expression algorithm?\nChoices:\na) operand is pushed on to the stack\nb) if the precedence of operator is higher, pop two operands and evaluate\nc) if the precedence of operator is lower, pop two operands and evaluate\nd) the result is pushed on to the operand stack\nAnswer: b"
     },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: An AVL tree is a height-balanced binary search tree. For every node, the difference in height between its left and right subtrees (called balance factor) must be at most 1.",
+        "target_text": "Question: An AVL tree is a self - balancing binary search tree, in which the heights of the two child sub trees of any node differ by __________\nChoices:\na) at least one\nb) at most one\nc) two\nd) at most two\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: In a binary search tree (BST), in-order traversal visits nodes in the left-root-right order, which yields values in ascending sorted order.",
+        "target_text": "Question: In a binary search tree, which of the following traversals would print the numbers in the ascending order?\nChoices:\na) level-order traversal\nb) pre-order traversal\nc) post-order traversal\nd) in-order traversal\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: Height-balanced binary trees like AVL trees maintain balance to prevent skewed shapes, which helps achieve faster access and insertion times, improving overall efficiency.",
+        "target_text": "Question: Why do we need a height-balanced binary tree?\nChoices:\na) to avoid formation of skew trees\nb) to save memory\nc) to attain faster memory access\nd) to simplify storing\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Hashing | Context: Open addressing handles collisions by probing alternative locations in the hash table. Common techniques include linear probing, quadratic probing, and double hashing. Rehashing, however, refers to resizing the hash table, not collision resolution.",
+        "target_text": "Question: Which of the following is not a collision resolution strategy for open addressing?\nChoices:\na) linear probing\nb) quadratic probing\nc) double hashing\nd) rehashing\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: In a B+ tree with n pointers, the number of keys in a leaf node ranges from ceil((n-1)/2) to n-1. If the node can hold 7 pointers, it can hold up to 6 keys, with a minimum of ceil(6/2) = 3.",
+        "target_text": "Question: A B+ tree can contain a maximum of 7 pointers in a node. What is the minimum number of keys in leaves?\nChoices:\na) 6\nb) 3\nc) 4\nd) 7\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: In syntax trees or parse trees used by compilers, an in-order traversal returns the original infix expression, which is the same as the original input string.",
+        "target_text": "Question: While evaluating the parse tree, which traversal technique is used to give the original input string?\nChoices:\na) pre-order traversal\nb) in-order traversal\nc) post-order traversal\nd) breadth-first traversal\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: The maximum number of nodes in a binary tree of depth `d` is given by the formula 2^d - 1. For depth 5, it would be 2^5 - 1 = 31.",
+        "target_text": "Question: The maximum number of nodes in a binary tree of depth 5 is __________\nChoices:\na) 31\nb) 16\nc) 32\nd) 15\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: A 2D search tree, also known as a k-d tree, uses alternate dimensions for comparison at different levels. At odd levels, comparisons are typically made using the first key.",
+        "target_text": "Question: The 2d search tree has the simple property that branching on odd levels is done with respect to the first key.\nChoices:\na) true\nb) false\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: A full binary tree is a binary tree in which every node other than the leaves has two children. A balanced full binary tree with `n` leaves has height log₂(n). For 8 leaves, height is log₂(8) = 3.",
+        "target_text": "Question: What will be the height of a balanced full binary tree with 8 leaves?\nChoices:\na) 2\nb) 3\nc) 4\nd) 5\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: A self-balancing binary search tree ensures logarithmic height. The minimum height for `n` nodes in such a tree is approximately log2(n).",
+        "target_text": "Question: The minimum height of self balancing binary search tree with n nodes is __________\nChoices:\na) log2(n)\nb) n\nc) 2n + 1\nd) 2n - 1\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: Random trees are generated using probabilistic algorithms. AVL trees are deterministic and follow strict balancing rules, making them non-random trees.",
+        "target_text": "Question: Which of the following is not a random tree?\nChoices:\na) treap\nb) random binary tree\nc) uniform spanning tree\nd) avl tree\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: XOR linked lists use a single pointer per node that stores the XOR of previous and next node addresses. This reduces memory usage compared to traditional doubly linked lists.",
+        "target_text": "Question: Is it possible to create a doubly linked list using only one pointer with every node.\nChoices:\na) not possible\nb) yes, possible by storing xor of addresses of previous and next nodes\nc) yes, possible by storing xor of current node and next node\nd) yes, possible by storing xor of current node and previous node\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: A special sparse matrix has mostly zero elements but follows a specific structure. A band matrix is one such type, where non-zero elements are confined to a diagonal band.",
+        "target_text": "Question: Which one of the following is a special sparse matrix?\nChoices:\na) band matrix\nb) skew matrix\nc) null matrix\nd) unit matrix\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: XOR linked lists use a single field to store the XOR of the addresses of previous and next nodes. The first node XORs NULL and the address of the second node; the last node XORs its previous node and NULL.",
+        "target_text": "Question: What do the first and last nodes of an XOR linked list contain? (let the addresses of the first and last nodes be A and B)\nChoices:\na) null xor a and b xor null\nb) null and null\nc) a and b\nd) null xor a and b\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: Simple uniform hashing assumes that every key is equally likely to hash into any of the available slots in the hash table, resulting in uniform distribution.",
+        "target_text": "Question: What is simple uniform hashing?\nChoices:\na) every element has equal probability of hashing into any of the slots\nb) a weighted probabilistic method is used to hash elements into the slots\nc) elements have random probability of hashing into array slots\nd) elements are hashed based on priority\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Hashing | Context: A suffix tree is a compressed trie used for efficient full-text searches, particularly in string processing and bioinformatics.",
+        "target_text": "Question: Which of the following special type of trie is used for fast searching of the full texts?\nChoices:\na) ctrie\nb) hash tree\nc) suffix tree\nd) t tree\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Queue | Context: In queue data structures, attempting to insert an element into a full queue results in an overflow condition, especially in fixed-size implementations like arrays.",
+        "target_text": "Question: What is the term for inserting into a full queue known as?\nChoices:\na) overflow\nb) underflow\nc) null pointer exception\nd) program won't be compiled\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: In C, memory allocated using `malloc` or `calloc` should be released using `free`. For deleting nodes in an expression tree, `free` is used to deallocate the memory.",
+        "target_text": "Question: An expression tree's nodes can be deleted by calling?\nChoices:\na) malloc\nb) calloc\nc) delete\nd) free\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: In data structures and algorithms, a naive merge strategy can sometimes still apply in skewed merges, depending on the case. The claim that naive merge cannot be done is False.",
+        "target_text": "Question: Naive merge cannot be done in a skew merge.\nChoices:\na) true\nb) false\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: Reversing an array involves swapping pairs of elements from both ends toward the center. For an array of even length n, exactly n/2 swaps are required.",
+        "target_text": "Question: How many swaps are required for reversing an array having n elements where n is an even number?\nChoices:\na) (n-1) / 2\nb) n/2\nc) (n/2) - 1\nd) (n+1)/2\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Queue | Context: Height-balanced binary search trees (like AVL trees) can efficiently implement abstract data types such as sets and priority queues due to their balanced structure and fast lookup and update times.",
+        "target_text": "Question: Which of the following data structures can be efficiently implemented using height balanced binary search tree?\nChoices:\na) sets\nb) priority queue\nc) heap\nd) both sets and priority queue\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Heap | Context: A leftist heap is a variant of a binary heap that is designed to support efficient merging of two heaps. Merging is the fundamental operation upon which others like insertion and deletion are based.",
+        "target_text": "Question: What is the fundamental operation on leftist heap?\nChoices:\na) insertion\nb) merging\nc) deletion\nd) swapping\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: A binary tree supports three primary traversal orders: in-order, pre-order, and post-order. Level-order traversal is also applicable, but generally the number of basic traversal orders is considered to be 3.",
+        "target_text": "Question: How many orders of traversal are applicable to a binary tree (In General)?\nChoices:\na) 1\nb) 4\nc) 2\nd) 3\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: In any K-ary tree, the root node is always at depth 0. Depth is defined as the number of edges from the root to a given node.",
+        "target_text": "Question: What is the depth of the root node of K-ary tree?\nChoices:\na) 2\nb) 1\nc) 0\nd) 3\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: The average depth of a binary tree gives an idea of how far nodes are from the root on average. It is often approximated by O(sqrt(N)) in randomly constructed binary trees.",
+        "target_text": "Question: The average depth of a binary tree is given as?\nChoices:\na) O(N)\nb) O(log N)\nc) O(M log N)\nd) O(sqrt(N))\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: In a B-tree of minimum degree t, each node can have at most 2t children (pointers), and hence a maximum of 2t pointers.",
+        "target_text": "Question: A B-tree of minimum degree t can maximum __________ pointers in a node.\nChoices:\na) t-1\nb) 2t-1\nc) 2t\nd) t\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: In a singly or doubly linked list, searching requires sequential traversal from the head node, leading to a linear time complexity of O(n).",
+        "target_text": "Question: The time required to search an element in a linked list of length n is\nChoices:\na) O(log n)\nb) O(n)\nc) O(1)\nd) O(n²)\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: Splay trees are self-adjusting binary search trees. They are used in applications such as cache implementation where frequently accessed elements are moved closer to the root.",
+        "target_text": "Question: Which of the following options is an application of splay trees?\nChoices:\na) cache implementation\nb) networks\nc) send values\nd) receive values\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: A queue is a linear data structure where insertion (enqueue) occurs at the rear and deletion (dequeue) occurs at the front. This behavior classifies it as FIFO.",
+        "target_text": "Question: A linear list of elements in which deletion can be done from one end (front) and insertion can take place only at the other end (rear) is known as __________\nChoices:\na) queue\nb) stack\nc) tree\nd) linked list\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: When a node with two children is deleted in a binary search tree, it is typically replaced with its in-order successor (the next larger node) to maintain the BST properties.",
+        "target_text": "Question: If a node having two children is deleted from a binary tree, it is replaced by its __________\nChoices:\na) in-order predecessor\nb) in-order successor\nc) pre-order predecessor\nd) none of these\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Queue | Context: A priority queue allows elements to be processed based on priority. While it efficiently handles priority-based operations, arbitrary deletions (deleting any element) are not straightforward or efficient.",
+        "target_text": "Question: Which of the following is not an advantage of a priority queue?\nChoices:\na) easy to implement\nb) processes with different priority can be efficiently handled\nc) applications with differing requirements\nd) easy to delete elements in any case\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: Heaps are typically complete binary trees, which are well-suited to array representations. Arrays provide better memory efficiency and caching compared to linked tree structures.",
+        "target_text": "Question: Why is heap implemented using array representations than tree(linked list) representations though both tree representations and heaps have same complexities?\nThen why go with array representation when both are having same values ?\nChoices:\na) arrays can store trees which are complete and heaps are not complete\nb) lists representation takes more memory hence memory efficiency is less and go with arrays and arrays have better caching\nc) lists have better caching\nd) in lists insertion and deletion is difficult\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Hashing | Context: Open addressing and separate chaining are two methods to resolve hash collisions. Open addressing can be easier to implement because it does not require additional data structures like linked lists.",
+        "target_text": "Question: Which of the following is an advantage of open addressing over separate chaining?\nChoices:\na) it is simpler to implement\nb) table never gets full\nc) it is less sensitive to hash function\nd) it has better cache performance\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: In threaded binary trees, null pointers are replaced with references to in-order predecessors and successors to allow for efficient non-recursive traversal.",
+        "target_text": "Question: What are null nodes filled with in a threaded binary tree?\nChoices:\na) inorder predecessor for left node and inorder successor for right node information\nb) right node with inorder predecessor and left node with inorder successor information\nc) they remain null\nd) some other values randomly\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Heap | Context: In a d-heap (a generalization of a binary heap where each node has d children), most operations like insert and delete are efficient, but merging two d-heaps is not efficient without specialized data structures.",
+        "target_text": "Question: Which operation is not efficiently performed in a d-heap?\nChoices:\na) insert\nb) delete\nc) find\nd) merge\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: In a circular linked list representation of a queue, maintaining a single pointer to the rear node allows both enQueue (insert at rear) and deQueue (delete from front) operations to be performed in constant time.",
+        "target_text": "Question: A circularly linked list is used to represent a Queue. A single variable p is used to access the Queue. To which node should p point such that both the operations enQueue and deQueue can be performed in constant time? (GATE 2004) \nChoices:\na) rear node\nb) front node\nc) not possible with a single pointer\nd) node next to front\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Heap | Context: A binomial heap supports efficient union operations, unlike binary heaps. It consists of a collection of binomial trees, allowing union in logarithmic time.",
+        "target_text": "Question: The main distinguishable characterstic of a binomial heap from a binary heap is that\nChoices:\na) it allows union operations very efficiently\nb) it does not allow union operations that could easily be implemented in binary heap\nc) the heap structure is not similar to complete binary tree\nd) the location of child node is not fixed i.e child nodes could be at level (h-2) or (h-3), where h is height of heap and h>4\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: For pre-order and post-order traversals to be the same, the tree must have only one node. With more than one node, the traversal orders will differ.",
+        "target_text": "Question: The maximum number of nodes in a tree for which post-order and pre-order traversals may be equal is __________\nChoices:\na) 3\nb) 1\nc) 2\nd) any number\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Sorting | Context: If a Directed Acyclic Graph (DAG) has more than one valid topological sort, then it cannot have exactly one Hamiltonian path. A unique topological sort would imply exactly one such path.",
+        "target_text": "Question: If there are more than 1 topological sorting of a DAG is possible, which of the following is True.\nChoices:\na) many Hamiltonian paths are possible\nb) no Hamiltonian path is possible\nc) exactly 1 Hamiltonian path is possible\nd) given information is insufficient to comment anything\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: AVL trees are more strictly balanced than Red-Black trees, which may result in more rotations during insertion and deletion. Red-Black trees allow faster updates but are less balanced.",
+        "target_text": "Question: Which of the following is True\nChoices:\na) the avl trees are more balanced compared to red black trees, but they may cause more rotations during insertion and deletion.\nb) heights of avl and red-black trees are generally same, but avl trees may cause more rotations during insertion and deletion.\nc) red black trees are more balanced compared to avl trees, but may cause more rotations during insertion and deletion.\nd) heights of avl and red-black trees are generally same, but red black trees may cause more rotations during insertion and deletion.\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: A Hash tree (or Merkle tree) uses hashing to support direct access and data integrity verification. It does not provide sequential access.",
+        "target_text": "Question: Which of the following is True for a Hash tree?\nChoices:\na) hashing is used for sequential access\nb) indexing is used for direct access\nc) hash tree allows only sequential access\nd) hashing is used for direct access\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: A triply linked list is an extension of doubly linked lists and is dynamic in nature, allowing flexible memory usage. It supports forward and backward traversal and an additional pointer for special operations.",
+        "target_text": "Question: Which of the following is True about a triply linked list?\nChoices:\na) dynamic in nature\nb) allows random access\nc) less memory wastage\nd) reverse traversing is difficult\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Graph | Context: A graph can consist of only vertices and no edges (called an edgeless graph). However, it cannot contain edges without vertices, since edges must connect vertices.",
+        "target_text": "Question: Which of the following is True?\nChoices:\na) a graph may contain no edges and many vertices\nb) a graph may contain many edges and no vertices\nc) a graph may contain no edges and no vertices\nd) a graph may contain no vertices and many edges\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: The number of inversions in an array indicates how far the array is from being sorted. A common method to compute inversions efficiently is via a modified merge sort algorithm.",
+        "target_text": "Question: Choose the correct function from the following which determines the number of inversions in an array?\nChoices:\na) using bubble sort comparisons\nb) using merge sort with inversion count logic\nc) using simple count of unequal elements\nd) using linear scan for each element\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: A B+ tree is a type of self-balancing tree structure that allows both rapid sequential access (via leaf node chaining) and rapid random access (through internal indexing).",
+        "target_text": "Question: Which of the following is True?\nChoices:\na) b+ tree allows only the rapid random access\nb) b+ tree allows only the rapid sequential access\nc) b+ tree allows rapid random access as well as rapid sequential access\nd) b+ tree allows rapid random access and slower sequential access\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Queue | Context: Priority queues can be implemented using multiple queues for different priority levels. A minimum of 2 queues is required--one for high and one for low priority elements.",
+        "target_text": "Question: Minimum number of queues required for priority queue implementation?\nChoices:\na) 5\nb) 4\nc) 3\nd) 2\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: Standard operator precedence rules apply: division and multiplication before addition. The expression `a/b + c*d` with values a=4, b=2, c=2, d=1 becomes 2 + 2 = 4.",
+        "target_text": "Question: Evaluate the following and choose the correct answer.\na/b+c*d where a=4, b=2, c=2, d=1.\nChoices:\na) 1\nb) 4\nc) 5\nd) 2\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: When implementing a queue with a linked list, inserting at one end (e.g., rear) and deleting from the other (e.g., front) maintains FIFO order. Option a describes this behavior correctly.",
+        "target_text": "Question: Which of the following is True about linked list implementation of queue?\nChoices:\na) In push operation, if new nodes are inserted at the beginning of linked list, then in pop operation, nodes must be removed from end\nb) In push operation, if new nodes are inserted at the beginning, then in pop operation, nodes must be removed from the beginning\nc) In push operation, if new nodes are inserted at the end, then in pop operation, nodes must be removed from end\nd) In push operation, if new nodes are inserted at the end, then in pop operation, nodes must be removed from beginning\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: According to operator precedence, multiplication is done before addition and subtraction. The expression `1+2*3-2` evaluates as `1 + 6 - 2 = 5`.",
+        "target_text": "Question: Evaluate the following statement using infix evaluation algorithm and choose the correct answer. 1+2*3-2\nChoices:\na) 3\nb) 6\nc) 5\nd) 4\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: In Binary Search Tree deletion, when a node has two children, it's replaced with its inorder successor or predecessor. The inorder successor is either a leaf or has no left child.",
+        "target_text": "Question: In delete operation of BST, we need inorder successor (or predecessor) of a node when the node to be deleted has both left and right child as non-empty. Which of the following is True about inorder successor needed in delete operation?\nChoices:\na) Inorder successor is always a leaf node\nb) Inorder successor is always either a leaf node or a node with empty left child\nc) Inorder successor may be an ancestor of the node\nd) Inorder successor is always either a leaf node or a node with empty right child\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: The Move-To-Front heuristic reorganizes data to improve access time. However, it may bring infrequently accessed nodes to the front, potentially decreasing performance.",
+        "target_text": "Question: Which of the following is True about the Move-To-Front Method for rearranging nodes?\nChoices:\na) node with highest access count is moved to head of the list\nb) requires extra storage\nc) may over-reward infrequently accessed nodes\nd) requires a counter for each node\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: Searching in AVL trees is θ(log n) due to their balanced nature, while unbalanced BSTs may degrade to O(n) in worst case.",
+        "target_text": "Question: Which of the following is TRUE?\nChoices:\na) The cost of searching an AVL tree is θ (log n) but that of a binary search tree is O(n)\nb) The cost of searching an AVL tree is θ (log n) but that of a complete binary tree is θ (n log n)\nc) The cost of searching a binary search tree is O (log n ) but that of an AVL tree is θ(n)\nd) The cost of searching an AVL tree is θ (n log n) but that of a binary search tree is O(n)\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Queue | Context: In a linked list implementation of a queue, you can insert at the beginning and remove from the end, or vice versa, depending on your implementation. Both configurations are valid.",
+        "target_text": "Question: Which of the following is True about linked list implementation of queue?\nChoices:\na) in push operation, if new nodes are inserted at the beginning of linked list, then in pop operation, nodes must be removed from end.\nb) in push operation, if new nodes are inserted at the end, then in pop operation, nodes must be removed from the beginning.\nc) both of the above\nd) none of the above\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: In B-trees, the higher the order (maximum number of children), the more keys each node can hold. This reduces the frequency of splits because nodes can accommodate more insertions.",
+        "target_text": "Question: Which of the following is True?\nChoices:\na) larger the order of b-tree, less frequently the split occurs\nb) larger the order of b-tree, more frequently the split occurs\nc) smaller the order of b-tree, more frequently the split occurs\nd) smaller the order of b-tree, less frequently the split occurs\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: String | Context: In a trie (prefix tree), strings are stored such that the path from the root to a leaf represents a string. Each node contains character edges to its children.",
+        "target_text": "Question: Which of the following is True about the trie?\nChoices:\na) root is letter a\nb) path from root to the leaf yields the string\nc) children of nodes are randomly ordered\nd) each node stores the associated keys\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: In normal binary trees, many pointers in the structure may be null (especially in leaf nodes), which leads to space inefficiency. Threaded binary trees solve this by reusing null pointers.",
+        "target_text": "Question: What are the disadvantages of normal binary tree traversals?\nChoices:\na) there are many pointers which are null and thus useless\nb) there is no traversal which is efficient\nc) complexity in implementing\nd) improper traversals\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: Binary trees can be both complete and full, but not all binary trees satisfy these properties. Therefore, none of the listed options are universally True.",
+        "target_text": "Question: Which of the following is True about Binary Trees?\nChoices:\na) every binary tree is either complete or full\nb) every complete binary tree is also a full binary tree\nc) every full binary tree is also a complete binary tree\nd) no binary tree is both complete and full\ne) none of the above\nAnswer: e"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: Standard infix evaluation respects operator precedence: multiplication/division before addition/subtraction. The expression `4*2 + 3 - 5/5` = `8 + 3 - 1` = `10`.",
+        "target_text": "Question: Evaluate the following statement using infix evaluation algorithm and choose the correct answer. 4*2+3-5/5\nChoices:\na) 10\nb) 11\nc) 16\nd) 12\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Heap | Context: In a weak-heap, each right child has a greater value than its parent. It is a relaxed version of the min-heap with specific rules enabling better performance in certain cases.",
+        "target_text": "Question: Choose the correct properties of weak-heap.\nChoices:\na) every node has value greater than the value of child node\nb) every right child of node has greater value than parent node\nc) every left child of node has greater value than parent node\nd) every left and right child of node has same value as parent node\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Stack | Context: A threaded binary tree replaces null pointers with pointers to in-order predecessor or successor, enabling traversal without stacks or queues.",
+        "target_text": "Question: What is a threaded binary tree traversal?\nChoices:\na) a binary tree traversal using stacks\nb) a binary tree traversal using queues\nc) a binary tree traversal using stacks and queues\nd) a binary tree traversal without using stacks and queues\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: If delete and decrease-key operations are rare and provided with direct access, an unsorted array allows O(1) insertions and direct deletions, making it optimal for minimizing total cost.",
+        "target_text": "Question: An algorithm performs (logN)^1/2 find operations, N insert operations, (logN)^1/2 delete operations, and (logN)^1/2 decrease-key operations on a set of data items with keys drawn from a linearly ordered set. For a delete operation, a pointer is provided to the record that must be deleted. For the decrease-key operation, a pointer is provided to the record that has its key decreased. Which one of the following data structures is the most suited for the algorithm to use, if the goal is to achieve the best total asymptotic complexity considering all the operations?\nChoices:\na) unsorted array\nb) min-heap\nc) sorted array\nd) sorted doubly linked list\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Hashing | Context: In a hash table with chaining using a list head, deleting an element pointed to by a reference is done in constant time, giving a time complexity of O(1).",
+        "target_text": "Question: What is the time complexity of delete function in the hash table using list head?\nChoices:\na) o(1)\nb) o(n)\nc) o(log n)\nd) o(n log n)\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: AA-Trees are balanced binary search trees with worst-case time complexity for operations like search, insert, and delete being O(log N), similar to AVL or Red-Black trees.",
+        "target_text": "Question: What is the worst case analysis of an AA-Tree?\nChoices:\na) o(n)\nb) o(log n)\nc) o(n log n)\nd) o(n^2)\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Heap | Context: In a ternary heap, each node has 3 children. The height is log base 3 of n. Decreasing a key may involve bubbling down the tree, taking O(3 * log n / log 3) time in the worst case.",
+        "target_text": "Question: What is the time complexity for decreasing priority of key in a maximum ternary heap of n elements?\nChoices:\na) o(log n / log 3)\nb) o(3 log n / log 3)\nc) o(n)\nd) o(1)\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: In a circular linked list, searching for a specific element still requires traversing up to n elements in the worst case, giving a time complexity of O(n).",
+        "target_text": "Question: What is the time complexity of searching for an element in a circular linked list?\nChoices:\na) o(n)\nb) o(nlogn)\nc) o(1)\nd) o(n^2)\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: Finding all tandem repeats (repeated substrings appearing consecutively) can be done using suffix trees in O(n log n + z), where z is the number of such repeats.",
+        "target_text": "Question: What is a time complexity for finding all the tandem repeats?\nChoices:\na) θ(n)\nb) θ(n!)\nc) θ(1)\nd) o(n log n + z)\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Hashing | Context: While hash tables offer O(1) average-case time complexity, self-balancing BSTs offer O(log n). Hence, BSTs are worse than hash tables in the average case.",
+        "target_text": "Question: Self - balancing binary search trees have a much better average-case time complexity than hash tables.\nChoices:\na) true\nb) false\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: Generalized suffix trees can be used to find the longest palindromic substring in linear time using clever traversal and string manipulations.",
+        "target_text": "Question: What is a time complexity for finding the longest palindromic substring in a string by using the generalized suffix tree?\nChoices:\na) linear time\nb) exponential time\nc) logarithmic time\nd) cubic time\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: Dynamic arrays provide amortized O(1) time complexity for insertion at the end. But resizing may take O(n), so worst case is O(n).",
+        "target_text": "Question: What is the time complexity of inserting at the end in dynamic arrays?\nChoices:\na) o(1)\nb) o(n)\nc) o(log n)\nd) either o(1) or o(n)\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Hashing | Context: When using separate chaining with a list head in a hash table, if a key is present at the head, it can be found in constant time O(1) on average.",
+        "target_text": "Question: What is the time complexity of search function in a hash table using list head?\nChoices:\na) o(1)\nb) o(n)\nc) o(log n)\nd) o(n log n)\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: Finding the minimum number of steps to reach the end of an array (e.g., jump game) can be solved using greedy or dynamic programming in O(n) time.",
+        "target_text": "Question: What is the minimum possible time complexity to find the number of steps to reach the end of an array?\nChoices:\na) o(n)\nb) o(n^2)\nc) o(n^{3/2})\nd) o(1)\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: Appending to a variable-length array may cause reallocation when capacity is exceeded, leading to O(n) time in the worst case.",
+        "target_text": "Question: Which among the following is the worst-case time complexity for appending an element in a variable-length array?\nChoices:\na) o(n)\nb) o(1)\nc) o(n^2)\nd) o(log n)\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: A Van Emde Boas (vEB) tree can store up to M elements with linear space O(M). It offers fast operations like insert, delete, and search in O(log log M) time.",
+        "target_text": "Question: What is the time complexity for storing the maximum number of elements in Van Emde Boas tree if M is the maximum number of elements?\nChoices:\na) o(log m)\nb) o(m!)\nc) o(m)\nd) o(1)\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Heap | Context: In a ternary heap, each node has up to 3 children. The height of the heap is log base 3 of n, so inserting takes O(log n / log 3) time in the worst case.",
+        "target_text": "Question: What is the time complexity for inserting a new item in a ternary heap of n elements?\nChoices:\na) o(log n / log 3)\nb) o(n!)\nc) o(n)\nd) o(1)\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Stack | Context: Implementing a stack using queues (especially a single queue) can lead to O(n) time complexity for some operations, making it inefficient for large datasets.",
+        "target_text": "Question: Why is implementation of stack operations on queues not feasible for a large dataset (Assume the number of elements in the stack to be n)?\nChoices:\na) because of its time complexity o(n)\nb) because of its time complexity o(log(n))\nc) extra memory is not required\nd) there are no problems\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Sorting | Context: Merge Sort is a divide-and-conquer algorithm with a guaranteed worst-case time complexity of O(n log n), unlike other elementary sorts like Bubble or Insertion Sort.",
+        "target_text": "Question: Which of the following sorting algorithms does not have a worst case running time of O(n^2) ?\nChoices:\na) insertion sort\nb) merge sort\nc) quick sort\nd) bubble sort\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: In a singly or doubly linked list, searching for a specific element requires traversing the list from the head to the desired node, resulting in O(n) time in the worst case.",
+        "target_text": "Question: What would be the asymptotic time complexity to find an element in the linked list?\nChoices:\na) o(1)\nb) o(n)\nc) o(n^2)\nd) o(n^4)\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: Inserting at the second position in a linked list requires only a single traversal step and pointer adjustment, which takes constant time, i.e., O(1).",
+        "target_text": "Question: What would be the asymptotic time complexity to insert an element at the second position in the linked list?\nChoices:\na) o(1)\nb) o(n)\nc) o(n^2)\nd) o(n^3)\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Heap | Context: In a binary min-heap, the maximum element is not necessarily at the root and could be in any of the leaf nodes. To find it requires scanning up to n/2 leaf nodes, giving \u03b8(n) time.",
+        "target_text": "Question: Let H be a binary min-heap consisting of n elements implemented as an array. What is the worst case time complexity of an optimal algorithm to find the maximum element in H?\nChoices:\na) \u03b8(1)\nb) \u03b8(log n)\nc) \u03b8(n)\nd) \u03b8(n log n)\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Hashing | Context: In separate chaining, the worst-case scenario occurs when all elements hash to the same bucket, resulting in a linear search through a linked list. This gives O(n) worst-case search time.",
+        "target_text": "Question: What is the worst case search time of a hashing using separate chaining algorithm?\nChoices:\na) O(n log n)\nb) O(n)\nc) O(n^2)\nd) O(n^3)\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Heap | Context: The Build Heap operation for constructing a binary heap from an array of n elements has a time complexity of O(n), not O(n log n), due to the reduced cost of heapifying lower levels.",
+        "target_text": "Question: What is the time complexity of Build Heap operation? \n(Build Heap is used to build a max(or min) binary heap from a given array. Build Heap is used in Heap Sort as a first step for sorting.)\nChoices:\na) O(n log n)\nb) O(n^2)\nc) O(n)\nd) O(log n)\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Hashing | Context: When a binary search tree is used for chaining in a hash table, insertion into the tree (assuming it is balanced) takes O(log n), but inserting at the head or tail of a list in chaining takes O(1).",
+        "target_text": "Question: What is the time complexity of insert function in a hash table using a binary tree?\nChoices:\na) o(1)\nb) o(n)\nc) o(log n)\nd) o(n log n)\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: Inserting n^2 elements into an AVL tree with n initial elements involves multiple insertions, each costing O(log n), leading to a total time complexity of \u03b8(n^2 log n).",
+        "target_text": "Question: What is the worst case time complexity of inserting n^2 elements into an AVL-tree with n elements initially ?\nChoices:\na) \u03b8(n^4)\nb) \u03b8(n^2)\nc) \u03b8(n^2 log n)\nd) \u03b8(n^3)\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: In a circular linked list, to count nodes we loop until we reach the head again. The correct method must check `while(temp != head)` and increment the count properly.",
+        "target_text": "Question: How do you count the number of elements in the circular linked list?\nChoices:\na) \npublic int length(Node head)\n{\n int length = 0;\n if( head == null)\n  return 0;\n Node temp = head.getNext();\n while(temp != head)\n {\n  temp = temp.getNext();\n  length++;\n }\n return length;\n}\nb) \npublic int length(Node head)\n{\n int length = 0;\n if( head == null)\n  return 0;\n Node temp = head.getNext();\n while(temp != null)\n {\n  temp = temp.getNext();\n  length++;\n }\n return length;\n}\nc) \npublic int length(Node head)\n{\n int length = 0;\n if( head == null)\n  return 0;\n Node temp = head.getNext();\n while(temp != head && temp != null)\n {\n  temp = head.getNext();\n  length++;\n }\n return length;\n}\nd) \npublic int length(Node head)\n{\n int length = 0;\n if( head == null)\n  return 0;\n Node temp = head.getNext();\n while(temp != head && temp == null)\n {\n  temp = head.getNext();\n  length++;\n }\n return length;\n}\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: Level order traversal visits nodes breadth-first, processing each node once. The total complexity is linear in the number of nodes, O(n).",
+        "target_text": "Question: What is the time complexity of level order traversal?\nChoices:\na) o(1)\nb) o(n)\nc) o(log n)\nd) o(n log n)\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Hashing | Context: Red-black trees are preferred over hash tables when ordered data or range queries are needed. Hash tables require resizing and do not maintain order.",
+        "target_text": "Question: Why red-black trees are preferred over hash tables though hash tables have constant time complexity?\nChoices:\na) no they are not preferred\nb) because of resizing issues of hash table and better ordering in red-black trees\nc) because they can be implemented using trees\nd) because they are balanced\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Hashing | Context: Hash tables generally have lower average-case time complexity for insert, search, and delete compared to Binary Search Trees (BST), which may degrade to O(n) in the worst case.",
+        "target_text": "Question: What is the disadvantage of BST over the hash table?\nChoices:\na) bst is easier to implement\nb) bst can get the keys sorted by just performing inorder traversal\nc) bst can perform range query easily\nd) time complexity of hash table in inserting, searching and deleting is less than that of bst\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Search | Context: The Van Emde Boas (vEB) tree provides extremely fast operations for search, insert, and delete, with time complexity O(log log M), where M is the universe size.",
+        "target_text": "Question: What is the time complexity for searching a key or integer in Van Emde Boas data structure?\nChoices:\na) o(log m!)\nb) o(m!)\nc) o(m^2)\nd) o(log log m)\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: Skip lists improve over linked lists by allowing fast search, insertion, and deletion in expected O(log n) time, compared to O(n) in regular linked lists.",
+        "target_text": "Question: What is the time complexity improvement of skip lists from linked lists in insertion and deletion?\nChoices:\na) o(n) to o(log n) where n is number of elements\nb) o(n) to o(1) where n is number of elements\nc) no change\nd) o(n) to o(n^2) where n is number of elements\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: Inserting a node at the end of a singly linked list requires traversing all nodes from the head unless a tail pointer is maintained, resulting in O(n) time.",
+        "target_text": "Question: What would be the asymptotic time complexity to add a node at the end of singly linked list, if the pointer is initially pointing to the head of the list?\nChoices:\na) o(1)\nb) o(n)\nc) θ(n)\nd) both o(n) and θ(n)\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Heap | Context: In heapsort, multiple heapify operations may be required depending on element swaps. The array snapshot suggests at least two heapify operations were done at the root.",
+        "target_text": "Question: Suppose we are sorting an array of eight integers using heapsort, and we have just finished some heapify (either maxheapify or minheapify) operations. The array now looks like this: 16 14 15 10 12 27 28. How many heapify operations have been performed on root of heap?\nChoices:\na) 1\nb) 2\nc) 3 or 4\nd) 5 or 6\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: In a skewed binary search tree (like a linked list), all operations--search, insert, and delete--take linear time in the number of nodes, i.e., O(n).",
+        "target_text": "Question: What is the worst case time complexity for search, insert and delete operations in a general Binary Search Tree for a skewed tree ?\nChoices:\na) O(n) for all\nb) O(log n) for all\nc) O(log n) for search and insert, and O(n) for delete\nd) O(log n) for search, and O(n) for insert and delete\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: The best-case height of a B-tree with k keys and order n is logₙ(k+1) - 1. This occurs when the tree is perfectly balanced and maximally filled.",
+        "target_text": "Question: What is the best case height of a B-tree of order n and which has k keys?\nChoices:\na) logₙ(k+1) - 1\nb) nk\nc) logₖ(n+1) - 1\nd) k log n\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: Circular linked lists are suitable for implementing both stacks and queues due to their ability to cycle through elements without needing null termination.",
+        "target_text": "Question: A circular linked list can be used for __________\nChoices:\na) stack\nb) queue\nc) both stack & queue\nd) neither stack or queue\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: In sparse matrix addition, only the non-zero elements need to be processed. Hence, the worst-case time complexity is O(n), where n is the number of non-zero elements.",
+        "target_text": "Question: Is O(n) the worst case time complexity for addition of two sparse matrices?\nChoices:\na) true\nb) false\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: Both the reversal algorithm and the juggling algorithm for array rotation have linear time complexity O(n), though they use different approaches and space.",
+        "target_text": "Question: Reversal algorithm and juggling algorithm for array rotation have the same time complexity.\nChoices:\na) true\nb) false\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: To count the number of elements in a singly or circular linked list, each node must be visited once. This results in linear time complexity, O(n).",
+        "target_text": "Question: What is the time complexity to count the number of elements in the linked list?\nChoices:\na) o(1)\nb) o(n)\nc) o(log n)\nd) o(n^2)\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: String | Context: Using suffix automaton or enhanced string techniques, it is possible to find the longest common prefix between any suffix in constant time, i.e., \u03b8(1), after preprocessing.",
+        "target_text": "Question: What is a time complexity for finding the longest prefix that is common between suffix in a string?\nChoices:\na) \u03b8(n)\nb) \u03b8(n!)\nc) \u03b8(1)\nd) o(log n!)\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Heap | Context: Merging two max-heaps of size n can be done by copying elements from both into an array and using Build-Heap, which has a linear time complexity of O(n).",
+        "target_text": "Question: Given two max heaps of size n each, what is the minimum possible time complexity to make a one max-heap of size from elements of two max heaps?\nChoices:\na) o(n^2)\nb) o(n log log n)\nc) o(n)\nd) o(n log n)\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Heap | Context: Skew heaps are self-adjusting heaps where operations like insert and delete have an amortized time of O(log n), but the worst-case time complexity can reach O(n).",
+        "target_text": "Question: The worst case running time of all operations in a skew heap is given as?\nChoices:\na) o(n)\nb) o(n log n)\nc) o(n^2)\nd) o(m log n)\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: In the worst case, a query operation over a set of n elements (e.g., a linear scan or unindexed search) can take O(n) time.",
+        "target_text": "Question: What is the worst case time complexity of query operation (n is the number of candidates)?\nChoices:\na) o(1)\nb) o(n)\nc) o(log n)\nd) o(n log n)\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: In simple chaining used for hash tables, a doubly linked list can make deletion more efficient by allowing constant-time removal without needing to search for the previous node.",
+        "target_text": "Question: In simple chaining, what data structure is appropriate?\nChoices:\na) singly linked list\nb) doubly linked list\nc) circular linked list\nd) binary trees\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Sorting | Context: Binary search has a worst-case complexity of O(log n), which is significantly better than linear search. However, in edge cases (like unsorted data), both may fall back to linear scanning.",
+        "target_text": "Question: The worst case complexity of binary search matches with __________\nChoices:\na) interpolation search\nb) linear search\nc) merge sort\nd) none of the above\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: Tango trees are a type of binary search tree that achieve a competitive ratio of O(log log n) using preferred path decomposition and auxiliary trees.",
+        "target_text": "Question: What is the time complexity of for achieving competitive ratio by tango tree?\nChoices:\na) o(log n)\nb) o(n^2)\nc) o(n!)\nd) o(log log n)\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Graph | Context: In an adjacency list representation, checking if an edge exists between two vertices may require scanning the list of one vertex, resulting in O(degree) = O(E) in worst case.",
+        "target_text": "Question: Time complexity to check if an edge exists between two vertices would be __________\nChoices:\na) o(v^2)\nb) o(v + e)\nc) o(1)\nd) o(e)\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Heap | Context: Deleting an arbitrary node from a binary heap involves locating the node (O(n)), replacing it with the last node, and then heapifying (O(log n)). Combined worst-case: O(n).",
+        "target_text": "Question: The worst case complexity of deleting any arbitrary node value element from heap is __________\nChoices:\na) o(log n)\nb) o(n)\nc) o(n log n)\nd) o(n^2)\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: If each bin has a constant number of candidates and m bins are checked, the time complexity of insertion is proportional to the number of bins: O(m).",
+        "target_text": "Question: What will be the time complexity of insertion operation if all the candidates are evenly spaced so that each bin has constant no. of candidates? (m = number of bins intersecting candidate intersects)\nChoices:\na) o(1)\nb) o(m)\nc) o(m^2)\nd) o(log m)\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Hashing | Context: Inserting an alphabet into a tree-like structure using a hash map can be done in constant time assuming ideal hashing and constant-time insert in each map level.",
+        "target_text": "Question: What is a time complexity for inserting an alphabet in the tree using hash maps?\nChoices:\na) o(log n!)\nb) o(n!)\nc) o(n^2)\nd) o(1)\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Sorting | Context: Quick Sort is a classic example of the Divide and Conquer design paradigm where the array is divided into parts based on a pivot, and each part is recursively sorted.",
+        "target_text": "Question: The quick sort algorithm exploit __________ design technique.\nChoices:\na) greedy\nb) dynamic programming\nc) divide and conquer\nd) backtracking\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: The Van Emde Boas tree supports insertion, deletion, and search operations in O(log log M) time, where M is the size of the universe of keys.",
+        "target_text": "Question: What is the time complexity for deleting a key or integer in Van Emde Boas data structure?\nChoices:\na) o(log m!)\nb) o(log log m)\nc) o(m!)\nd) o(m^2)\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Stack | Context: Reversing a word using a stack involves pushing each character and then popping them to reverse the order. This process takes linear time O(N).",
+        "target_text": "Question: What is the time complexity of reversing a word using stack algorithm?\nChoices:\na) o(n log n)\nb) o(n^2)\nc) o(n)\nd) o(m log n)\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: String | Context: Rope data structures are used for efficient string manipulation, especially insertions and concatenations, which can be done in O(log n) time.",
+        "target_text": "Question: What is the time complexity for inserting the string and forming a new string in the rope data structure?\nChoices:\na) o(log n)\nb) o(n!)\nc) o(n^2)\nd) o(1)\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: Merge Sort is the most suitable sorting algorithm for linked lists due to its efficient O(n log n) time and ability to be implemented without random access.",
+        "target_text": "Question: Which of the following sorting algorithms can be used to sort a random linked list with minimum time complexity?\nChoices:\na) insertion sort\nb) quick sort\nc) heap sort\nd) merge sort\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Hashing | Context: When chaining is implemented using a list head, the worst-case scenario occurs when all keys hash to the same bucket, requiring a linear search through a linked list, giving O(n) time for insertion.",
+        "target_text": "Question: What is the worst case time complexity of insert function in the hash table when the list head is used for chaining?\nChoices:\na) o(1)\nb) o(n log n)\nc) o(log n)\nd) o(n)\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Queue | Context: In a queue implemented with an array or linked list, enqueue (insertion at the rear) takes constant time O(1) in the average and worst case.",
+        "target_text": "Question: What is the time complexity of enqueue operation?\nChoices:\na) o(log n)\nb) o(n log n)\nc) o(n)\nd) o(1)\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: If elements are evenly distributed among bins, deletion from a bin takes O(m), where m is the number of bins intersected during deletion.",
+        "target_text": "Question: What will be the time complexity of delete operation if all the candidates are evenly spaced so that each bin has constant number of candidates? (m = number of bins intersecting candidate intersects)\nChoices:\na) o(1)\nb) o(m)\nc) o(m^2)\nd) o(log m)\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Hashing | Context: One key advantage of chained hashing (external hashing) over open addressing is ease of deletion, as linked list operations allow direct removal without shifting elements.",
+        "target_text": "Question: An advantage of chained hash table (external hashing) over the open addressing scheme is\nChoices:\na) worst case complexity of search operations is less\nb) space used is less\nc) deletion is easier\nd) none of the above\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: String | Context: Rope data structures allow efficient editing of large strings. Deletion in a rope takes O(log n) time by splitting and concatenating balanced tree nodes.",
+        "target_text": "Question: What is the time complexity for deleting the string to form a new string in the rope data structure?\nChoices:\na) o(n^2)\nb) o(n!)\nc) o(log n)\nd) o(1)\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Queue | Context: In a priority queue, inserting a node based on position (priority) may require traversing or adjusting elements, resulting in worst-case linear time complexity O(n).",
+        "target_text": "Question: What is the time complexity to insert a node based on position in a priority queue?\nChoices:\na) o(n log n)\nb) o(log n)\nc) o(n)\nd) o(n^2)\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Hashing | Context: Hash tables typically offer constant average-case time complexity for insert, delete, and search operations, which is better than the O(log n) average of balanced BSTs.",
+        "target_text": "Question: What is the advantage of a hash table over BST?\nChoices:\na) hash table has a better average time complexity for performing insert, delete and search operations\nb) hash table requires less space\nc) range query is easy with hash table\nd) easier to implement\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Sorting | Context: Selection sort has the same time complexity in best, average, and worst cases--O(n^2)--making it the slowest among common algorithms even in the best case.",
+        "target_text": "Question: Which of the sorting techniques has highest best-case runtime complexity?\nChoices:\na) quick sort\nb) selection sort\nc) insertion sort\nd) bubble sort\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: Circular linked lists are commonly used in CPU scheduling (Round Robin) because they allow the scheduler to cycle through processes efficiently.",
+        "target_text": "Question: Which of the following application makes use of a circular linked list?\nChoices:\na) undo operation\nb) recursive function calls\nc) allocating cpu to resources\nd) implement hash tables\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: The average-case height of a binary search tree is O(log n) when nodes are inserted in random order, making searches and updates efficient.",
+        "target_text": "Question: What is the average case time complexity for finding the height of the binary tree?\nChoices:\na) h = O(log log n)\nb) h = O(n log n)\nc) h = O(n)\nd) h = O(log n)\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Hashing | Context: In a hash table using a binary tree (e.g., in chaining), delete operations in a balanced binary search tree take O(log n) time, not constant.",
+        "target_text": "Question: What is the time complexity of the delete function in the hash table using a binary tree?\nChoices:\na) o(1)\nb) o(n)\nc) o(log n)\nd) o(n log n)\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Hashing | Context: A hash tree (Merkle tree) is used for data synchronization and verification. In the worst case, all nodes may need to be compared, resulting in O(n) time complexity.",
+        "target_text": "Question: Hash tree is used in data synchronisation. In the worst case the data synchronisation takes __________ time.\nChoices:\na) o(log n)\nb) o(n^2)\nc) o(n log n)\nd) o(n)\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Heap | Context: In a ternary heap, each node has three children, so the height is log base 3 of n. Deleting the root requires bubbling down and comparing up to 3 children per level, giving time complexity O(3 log n / log 3).",
+        "target_text": "Question: What is the time complexity for deleting root key in a ternary heap of n elements?\nChoices:\na) o(log n / log 3)\nb) o(3 log n / log 3)\nc) o(n)\nd) o(1)\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: Binary tree sort using a self-balancing BST ensures sorted output and guarantees O(n log n) time in the worst case by keeping the tree balanced.",
+        "target_text": "Question: The binary tree sort implemented using a self-balancing binary search tree takes __________ time in worst case.\nChoices:\na) o(n log n)\nb) o(n)\nc) o(n^2)\nd) o(log n)\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: In a circular linked list, all nodes are connected in a circle, making it appear as though there is no True beginning or end.",
+        "target_text": "Question: In a circular linked list:\nChoices:\na) components are all linked together in some sequential manner.\nb) there is no beginning and no end.\nc) components are arranged hierarchically.\nd) forward and backward traversal within the list is permitted.\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Search | Context: In a self-organizing list with linear search, the worst-case scenario requires traversing all elements, giving O(n) time complexity.",
+        "target_text": "Question: The worst case running time of a linear search on the self-organizing list is __________\nChoices:\na) o(1)\nb) o(log n)\nc) o(n)\nd) o(n^2)\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Search | Context: Linear search checks each element sequentially until the target is found or the end is reached, resulting in a worst-case time complexity of \u03b8(n).",
+        "target_text": "Question: What is the worst case time complexity of linear search algorithm?\nChoices:\na) \u03b8(1)\nb) \u03b8(n)\nc) \u03b8(log n)\nd) \u03b8(n^2)\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Heap | Context: In a ternary heap, each node has 3 children. Increasing the priority of a key involves bubbling it up the tree, which takes O(log n / log 3) time.",
+        "target_text": "Question: What is the time complexity for increasing priority of key in a maximum ternary heap of n elements?\nChoices:\na) O(log n / log 3)\nb) O(n!)\nc) O(n)\nd) O(1)\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Sorting | Context: The worst case of Quick Sort occurs when the pivot selection leads to unbalanced partitions, causing O(n^2) time complexity.",
+        "target_text": "Question: The worst case of quick sort has order __________.\nChoices:\na) O(n^2)\nb) O(n)\nc) O(n log^2 n)\nd) O(log^2 n)\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Hashing | Context: Chaining in hashing is less sensitive to the choice of hash function because collisions are handled using separate lists rather than probing schemes.",
+        "target_text": "Question: What is the advantage of hashing with chaining?\nChoices:\na) cache performance is good\nb) uses less space\nc) less sensitive to hash function\nd) has a time complexity of O(n) in the worst case\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: Both AVL trees and B-trees maintain balanced structures that ensure logarithmic time complexity O(log n) in the worst case for insertion and deletion.",
+        "target_text": "Question: B-tree and AVL tree have the same worst case time complexity for insertion and deletion.\nChoices:\na) true\nb) false\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: The juggling algorithm for array rotation performs element swaps based on the greatest common divisor (GCD) of the array size and rotation steps. Its time complexity is O(n).",
+        "target_text": "Question: What is the time complexity of the juggling algorithm to rotate an array?\nChoices:\na) o(1)\nb) o(n)\nc) o(d)\nd) o(n*d)\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: Converting infix expressions to postfix (Reverse Polish Notation) using a stack-based algorithm can be done in linear time O(n), where n is the length of the expression.",
+        "target_text": "Question: What is the time complexity of an infix to postfix conversion algorithm?\nChoices:\na) o(n log n)\nb) o(n)\nc) o(n^2)\nd) o(m log n)\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: Inserting into a doubly linked list takes O(1) time if the pointer to the insertion point is known. However, finding the correct position can take O(n) in the worst case.",
+        "target_text": "Question: What is the worst case time complexity of inserting a node in a doubly linked list?\nChoices:\na) o(n log n)\nb) o(log n)\nc) o(n)\nd) o(1)\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: String | Context: Finding the most frequent substring of a given minimum length can be done using a sliding window and hashmap or suffix tree in linear time O(n).",
+        "target_text": "Question: What is a time complexity for finding frequently occurring substring of minimum length in a string?\nChoices:\na) θ(n)\nb) θ(n!)\nc) o(n^2 + n)\nd) o(log n!)\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: In a balanced binary search tree with 2ⁿ elements, search operations take time proportional to the tree height, which is O(log n). So the worst-case time is θ(log n).",
+        "target_text": "Question: The worst case running time to search for an element in a balanced binary search tree with n = 2^k elements is:\nChoices:\na) θ(n log n)\nb) θ(n*2ⁿ)\nc) θ(n)\nd) θ(log n)\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: String | Context: Reversing a string involves swapping characters from both ends toward the center, which takes O(n) time where n is the string length.",
+        "target_text": "Question: What is the time complexity to reverse a string?\nChoices:\na) O(n^2)\nb) O(1)\nc) O(log n)\nd) O(n)\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Theory | Context: In rope data structures, creating a new node and concatenating ropes are done using tree operations that can take O(1) time when no balancing is required.",
+        "target_text": "Question: What is the time complexity for creating a new node and then performing concatenation in the rope data structure?\nChoices:\na) O(log n)\nb) O(n!)\nc) O(n^2)\nd) O(1)\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Sorting | Context: Bubble Sort performs pairwise comparisons and swaps in nested loops, giving a worst-case time complexity of O(n^2).",
+        "target_text": "Question: Consider that n elements are to be sorted. What is the worst case time complexity of Bubble sort?\nChoices:\na) O(1)\nb) O(log^2 n)\nc) O(n)\nd) O(n^2)\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: In circular linked lists, nodes are linked in a loop without a terminating NULL, and traversal can start at any point. Valid statements about their structure often include loop-based properties like P1 and P4.",
+        "target_text": "Question: Which of the following Statement is correct about Circular Linked List?\nChoices:\na) only p4\nb) only p1\nc) p1 and p2\nd) p1 and p4\nAnswer: d"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Array | Context: In array-based stack implementations, the pop operation simply decrements the index (top pointer) and is therefore done in constant time, O(1).",
+        "target_text": "Question: What is the time complexity of pop() operation when the stack is implemented using an array?\nChoices:\na) o(1)\nb) o(n)\nc) o(log n)\nd) o(n log n)\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: Inserting a node at the beginning of a linked list requires changing the head pointer and the next pointer of the new node, which is a constant time O(1) operation.",
+        "target_text": "Question: What is the time complexity to insert a node at the beginning of the list?\nChoices:\na) o(log n)\nb) o(n)\nc) o(1)\nd) none\nAnswer: c"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Linked List | Context: In a hash table with chaining using doubly linked lists, insertions occur at the head or tail of the list and take constant time, i.e., O(1).",
+        "target_text": "Question: What is the time complexity of insert function in a hash table using a doubly linked list?\nChoices:\na) o(1)\nb) o(n)\nc) o(log n)\nd) o(n log n)\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: The worst-case height of an AVL tree is approximately 1.44 log2(n), where n is the number of nodes. This follows from AVL balancing rules.",
+        "target_text": "Question: What is the worst case possible height of AVL tree?\nChoices:\na) 2 log n (assume base of log is 2)\nb) 1.44 log n (assume base of log is 2)\nc) depends upon implementation\nd) \u03b8(n)\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Hashing | Context: In a hash tree (e.g., Merkle tree), insertion can involve O(log\u2096(n)) time, where k is the arity of the tree and n is the number of elements.",
+        "target_text": "Question: What is the worst case time complexity of the insertion in the hash tree?\nChoices:\na) O(log\u2096(n))\nb) O(n^2)\nc) O(n log\u2096(n))\nd) O(k*n)\nAnswer: a"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Tree | Context: In a suffix tree, the number of nodes in the worst case is 2n where n is the length of the string, because each suffix may form a new branch.",
+        "target_text": "Question: For what size of nodes, the worst case of usage of space in suffix tree seen?\nChoices:\na) n nodes\nb) 2n nodes\nc) 2n nodes\nd) n! nodes\nAnswer: b"
+    },
+    {
+        "input_text": "Generate a data structure MCQ | Topic: Heap | Context: In a ternary heap, increasing a key's priority may require bubbling it up through levels. The height is log base 3 of n, and with up to 3 comparisons per level, time is O(3 log n / log 3).",
+        "target_text": "Question: What is the time complexity for increasing priority of key in a minimum ternary heap of n elements?\nChoices:\na) o(log n / log 3)\nb) o(3 log n / log 3)\nc) o(n)\nd) o(1)\nAnswer: b"
+    },
