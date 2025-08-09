@@ -43,7 +43,7 @@ def parse_args():
     """Parse command line arguments."""
     parser = argparse.ArgumentParser(description="Pre-train T5 model on raw documentation")
     parser.add_argument("--model_name", type=str, default="t5-base")
-    parser.add_argument("--data_path", type=str, required=True, help="Path to raw text file(s)")
+    parser.add_argument("--data_path", type=str, default="datasets/java_corpus.txt", help="Path to raw text file(s)")
     parser.add_argument("--batch_size", type=int, default=8)
     parser.add_argument("--gradient_accumulation_steps", type=int, default=4)
     parser.add_argument("--num_epochs", type=int, default=3)
@@ -364,7 +364,7 @@ def main():
         num_train_epochs=config.num_epochs,
         learning_rate=config.learning_rate,
         warmup_steps=config.warmup_steps,
-        evaluation_strategy="steps",
+        eval_strategy="steps",
         eval_steps=config.eval_steps,
         save_strategy="steps",
         save_steps=config.save_steps,
