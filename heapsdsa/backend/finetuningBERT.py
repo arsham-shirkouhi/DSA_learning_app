@@ -163,6 +163,5 @@ class TopicDifficultyClassifier(BertPreTrainedModel):
             "logits": (topic_logits, diff_logits)
         }
 
-
 if __name__ == "__main__":
     main()

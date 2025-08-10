@@ -20,7 +20,7 @@ def remove_duplicate_targets(input_path, output_path):
     print(f"Cleaned data saved to: {output_path}")
 
 # Example usage:
-input_file = "./datasets/final.json"               # Replace with your input file
+input_file = "./datasets/ds_mcq_unique_part2_of6.json"               # Replace with your input file
 output_file = "./temp/cleaned_output.json"         # Output file name
 
 remove_duplicate_targets(input_file, output_file)
