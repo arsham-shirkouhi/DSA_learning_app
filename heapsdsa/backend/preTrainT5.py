@@ -19,6 +19,7 @@ from transformers import (
 from typing import List, Dict, Any
 
 
+
 @dataclass
 class PreTrainingConfig:
     """Configuration class for pre-training parameters."""
@@ -296,6 +297,10 @@ def compute_metrics(eval_preds):
 
 
 def main():
+    
+    torch.backends.cuda.matmul.allow_tf32 = True
+    torch.backends.cudnn.allow_tf32 = True
+
     """Main pre-training function."""
     args = parse_args()
     config = PreTrainingConfig(
@@ -364,21 +369,24 @@ def main():
         num_train_epochs=config.num_epochs,
         learning_rate=config.learning_rate,
         warmup_steps=config.warmup_steps,
-        eval_strategy="steps",
+        eval_strategy="epoch",
         eval_steps=config.eval_steps,
-        save_strategy="steps",
+        save_strategy="epoch",
         save_steps=config.save_steps,
         save_total_limit=3,
         load_best_model_at_end=True,
         metric_for_best_model="eval_loss",
         greater_is_better=False,
-        fp16=config.fp16,
+        bf16=True,
+        fp16=False,
+        # fp16=config.fp16,
         logging_dir=f"{args.output_dir}/logs",
         logging_steps=100,
         report_to=["wandb"] if config.use_wandb else ["tensorboard"],
         run_name=f"t5_pretrain_{datetime.now().strftime('%Y%m%d_%H%M%S')}",
         dataloader_drop_last=True,
         remove_unused_columns=False,
+        predict_with_generate=False,
     )
     
     # Initialize trainer
@@ -388,7 +396,7 @@ def main():
         train_dataset=train_dataset,
         eval_dataset=val_dataset,
         data_collator=data_collator,
-        compute_metrics=compute_metrics,
+        # compute_metrics=compute_metrics,
     )
     
     # Train
